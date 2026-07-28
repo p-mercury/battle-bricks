@@ -1,0 +1,1421 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
+"Source-Language: en\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../packages/ui-web/dist/lib/components/file-input/file-input.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+msgid "Delete"
+msgstr "Löschen"
+
+#: ../../packages/ui-web/dist/lib/components/search/search.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/search.svelte
+msgid "Search..."
+msgstr "Suchen..."
+
+#: src/lib/components/order-lines-desktop.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/+page.svelte
+msgid "Product"
+msgstr "Produkt"
+
+#: src/lib/components/order-lines-desktop.svelte
+#: src/lib/components/order-lines-mobile.svelte
+msgid "Quantity"
+msgstr "Menge"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/line-item.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+msgid "Indicative price based on historical data. Final pricing is subject to quotation and may vary."
+msgstr "Richtwert basierend auf historischen Daten. Die endgültige Preisgestaltung unterliegt einem Angebot und kann variieren."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+msgid "Unit Price<0/>"
+msgstr "Stückpreis<0/>"
+
+#. 0: line.quantity
+#. 0: line.quantity
+#. 0: quantity
+#: src/lib/components/order-lines-desktop.svelte
+#: src/lib/components/order-lines-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/line-item.svelte
+msgid "({0}x)"
+msgstr "({0}x)"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/+layout.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/platform-item.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/notification-settings/notification-settings.svelte
+msgid "Purchasing"
+msgstr "Einkauf"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/+layout.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/platform-item.svelte
+msgid "Sales"
+msgstr "Vertrieb"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/+layout.svelte
+msgid "Account"
+msgstr "Account"
+
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "You must accept the terms & privacy policy"
+msgstr "Sie müssen die Nutzungsbedingungen & Datenschutzrichtlinie akzeptieren"
+
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Complete your profile"
+msgstr "Profil vervollständigen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "Image"
+msgstr "Bild"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/edit-details-dialog.svelte
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Name"
+msgstr "Name"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/edit-details-dialog.svelte
+msgid "User name"
+msgstr "Benutzername"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/edit-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/edit-details-dialog.svelte
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Job title"
+msgstr "Berufsbezeichnung"
+
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Subscribe to newsletter"
+msgstr "Newsletter abonnieren"
+
+#: src/routes/(authenticated)/complete/+page.svelte
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Complete"
+msgstr "Abschließen"
+
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Completing your profile"
+msgstr "Ihr Profil wird vervollständigt"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Something went wrong"
+msgstr "Etwas ist schiefgelaufen"
+
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Please try again"
+msgstr "Bitte versuchen Sie es erneut"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+#: src/routes/(authenticated)/complete/+page.svelte
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Refresh"
+msgstr "Aktualisieren"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/+page.svelte
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Log Out"
+msgstr "Abmelden"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/+page.svelte
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "<0/>Log Out"
+msgstr "<0/>Abmelden"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/+error.svelte
+msgid "An error has occurred, please try refresing the page or contacting us at support@jumper.de"
+msgstr "Ein Fehler ist aufgetreten. Bitte aktualisieren Sie die Seite oder kontaktieren Sie uns unter support@jumper.de"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/+layout.svelte
+msgid "Catalogue"
+msgstr "Katalog"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/+layout.svelte
+msgid "Quotes"
+msgstr "Angebote"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/+layout.svelte
+msgid "Orders"
+msgstr "Bestellungen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/+layout.svelte
+msgid "Archive"
+msgstr "Archiv"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/+page.svelte
+msgid "Details"
+msgstr "Details"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/+page.svelte
+msgid "Edit user details"
+msgstr "Benutzerdetails bearbeiten"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/+layout.svelte
+msgid "Profile"
+msgstr "Profil"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/+layout.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/+page.svelte
+msgid "Organisation"
+msgstr "Organisation"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/+layout.svelte
+msgid "Integrations"
+msgstr "Integrationen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/+layout.svelte
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: src/routes/(authenticated)/(completed)/integrations/zoho-crm/callback/+page.svelte
+msgid "Connecting Zoho CRM"
+msgstr "Zoho CRM verbinden"
+
+#: src/routes/(authenticated)/(completed)/integrations/zoho-crm/callback/+page.svelte
+msgid "Please wait,"
+msgstr "Bitte warten,"
+
+#: src/routes/(authenticated)/(completed)/integrations/zoho-crm/callback/+page.svelte
+msgid "you will be redirected automatically"
+msgstr "Sie werden automatisch weitergeleitet"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/edit-details-dialog.svelte
+msgid "Edit Details"
+msgstr "Details bearbeiten"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/edit-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/edit-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "Discard"
+msgstr "Verwerfen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/edit-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/edit-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "Save"
+msgstr "Speichern"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/edit-details-dialog.svelte
+msgid "Saving..."
+msgstr "Wird gespeichert..."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/+page.svelte
+msgid "Platforms"
+msgstr "Plattformen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/+page.svelte
+msgid "Users"
+msgstr "Benutzer"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/+page.svelte
+msgid "Invite User"
+msgstr "Benutzer einladen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+msgid "Invite user"
+msgstr "Benutzer einladen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+msgid "Email"
+msgstr "E-Mail"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/+page.svelte
+msgid "Status"
+msgstr "Status"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+msgid "Deactivate User"
+msgstr "Benutzer deaktivieren"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+msgid "Are you sure you want to deactivate <0/>?"
+msgstr "Sind Sie sicher, dass Sie <0/> deaktivieren möchten?"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/submit-po-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/submit-po-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/delete-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/delete-stage.svelte
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+msgid "Deactivate"
+msgstr "Deaktivieren"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+msgid "Deactivating..."
+msgstr "Wird deaktiviert..."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+msgid "Deactivated"
+msgstr "Deaktiviert"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+msgid "Continue"
+msgstr "Weiter"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+msgid "We couldn’t deactivate this user. Please try again."
+msgstr "Dieser Benutzer konnte nicht deaktiviert werden. Bitte versuchen Sie es erneut."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/custom-parts-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+msgid "Back"
+msgstr "Zurück"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/+layout.svelte
+msgid "Inventory"
+msgstr "Inventar"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+msgid "Invalid email"
+msgstr "Ungültige E-Mail-Adresse"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+msgid "Invite"
+msgstr "Einladen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+msgid "Confirm New User"
+msgstr "Neuen Benutzer bestätigen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+msgid "Are you sure you want to invite <0/> to <1/>"
+msgstr "Sind Sie sicher, dass Sie <0/> zu <1/> einladen möchten?"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+msgid "Sending invitation..."
+msgstr "Einladung wird gesendet..."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+msgid "Invite sent"
+msgstr "Einladung gesendet"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+msgid "<0/> has been invited."
+msgstr "<0/> wurde eingeladen."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "Error"
+msgstr "Fehler"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/platform-item.svelte
+msgid "Request quotes"
+msgstr "Angebote anfragen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/platform-item.svelte
+msgid "List products"
+msgstr "Produkte verkaufen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/platform-item.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/platform-item.svelte
+msgid "Undefined"
+msgstr "Undefiniert"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/no-users-item.svelte
+msgid "No Users"
+msgstr "Keine Benutzer"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/user-item.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/user-item.svelte
+msgid "User settings"
+msgstr "Benutzereinstellungen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/user-item.svelte
+msgid "Deactivate user"
+msgstr "Benutzer deaktivieren"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/user-item.svelte
+msgid "<0/>Deactivate"
+msgstr "<0/>Deaktivieren"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/user-item.svelte
+msgid "Activate user"
+msgstr "Benutzer aktivieren"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/user-item.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "<0/>Activate"
+msgstr "<0/>Aktivieren"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/user-item.svelte
+msgid "Delete user"
+msgstr "Benutzer löschen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/user-item.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "<0/>Delete"
+msgstr "<0/>Löschen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/integrations/+page.svelte
+msgid "Zoho CRM"
+msgstr "Zoho CRM"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/integrations/+page.svelte
+msgid "Status: <0/>"
+msgstr "Status: <0/>"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/integrations/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/integrations/+page.svelte
+msgid "Connect Zoho CRM"
+msgstr "Zoho CRM verbinden"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/+page.svelte
+msgid "PO Number"
+msgstr "Bestellnummer"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/+page.svelte
+msgid "Item Preview"
+msgstr "Artikelvorschau"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/+page.svelte
+msgid "Ordered Date"
+msgstr "Bestelldatum"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "Lead Time"
+msgstr "Lieferzeit"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/+page.svelte
+msgid "Grand Total"
+msgstr "Gesamtsumme"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/+page.svelte
+msgid "No orders"
+msgstr "Keine Bestellungen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/+page.svelte
+msgid "Account Settings"
+msgstr "Kontoeinstellungen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/+page.svelte
+msgid "Password"
+msgstr "Passwort"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/+page.svelte
+msgid "Notification Settings"
+msgstr "Benachrichtigungseinstellungen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "Description"
+msgstr "Beschreibung"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+msgid "Delete User"
+msgstr "Benutzer löschen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+msgid "To confirm deletion, type the email address <0/>. This action cannot be undone."
+msgstr "Um die Löschung zu bestätigen, geben Sie die E-Mail-Adresse <0/> ein. Diese Aktion kann nicht rückgängig gemacht werden."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+msgid "Type the email address"
+msgstr "E-Mail-Adresse eingeben"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+msgid "Email does not match yet."
+msgstr "E-Mail-Adresse stimmt noch nicht überein."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+msgid "Deleting..."
+msgstr "Wird gelöscht..."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+msgid "Deleted"
+msgstr "Gelöscht"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+msgid "<0/> was deleted."
+msgstr "<0/> wurde gelöscht."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+msgid "We couldn’t delete this user. Please try again."
+msgstr "Dieser Benutzer konnte nicht gelöscht werden. Bitte versuchen Sie es erneut."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/+page.svelte
+msgid "Quote Number"
+msgstr "Angebotsnummer"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/+page.svelte
+msgid "No quotes"
+msgstr "Keine Angebote"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+msgid "Open cart"
+msgstr "Warenkorb öffnen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "Tags"
+msgstr "Tags"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+msgid "No products found"
+msgstr "Keine Produkte gefunden"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "Product Information"
+msgstr "Produktinformationen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "Name:"
+msgstr "Name:"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "Code:"
+msgstr "Code:"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "OEM Number:"
+msgstr "OEM-Nummer:"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/order-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/order-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/order-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/order-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "Lead Time:"
+msgstr "Lieferzeit:"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/tag-filter.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "Tags:"
+msgstr "Tags:"
+
+#. 0: formatMoney(product.price)
+#. 0: formatMoney(product.price)
+#. 0: formatMoney(product.price)
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "Price: {0}"
+msgstr "Preis: {0}"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/search.svelte
+msgid "Search catalogue"
+msgstr "Katalog durchsuchen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/search.svelte
+msgid "Open search filters"
+msgstr "Suchfilter öffnen"
+
+#. 0: hiddenTagsTooltip
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-item-desktop.svelte
+msgid "More tags: {0}"
+msgstr "Weitere Tags: {0}"
+
+#. 0: order.quotationNumber
+#. 0: order.quotationNumber
+#. 0: data.order.purchaseOrderNumber
+#. 0: order.purchaseOrderNumber
+#. 0: order.purchaseOrderNumber
+#. 0: data.order.purchaseOrderNumber
+#. 0: order.purchaseOrderNumber
+#. 0: order.purchaseOrderNumber
+#. 0: order.quotationNumber || "-"
+#. 0: order.quotationNumber
+#. 0: order.quotationNumber
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/order-item-desktop.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/order-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/[id]/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/order-item-desktop.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/order-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/[id]/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/order-item-desktop.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/order-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/order-item-desktop.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/order-item-mobile.svelte
+msgid "No. {0}"
+msgstr "Nr. {0}"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/+page.svelte
+msgid "Create new product"
+msgstr "Neues Produkt erstellen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "Price"
+msgstr "Preis"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/edit-language.svelte
+msgid "Language"
+msgstr "Sprache"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+msgid "New Product"
+msgstr "Neues Produkt"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "Name*"
+msgstr "Name*"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+msgid "Code*"
+msgstr "Code*"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+msgid "Status*"
+msgstr "Status*"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "OEM Number"
+msgstr "OEM-Nummer"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "Lead time (weeks)"
+msgstr "Lieferzeit (Wochen)"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+msgid "Create"
+msgstr "Erstellen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+msgid "Confirm New Product"
+msgstr "Neues Produkt bestätigen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+msgid "Are you sure you want to add <0/>?"
+msgstr "Sind Sie sicher, dass Sie <0/> hinzufügen möchten?"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+msgid "Adding Product..."
+msgstr "Produkt wird hinzugefügt..."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+msgid "Product added"
+msgstr "Produkt hinzugefügt"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+msgid "<0/> has been added."
+msgstr "<0/> wurde hinzugefügt."
+
+#. 0: formatDuration(data.order.leadTime)
+#. 0: formatDuration(data.order.leadTime)
+#. 0: formatDuration(order.leadTime)
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/[id]/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/[id]/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/+page.svelte
+msgid "Lead Time: {0}"
+msgstr "Lieferzeit: {0}"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/cart-dialog.svelte
+msgid "Cart"
+msgstr "Warenkorb"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/cart-dialog.svelte
+msgid "Close dialog"
+msgstr "Dialog schließen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/cart-dialog.svelte
+msgid "Add attachment"
+msgstr "Anhang hinzufügen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/cart-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "Request quote"
+msgstr "Angebot anfragen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/cart-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "Request Quote"
+msgstr "Angebot anfragen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "Are you sure you want to request this quote?"
+msgstr "Sind Sie sicher, dass Sie dieses Angebot anfragen möchten?"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "Request"
+msgstr "Anfragen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "Requesting..."
+msgstr "Wird angefragt..."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "Quote Requested"
+msgstr "Angebot angefragt"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "Your quote has been requested."
+msgstr "Ihr Angebot wurde angefragt."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "Continue shopping"
+msgstr "Weiter einkaufen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "Continue Shopping"
+msgstr "Weiter einkaufen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "View quote"
+msgstr "Angebot ansehen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "View Quote"
+msgstr "Angebot ansehen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "We couldn’t submit your quote request. Please try again."
+msgstr "Ihre Angebotsanfrage konnte nicht übermittelt werden. Bitte versuchen Sie es erneut."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/delete-stage.svelte
+msgid "Delete Product"
+msgstr "Produkt löschen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/delete-stage.svelte
+msgid "Are you sure you want to delete this product?"
+msgstr "Sind Sie sicher, dass Sie dieses Produkt löschen möchten?"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/delete-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "Delete product"
+msgstr "Produkt löschen"
+
+#: src/lib/components/custom-part-details-dialog.svelte
+#: src/lib/components/custom-part-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/delete-stage.svelte
+msgid "Yes"
+msgstr "Ja"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "Product settings"
+msgstr "Produkteinstellungen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "Edit product"
+msgstr "Produkt bearbeiten"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "<0/>Edit"
+msgstr "<0/>Bearbeiten"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "Activate product"
+msgstr "Produkt aktivieren"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "Unlist product"
+msgstr "Produkt ausblenden"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "<0/>Unlist"
+msgstr "<0/>Deaktivieren"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "You can delete this product only after unlisting it"
+msgstr "Sie können dieses Produkt nur nach dem Deaktivieren löschen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "Jumper.de code:"
+msgstr "Jumper.de Code:"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "Edit Product"
+msgstr "Produkt bearbeiten"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "Saving Changes..."
+msgstr "Änderungen werden gespeichert..."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+msgid "Invite New User"
+msgstr "Neuen Benutzer einladen"
+
+#: src/lib/components/totals.svelte
+msgid "Sub total:"
+msgstr "Zwischensumme:"
+
+#: src/lib/components/totals.svelte
+msgid "Discount:"
+msgstr "Rabatt:"
+
+#: src/lib/components/totals.svelte
+msgid "Tax:"
+msgstr "Mehrwertsteuer:"
+
+#. 0: formatMoney(line.item.price)
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/line-item.svelte
+msgid "{0}/Unit <0/>"
+msgstr "{0}/Einheit <0/>"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/submit-po-dialog.svelte
+msgid "Submit PO"
+msgstr "PO einreichen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/+page.svelte
+msgid "<0/>Submit PO"
+msgstr "<0/>PO einreichen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/submit-po-dialog.svelte
+msgid "Submit"
+msgstr "Einreichen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/submit-po-dialog.svelte
+msgid "Uploading PO..."
+msgstr "PO wird hochgeladen..."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/attachment-item.svelte
+msgid "Remove attachment"
+msgstr "Anhang entfernen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/cart-dialog.svelte
+msgid "You can upload up to 4 attachments."
+msgstr "Sie können bis zu 4 Anhänge hochladen."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "Attachments:"
+msgstr "Anhänge:"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/user-item.svelte
+msgid "You don't have permission to edit this user"
+msgstr "Sie haben keine Berechtigung, diesen Benutzer zu bearbeiten"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/+page.svelte
+msgid "You don't have permission to invite users"
+msgstr "Sie haben keine Berechtigung, Benutzer einzuladen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/+page.svelte
+msgid "Valid Until"
+msgstr "Gültig bis"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/+layout.svelte
+msgid "Past Orders"
+msgstr "Vergangene Bestellungen"
+
+#. 0: formatTimestamp(data.order.orderedTime)
+#. 0: formatTimestamp(data.order.orderedTime)
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/[id]/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/[id]/+page.svelte
+msgid "Ordered Date: {0}"
+msgstr "Bestelldatum: {0}"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/+page.svelte
+msgid "No past orders"
+msgstr "Keine vergangenen Bestellungen"
+
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "I agree to the <0>Terms & Privacy Policy</0>"
+msgstr "Ich stimme den <0>Nutzungsbedingungen & Datenschutzrichtlinien</0> zu"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/+page.svelte
+msgid "No archived quotes"
+msgstr "Keine archivierten Angebote"
+
+#: src/lib/components/order-lines-desktop.svelte
+#: src/lib/components/order-lines-mobile.svelte
+msgid "Documents"
+msgstr "Dokumente"
+
+#. 0: data.order.quotationNumber
+#. 0: data.order.quotationNumber
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/+page.svelte
+msgid "Quote No.{0}"
+msgstr "Angebotsnr.{0}"
+
+#. 0: formatTimestamp(order.expiresTime)
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/+page.svelte
+msgid "Valid Until: {0}"
+msgstr "Gültig bis: {0}"
+
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Your full name"
+msgstr "Ihr vollständiger Name"
+
+#: src/lib/components/order-lines-desktop.svelte
+#: src/lib/components/order-lines-mobile.svelte
+msgid "Unit Price"
+msgstr "Stückpreis"
+
+#: src/lib/components/order-lines-desktop.svelte
+#: src/lib/components/order-lines-mobile.svelte
+msgid "Amount"
+msgstr "Betrag"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/submit-po-dialog.svelte
+msgid "PO number*"
+msgstr "Bestellnummer*"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/submit-po-dialog.svelte
+msgid "Upload PO file*"
+msgstr "PO-Datei hochladen*"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/submit-po-dialog.svelte
+msgid "Submit Your PO"
+msgstr "Ihre Bestellung einreichen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/+page.svelte
+msgid "Job Title"
+msgstr "Berufsbezeichnung"
+
+#: src/lib/components/order-lines-desktop.svelte
+#: src/lib/components/order-lines-mobile.svelte
+msgid "Purchase Order"
+msgstr "Bestellung"
+
+#: src/lib/components/order-lines-desktop.svelte
+#: src/lib/components/order-lines-mobile.svelte
+msgid "Quote"
+msgstr "Angebot"
+
+#: src/lib/components/order-lines-desktop.svelte
+#: src/lib/components/order-lines-mobile.svelte
+msgid "Order Confirmation"
+msgstr "Auftragsbestätigung"
+
+#: src/lib/components/order-lines-desktop.svelte
+#: src/lib/components/order-lines-mobile.svelte
+msgid "Delivery Note"
+msgstr "Lieferschein"
+
+#: src/lib/components/order-lines-desktop.svelte
+#: src/lib/components/order-lines-mobile.svelte
+msgid "Invoice"
+msgstr "Rechnung"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-item-mobile.svelte
+msgid "more details"
+msgstr "Mehr Details"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/order-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/order-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/order-item-mobile.svelte
+msgid "Valid Until:"
+msgstr "Gültig bis:"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/order-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/order-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/order-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/order-item-mobile.svelte
+msgid "Grand Total:"
+msgstr "Gesamtbetrag:"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-item-mobile.svelte
+msgid "Description:"
+msgstr "Beschreibung:"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+msgid "Request custom part"
+msgstr "Benutzerdefiniertes Teil anfragen"
+
+#. 0: weeks.toFixed(0); 1: weeks !== 1 ? "s" \\: ""
+#. 0: weeks.toFixed(0); 1: weeks !== 1 ? "s" \\: ""
+#. 0: weeks.toFixed(0); 1: weeks !== 1 ? "s" \\: ""
+#: ../../packages/ui-web/dist/lib/units/duration.js
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-item-desktop.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-item-mobile.svelte
+msgid "{0} week{1}"
+msgstr "{0} Woche{1}"
+
+#. 0: preview; 1: remaining
+#. 0: preview; 1: remaining
+#. 0: preview; 1: remaining
+#. 0: preview; 1: remaining
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/order-item-desktop.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/order-item-desktop.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/order-item-desktop.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/order-item-desktop.svelte
+msgid "{0}, +{1} more..."
+msgstr "{0}, +{1} mehr..."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/custom-parts-dialog.svelte
+msgid "Custom Part Request"
+msgstr "Anfrage für kundenspezifisches Teil"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+msgid "Next"
+msgstr "Weiter"
+
+#: src/lib/components/custom-part-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/custom-parts-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/custom-parts-dialog.svelte
+msgid "Machine"
+msgstr "Maschine"
+
+#: src/lib/components/custom-part-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/custom-parts-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/custom-parts-dialog.svelte
+msgid "Form"
+msgstr "Formular"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/custom-parts-dialog.svelte
+#: src/routes/(authenticated)/complete/+page.svelte
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Required"
+msgstr "Erforderlich"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/custom-parts-dialog.svelte
+msgid "Optional"
+msgstr "Optional"
+
+#: src/lib/components/custom-part-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/custom-parts-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+msgid "Notes"
+msgstr "Hinweise"
+
+#: src/lib/components/custom-part-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+msgid "Custom Part"
+msgstr "Benutzerdefiniertes Teil"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/custom-parts-dialog.svelte
+msgid "<0/> Back"
+msgstr "<0/> Zurück"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/[id]/+page.svelte
+msgid "No. <0/>"
+msgstr "Nr. <0/>"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/[id]/+page.svelte
+msgid "Valid Until: <0/>"
+msgstr "Gültig bis: <0/>"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/[id]/+page.svelte
+msgid "Lead Time: <0/>"
+msgstr "Lieferzeit: <0/>"
+
+#: ../../packages/ui-web/dist/lib/components/confirm-input/confirm-input.svelte
+msgid "Escape"
+msgstr "Escape"
+
+#: ../../packages/ui-web/dist/lib/components/confirm-input/confirm-input.svelte
+msgid "Enter"
+msgstr "Enter"
+
+#: ../../packages/ui-web/dist/lib/components/file-input/file-input.svelte
+#: ../../packages/ui-web/dist/lib/components/file-input/file-input.svelte
+msgid "Replace"
+msgstr "Ersetzen"
+
+#: ../../packages/ui-web/dist/lib/components/file-input/file-input.svelte
+msgid "Document pdf"
+msgstr "Dokument PDF"
+
+#: ../../packages/ui-web/dist/lib/components/file-input/file-input.svelte
+msgid "Remove file"
+msgstr "Datei entfernen"
+
+#: ../../packages/ui-web/dist/lib/components/file-input/file-input.svelte
+msgid "Uploading..."
+msgstr "Wird hochgeladen..."
+
+#: ../../packages/ui-web/dist/lib/components/file-input/file-input.svelte
+msgid "Upload"
+msgstr "Hochladen"
+
+#: ../../packages/ui-web/dist/lib/components/currency-input/currency-input.svelte
+msgid "Value"
+msgstr "Wert"
+
+#: ../../packages/ui-web/dist/lib/components/currency-input/currency-input.svelte
+msgid "Code"
+msgstr "Code"
+
+#: ../../packages/ui-web/dist/lib/components/quantity-button/quantity-button.svelte
+msgid "Decrease quantity"
+msgstr "Menge verringern"
+
+#: ../../packages/ui-web/dist/lib/components/quantity-button/quantity-button.svelte
+msgid "Increase quantity"
+msgstr "Menge erhöhen"
+
+#: ../../packages/ui-web/dist/lib/components/navigation/footer/primary.svelte
+msgid "Select Platform"
+msgstr "Plattform auswählen"
+
+#: ../../packages/ui-web/dist/lib/services/catalogue/product-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/custom-parts/form-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-customer/organisation-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-customer/user-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-staff/user-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/purchasing/order-status.svelte.js
+msgctxt "status"
+msgid "Deleted"
+msgstr "Entwurf"
+
+#: ../../packages/ui-web/dist/lib/services/catalogue/product-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/custom-parts/form-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-customer/organisation-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-customer/user-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-staff/user-status.svelte.js
+msgctxt "status"
+msgid "Active"
+msgstr "Deaktiviert"
+
+#: ../../packages/ui-web/dist/lib/services/catalogue/product-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/custom-parts/form-status.svelte.js
+msgctxt "status"
+msgid "Unlisted"
+msgstr "Unbekannt"
+
+#: ../../packages/ui-web/dist/lib/services/catalogue/product-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/custom-parts/form-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-customer/organisation-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-customer/platform-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-customer/user-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-staff/user-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/purchasing/order-status.svelte.js
+msgctxt "status"
+msgid "Unknown"
+msgstr "Unbekannt"
+
+#: ../../packages/ui-web/dist/lib/services/catalogue/tag.svelte.js
+msgid "Development"
+msgstr "Entwicklung"
+
+#: ../../packages/ui-web/dist/lib/services/catalogue/tag.svelte.js
+msgid "Training"
+msgstr "Schulung"
+
+#: ../../packages/ui-web/dist/lib/services/catalogue/tag.svelte.js
+#: ../../packages/ui-web/dist/lib/services/common/currency.svelte.js
+#: ../../packages/ui-web/dist/lib/services/common/language.svelte.js
+#: ../../packages/ui-web/dist/lib/services/custom-parts/equipment-type.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-customer/purchasing-integration.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-customer/sales-integration.svelte.js
+#: ../../packages/ui-web/dist/lib/services/zoho-customer/connection-status.svelte.js
+msgid "Unknown"
+msgstr "Gelöscht"
+
+#: ../../packages/ui-web/dist/lib/services/common/currency.svelte.js
+msgid "EUR"
+msgstr "EUR"
+
+#: ../../packages/ui-web/dist/lib/services/common/currency.svelte.js
+msgid "USD"
+msgstr "USD"
+
+#: ../../packages/ui-web/dist/lib/services/identity-customer/user-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-staff/user-status.svelte.js
+msgctxt "status"
+msgid "Invited"
+msgstr "Aktiv"
+
+#: ../../packages/ui-web/dist/lib/services/identity-customer/user-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-staff/user-status.svelte.js
+msgctxt "status"
+msgid "Deactivated"
+msgstr "Unbekannt"
+
+#: ../../packages/ui-web/dist/lib/services/identity-customer/platform-status.svelte.js
+msgctxt "status"
+msgid "Disabled"
+msgstr "Aktiviert"
+
+#: ../../packages/ui-web/dist/lib/services/identity-customer/platform-status.svelte.js
+msgctxt "status"
+msgid "Enabled"
+msgstr "Unbekannt"
+
+#: ../../packages/ui-web/dist/lib/services/identity-customer/purchasing-integration.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-customer/sales-integration.svelte.js
+msgid "None"
+msgstr "ZOHO CRM"
+
+#: ../../packages/ui-web/dist/lib/services/identity-customer/sales-integration.svelte.js
+msgid "ZOHO CRM"
+msgstr "Unbekannt"
+
+#: ../../packages/ui-web/dist/lib/services/zoho-customer/connection-status.svelte.js
+msgid "Active"
+msgstr "Inaktiv"
+
+#: ../../packages/ui-web/dist/lib/services/zoho-customer/connection-status.svelte.js
+msgid "Inactive"
+msgstr "Unbekannt"
+
+#: ../../packages/ui-web/dist/lib/services/purchasing/order-status.svelte.js
+msgctxt "status"
+msgid "Draft"
+msgstr "Angefragt"
+
+#: ../../packages/ui-web/dist/lib/services/purchasing/order-status.svelte.js
+msgctxt "status"
+msgid "Requested"
+msgstr "Bepreist"
+
+#: ../../packages/ui-web/dist/lib/services/purchasing/order-status.svelte.js
+msgctxt "status"
+msgid "Priced"
+msgstr "Abgelaufen"
+
+#: ../../packages/ui-web/dist/lib/services/purchasing/order-status.svelte.js
+msgctxt "status"
+msgid "Expired"
+msgstr "Archiviert"
+
+#: ../../packages/ui-web/dist/lib/services/purchasing/order-status.svelte.js
+msgctxt "status"
+msgid "Archived"
+msgstr "Bestellung angefragt"
+
+#: ../../packages/ui-web/dist/lib/services/purchasing/order-status.svelte.js
+msgctxt "status"
+msgid "Order requested"
+msgstr "Bestellung bestätigt"
+
+#: ../../packages/ui-web/dist/lib/services/purchasing/order-status.svelte.js
+msgctxt "status"
+msgid "Order confirmed"
+msgstr "Erfüllt"
+
+#: ../../packages/ui-web/dist/lib/services/purchasing/order-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/purchasing/order-status.svelte.js
+msgctxt "status"
+msgid "Fulfilled"
+msgstr "Unbekannt"
+
+#: src/routes/(authenticated)/complete/+page.svelte
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Must be at least two characters long"
+msgstr "Muss mindestens zwei Zeichen lang sein"
+
+#: src/routes/(authenticated)/complete/+page.svelte
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Must be no more than 80 characters long"
+msgstr "Darf maximal 80 Zeichen lang sein"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/line-item.svelte
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: src/lib/components/document-item.svelte
+msgid "View"
+msgstr "Ansehen"
+
+#: src/lib/components/totals.svelte
+msgid "Grand total:"
+msgstr "Gesamtsumme:"
+
+#: src/lib/components/document-item.svelte
+msgid "Download"
+msgstr "Herunterladen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/line-item.svelte
+msgid "Remove line"
+msgstr "Position entfernen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+msgid "Saving"
+msgstr "Speichern"
+
+#. 0: line.name
+#. 0: line.name
+#: src/lib/components/order-lines-desktop.svelte
+#: src/lib/components/order-lines-mobile.svelte
+msgid "View details for {0}"
+msgstr "Details zu {0} anzeigen"
+
+#: src/lib/components/custom-part-details-dialog.svelte
+msgid "Order preview"
+msgstr "Bestellvorschau"
+
+#: src/lib/components/custom-part-details-dialog.svelte
+msgid "Close custom part preview"
+msgstr "Vorschau für Sonderteil schließen"
+
+#: src/lib/components/custom-part-details-dialog.svelte
+msgid "Qty"
+msgstr "Menge"
+
+#: src/lib/components/custom-part-details-dialog.svelte
+#: src/lib/components/custom-part-details-dialog.svelte
+msgid "No"
+msgstr "Nein"
+
+#: src/lib/components/custom-part-details-dialog.svelte
+msgid "Unnamed field"
+msgstr "Unbenanntes Feld"
+
+#. 0: index + 1
+#: src/lib/components/custom-part-details-dialog.svelte
+msgid "<0/> Attachment {0}"
+msgstr "<0/> Anhang {0}"
+
+#: src/lib/components/custom-part-details-dialog.svelte
+msgid "Fields"
+msgstr "Felder"
+
+#: src/lib/components/custom-part-details-dialog.svelte
+msgid "No form information available."
+msgstr "Keine Formularinformationen verfügbar."
+
+#: src/lib/components/order-lines-desktop.svelte
+msgid "View details"
+msgstr "Details anzeigen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/notification-settings/notification-settings.svelte
+msgid "General"
+msgstr "Allgemein"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/notification-settings/notification-settings.svelte
+msgid "Newsletter"
+msgstr "Newsletter"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/notification-settings/notification-settings.svelte
+msgid "Receive updates on new features, improvements, and product launches"
+msgstr "Erhalten Sie Updates zu neuen Funktionen, Verbesserungen und Produkteinführungen"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/notification-settings/notification-settings.svelte
+msgid "Quote Priced"
+msgstr "Angebot bepreist"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/notification-settings/notification-settings.svelte
+msgid "Get notified as soon as your quote is priced"
+msgstr "Lassen Sie sich benachrichtigen, sobald Ihr Angebot bepreist wurde"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/notification-settings/notification-settings.svelte
+msgid "Get notified as soon as your order is confirmed"
+msgstr "Lassen Sie sich benachrichtigen, sobald Ihre Bestellung bestätigt wurde"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/notification-settings/notification-settings.svelte
+msgid "Order Confirmed"
+msgstr "Bestellung bestätigt"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+msgid "Must be no more than 800 characters long"
+msgstr "Darf nicht länger als 800 Zeichen sein"
+
+#: src/routes/+page.svelte
+msgid "Flingo"
+msgstr ""

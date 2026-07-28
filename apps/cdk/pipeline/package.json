@@ -1,0 +1,20 @@
+{
+	"name": "@battle-bricks/pipeline",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "rm -rf dist && tsc && pnpm exec cdk synth --quiet",
+		"lint": "tsc"
+	},
+	"dependencies": {
+		"@battle-bricks/backbone": "workspace:*",
+		"@battle-bricks/front-end": "workspace:*",
+		"@flit/cdk-pipeline": "^2.6.0",
+		"@types/node": "^26.1.2",
+		"aws-cdk": "^2.1133.0",
+		"aws-cdk-lib": "^2.262.1",
+		"constructs": "^10.7.1",
+		"esbuild": "^0.28.1",
+		"typescript": "^6.0.3"
+	}
+}

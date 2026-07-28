@@ -1,0 +1,8 @@
+rules:
+  idiomatic:
+    directory-package-mismatch:
+      level: ignore
+      exclude-test-suffix: true
+  performance:
+    non-loop-expression:
+      level: ignore

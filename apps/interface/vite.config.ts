@@ -1,0 +1,14 @@
+import { sveltekit } from "@sveltejs/kit/vite";
+import basicSsl from "@vitejs/plugin-basic-ssl";
+import { defineConfig } from "vite";
+
+export default defineConfig({
+	clearScreen: false,
+	plugins: [
+		// wuchale(),
+		sveltekit(),
+		basicSsl({
+			certDir: "dist",
+		}),
+	],
+});

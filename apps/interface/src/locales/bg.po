@@ -1,0 +1,1421 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
+"Source-Language: en\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../packages/ui-web/dist/lib/components/file-input/file-input.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+msgid "Delete"
+msgstr "Изтрий"
+
+#: ../../packages/ui-web/dist/lib/components/search/search.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/search.svelte
+msgid "Search..."
+msgstr "Търсене..."
+
+#: src/lib/components/order-lines-desktop.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/+page.svelte
+msgid "Product"
+msgstr "Продукт"
+
+#: src/lib/components/order-lines-desktop.svelte
+#: src/lib/components/order-lines-mobile.svelte
+msgid "Quantity"
+msgstr "Брой"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/line-item.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+msgid "Indicative price based on historical data. Final pricing is subject to quotation and may vary."
+msgstr "Ориентировъчна цена, базирана на исторически данни. Окончателната цена подлежи на офериране и може да варира."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+msgid "Unit Price<0/>"
+msgstr "Единична цена<0/>"
+
+#. 0: line.quantity
+#. 0: line.quantity
+#. 0: quantity
+#: src/lib/components/order-lines-desktop.svelte
+#: src/lib/components/order-lines-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/line-item.svelte
+msgid "({0}x)"
+msgstr "({0}x)"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/+layout.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/platform-item.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/notification-settings/notification-settings.svelte
+msgid "Purchasing"
+msgstr "Покупки"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/+layout.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/platform-item.svelte
+msgid "Sales"
+msgstr "Продажби"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/+layout.svelte
+msgid "Account"
+msgstr "Профил"
+
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "You must accept the terms & privacy policy"
+msgstr "Трябва да приемете Условията и политиката за поверителност"
+
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Complete your profile"
+msgstr "Завършете профила си"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "Image"
+msgstr "Изображение"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/edit-details-dialog.svelte
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Name"
+msgstr "Име"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/edit-details-dialog.svelte
+msgid "User name"
+msgstr "Потребителско име"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/edit-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/edit-details-dialog.svelte
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Job title"
+msgstr "Длъжност"
+
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Subscribe to newsletter"
+msgstr "Абониране за бюлетин"
+
+#: src/routes/(authenticated)/complete/+page.svelte
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Complete"
+msgstr "Завърши"
+
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Completing your profile"
+msgstr "Завършване на профила ви"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Something went wrong"
+msgstr "Нещо се обърка"
+
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Please try again"
+msgstr "Моля, опитайте отново"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+#: src/routes/(authenticated)/complete/+page.svelte
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Refresh"
+msgstr "Обнови"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/+page.svelte
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Log Out"
+msgstr "Изход"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/+page.svelte
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "<0/>Log Out"
+msgstr "<0/>Изход"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/+error.svelte
+msgid "An error has occurred, please try refresing the page or contacting us at support@jumper.de"
+msgstr "Възникна грешка. Моля, обновете страницата или се свържете с нас на support@jumper.de"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/+layout.svelte
+msgid "Catalogue"
+msgstr "Каталог"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/+layout.svelte
+msgid "Quotes"
+msgstr "Оферти"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/+layout.svelte
+msgid "Orders"
+msgstr "Поръчки"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/+layout.svelte
+msgid "Archive"
+msgstr "Архив"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/+page.svelte
+msgid "Details"
+msgstr "Детайли"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/+page.svelte
+msgid "Edit user details"
+msgstr "Редактиране на данни на потребителя"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/+layout.svelte
+msgid "Profile"
+msgstr "Потребител"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/+layout.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/+page.svelte
+msgid "Organisation"
+msgstr "Организация"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/+layout.svelte
+msgid "Integrations"
+msgstr "Интеграции"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/+layout.svelte
+msgid "Settings"
+msgstr "Настройки"
+
+#: src/routes/(authenticated)/(completed)/integrations/zoho-crm/callback/+page.svelte
+msgid "Connecting Zoho CRM"
+msgstr "Свързване на Zoho CRM"
+
+#: src/routes/(authenticated)/(completed)/integrations/zoho-crm/callback/+page.svelte
+msgid "Please wait,"
+msgstr "Моля, изчакайте,"
+
+#: src/routes/(authenticated)/(completed)/integrations/zoho-crm/callback/+page.svelte
+msgid "you will be redirected automatically"
+msgstr "ще бъдете пренасочени автоматично"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/edit-details-dialog.svelte
+msgid "Edit Details"
+msgstr "Редактиране на детайли"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/edit-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/edit-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "Discard"
+msgstr "Откажи"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/edit-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/edit-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "Save"
+msgstr "Запази"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/profile/edit-details-dialog.svelte
+msgid "Saving..."
+msgstr "Запазване..."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/+page.svelte
+msgid "Platforms"
+msgstr "Платформи"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/+page.svelte
+msgid "Users"
+msgstr "Потребители"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/+page.svelte
+msgid "Invite User"
+msgstr "Покани потребител"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+msgid "Invite user"
+msgstr "Покани потребител"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+msgid "Email"
+msgstr "Имейл"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/+page.svelte
+msgid "Status"
+msgstr "Статус"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+msgid "Deactivate User"
+msgstr "Деактивирай потребител"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+msgid "Are you sure you want to deactivate <0/>?"
+msgstr "Сигурни ли сте, че искате да деактивирате <0/>?"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/submit-po-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/submit-po-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/delete-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/delete-stage.svelte
+msgid "Cancel"
+msgstr "Откажи"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+msgid "Deactivate"
+msgstr "Деактивирай"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+msgid "Deactivating..."
+msgstr "Деактивиране..."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+msgid "Deactivated"
+msgstr "Деактивиран"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+msgid "Continue"
+msgstr "Продължи"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+msgid "We couldn’t deactivate this user. Please try again."
+msgstr "Не успяхме да деактивираме този потребител. Моля, опитайте отново."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/deactivate-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/custom-parts-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+msgid "Back"
+msgstr "Назад"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/+layout.svelte
+msgid "Inventory"
+msgstr "Инвентар"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+msgid "Invalid email"
+msgstr "Невалиден имейл"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+msgid "Invite"
+msgstr "Покани"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+msgid "Confirm New User"
+msgstr "Потвърди нов потребител"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+msgid "Are you sure you want to invite <0/> to <1/>"
+msgstr "Сигурни ли сте, че искате да поканите <0/> в <1/>"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+msgid "Sending invitation..."
+msgstr "Изпращане на покана..."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+msgid "Invite sent"
+msgstr "Изпратена покана"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+msgid "<0/> has been invited."
+msgstr "<0/> е поканен."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "Error"
+msgstr "Грешка"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/platform-item.svelte
+msgid "Request quotes"
+msgstr "Заявка за оферти"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/platform-item.svelte
+msgid "List products"
+msgstr "Публикуване на продукти"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/platform-item.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/platform-item.svelte
+msgid "Undefined"
+msgstr "Неопределено"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/no-users-item.svelte
+msgid "No Users"
+msgstr "Няма потребители"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/user-item.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/user-item.svelte
+msgid "User settings"
+msgstr "Потребителски настройки"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/user-item.svelte
+msgid "Deactivate user"
+msgstr "Деактивирай потребител"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/user-item.svelte
+msgid "<0/>Deactivate"
+msgstr "<0/>Деактивирай"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/user-item.svelte
+msgid "Activate user"
+msgstr "Активиране на потребител"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/user-item.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "<0/>Activate"
+msgstr "<0/>Активиране"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/user-item.svelte
+msgid "Delete user"
+msgstr "Изтрий потребител"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/user-item.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "<0/>Delete"
+msgstr "<0/>Изтрий"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/integrations/+page.svelte
+msgid "Zoho CRM"
+msgstr "Zoho CRM"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/integrations/+page.svelte
+msgid "Status: <0/>"
+msgstr "Статус: <0/>"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/integrations/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/account/integrations/+page.svelte
+msgid "Connect Zoho CRM"
+msgstr "Свържете Zoho CRM"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/+page.svelte
+msgid "PO Number"
+msgstr "Номер на поръчка"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/+page.svelte
+msgid "Item Preview"
+msgstr "Преглед на продуктите"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/+page.svelte
+msgid "Ordered Date"
+msgstr "Дата на поръчка"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "Lead Time"
+msgstr "Време за изпълнение"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/+page.svelte
+msgid "Grand Total"
+msgstr "Обща сума"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/+page.svelte
+msgid "No orders"
+msgstr "Няма поръчки"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/+page.svelte
+msgid "Account Settings"
+msgstr "Настройски на профила"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/+page.svelte
+msgid "Password"
+msgstr "Парола"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/+page.svelte
+msgid "Notification Settings"
+msgstr "Настройки за известия"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "Description"
+msgstr "Описание"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+msgid "Delete User"
+msgstr "Изтрий потребител"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+msgid "To confirm deletion, type the email address <0/>. This action cannot be undone."
+msgstr "За да потвърдите изтриването, въведете илейл адрес <0/>. Това действие не може да бъде отменено."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+msgid "Type the email address"
+msgstr "Въведете имейл адреса"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+msgid "Email does not match yet."
+msgstr "Имейлът все още не съвпада."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+msgid "Deleting..."
+msgstr "Изтриване..."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+msgid "Deleted"
+msgstr "Изтрит"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+msgid "<0/> was deleted."
+msgstr "<0/> беше изтрит."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/delete-user-dialog.svelte
+msgid "We couldn’t delete this user. Please try again."
+msgstr "Не успяхме да изтрием този потребител. Моля, опитайте отново."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/+page.svelte
+msgid "Quote Number"
+msgstr "Номер на оферта"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/+page.svelte
+msgid "No quotes"
+msgstr "Няма оферти"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+msgid "Open cart"
+msgstr "Отвори количката"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "Tags"
+msgstr "Категории"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+msgid "No products found"
+msgstr "Няма намерени продукти"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "Product Information"
+msgstr "Информация за продукта"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "Name:"
+msgstr "Име:"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "Code:"
+msgstr "Код:"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "OEM Number:"
+msgstr "OEM номер:"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/order-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/order-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/order-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/order-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "Lead Time:"
+msgstr "Време за изпълнение:"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/tag-filter.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "Tags:"
+msgstr "Категории:"
+
+#. 0: formatMoney(product.price)
+#. 0: formatMoney(product.price)
+#. 0: formatMoney(product.price)
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "Price: {0}"
+msgstr "Цена: {0}"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/search.svelte
+msgid "Search catalogue"
+msgstr "Търсене в каталога"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/search.svelte
+msgid "Open search filters"
+msgstr "Отвори филтрите за търсене"
+
+#. 0: hiddenTagsTooltip
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-item-desktop.svelte
+msgid "More tags: {0}"
+msgstr "Още категории: {0}"
+
+#. 0: order.quotationNumber
+#. 0: order.quotationNumber
+#. 0: data.order.purchaseOrderNumber
+#. 0: order.purchaseOrderNumber
+#. 0: order.purchaseOrderNumber
+#. 0: data.order.purchaseOrderNumber
+#. 0: order.purchaseOrderNumber
+#. 0: order.purchaseOrderNumber
+#. 0: order.quotationNumber || "-"
+#. 0: order.quotationNumber
+#. 0: order.quotationNumber
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/order-item-desktop.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/order-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/[id]/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/order-item-desktop.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/order-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/[id]/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/order-item-desktop.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/order-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/order-item-desktop.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/order-item-mobile.svelte
+msgid "No. {0}"
+msgstr "№ {0}"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/+page.svelte
+msgid "Create new product"
+msgstr "Създаване на нов продукт"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "Price"
+msgstr "Цена"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/edit-language.svelte
+msgid "Language"
+msgstr "Език"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+msgid "New Product"
+msgstr "Нов продукт"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "Name*"
+msgstr "Име*"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+msgid "Code*"
+msgstr "Код*"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+msgid "Status*"
+msgstr "Статус*"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "OEM Number"
+msgstr "OEM номер"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "Lead time (weeks)"
+msgstr "Време за изпълнение (седмици)"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+msgid "Create"
+msgstr "Създай"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+msgid "Confirm New Product"
+msgstr "Потвърждение на нов продукт"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+msgid "Are you sure you want to add <0/>?"
+msgstr "Сигурни ли сте, че искате да добавите <0/>?"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+msgid "Adding Product..."
+msgstr "Добавяне на продукт..."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+msgid "Product added"
+msgstr "Продуктът е добавен"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/create-product-dialog.svelte
+msgid "<0/> has been added."
+msgstr "<0/> беше добавен."
+
+#. 0: formatDuration(data.order.leadTime)
+#. 0: formatDuration(data.order.leadTime)
+#. 0: formatDuration(order.leadTime)
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/[id]/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/[id]/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/+page.svelte
+msgid "Lead Time: {0}"
+msgstr "Време за изпълнение: {0}"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/cart-dialog.svelte
+msgid "Cart"
+msgstr "Количка"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/cart-dialog.svelte
+msgid "Close dialog"
+msgstr "Затвори диалоговия прозорец"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/cart-dialog.svelte
+msgid "Add attachment"
+msgstr "Прикачи файл"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/cart-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "Request quote"
+msgstr "Заяви оферта"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/cart-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "Request Quote"
+msgstr "Заяви оферта"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "Are you sure you want to request this quote?"
+msgstr "Сигурни ли сте, че искате да заявите тази оферта?"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "Request"
+msgstr "Заяви"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "Requesting..."
+msgstr "Заявяване..."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "Quote Requested"
+msgstr "Офертата е заявена"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "Your quote has been requested."
+msgstr "Офертата е успешно заявена"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "Continue shopping"
+msgstr "Продължи пазаруването"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "Continue Shopping"
+msgstr "Продължи пазаруването"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "View quote"
+msgstr "Преглед на офертата"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "View Quote"
+msgstr "Преглед на офертата"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "We couldn’t submit your quote request. Please try again."
+msgstr "Не успяхме да изпратим вашата заявка за оферта. Моля, опитайте отново."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/delete-stage.svelte
+msgid "Delete Product"
+msgstr "Изтриване на продукт"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/delete-stage.svelte
+msgid "Are you sure you want to delete this product?"
+msgstr "Сигурни ли сте, че искате да изтриете този продукт?"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/delete-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "Delete product"
+msgstr "Изтриване на продукт"
+
+#: src/lib/components/custom-part-details-dialog.svelte
+#: src/lib/components/custom-part-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/delete-stage.svelte
+msgid "Yes"
+msgstr "Да"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "Product settings"
+msgstr "Настройки на продукта"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "Edit product"
+msgstr "Редактиране на продукт"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "<0/>Edit"
+msgstr "<0/>Редактиране"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "Activate product"
+msgstr "Активиране на продукт"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "Unlist product"
+msgstr "Премахване на продукт от списъка"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "<0/>Unlist"
+msgstr "<0/>Премахване от списъка"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "You can delete this product only after unlisting it"
+msgstr "Можете да изтриете този продукт само след като го премахнете от списъка"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/details-stage.svelte
+msgid "Jumper.de code:"
+msgstr "Jumper.de код"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "Edit Product"
+msgstr "Редактиране на продукт"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/sales/inventory/product-dialog/edit-stage.svelte
+msgid "Saving Changes..."
+msgstr "Запазване на промените..."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/invite-user-dialog.svelte
+msgid "Invite New User"
+msgstr "Покани нов потребител"
+
+#: src/lib/components/totals.svelte
+msgid "Sub total:"
+msgstr "Междинна сума:"
+
+#: src/lib/components/totals.svelte
+msgid "Discount:"
+msgstr "Отстъпка:"
+
+#: src/lib/components/totals.svelte
+msgid "Tax:"
+msgstr "ДДС:"
+
+#. 0: formatMoney(line.item.price)
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/line-item.svelte
+msgid "{0}/Unit <0/>"
+msgstr "{0}/бр. <0/>"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/submit-po-dialog.svelte
+msgid "Submit PO"
+msgstr "Изпрати поръчка"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/+page.svelte
+msgid "<0/>Submit PO"
+msgstr "<0/>Изпрати поръчка"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/submit-po-dialog.svelte
+msgid "Submit"
+msgstr "Изпращане"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/submit-po-dialog.svelte
+msgid "Uploading PO..."
+msgstr "Качване на поръчка..."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/attachment-item.svelte
+msgid "Remove attachment"
+msgstr "Премахни прикачен файл"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/cart-dialog.svelte
+msgid "You can upload up to 4 attachments."
+msgstr "Можете да качите до 4 файла."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/checkout-dialog.svelte
+msgid "Attachments:"
+msgstr "Прикачени файлове:"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/user-item.svelte
+msgid "You don't have permission to edit this user"
+msgstr "Нямате разрешение да редактирате този потребител"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/+page.svelte
+msgid "You don't have permission to invite users"
+msgstr "Нямате разрешение да поканите потребители"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/+page.svelte
+msgid "Valid Until"
+msgstr "Валидно до"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/+layout.svelte
+msgid "Past Orders"
+msgstr "Предишни поръчки"
+
+#. 0: formatTimestamp(data.order.orderedTime)
+#. 0: formatTimestamp(data.order.orderedTime)
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/[id]/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/[id]/+page.svelte
+msgid "Ordered Date: {0}"
+msgstr "Дата на поръчка: {0}"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/+page.svelte
+msgid "No past orders"
+msgstr "Няма предишни поръчки"
+
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "I agree to the <0>Terms & Privacy Policy</0>"
+msgstr "Съгласявам се с <0>Условията и Политиката за поверителност</0>"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/+page.svelte
+msgid "No archived quotes"
+msgstr "Няма архивирани оферти"
+
+#: src/lib/components/order-lines-desktop.svelte
+#: src/lib/components/order-lines-mobile.svelte
+msgid "Documents"
+msgstr "Документи"
+
+#. 0: data.order.quotationNumber
+#. 0: data.order.quotationNumber
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/+page.svelte
+msgid "Quote No.{0}"
+msgstr "Оферта №{0}"
+
+#. 0: formatTimestamp(order.expiresTime)
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/+page.svelte
+msgid "Valid Until: {0}"
+msgstr "Валидна до: {0}"
+
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Your full name"
+msgstr "Пълното ви име"
+
+#: src/lib/components/order-lines-desktop.svelte
+#: src/lib/components/order-lines-mobile.svelte
+msgid "Unit Price"
+msgstr "Единична цена"
+
+#: src/lib/components/order-lines-desktop.svelte
+#: src/lib/components/order-lines-mobile.svelte
+msgid "Amount"
+msgstr "Сума"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/submit-po-dialog.svelte
+msgid "PO number*"
+msgstr "Номер на поръчка*"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/submit-po-dialog.svelte
+msgid "Upload PO file*"
+msgstr "Качете файл на поръчка*"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/[id]/submit-po-dialog.svelte
+msgid "Submit Your PO"
+msgstr "Подайте вашата поръчка"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/organisation/+page.svelte
+msgid "Job Title"
+msgstr "Длъжност"
+
+#: src/lib/components/order-lines-desktop.svelte
+#: src/lib/components/order-lines-mobile.svelte
+msgid "Purchase Order"
+msgstr "Поръчка за покупка"
+
+#: src/lib/components/order-lines-desktop.svelte
+#: src/lib/components/order-lines-mobile.svelte
+msgid "Quote"
+msgstr "Оферта"
+
+#: src/lib/components/order-lines-desktop.svelte
+#: src/lib/components/order-lines-mobile.svelte
+msgid "Order Confirmation"
+msgstr "Потвърждение на поръчка"
+
+#: src/lib/components/order-lines-desktop.svelte
+#: src/lib/components/order-lines-mobile.svelte
+msgid "Delivery Note"
+msgstr "Известие за доставка"
+
+#: src/lib/components/order-lines-desktop.svelte
+#: src/lib/components/order-lines-mobile.svelte
+msgid "Invoice"
+msgstr "Фактура"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-item-mobile.svelte
+msgid "more details"
+msgstr "Повече детайли"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/order-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/order-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/order-item-mobile.svelte
+msgid "Valid Until:"
+msgstr "Валидно до:"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/order-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/order-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/order-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/order-item-mobile.svelte
+msgid "Grand Total:"
+msgstr "Обща сума:"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-item-mobile.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-item-mobile.svelte
+msgid "Description:"
+msgstr "Описание:"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+msgid "Request custom part"
+msgstr "Заявка за персонализирана част"
+
+#. 0: weeks.toFixed(0); 1: weeks !== 1 ? "s" \\: ""
+#. 0: weeks.toFixed(0); 1: weeks !== 1 ? "s" \\: ""
+#. 0: weeks.toFixed(0); 1: weeks !== 1 ? "s" \\: ""
+#: ../../packages/ui-web/dist/lib/units/duration.js
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-item-desktop.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/product-item-mobile.svelte
+msgid "{0} week{1}"
+msgstr "{0} седмица{1}"
+
+#. 0: preview; 1: remaining
+#. 0: preview; 1: remaining
+#. 0: preview; 1: remaining
+#. 0: preview; 1: remaining
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/order-item-desktop.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/orders/order-item-desktop.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/past-orders/order-item-desktop.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/quotes/order-item-desktop.svelte
+msgid "{0}, +{1} more..."
+msgstr "{0}, +{1} още..."
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/custom-parts-dialog.svelte
+msgid "Custom Part Request"
+msgstr "Заявка за част по поръчка"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+msgid "Next"
+msgstr "Напред"
+
+#: src/lib/components/custom-part-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/custom-parts-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/custom-parts-dialog.svelte
+msgid "Machine"
+msgstr "Машина"
+
+#: src/lib/components/custom-part-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/custom-parts-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/custom-parts-dialog.svelte
+msgid "Form"
+msgstr "Форма"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/custom-parts-dialog.svelte
+#: src/routes/(authenticated)/complete/+page.svelte
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Required"
+msgstr "Задължително"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/custom-parts-dialog.svelte
+msgid "Optional"
+msgstr "По избор"
+
+#: src/lib/components/custom-part-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/custom-parts-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+msgid "Notes"
+msgstr "Бележки"
+
+#: src/lib/components/custom-part-details-dialog.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/+page.svelte
+msgid "Custom Part"
+msgstr "Части по поръчка"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/custom-parts-dialog.svelte
+msgid "<0/> Back"
+msgstr "<0/> Назад"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/[id]/+page.svelte
+msgid "No. <0/>"
+msgstr "№ <0/>"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/[id]/+page.svelte
+msgid "Valid Until: <0/>"
+msgstr "Валидно до: <0/>"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/archive/[id]/+page.svelte
+msgid "Lead Time: <0/>"
+msgstr "Срок на доставка: <0/>"
+
+#: ../../packages/ui-web/dist/lib/components/confirm-input/confirm-input.svelte
+msgid "Escape"
+msgstr "Escape"
+
+#: ../../packages/ui-web/dist/lib/components/confirm-input/confirm-input.svelte
+msgid "Enter"
+msgstr "Enter"
+
+#: ../../packages/ui-web/dist/lib/components/file-input/file-input.svelte
+#: ../../packages/ui-web/dist/lib/components/file-input/file-input.svelte
+msgid "Replace"
+msgstr "Замени"
+
+#: ../../packages/ui-web/dist/lib/components/file-input/file-input.svelte
+msgid "Document pdf"
+msgstr "PDF документ"
+
+#: ../../packages/ui-web/dist/lib/components/file-input/file-input.svelte
+msgid "Remove file"
+msgstr "Премахни файл"
+
+#: ../../packages/ui-web/dist/lib/components/file-input/file-input.svelte
+msgid "Uploading..."
+msgstr "Качване..."
+
+#: ../../packages/ui-web/dist/lib/components/file-input/file-input.svelte
+msgid "Upload"
+msgstr "Качи"
+
+#: ../../packages/ui-web/dist/lib/components/currency-input/currency-input.svelte
+msgid "Value"
+msgstr "Стойност"
+
+#: ../../packages/ui-web/dist/lib/components/currency-input/currency-input.svelte
+msgid "Code"
+msgstr "Код"
+
+#: ../../packages/ui-web/dist/lib/components/quantity-button/quantity-button.svelte
+msgid "Decrease quantity"
+msgstr "Намали количеството"
+
+#: ../../packages/ui-web/dist/lib/components/quantity-button/quantity-button.svelte
+msgid "Increase quantity"
+msgstr "Увеличи количеството"
+
+#: ../../packages/ui-web/dist/lib/components/navigation/footer/primary.svelte
+msgid "Select Platform"
+msgstr "Изберете платформа"
+
+#: ../../packages/ui-web/dist/lib/services/catalogue/product-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/custom-parts/form-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-customer/organisation-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-customer/user-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-staff/user-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/purchasing/order-status.svelte.js
+msgctxt "status"
+msgid "Deleted"
+msgstr "Чернова"
+
+#: ../../packages/ui-web/dist/lib/services/catalogue/product-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/custom-parts/form-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-customer/organisation-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-customer/user-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-staff/user-status.svelte.js
+msgctxt "status"
+msgid "Active"
+msgstr "Деактивиран"
+
+#: ../../packages/ui-web/dist/lib/services/catalogue/product-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/custom-parts/form-status.svelte.js
+msgctxt "status"
+msgid "Unlisted"
+msgstr "Неизвестен"
+
+#: ../../packages/ui-web/dist/lib/services/catalogue/product-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/custom-parts/form-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-customer/organisation-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-customer/platform-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-customer/user-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-staff/user-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/purchasing/order-status.svelte.js
+msgctxt "status"
+msgid "Unknown"
+msgstr "Активен"
+
+#: ../../packages/ui-web/dist/lib/services/catalogue/tag.svelte.js
+msgid "Development"
+msgstr "Разработка"
+
+#: ../../packages/ui-web/dist/lib/services/catalogue/tag.svelte.js
+msgid "Training"
+msgstr "Обучение"
+
+#: ../../packages/ui-web/dist/lib/services/catalogue/tag.svelte.js
+#: ../../packages/ui-web/dist/lib/services/common/currency.svelte.js
+#: ../../packages/ui-web/dist/lib/services/common/language.svelte.js
+#: ../../packages/ui-web/dist/lib/services/custom-parts/equipment-type.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-customer/purchasing-integration.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-customer/sales-integration.svelte.js
+#: ../../packages/ui-web/dist/lib/services/zoho-customer/connection-status.svelte.js
+msgid "Unknown"
+msgstr "Изтрит"
+
+#: ../../packages/ui-web/dist/lib/services/common/currency.svelte.js
+msgid "EUR"
+msgstr "EUR"
+
+#: ../../packages/ui-web/dist/lib/services/common/currency.svelte.js
+msgid "USD"
+msgstr "USD"
+
+#: ../../packages/ui-web/dist/lib/services/identity-customer/user-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-staff/user-status.svelte.js
+msgctxt "status"
+msgid "Invited"
+msgstr "Активен"
+
+#: ../../packages/ui-web/dist/lib/services/identity-customer/user-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-staff/user-status.svelte.js
+msgctxt "status"
+msgid "Deactivated"
+msgstr "Неизвестен"
+
+#: ../../packages/ui-web/dist/lib/services/identity-customer/platform-status.svelte.js
+msgctxt "status"
+msgid "Disabled"
+msgstr "Активиран"
+
+#: ../../packages/ui-web/dist/lib/services/identity-customer/platform-status.svelte.js
+msgctxt "status"
+msgid "Enabled"
+msgstr "Неизвестен"
+
+#: ../../packages/ui-web/dist/lib/services/identity-customer/purchasing-integration.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity-customer/sales-integration.svelte.js
+msgid "None"
+msgstr "ZOHO CRM"
+
+#: ../../packages/ui-web/dist/lib/services/identity-customer/sales-integration.svelte.js
+msgid "ZOHO CRM"
+msgstr "Неизвестен"
+
+#: ../../packages/ui-web/dist/lib/services/zoho-customer/connection-status.svelte.js
+msgid "Active"
+msgstr "Неактивен"
+
+#: ../../packages/ui-web/dist/lib/services/zoho-customer/connection-status.svelte.js
+msgid "Inactive"
+msgstr "Неизвестен"
+
+#: ../../packages/ui-web/dist/lib/services/purchasing/order-status.svelte.js
+msgctxt "status"
+msgid "Draft"
+msgstr "Заявена"
+
+#: ../../packages/ui-web/dist/lib/services/purchasing/order-status.svelte.js
+msgctxt "status"
+msgid "Requested"
+msgstr "Оценена"
+
+#: ../../packages/ui-web/dist/lib/services/purchasing/order-status.svelte.js
+msgctxt "status"
+msgid "Priced"
+msgstr "Изтекла"
+
+#: ../../packages/ui-web/dist/lib/services/purchasing/order-status.svelte.js
+msgctxt "status"
+msgid "Expired"
+msgstr "Архивирана"
+
+#: ../../packages/ui-web/dist/lib/services/purchasing/order-status.svelte.js
+msgctxt "status"
+msgid "Archived"
+msgstr "Поръчката е заявена"
+
+#: ../../packages/ui-web/dist/lib/services/purchasing/order-status.svelte.js
+msgctxt "status"
+msgid "Order requested"
+msgstr "Поръчката е потвърдена"
+
+#: ../../packages/ui-web/dist/lib/services/purchasing/order-status.svelte.js
+msgctxt "status"
+msgid "Order confirmed"
+msgstr "Изпълнена"
+
+#: ../../packages/ui-web/dist/lib/services/purchasing/order-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/purchasing/order-status.svelte.js
+msgctxt "status"
+msgid "Fulfilled"
+msgstr "Изпълнена"
+
+#: src/routes/(authenticated)/complete/+page.svelte
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Must be at least two characters long"
+msgstr "Трябва да съдържа поне два символа"
+
+#: src/routes/(authenticated)/complete/+page.svelte
+#: src/routes/(authenticated)/complete/+page.svelte
+msgid "Must be no more than 80 characters long"
+msgstr "Трябва да е не повече от 80 символа"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/line-item.svelte
+msgid "Edit"
+msgstr "Редактиране"
+
+#: src/lib/components/document-item.svelte
+msgid "View"
+msgstr "Преглед"
+
+#: src/lib/components/totals.svelte
+msgid "Grand total:"
+msgstr "Обща сума:"
+
+#: src/lib/components/document-item.svelte
+msgid "Download"
+msgstr "Изтегляне"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/cart/line-item.svelte
+msgid "Remove line"
+msgstr "Премахване на ред"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+msgid "Saving"
+msgstr "Запазване"
+
+#. 0: line.name
+#. 0: line.name
+#: src/lib/components/order-lines-desktop.svelte
+#: src/lib/components/order-lines-mobile.svelte
+msgid "View details for {0}"
+msgstr "Преглед на подробности за {0}"
+
+#: src/lib/components/custom-part-details-dialog.svelte
+msgid "Order preview"
+msgstr "Преглед на поръчката"
+
+#: src/lib/components/custom-part-details-dialog.svelte
+msgid "Close custom part preview"
+msgstr "Затваряне на прегледа на персонализирана част"
+
+#: src/lib/components/custom-part-details-dialog.svelte
+msgid "Qty"
+msgstr "Кол."
+
+#: src/lib/components/custom-part-details-dialog.svelte
+#: src/lib/components/custom-part-details-dialog.svelte
+msgid "No"
+msgstr "№"
+
+#: src/lib/components/custom-part-details-dialog.svelte
+msgid "Unnamed field"
+msgstr "Поле без име"
+
+#. 0: index + 1
+#: src/lib/components/custom-part-details-dialog.svelte
+msgid "<0/> Attachment {0}"
+msgstr "<0/> Прикачен файл {0}"
+
+#: src/lib/components/custom-part-details-dialog.svelte
+msgid "Fields"
+msgstr "Полета"
+
+#: src/lib/components/custom-part-details-dialog.svelte
+msgid "No form information available."
+msgstr "Няма налична информация за формуляра."
+
+#: src/lib/components/order-lines-desktop.svelte
+msgid "View details"
+msgstr "Преглед на подробности"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/notification-settings/notification-settings.svelte
+msgid "General"
+msgstr "Общи"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/notification-settings/notification-settings.svelte
+msgid "Newsletter"
+msgstr "Бюлетин"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/notification-settings/notification-settings.svelte
+msgid "Receive updates on new features, improvements, and product launches"
+msgstr "Получи актуална информация за нови функции, подобрения и нови продукти"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/notification-settings/notification-settings.svelte
+msgid "Quote Priced"
+msgstr "Офертата е оценена"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/notification-settings/notification-settings.svelte
+msgid "Get notified as soon as your quote is priced"
+msgstr "Получи известие веднага щом вашата оферта бъде оценена"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/notification-settings/notification-settings.svelte
+msgid "Get notified as soon as your order is confirmed"
+msgstr "Получи известие веднага щом вашата поръчка бъде потвърдена"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/account/settings/notification-settings/notification-settings.svelte
+msgid "Order Confirmed"
+msgstr "Поръчката е потвърдена"
+
+#: src/routes/(authenticated)/(completed)/(navigation)/purchasing/catalogue/custom-parts-dialog/form-stage.svelte
+msgid "Must be no more than 800 characters long"
+msgstr "Не трябва да е по-дълго от 800 знака"
+
+#: src/routes/+page.svelte
+msgid "Flingo"
+msgstr ""

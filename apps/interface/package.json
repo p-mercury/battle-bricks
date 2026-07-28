@@ -1,0 +1,42 @@
+{
+	"name": "@battle-bricks/interface",
+	"private": true,
+	"type": "module",
+	"main": "./dist/cdk/index.js",
+	"types": "./dist/cdk/index.d.ts",
+	"scripts": {
+		"build": "vite build",
+		"lint": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"lint:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"start": "vite dev"
+	},
+	"dependencies": {
+		"@ai-sdk/openai": "^4.0.22",
+		"@aws-lambda-powertools/logger": "^2.34.0",
+		"@babel/preset-typescript": "^8.0.1",
+		"@bufbuild/protobuf": "^2.13.0",
+		"@connectrpc/connect": "^2.1.2",
+		"@connectrpc/connect-web": "^2.1.2",
+		"@flit/accepted-language": "^0.1.0",
+		"@flit/svelte-form": "^2.5.1",
+		"@flit/sveltekit-adapter-cdk": "^2.5.0",
+		"@open-policy-agent/opa-wasm": "^1.10.0",
+		"@sentry/sveltekit": "^10.68.0",
+		"@svelte-put/inline-svg": "^4.0.2",
+		"@sveltejs/adapter-static": "^3.0.10",
+		"@sveltejs/kit": "^2.70.1",
+		"@sveltejs/vite-plugin-svelte": "^7.2.0",
+		"@vitejs/plugin-basic-ssl": "^2.3.0",
+		"@wuchale/svelte": "^0.20.5",
+		"ai": "^7.0.40",
+		"minisearch": "^7.2.0",
+		"sass": "^1.102.0",
+		"svelte": "^5.56.8",
+		"svelte-check": "^4.7.4",
+		"sveltekit-superforms": "^2.30.2",
+		"typescript": "^6.0.3",
+		"vite": "^8.1.5",
+		"wuchale": "^0.25.6",
+		"zod": "^4.4.3"
+	}
+}

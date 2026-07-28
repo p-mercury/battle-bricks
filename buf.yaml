@@ -1,0 +1,16 @@
+version: v2
+modules:
+  - path: packages/contracts/proto
+  - path: packages/protoc-gen-event-registry/proto
+lint:
+  use:
+    - STANDARD
+  except:
+    - FILE_LOWER_SNAKE_CASE
+    - SERVICE_SUFFIX
+    - SERVICE_PASCAL_CASE
+    - RPC_REQUEST_RESPONSE_UNIQUE
+    - PACKAGE_VERSION_SUFFIX
+deps:
+  - buf.build/bufbuild/protovalidate
+  - buf.build/googleapis/googleapis

@@ -1,0 +1,40 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: "v6.0.0"
+    hooks:
+      - id: check-json
+      - id: check-symlinks
+      - id: destroyed-symlinks
+      - id: trailing-whitespace
+        exclude: (?xi)^((?:.*/)?locales/.*)$
+      - id: end-of-file-fixer
+        exclude: (?xi)^((?:.*/)?locales/.*)$
+      - id: detect-private-key
+      - id: detect-aws-credentials
+  - repo: https://github.com/bufbuild/buf
+    rev: "v1.67.0"
+    hooks:
+      - id: buf-format
+  - repo: https://github.com/JoC0de/pre-commit-prettier
+    rev: "v3.8.3"
+    hooks:
+      - id: prettier
+        exclude: (?xi)^((?:.*/)?locales/.*)$
+  - repo: local
+    hooks:
+      - id: check-ci
+        name: check module status
+        files: "(package|package-lock).json"
+        entry: pnpm ci
+        language: system
+        pass_filenames: false
+      - id: go-sync
+        name: sync go workspace
+        entry: bash -c 'go work sync'
+        language: system
+        pass_filenames: false
+      - id: build
+        name: build
+        entry: bash -c 'pnpm run forcebuild'
+        language: system
+        pass_filenames: false

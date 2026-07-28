@@ -1,0 +1,18 @@
+{
+	"name": "@battle-bricks/front-end",
+	"private": true,
+	"type": "module",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"scripts": {
+		"build": "tsc",
+		"lint": "tsc"
+	},
+	"dependencies": {
+		"@battle-bricks/interface": "workspace:*",
+		"@types/node": "^26.1.2",
+		"aws-cdk-lib": "^2.262.1",
+		"constructs": "^10.7.1",
+		"typescript": "^6.0.3"
+	}
+}
