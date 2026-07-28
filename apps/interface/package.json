@@ -19,7 +19,7 @@
 		"@connectrpc/connect-web": "^2.1.2",
 		"@flit/accepted-language": "^0.1.0",
 		"@flit/svelte-form": "^2.5.1",
-		"@flit/sveltekit-adapter-cdk": "^2.5.0",
+		"@flit/sveltekit-adapter-cdk": "^2.6.0",
 		"@open-policy-agent/opa-wasm": "^1.10.0",
 		"@sentry/sveltekit": "^10.68.0",
 		"@svelte-put/inline-svg": "^4.0.2",
