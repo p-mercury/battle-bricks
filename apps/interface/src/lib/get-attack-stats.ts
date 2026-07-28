@@ -1,10 +1,14 @@
 import type { Loadout } from "$lib/loadouts";
-import { type Ammunition, type Weapon } from "$lib/items";
+import {
+	type Ammunition,
+	type RangeWeapon,
+	type MeleeWeapon,
+} from "$lib/items";
 import { getLoadoutStats } from "./get-loadout-stats";
 
 interface AttackStat {
-	weapon: Weapon;
-	ammunition: Ammunition;
+	weapon: RangeWeapon | MeleeWeapon;
+	ammunition?: Ammunition;
 	b1r: number;
 	b1o: number;
 	b2: number;
@@ -16,7 +20,10 @@ export function getAttackStats(attacker: Loadout, defender: Loadout) {
 	const attackerWeapons = Array.from(
 		new Map(
 			_attacker.items
-				.filter((item) => item.type === "WEAPON")
+				.filter(
+					(item) =>
+						item.type === "RANGE_WEAPON" || item.type === "MELEE_WEAPON",
+				)
 				.map((item) => [item.id, item]),
 		).values(),
 	);
@@ -31,25 +38,44 @@ export function getAttackStats(attacker: Loadout, defender: Loadout) {
 	const _defender = getLoadoutStats(defender);
 
 	return attackerWeapons.reduce<AttackStat[]>((stats, weapon) => {
-		stats.push(
-			...attackerAmmunitions.map((ammunition) => ({
+		if (weapon.type === "RANGE_WEAPON") {
+			stats.push(
+				...attackerAmmunitions.map((ammunition) => ({
+					weapon: weapon,
+					ammunition: ammunition,
+					b1r: Math.min(
+						Math.max(7 - _attacker.unit.marksmanship - _defender.unit.size, 0),
+						6,
+					),
+					b1o: Math.min(
+						Math.max(8 - _attacker.unit.marksmanship - _defender.unit.size, 0),
+						6,
+					),
+					b2: Math.min(
+						Math.max(
+							3 - ammunition.armorPiercing + _defender.unit.armorClass,
+							0,
+						),
+						6,
+					),
+					damage: ammunition.damage,
+				})),
+			);
+		} else {
+			stats.push({
 				weapon: weapon,
-				ammunition: ammunition,
 				b1r: Math.min(
-					Math.max(7 - _attacker.unit.accuracy - _defender.unit.size, 0),
+					Math.max(7 - _attacker.unit.meleeAbility - _defender.unit.size, 0),
 					6,
 				),
-				b1o: Math.min(
-					Math.max(9 - _attacker.unit.accuracy - _defender.unit.size, 0),
-					6,
-				),
+				b1o: 0,
 				b2: Math.min(
-					Math.max(3 - ammunition.armorPiercing + _defender.unit.armorClass, 0),
+					Math.max(3 - weapon.armorPiercing + _defender.unit.armorClass, 0),
 					6,
 				),
-				damage: ammunition.damage,
-			})),
-		);
+				damage: weapon.damage,
+			});
+		}
 
 		return stats;
 	}, []);

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { Ammunition, Weapon } from "$lib/items";
+	import type { Ammunition, RangeWeapon, MeleeWeapon } from "$lib/items";
 
-	let { item }: { item: Ammunition | Weapon } = $props();
+	let { item }: { item: Ammunition | RangeWeapon | MeleeWeapon } = $props();
 </script>
 
 <section>
@@ -13,11 +13,13 @@
 		<div>Capacity: {item.capacity}</div>
 		<div>Damage: {item.damage}</div>
 		<div>Armor Piercing: {item.armorPiercing}</div>
-	{/if}
-	{#if item.type === "WEAPON"}
+	{:else if item.type === "RANGE_WEAPON"}
 		<div>Type: {item.ammunitionType}</div>
 		<div>Tange: {item.range.min}-{item.range.max}m</div>
 		<div>Fire Rate: {item.fireRate}</div>
+	{:else}
+		<div>Armor Piercing: {item.armorPiercing}</div>
+		<div>Damage: {item.damage}</div>
 	{/if}
 </section>
 

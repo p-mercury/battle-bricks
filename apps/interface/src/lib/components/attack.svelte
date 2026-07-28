@@ -13,13 +13,19 @@
 <ul>
 	{#each stats as stat}
 		<li>
-			<b>{stat.weapon.name} with {stat.ammunition.name}</b>
-			<div>Fire Rate: {stat.weapon.fireRate}</div>
-			<div>Range: {stat.weapon.range.min}-{stat.weapon.range.max}m</div>
-			<div>B1R: {stat.b1r}</div>
-			<div>B1O: {stat.b1o}</div>
-			<div>B2: {stat.b2}</div>
-			<div>Damage: {stat.damage}</div>
+			{#if stat.weapon.type === "RANGE_WEAPON"}
+				<b>{stat.weapon.name} with {stat.ammunition!.name}</b>
+				<div>Fire Rate: {stat.weapon.fireRate}</div>
+				<div>Range: {stat.weapon.range.min}-{stat.weapon.range.max}m</div>
+				<div>To hit: {stat.b1r} - ({stat.b1o} with cover)</div>
+				<div>To pierce armor: {stat.b2}</div>
+				<div>Damage: {stat.damage}</div>
+			{:else}
+				<b>{stat.weapon.name}</b>
+				<div>To hit: {stat.b1r}</div>
+				<div>To pierce armor: {stat.b2}</div>
+				<div>Damage: {stat.damage}</div>
+			{/if}
 		</li>
 	{/each}
 </ul>

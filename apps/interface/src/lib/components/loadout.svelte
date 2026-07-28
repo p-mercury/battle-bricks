@@ -12,8 +12,9 @@
 </script>
 
 <section {onclick} class:selected>
-	<div>{loadout.name}</div>
+	<b>{loadout.name}</b>
 	<div>Price: {loadoutStats.price}</div>
+	<div>Health: {loadoutStats.unit.health}</div>
 	<div>
 		Carry Weight: {loadoutStats.carryWeight}/{loadoutStats.unit.carryCapacity}
 	</div>

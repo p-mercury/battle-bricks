@@ -5,13 +5,14 @@
 </script>
 
 <section>
-	<div>{unit.name}</div>
+	<b>{unit.name}</b>
 	<div>Price: {unit.price}</div>
 	<div>Size: {unit.size}</div>
 	<div>Health: {unit.health}</div>
 	<div>Armor Class: {unit.armorClass}</div>
 	<div>Carry Capacity: {unit.carryCapacity}</div>
-	<div>Accuracy: {unit.accuracy}</div>
+	<div>Marksmanship: {unit.marksmanship}</div>
+	<div>Melee Ability: {unit.meleeAbility}</div>
 </section>
 
 <style lang="scss">

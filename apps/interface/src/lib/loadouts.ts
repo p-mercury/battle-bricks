@@ -11,13 +11,13 @@ export const loadouts: { [key: string]: Loadout } = {
 		id: "LOADOUT#1",
 		name: "Clone Trooper",
 		unit: "UNIT#1",
-		items: ["WEAPON#1", "AMMUNITION#2", "AMMUNITION#2"],
+		items: ["RANGE_WEAPON#1", "AMMUNITION#2", "AMMUNITION#2"],
 	},
 	"LOADOUT#2": {
 		id: "LOADOUT#2",
 		name: "Droid Scout",
 		unit: "UNIT#2",
-		items: ["WEAPON#1", "AMMUNITION#1", "AMMUNITION#1"],
+		items: ["RANGE_WEAPON#1", "AMMUNITION#1", "AMMUNITION#1"],
 	},
 	"LOADOUT#3": {
 		id: "LOADOUT#3",
