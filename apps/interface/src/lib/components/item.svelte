@@ -1,9 +1,26 @@
 <script lang="ts">
-	import type { Ammunition, RangeWeapon, MeleeWeapon } from "$lib/items";
+	import type {
+		PlasmaAmmunition,
+		RocketAmmunition,
+		SlugAmmunition,
+		RangeWeapon,
+		MeleeWeapon,
+	} from "$lib/items";
 	import StatBar from "./stat-bar.svelte";
 	import { slide } from "svelte/transition";
+	import StatTable from "./stat-table.svelte";
+	import StatRow from "./stat-row.svelte";
 
-	let { item }: { item: Ammunition | RangeWeapon | MeleeWeapon } = $props();
+	let {
+		item,
+	}: {
+		item:
+			| PlasmaAmmunition
+			| RocketAmmunition
+			| SlugAmmunition
+			| RangeWeapon
+			| MeleeWeapon;
+	} = $props();
 
 	let isOpen = $state(false);
 </script>
@@ -38,54 +55,86 @@
 	</button>
 	{#if isOpen}
 		<div class="stats" transition:slide={{ duration: 200 }}>
-			<div class="row">
-				<div>Price:</div>
-				<div>{item.price}</div>
-			</div>
-			<div class="row">
-				<div>Weight:</div>
-				<div>{item.weight}</div>
-			</div>
-			{#if item.type === "AMMUNITION"}
-				<div class="row">
-					<div>Type:</div>
-					<div>{item.ammunitionType}</div>
-				</div>
-				<div class="row">
-					<div>Capacity:</div>
-					<div>{item.capacity}</div>
-				</div>
-				<div class="row">
-					<div>Damage:</div>
-					<div>{item.damage}</div>
-				</div>
-				<div class="row">
-					<div>Armor Piercing:</div>
-					<StatBar value={item.armorPiercing} size={4} />
-				</div>
-			{:else if item.type === "RANGE_WEAPON"}
-				<div class="row">
-					<div>Type:</div>
-					<div>{item.ammunitionType}</div>
-				</div>
-				<div class="row">
-					<div>Tange:</div>
-					<div>{item.range.min}-{item.range.max}m</div>
-				</div>
-				<div class="row">
-					<div>Fire Rate:</div>
-					<div>{item.fireRate}</div>
-				</div>
-			{:else}
-				<div class="row">
-					<div>Armor Piercing:</div>
-					<StatBar value={item.armorPiercing} size={4} />
-				</div>
-				<div class="row">
-					<div>Damage:</div>
-					<div>{item.damage}</div>
-				</div>
-			{/if}
+			<StatTable>
+				<StatRow>
+					Price:
+					<div>{item.price}</div>
+				</StatRow>
+				<StatRow>
+					Weight:
+					<div>{item.weight}</div>
+				</StatRow>
+				{#if item.type === "PLASMA_AMMUNITION"}
+					<StatRow>
+						Type:
+						<div>{item.ammunitionType}</div>
+					</StatRow>
+					<StatRow>
+						Capacity:
+						<div>{item.capacity}</div>
+					</StatRow>
+					<StatRow>
+						Damage:
+						<div>{item.damage}</div>
+					</StatRow>
+					<StatRow>
+						Armor Piercing:
+						<StatBar value={item.armorPiercing} size={4} />
+					</StatRow>
+				{:else if item.type === "ROCKET_AMMUNITION"}
+					<StatRow>
+						Type:
+						<div>{item.ammunitionType}</div>
+					</StatRow>
+					<StatRow>
+						Damage:
+						<div>{item.damage}</div>
+					</StatRow>
+					<StatRow>
+						Splash Radius:
+						<div>{item.splashRadius}m</div>
+					</StatRow>
+				{:else if item.type === "SLUG_AMMUNITION"}
+					<StatRow>
+						Type:
+						<div>{item.ammunitionType}</div>
+					</StatRow>
+					<StatRow>
+						Capacity:
+						<div>{item.capacity}</div>
+					</StatRow>
+					<StatRow>
+						Damage:
+						<div>{item.damage}</div>
+					</StatRow>
+					<StatRow>
+						Armor Piercing:
+						<StatBar value={item.armorPiercing} size={4} />
+					</StatRow>
+				{:else if item.type === "RANGE_WEAPON"}
+					<StatRow>
+						Type:
+						<div>{item.ammunitionType}</div>
+					</StatRow>
+					<StatRow>
+						Tange:
+						<div>{item.range.min}-{item.range.max}m</div>
+					</StatRow>
+					<StatRow>
+						Fire Rate:
+						<div>{item.fireRate}</div>
+					</StatRow>
+				{:else}
+					<StatRow>
+						Armor Piercing:
+						<StatBar value={item.armorPiercing} size={4} />
+					</StatRow>
+					<StatRow>
+						Damage:
+						<div>{item.damage}</div>
+					</StatRow>
+				{/if}
+			</StatTable>
 		</div>
 	{/if}
 </section>
@@ -133,20 +182,5 @@
 		&.rotated {
 			transform: rotate(180deg);
 		}
-	}
-
-	.stats {
-		display: grid;
-		grid-template-columns: auto auto;
-		gap: 0.5rem;
-		padding: 0.5rem;
-		flex-shrink: 0;
-	}
-
-	.row {
-		display: grid;
-		list-style: none;
-		grid-column: 1 / -1;
-		grid-template-columns: subgrid;
 	}
 </style>

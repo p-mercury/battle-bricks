@@ -14,9 +14,25 @@ export interface Range {
 	max: number;
 }
 
-export interface Ammunition extends Item {
-	type: "AMMUNITION";
-	ammunitionType: AmmunitionType;
+export interface PlasmaAmmunition extends Item {
+	type: "PLASMA_AMMUNITION";
+	ammunitionType: "PLASMA";
+	capacity: number;
+	damage: string;
+	armorPiercing: number;
+	splashRadius: number;
+}
+
+export interface RocketAmmunition extends Item {
+	type: "ROCKET_AMMUNITION";
+	ammunitionType: "ROCKET";
+	damage: string;
+	splashRadius: number;
+}
+
+export interface SlugAmmunition extends Item {
+	type: "SLUG_AMMUNITION";
+	ammunitionType: "SLUG";
 	capacity: number;
 	damage: string;
 	armorPiercing: number;
@@ -38,11 +54,16 @@ export interface MeleeWeapon extends Item {
 }
 
 export const items: {
-	[key: string]: Ammunition | RangeWeapon | MeleeWeapon;
+	[key: string]:
+		| PlasmaAmmunition
+		| RocketAmmunition
+		| SlugAmmunition
+		| RangeWeapon
+		| MeleeWeapon;
 } = {
-	"AMMUNITION#1": {
-		id: "AMMUNITION#1",
-		type: "AMMUNITION",
+	"PLASMA_AMMUNITION#1": {
+		id: "PLASMA_AMMUNITION#1",
+		type: "PLASMA_AMMUNITION",
 		name: "Red Plasma Cartridge",
 		price: 5,
 		weight: 3,
@@ -52,9 +73,9 @@ export const items: {
 		armorPiercing: 1,
 		splashRadius: 0,
 	},
-	"AMMUNITION#2": {
-		id: "AMMUNITION#2",
-		type: "AMMUNITION",
+	"PLASMA_AMMUNITION#2": {
+		id: "PLASMA_AMMUNITION#2",
+		type: "PLASMA_AMMUNITION",
 		name: "Blue Plasma Cartridge",
 		price: 10,
 		weight: 3,
@@ -64,9 +85,9 @@ export const items: {
 		armorPiercing: 2,
 		splashRadius: 0,
 	},
-	"AMMUNITION#3": {
-		id: "AMMUNITION#3",
-		type: "AMMUNITION",
+	"PLASMA_AMMUNITION#3": {
+		id: "PLASMA_AMMUNITION#3",
+		type: "PLASMA_AMMUNITION",
 		name: "Green Plasma Cartridge",
 		price: 15,
 		weight: 3,
@@ -76,9 +97,9 @@ export const items: {
 		armorPiercing: 2,
 		splashRadius: 0,
 	},
-	"AMMUNITION#4": {
-		id: "AMMUNITION#4",
-		type: "AMMUNITION",
+	"PLASMA_AMMUNITION#4": {
+		id: "PLASMA_AMMUNITIONN#4",
+		type: "PLASMA_AMMUNITION",
 		name: "Yellow Plasma Cartridge",
 		price: 20,
 		weight: 3,
@@ -88,16 +109,24 @@ export const items: {
 		armorPiercing: 3,
 		splashRadius: 0,
 	},
-	"AMMUNITION#5": {
-		id: "AMMUNITION#5",
-		type: "AMMUNITION",
-		name: "Ion rocket",
+	"ROCKET_AMMUNITION#1": {
+		id: "ROCKET_AMMUNITION#1",
+		type: "ROCKET_AMMUNITION",
+		name: "Fragmentation rocket",
 		price: 30,
 		weight: 5,
 		ammunitionType: "ROCKET",
-		capacity: 1,
+		damage: "1d6+2",
+		splashRadius: 2,
+	},
+	"ROCKET_AMMUNITION#2": {
+		id: "ROCKET_AMMUNITION#2",
+		type: "ROCKET_AMMUNITION",
+		name: "Ion rocket",
+		price: 40,
+		weight: 5,
+		ammunitionType: "ROCKET",
 		damage: "1d6+4",
-		armorPiercing: 3,
 		splashRadius: 1,
 	},
 	"RANGE_WEAPON#1": {
@@ -111,7 +140,7 @@ export const items: {
 			min: 2,
 			max: 12,
 		},
-		fireRate: 5,
+		fireRate: 6,
 	},
 	"RANGE_WEAPON#2": {
 		id: "RANGE_WEAPON#2",
@@ -137,7 +166,7 @@ export const items: {
 			min: 5,
 			max: 20,
 		},
-		fireRate: 3,
+		fireRate: 4,
 	},
 	"MELEE_WEAPON#1": {
 		id: "MELEE_WEAPON#1",

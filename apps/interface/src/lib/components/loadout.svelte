@@ -2,6 +2,8 @@
 	import type { Loadout } from "$lib/loadouts";
 	import Item from "./item.svelte";
 	import StatBar from "./stat-bar.svelte";
+	import StatRow from "./stat-row.svelte";
+	import StatTable from "./stat-table.svelte";
 
 	let {
 		loadout,
@@ -13,36 +15,36 @@
 <li {onclick} class:selected>
 	<h3>{loadout.name}</h3>
 	<div class="content">
-		<div class="stats">
-			<div class="row">
-				<div>Price:</div>
-				<div>{loadout.price}</div>
-			</div>
-			<div class="row">
-				<div>Health:</div>
-				<div>{loadout.unit.health}</div>
-			</div>
-			<div class="row">
-				<div>Carry Weight:</div>
-				<div>{loadout.carryWeight}/{loadout.unit.carryCapacity}</div>
-			</div>
-			<div class="row">
-				<div>Size:</div>
+		<StatTable>
+			<StatRow>
+				Price:
+				<div>{loadout.price}c</div>
+			</StatRow>
+			<StatRow>
+				Health:
+				<div>{loadout.unit.health}hp</div>
+			</StatRow>
+			<StatRow>
+				Carry Weight:
+				<div>{loadout.carryWeight}kg / {loadout.unit.carryCapacity}kg</div>
+			</StatRow>
+			<StatRow>
+				Size:
 				<StatBar value={loadout.unit.size} size={3} />
-			</div>
-			<div class="row">
-				<div>Armor Class:</div>
+			</StatRow>
+			<StatRow>
+				Armor Class:
 				<StatBar value={loadout.unit.armorClass} size={4} />
-			</div>
-			<div class="row">
-				<div>Marksmanship:</div>
+			</StatRow>
+			<StatRow>
+				Marksmanship:
 				<StatBar value={loadout.unit.marksmanship} size={4} />
-			</div>
-			<div class="row">
-				<div>Melee Ability:</div>
+			</StatRow>
+			<StatRow>
+				Melee Ability:
 				<StatBar value={loadout.unit.meleeAbility} size={4} />
-			</div>
-		</div>
+			</StatRow>
+		</StatTable>
 		<div class="items-wrapper">
 			<div class="items">
 				{#each loadout.items as item}
@@ -62,14 +64,14 @@
 		display: flex;
 		flex-direction: column;
 		margin: 0;
-		border: 2px solid black;
-		border-radius: 0.4rem;
+		border: 4px solid lightgray;
+		border-radius: 0.5rem;
 		overflow: hidden;
 		cursor: pointer;
 		overflow: hidden;
 
 		&.selected {
-			background-color: lightcoral;
+			border-color: lightcoral;
 		}
 	}
 
@@ -89,21 +91,6 @@
 		flex: 1;
 		min-height: 0;
 		gap: 1rem;
-	}
-
-	.stats {
-		display: grid;
-		grid-template-columns: auto auto;
-		gap: 0.5rem;
-		padding: 0.5rem;
-		flex-shrink: 0;
-	}
-
-	.row {
-		display: grid;
-		list-style: none;
-		grid-column: 1 / -1;
-		grid-template-columns: subgrid;
 	}
 
 	.items-wrapper {

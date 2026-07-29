@@ -1,8 +1,9 @@
 <script lang="ts">
 	import Attack from "$lib/components/attack.svelte";
 	import Loadout from "$lib/components/loadout.svelte";
+	import Unit from "$lib/components/unit.svelte";
 	import { loadouts } from "$lib/loadouts";
-	import type { Faction } from "$lib/units";
+	import { units, type Faction } from "$lib/units";
 
 	let attackerFaction = $state<Faction>("GALACTIC_REPUBLIC");
 	let defenderFaction = $state<Faction>("SEPARATIST_ALLIANCE");
@@ -49,13 +50,13 @@
 			<option value="GALACTIC_EMPIRE">Galactic Empire</option>
 		</select>
 		<ul>
-			{#each Object.values(loadouts).filter( (i) => i.unit.faction.includes(defenderFaction), ) as loadout}
-				<Loadout
-					{loadout}
-					selected={selectedDefender === loadout.id}
+			{#each Object.values(units).filter( (i) => i.faction.includes(defenderFaction), ) as unit}
+				<Unit
+					{unit}
+					selected={selectedDefender === unit.id}
 					onclick={() => {
-						if (selectedDefender !== loadout.id) {
-							selectedDefender = loadout.id;
+						if (selectedDefender !== unit.id) {
+							selectedDefender = unit.id;
 						} else {
 							selectedDefender = undefined;
 						}
@@ -67,7 +68,7 @@
 	{#if selectedAttacker && selectedDefender}
 		<Attack
 			attacker={loadouts[selectedAttacker]}
-			defender={loadouts[selectedDefender]}
+			defender={units[selectedDefender]}
 		/>
 	{/if}
 </div>
@@ -87,7 +88,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
-		height: 100%;
+		height: max-content;
 		width: max-content;
 	}
 

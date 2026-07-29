@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { getAttackStats } from "$lib/get-attack-stats";
 	import type { Loadout } from "$lib/loadouts";
+	import type { Unit } from "$lib/units";
 
-	let { attacker, defender }: { attacker: Loadout; defender: Loadout } =
-		$props();
+	let { attacker, defender }: { attacker: Loadout; defender: Unit } = $props();
 
 	let stats = $derived(getAttackStats(attacker, defender));
 
@@ -13,18 +13,23 @@
 <ul>
 	{#each stats as stat}
 		<li>
-			{#if stat.weapon.type === "RANGE_WEAPON"}
-				<b>{stat.weapon.name} with {stat.ammunition!.name}</b>
+			{#if stat.type === "RANGE"}
+				<b>{stat.weapon.name} with {stat.ammunition.name}</b>
 				<div>Fire Rate: {stat.weapon.fireRate}</div>
 				<div>Range: {stat.weapon.range.min}-{stat.weapon.range.max}m</div>
-				<div>To hit: {stat.b1r}</div>
-				<div>To pierce armor: {stat.b2}</div>
+				<div>To hit: ≥{stat.b1r}</div>
+				{#if stat.b2}
+					<div>To pierce armor: ≥{stat.b2}</div>
+				{/if}
 				<div>Damage: {stat.damage}</div>
+				{#if stat.ammunition.splashRadius}
+					<div>Splash radius: {stat.ammunition.splashRadius}m</div>
+				{/if}
 			{:else}
 				<b>{stat.weapon.name}</b>
 				<div>Attack Speed: {stat.weapon.attackSpeed}</div>
-				<div>To hit: {stat.b1r}</div>
-				<div>To pierce armor: {stat.b2}</div>
+				<div>To hit: ≥{stat.b1r}</div>
+				<div>To pierce armor: ≥{stat.b2}</div>
 				<div>Damage: {stat.damage}</div>
 			{/if}
 		</li>

@@ -1,7 +1,9 @@
 import { units, type Unit } from "$lib/units";
 import {
 	items,
-	type Ammunition,
+	type PlasmaAmmunition,
+	type RocketAmmunition,
+	type SlugAmmunition,
 	type MeleeWeapon,
 	type RangeWeapon,
 } from "$lib/items";
@@ -19,49 +21,59 @@ const loadoutConfigs: { [key: string]: LoadoutConfig } = {
 		id: "LOADOUT#1",
 		name: "Clone Scout",
 		unit: "UNIT#1",
-		items: ["RANGE_WEAPON#1", "AMMUNITION#2", "AMMUNITION#2"],
+		items: ["RANGE_WEAPON#1", "PLASMA_AMMUNITION#2", "PLASMA_AMMUNITION#2"],
 	},
 	"LOADOUT#2": {
 		id: "LOADOUT#2",
 		name: "Clone Sharpshooter",
 		unit: "UNIT#2",
-		items: ["RANGE_WEAPON#3", "AMMUNITION#2"],
+		items: ["RANGE_WEAPON#3", "PLASMA_AMMUNITION#2"],
 	},
 
 	"LOADOUT#3": {
 		id: "LOADOUT#3",
 		name: "Clone Commander",
 		unit: "UNIT#2",
-		items: ["MELEE_WEAPON#1", "RANGE_WEAPON#2", "AMMUNITION#2", "AMMUNITION#2"],
+		items: [
+			"MELEE_WEAPON#1",
+			"RANGE_WEAPON#2",
+			"PLASMA_AMMUNITION#2",
+			"PLASMA_AMMUNITION#2",
+		],
 	},
 	"LOADOUT#4": {
 		id: "LOADOUT#4",
 		name: "Fighter Tank",
 		unit: "UNIT#3",
-		items: ["AMMUNITION#2", "AMMUNITION#2", "AMMUNITION#5", "AMMUNITION#5"],
+		items: [
+			"PLASMA_AMMUNITION#2",
+			"PLASMA_AMMUNITION#2",
+			"ROCKET_AMMUNITION#1",
+			"ROCKET_AMMUNITION#1",
+		],
 	},
 	"LOADOUT#5": {
 		id: "LOADOUT#5",
 		name: "Droid Scout",
 		unit: "UNIT#4",
-		items: ["RANGE_WEAPON#1", "AMMUNITION#1", "AMMUNITION#1"],
+		items: ["RANGE_WEAPON#1", "PLASMA_AMMUNITION#1", "PLASMA_AMMUNITION#1"],
 	},
 	"LOADOUT#6": {
 		id: "LOADOUT#6",
 		name: "Super Battle Droid",
 		unit: "UNIT#5",
-		items: ["AMMUNITION#1", "AMMUNITION#1"],
+		items: ["PLASMA_AMMUNITION#1", "PLASMA_AMMUNITION#1"],
 	},
 	"LOADOUT#7": {
 		id: "LOADOUT#7",
 		name: "Octuptarra",
 		unit: "UNIT#6",
 		items: [
-			"AMMUNITION#1",
-			"AMMUNITION#1",
-			"AMMUNITION#5",
-			"AMMUNITION#5",
-			"AMMUNITION#5",
+			"PLASMA_AMMUNITION#1",
+			"PLASMA_AMMUNITION#1",
+			"ROCKET_AMMUNITION#1",
+			"ROCKET_AMMUNITION#1",
+			"ROCKET_AMMUNITION#1",
 		],
 	},
 };
@@ -70,7 +82,13 @@ export interface Loadout {
 	id: string;
 	name: string;
 	unit: Unit;
-	items: (Ammunition | RangeWeapon | MeleeWeapon)[];
+	items: (
+		| PlasmaAmmunition
+		| RocketAmmunition
+		| SlugAmmunition
+		| RangeWeapon
+		| MeleeWeapon
+	)[];
 	price: number;
 	carryWeight: number;
 }

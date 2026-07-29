@@ -153,7 +153,7 @@ export const units: { [key: string]: Unit } = {
 		price: 150,
 		size: 1,
 		speed: 2,
-		health: 8,
+		health: 10,
 		armorClass: 2,
 		carryCapacity: 9,
 		carryTypes: ["AMMUNITION"],
