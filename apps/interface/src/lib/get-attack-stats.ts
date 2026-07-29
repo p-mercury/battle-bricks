@@ -39,28 +39,36 @@ export function getAttackStats(attacker: Loadout, defender: Loadout) {
 
 	return attackerWeapons.reduce<AttackStat[]>((stats, weapon) => {
 		if (weapon.type === "RANGE_WEAPON") {
-			stats.push(
-				...attackerAmmunitions.map((ammunition) => ({
-					weapon: weapon,
-					ammunition: ammunition,
-					b1r: Math.min(
-						Math.max(7 - _attacker.unit.marksmanship - _defender.unit.size, 0),
-						6,
-					),
-					b1o: Math.min(
-						Math.max(8 - _attacker.unit.marksmanship - _defender.unit.size, 0),
-						6,
-					),
-					b2: Math.min(
-						Math.max(
-							3 - ammunition.armorPiercing + _defender.unit.armorClass,
-							0,
+			attackerAmmunitions.forEach((ammunition) => {
+				if (ammunition.ammunitionType === weapon.ammunitionType) {
+					stats.push({
+						weapon: weapon,
+						ammunition: ammunition,
+						b1r: Math.min(
+							Math.max(
+								7 - _attacker.unit.marksmanship - _defender.unit.size,
+								0,
+							),
+							6,
 						),
-						6,
-					),
-					damage: ammunition.damage,
-				})),
-			);
+						b1o: Math.min(
+							Math.max(
+								8 - _attacker.unit.marksmanship - _defender.unit.size,
+								0,
+							),
+							6,
+						),
+						b2: Math.min(
+							Math.max(
+								3 - ammunition.armorPiercing + _defender.unit.armorClass,
+								0,
+							),
+							6,
+						),
+						damage: ammunition.damage,
+					});
+				}
+			});
 		} else {
 			stats.push({
 				weapon: weapon,

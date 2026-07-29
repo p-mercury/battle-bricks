@@ -22,6 +22,7 @@
 				<div>Damage: {stat.damage}</div>
 			{:else}
 				<b>{stat.weapon.name}</b>
+				<div>Attack Speed: {stat.weapon.attackSpeed}</div>
 				<div>To hit: {stat.b1r}</div>
 				<div>To pierce armor: {stat.b2}</div>
 				<div>Damage: {stat.damage}</div>
@@ -35,7 +36,7 @@
 		display: grid;
 		box-sizing: border-box;
 		width: 100%;
-		height: 100%;
+		height: fit-content;
 		margin: 0;
 		padding: 0.5rem;
 		border: 2px solid black;
