@@ -17,7 +17,7 @@ export interface LoadoutConfig {
 const loadoutConfigs: { [key: string]: LoadoutConfig } = {
 	"LOADOUT#1": {
 		id: "LOADOUT#1",
-		name: "Clone Trooper",
+		name: "Clone Scout",
 		unit: "UNIT#1",
 		items: ["RANGE_WEAPON#1", "AMMUNITION#2", "AMMUNITION#2"],
 	},
@@ -27,26 +27,33 @@ const loadoutConfigs: { [key: string]: LoadoutConfig } = {
 		unit: "UNIT#2",
 		items: ["RANGE_WEAPON#3", "AMMUNITION#2"],
 	},
+
 	"LOADOUT#3": {
 		id: "LOADOUT#3",
+		name: "Clone Commander",
+		unit: "UNIT#2",
+		items: ["MELEE_WEAPON#1", "RANGE_WEAPON#2", "AMMUNITION#2", "AMMUNITION#2"],
+	},
+	"LOADOUT#4": {
+		id: "LOADOUT#4",
 		name: "Fighter Tank",
 		unit: "UNIT#3",
 		items: ["AMMUNITION#2", "AMMUNITION#2", "AMMUNITION#5", "AMMUNITION#5"],
 	},
-	"LOADOUT#4": {
-		id: "LOADOUT#4",
+	"LOADOUT#5": {
+		id: "LOADOUT#5",
 		name: "Droid Scout",
 		unit: "UNIT#4",
 		items: ["RANGE_WEAPON#1", "AMMUNITION#1", "AMMUNITION#1"],
 	},
-	"LOADOUT#5": {
-		id: "LOADOUT#5",
+	"LOADOUT#6": {
+		id: "LOADOUT#6",
 		name: "Super Battle Droid",
 		unit: "UNIT#5",
 		items: ["AMMUNITION#1", "AMMUNITION#1"],
 	},
-	"LOADOUT#6": {
-		id: "LOADOUT#6",
+	"LOADOUT#7": {
+		id: "LOADOUT#7",
 		name: "Octuptarra",
 		unit: "UNIT#6",
 		items: [

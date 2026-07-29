@@ -116,15 +116,15 @@ export const items: {
 	"RANGE_WEAPON#2": {
 		id: "RANGE_WEAPON#2",
 		type: "RANGE_WEAPON",
-		name: "Hand Blaster",
-		price: 20,
-		weight: 2.5,
+		name: "Hand Blasters",
+		price: 40,
+		weight: 5,
 		ammunitionType: "PLASMA",
 		range: {
 			min: 0,
 			max: 8,
 		},
-		fireRate: 4,
+		fireRate: 8,
 	},
 	"RANGE_WEAPON#3": {
 		id: "RANGE_WEAPON#3",
@@ -143,10 +143,10 @@ export const items: {
 		id: "MELEE_WEAPON#1",
 		type: "MELEE_WEAPON",
 		name: "Vibroblade",
-		price: 15,
+		price: 20,
 		weight: 1,
-		armorPiercing: 1,
-		damage: "1d6-1",
+		armorPiercing: 2,
+		damage: "1d6",
 		attackSpeed: 5,
 	},
 	"MELEE_WEAPON#2": {
@@ -156,7 +156,7 @@ export const items: {
 		price: 30,
 		weight: 2,
 		armorPiercing: 2,
-		damage: "1d6",
+		damage: "1d6+1",
 		attackSpeed: 4,
 	},
 };

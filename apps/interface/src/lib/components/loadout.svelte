@@ -58,6 +58,7 @@
 		box-sizing: border-box;
 		width: 100%;
 		height: 16rem;
+		min-height: 16rem;
 		display: flex;
 		flex-direction: column;
 		margin: 0;
