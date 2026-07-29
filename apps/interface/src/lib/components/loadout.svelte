@@ -30,6 +30,10 @@
 			<div>{loadoutStats.carryWeight}/{loadoutStats.unit.carryCapacity}</div>
 		</li>
 		<li>
+			<div>Size:</div>
+			<StatBar value={loadoutStats.unit.size} size={3} />
+		</li>
+		<li>
 			<div>Armor Class:</div>
 			<StatBar value={loadoutStats.unit.armorClass} size={4} />
 		</li>

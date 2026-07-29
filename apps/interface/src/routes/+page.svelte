@@ -20,7 +20,7 @@
 	<div>
 		<h2>Attacker</h2>
 		<select bind:value={attackerFaction}>
-			<option value="GALACTIC_REPUBLIC">Galactic Eepublic</option>
+			<option value="GALACTIC_REPUBLIC">Galactic Republic</option>
 			<option value="REBEL_ALLIANCE">Rebel Alliance</option>
 			<option value="SEPARATIST_ALLIANCE">Separatist Alliance</option>
 			<option value="GALACTIC_EMPIRE">Galactic Empire</option>

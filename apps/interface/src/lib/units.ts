@@ -80,6 +80,48 @@ export const units: { [key: string]: Unit } = {
 	},
 	"UNIT#3": {
 		id: "UNIT#3",
+		faction: ["GALACTIC_REPUBLIC"],
+		name: "Fighter Tank",
+		price: 450,
+		size: 3,
+		speed: 2,
+		health: 25,
+		armorClass: 4,
+		carryCapacity: 24,
+		carryTypes: ["AMMUNITION"],
+		marksmanship: 3,
+		meleeAbility: 0,
+		items: [
+			{
+				id: "INTERNAL#1",
+				type: "RANGE_WEAPON",
+				name: "Dual Cannons",
+				price: 0,
+				weight: 0,
+				ammunitionType: "PLASMA",
+				range: {
+					min: 4,
+					max: 12,
+				},
+				fireRate: 6,
+			},
+			{
+				id: "INTERNAL#2",
+				type: "RANGE_WEAPON",
+				name: "Rocket Launcher",
+				price: 0,
+				weight: 0,
+				ammunitionType: "ROCKET",
+				range: {
+					min: 5,
+					max: 12,
+				},
+				fireRate: 2,
+			},
+		],
+	},
+	"UNIT#4": {
+		id: "UNIT#4",
 		faction: ["SEPARATIST_ALLIANCE"],
 		name: "Droid",
 		price: 50,
@@ -93,7 +135,7 @@ export const units: { [key: string]: Unit } = {
 		meleeAbility: 1,
 		items: [
 			{
-				id: "",
+				id: "INTERNAL#1",
 				type: "MELEE_WEAPON",
 				name: "Unarmed Strike",
 				price: 0,
@@ -104,8 +146,8 @@ export const units: { [key: string]: Unit } = {
 			},
 		],
 	},
-	"UNIT#4": {
-		id: "UNIT#4",
+	"UNIT#5": {
+		id: "UNIT#5",
 		faction: ["SEPARATIST_ALLIANCE"],
 		name: "Super Battle Droid",
 		price: 150,
@@ -119,7 +161,7 @@ export const units: { [key: string]: Unit } = {
 		meleeAbility: 0,
 		items: [
 			{
-				id: "",
+				id: "INTERNAL#1",
 				type: "RANGE_WEAPON",
 				name: "Arm blasters",
 				price: 0,
@@ -133,8 +175,8 @@ export const units: { [key: string]: Unit } = {
 			},
 		],
 	},
-	"UNIT#5": {
-		id: "UNIT#5",
+	"UNIT#6": {
+		id: "UNIT#6",
 		faction: ["SEPARATIST_ALLIANCE"],
 		name: "Octuptarra",
 		price: 350,
@@ -148,7 +190,7 @@ export const units: { [key: string]: Unit } = {
 		meleeAbility: 0,
 		items: [
 			{
-				id: "",
+				id: "INTERNAL#1",
 				type: "RANGE_WEAPON",
 				name: "Laser Cannon",
 				price: 0,
@@ -161,7 +203,7 @@ export const units: { [key: string]: Unit } = {
 				fireRate: 6,
 			},
 			{
-				id: "",
+				id: "INTERNAL#2",
 				type: "RANGE_WEAPON",
 				name: "Rocket Launcher",
 				price: 0,

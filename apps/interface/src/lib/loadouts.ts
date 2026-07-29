@@ -21,20 +21,26 @@ export const loadouts: { [key: string]: Loadout } = {
 	},
 	"LOADOUT#3": {
 		id: "LOADOUT#3",
-		name: "Droid Scout",
+		name: "Fighter Tank",
 		unit: "UNIT#3",
-		items: ["RANGE_WEAPON#1", "AMMUNITION#1", "AMMUNITION#1"],
+		items: ["AMMUNITION#2", "AMMUNITION#2", "AMMUNITION#5", "AMMUNITION#5"],
 	},
 	"LOADOUT#4": {
 		id: "LOADOUT#4",
-		name: "Super Battle Droid",
+		name: "Droid Scout",
 		unit: "UNIT#4",
-		items: ["AMMUNITION#1", "AMMUNITION#1"],
+		items: ["RANGE_WEAPON#1", "AMMUNITION#1", "AMMUNITION#1"],
 	},
 	"LOADOUT#5": {
 		id: "LOADOUT#5",
-		name: "Octuptarra",
+		name: "Super Battle Droid",
 		unit: "UNIT#5",
+		items: ["AMMUNITION#1", "AMMUNITION#1"],
+	},
+	"LOADOUT#6": {
+		id: "LOADOUT#6",
+		name: "Octuptarra",
+		unit: "UNIT#6",
 		items: [
 			"AMMUNITION#1",
 			"AMMUNITION#1",

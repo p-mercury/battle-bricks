@@ -17,7 +17,7 @@
 				<b>{stat.weapon.name} with {stat.ammunition!.name}</b>
 				<div>Fire Rate: {stat.weapon.fireRate}</div>
 				<div>Range: {stat.weapon.range.min}-{stat.weapon.range.max}m</div>
-				<div>To hit: {stat.b1r} - ({stat.b1o} with cover)</div>
+				<div>To hit: {stat.b1r}</div>
 				<div>To pierce armor: {stat.b2}</div>
 				<div>Damage: {stat.damage}</div>
 			{:else}
