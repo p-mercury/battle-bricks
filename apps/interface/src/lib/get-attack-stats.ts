@@ -4,7 +4,6 @@ import {
 	type RangeWeapon,
 	type MeleeWeapon,
 } from "$lib/items";
-import { getLoadoutStats } from "./get-loadout-stats";
 
 interface AttackStat {
 	weapon: RangeWeapon | MeleeWeapon;
@@ -16,10 +15,9 @@ interface AttackStat {
 }
 
 export function getAttackStats(attacker: Loadout, defender: Loadout) {
-	const _attacker = getLoadoutStats(attacker);
 	const attackerWeapons = Array.from(
 		new Map(
-			_attacker.items
+			[...attacker.unit.items, ...attacker.items]
 				.filter(
 					(item) =>
 						item.type === "RANGE_WEAPON" || item.type === "MELEE_WEAPON",
@@ -27,15 +25,14 @@ export function getAttackStats(attacker: Loadout, defender: Loadout) {
 				.map((item) => [item.id, item]),
 		).values(),
 	);
+
 	const attackerAmmunitions = Array.from(
 		new Map(
-			_attacker.items
+			[...attacker.unit.items, ...attacker.items]
 				.filter((item) => item.type === "AMMUNITION")
 				.map((item) => [item.id, item]),
 		).values(),
 	);
-
-	const _defender = getLoadoutStats(defender);
 
 	return attackerWeapons.reduce<AttackStat[]>((stats, weapon) => {
 		if (weapon.type === "RANGE_WEAPON") {
@@ -45,22 +42,16 @@ export function getAttackStats(attacker: Loadout, defender: Loadout) {
 						weapon: weapon,
 						ammunition: ammunition,
 						b1r: Math.min(
-							Math.max(
-								7 - _attacker.unit.marksmanship - _defender.unit.size,
-								0,
-							),
+							Math.max(7 - attacker.unit.marksmanship - defender.unit.size, 0),
 							6,
 						),
 						b1o: Math.min(
-							Math.max(
-								8 - _attacker.unit.marksmanship - _defender.unit.size,
-								0,
-							),
+							Math.max(8 - attacker.unit.marksmanship - defender.unit.size, 0),
 							6,
 						),
 						b2: Math.min(
 							Math.max(
-								3 - ammunition.armorPiercing + _defender.unit.armorClass,
+								3 - ammunition.armorPiercing + defender.unit.armorClass,
 								0,
 							),
 							6,
@@ -73,12 +64,12 @@ export function getAttackStats(attacker: Loadout, defender: Loadout) {
 			stats.push({
 				weapon: weapon,
 				b1r: Math.min(
-					Math.max(7 - _attacker.unit.meleeAbility - _defender.unit.size, 0),
+					Math.max(7 - attacker.unit.meleeAbility - defender.unit.size, 0),
 					6,
 				),
 				b1o: 0,
 				b2: Math.min(
-					Math.max(3 - weapon.armorPiercing + _defender.unit.armorClass, 0),
+					Math.max(3 - weapon.armorPiercing + defender.unit.armorClass, 0),
 					6,
 				),
 				damage: weapon.damage,

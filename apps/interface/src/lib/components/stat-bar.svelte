@@ -24,7 +24,8 @@
 		display: flex;
 		flex-direction: row;
 		height: 1.2rem;
-		border: 1px solid black;
+		overflow: hidden;
+		gap: 2px;
 	}
 
 	li {
@@ -35,7 +36,14 @@
 		height: 100%;
 		aspect-ratio: 1 / 1;
 		background-color: red;
-		border: 1px solid black;
+
+		&:first-child {
+			border-radius: 0.5rem 0 0 0.5rem;
+		}
+
+		&:last-child {
+			border-radius: 0 0.5rem 0.5rem 0;
+		}
 
 		&.active {
 			background-color: green;

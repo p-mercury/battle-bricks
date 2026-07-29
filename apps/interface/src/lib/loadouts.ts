@@ -1,4 +1,12 @@
-export interface Loadout {
+import { units, type Unit } from "$lib/units";
+import {
+	items,
+	type Ammunition,
+	type MeleeWeapon,
+	type RangeWeapon,
+} from "$lib/items";
+
+export interface LoadoutConfig {
 	id: string;
 	name: string;
 	description?: string;
@@ -6,7 +14,7 @@ export interface Loadout {
 	items: string[];
 }
 
-export const loadouts: { [key: string]: Loadout } = {
+const loadoutConfigs: { [key: string]: LoadoutConfig } = {
 	"LOADOUT#1": {
 		id: "LOADOUT#1",
 		name: "Clone Trooper",
@@ -50,3 +58,40 @@ export const loadouts: { [key: string]: Loadout } = {
 		],
 	},
 };
+
+export interface Loadout {
+	id: string;
+	name: string;
+	unit: Unit;
+	items: (Ammunition | RangeWeapon | MeleeWeapon)[];
+	price: number;
+	carryWeight: number;
+}
+
+export const loadouts = Object.fromEntries(
+	Object.entries(loadoutConfigs).map(([key, loadout]) => {
+		const lUnit = units[loadout.unit];
+		let lPrice = lUnit.price;
+		let lCarryWeight = 0;
+		const lItems = [
+			...loadout.items.map((i) => {
+				const item = items[i];
+				lPrice += item.price;
+				lCarryWeight += item.weight;
+				return item;
+			}),
+		];
+
+		return [
+			key,
+			{
+				id: loadout.id,
+				name: loadout.name,
+				unit: lUnit,
+				items: lItems,
+				price: lPrice,
+				carryWeight: lCarryWeight,
+			},
+		] as [string, Loadout];
+	}),
+) as Record<string, Loadout>;

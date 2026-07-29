@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Attack from "$lib/components/attack.svelte";
 	import Loadout from "$lib/components/loadout.svelte";
-	import { getLoadoutStats } from "$lib/get-loadout-stats";
 	import { loadouts } from "$lib/loadouts";
 	import type { Faction } from "$lib/units";
 
@@ -17,7 +16,7 @@
 </svelte:head>
 
 <div class="wrapper">
-	<div>
+	<section>
 		<h2>Attacker</h2>
 		<select bind:value={attackerFaction}>
 			<option value="GALACTIC_REPUBLIC">Galactic Republic</option>
@@ -26,7 +25,7 @@
 			<option value="GALACTIC_EMPIRE">Galactic Empire</option>
 		</select>
 		<ul>
-			{#each Object.values(loadouts).filter( (l) => getLoadoutStats(l).unit.faction.includes(attackerFaction), ) as loadout}
+			{#each Object.values(loadouts).filter( (i) => i.unit.faction.includes(attackerFaction), ) as loadout}
 				<Loadout
 					{loadout}
 					selected={selectedAttacker === loadout.id}
@@ -40,8 +39,8 @@
 				/>
 			{/each}
 		</ul>
-	</div>
-	<div>
+	</section>
+	<section>
 		<h2>Defender</h2>
 		<select bind:value={defenderFaction}>
 			<option value="GALACTIC_REPUBLIC">Galactic Eepublic</option>
@@ -50,7 +49,7 @@
 			<option value="GALACTIC_EMPIRE">Galactic Empire</option>
 		</select>
 		<ul>
-			{#each Object.values(loadouts).filter( (l) => getLoadoutStats(l).unit.faction.includes(defenderFaction), ) as loadout}
+			{#each Object.values(loadouts).filter( (i) => i.unit.faction.includes(defenderFaction), ) as loadout}
 				<Loadout
 					{loadout}
 					selected={selectedDefender === loadout.id}
@@ -64,7 +63,7 @@
 				/>
 			{/each}
 		</ul>
-	</div>
+	</section>
 	{#if selectedAttacker && selectedDefender}
 		<Attack
 			attacker={loadouts[selectedAttacker]}
@@ -75,10 +74,11 @@
 
 <style lang="scss">
 	.wrapper {
+		box-sizing: border-box;
 		display: grid;
 		grid-template-columns: auto auto auto 1fr;
-		gap: 4rem;
-		padding: 1rem;
+		gap: 2rem;
+		height: 100dvh;
 	}
 
 	ul {
@@ -89,5 +89,11 @@
 		gap: 0.5rem;
 		height: 100%;
 		width: max-content;
+	}
+
+	section {
+		max-height: 100%;
+		overflow: scroll;
+		padding: 1rem;
 	}
 </style>
