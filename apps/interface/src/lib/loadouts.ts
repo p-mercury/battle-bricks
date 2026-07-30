@@ -56,7 +56,7 @@ const loadoutConfigs: { [key: string]: LoadoutConfig } = {
 		id: "LOADOUT#5",
 		name: "Droid Scout",
 		unit: "UNIT#4",
-		items: ["RANGE_WEAPON#1", "PLASMA_AMMUNITION#1", "PLASMA_AMMUNITION#1"],
+		items: ["RANGE_WEAPON#1", "PLASMA_AMMUNITION#1"],
 	},
 	"LOADOUT#6": {
 		id: "LOADOUT#6",
