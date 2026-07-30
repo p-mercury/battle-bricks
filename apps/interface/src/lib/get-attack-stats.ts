@@ -25,6 +25,44 @@ interface MeleeAttackStat {
 	damage: string;
 }
 
+const HitTable: Record<string, number> = {
+	"1/1": 6,
+	"1/2": 5,
+	"1/3": 5,
+	"1/4": 4,
+	"2/1": 5,
+	"2/2": 4,
+	"2/3": 4,
+	"2/4": 3,
+	"3/1": 4,
+	"3/2": 3,
+	"3/3": 3,
+	"3/4": 2,
+	"4/1": 3,
+	"4/2": 2,
+	"4/3": 2,
+	"4/4": 1,
+};
+
+const PierceTable: Record<string, number> = {
+	"1/1": 3,
+	"1/2": 4,
+	"1/3": 5,
+	"1/4": 6,
+	"2/1": 2,
+	"2/2": 3,
+	"2/3": 4,
+	"2/4": 5,
+	"3/1": 2,
+	"3/2": 2,
+	"3/3": 3,
+	"3/4": 4,
+	"4/1": 1,
+	"4/2": 2,
+	"4/3": 2,
+	"4/4": 3,
+};
+
 export function getAttackStats(attacker: Loadout, defender: Unit) {
 	const weapons = Array.from(
 		new Map(
@@ -59,19 +97,12 @@ export function getAttackStats(attacker: Loadout, defender: Unit) {
 							type: "RANGE",
 							weapon: weapon,
 							ammunition: ammunition,
-							b1r: Math.min(
-								Math.max(8 - attacker.unit.marksmanship - defender.size, 0),
-								6,
-							),
+							b1r: HitTable[`${attacker.unit.marksmanship}/${defender.size}`],
 							b2:
 								ammunition.ammunitionType !== "ROCKET"
-									? Math.min(
-											Math.max(
-												3 - ammunition.armorPiercing + defender.armorClass,
-												0,
-											),
-											6,
-										)
+									? PierceTable[
+											`${ammunition.armorPiercing}/${defender.armorClass}`
+										]
 									: undefined,
 							damage: ammunition.damage,
 						});
@@ -81,14 +112,8 @@ export function getAttackStats(attacker: Loadout, defender: Unit) {
 				stats.push({
 					type: "MELEE",
 					weapon: weapon,
-					b1r: Math.min(
-						Math.max(8 - attacker.unit.meleeAbility - defender.size, 0),
-						6,
-					),
-					b2: Math.min(
-						Math.max(3 - weapon.armorPiercing + defender.armorClass, 0),
-						6,
-					),
+					b1r: HitTable[`${attacker.unit.marksmanship}/${defender.size}`],
+					b2: PierceTable[`${weapon.armorPiercing}/${defender.armorClass}`],
 					damage: weapon.damage,
 				});
 			}

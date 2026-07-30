@@ -12,10 +12,6 @@
 	let selectedDefender = $state<string>();
 </script>
 
-<svelte:head>
-	<title>Battle Bricks</title>
-</svelte:head>
-
 <div class="wrapper">
 	<section>
 		<h2>Attacker</h2>
@@ -44,7 +40,7 @@
 	<section>
 		<h2>Defender</h2>
 		<select bind:value={defenderFaction}>
-			<option value="GALACTIC_REPUBLIC">Galactic Eepublic</option>
+			<option value="GALACTIC_REPUBLIC">Galactic Republic</option>
 			<option value="REBEL_ALLIANCE">Rebel Alliance</option>
 			<option value="SEPARATIST_ALLIANCE">Separatist Alliance</option>
 			<option value="GALACTIC_EMPIRE">Galactic Empire</option>

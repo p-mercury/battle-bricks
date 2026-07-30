@@ -24,7 +24,7 @@
 		</StatRow>
 		<StatRow>
 			Size:
-			<StatBar value={unit.size} size={3} />
+			<StatBar value={unit.size} size={4} />
 		</StatRow>
 	</StatTable>
 </li>

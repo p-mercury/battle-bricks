@@ -4,6 +4,10 @@
 	let { children }: { children: () => ReturnType<Snippet> } = $props();
 </script>
 
+<svelte:head>
+	<title>Battle Bricks</title>
+</svelte:head>
+
 {@render children()}
 
 <style lang="scss">

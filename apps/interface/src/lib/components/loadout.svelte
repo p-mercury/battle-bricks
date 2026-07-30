@@ -30,7 +30,7 @@
 			</StatRow>
 			<StatRow>
 				Size:
-				<StatBar value={loadout.unit.size} size={3} />
+				<StatBar value={loadout.unit.size} size={4} />
 			</StatRow>
 			<StatRow>
 				Armor Class:

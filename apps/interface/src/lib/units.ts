@@ -83,7 +83,7 @@ export const units: { [key: string]: Unit } = {
 		faction: ["GALACTIC_REPUBLIC"],
 		name: "Fighter Tank",
 		price: 450,
-		size: 3,
+		size: 4,
 		speed: 2,
 		health: 25,
 		armorClass: 4,

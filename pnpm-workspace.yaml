@@ -8,11 +8,24 @@ allowBuilds:
   "@sentry/cli": false
   esbuild: false
 minimumReleaseAgeExclude:
-  - "@ai-sdk/gateway@4.0.30"
-  - "@ai-sdk/openai@4.0.22"
-  - "@ai-sdk/provider-utils@5.0.14"
-  - "@ai-sdk/provider@4.0.4"
-  - "@types/node@26.1.2"
-  - ai@7.0.40
-  - svelte-check@4.7.4
-  - "@flit/sveltekit-adapter-cdk@2.6.0"
+  - "@ai-sdk/gateway@4.0.32"
+  - "@ai-sdk/openai@4.0.24"
+  - "@ai-sdk/provider-utils@5.0.15"
+  - "@aws-cdk/aws-lambda-go-alpha@2.262.2-alpha.0"
+  - "@sentry/browser-utils@10.69.0"
+  - "@sentry/browser@10.69.0"
+  - "@sentry/cloudflare@10.69.0"
+  - "@sentry/core@10.69.0"
+  - "@sentry/feedback@10.69.0"
+  - "@sentry/node-core@10.69.0"
+  - "@sentry/node@10.69.0"
+  - "@sentry/opentelemetry@10.69.0"
+  - "@sentry/replay-canvas@10.69.0"
+  - "@sentry/replay@10.69.0"
+  - "@sentry/server-utils@10.69.0"
+  - "@sentry/svelte@10.69.0"
+  - "@sentry/sveltekit@10.69.0"
+  - "@sveltejs/kit@2.70.2"
+  - ai@7.0.42
+  - aws-cdk-lib@2.262.2
+  - constructs@10.7.2
