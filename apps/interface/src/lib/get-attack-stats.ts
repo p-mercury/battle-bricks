@@ -91,31 +91,35 @@ export function getAttackStats(attacker: Loadout, defender: Unit) {
 	return weapons.reduce<(RangeAttackStat | MeleeAttackStat)[]>(
 		(stats, weapon) => {
 			if (weapon.type === "RANGE_WEAPON") {
-				ammunitions.forEach((ammunition) => {
-					if (ammunition.ammunitionType === weapon.ammunitionType) {
-						stats.push({
-							type: "RANGE",
-							weapon: weapon,
-							ammunition: ammunition,
-							b1r: HitTable[`${attacker.unit.marksmanship}/${defender.size}`],
-							b2:
-								ammunition.ammunitionType !== "ROCKET"
-									? PierceTable[
-											`${ammunition.armorPiercing}/${defender.armorClass}`
-										]
-									: undefined,
-							damage: ammunition.damage,
-						});
-					}
-				});
+				if (attacker.unit.marksmanship) {
+					ammunitions.forEach((ammunition) => {
+						if (ammunition.ammunitionType === weapon.ammunitionType) {
+							stats.push({
+								type: "RANGE",
+								weapon: weapon,
+								ammunition: ammunition,
+								b1r: HitTable[`${attacker.unit.marksmanship}/${defender.size}`],
+								b2:
+									ammunition.ammunitionType !== "ROCKET"
+										? PierceTable[
+												`${ammunition.armorPiercing}/${defender.armorClass}`
+											]
+										: undefined,
+								damage: ammunition.damage,
+							});
+						}
+					});
+				}
 			} else {
-				stats.push({
-					type: "MELEE",
-					weapon: weapon,
-					b1r: HitTable[`${attacker.unit.marksmanship}/${defender.size}`],
-					b2: PierceTable[`${weapon.armorPiercing}/${defender.armorClass}`],
-					damage: weapon.damage,
-				});
+				if (attacker.unit.meleeAbility) {
+					stats.push({
+						type: "MELEE",
+						weapon: weapon,
+						b1r: HitTable[`${attacker.unit.meleeAbility}/${defender.size}`],
+						b2: PierceTable[`${weapon.armorPiercing}/${defender.armorClass}`],
+						damage: weapon.damage,
+					});
+				}
 			}
 
 			return stats;
