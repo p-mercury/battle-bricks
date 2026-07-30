@@ -26,6 +26,22 @@
 			Size:
 			<StatBar value={unit.size} size={4} />
 		</StatRow>
+		<StatRow>
+			Armor Class:
+			<StatBar value={unit.armorClass} size={4} />
+		</StatRow>
+		{#if unit.marksmanship}
+			<StatRow>
+				Marksmanship:
+				<StatBar value={unit.marksmanship} size={4} />
+			</StatRow>
+		{/if}
+		{#if unit.meleeAbility}
+			<StatRow>
+				Marksmanship:
+				<StatBar value={unit.meleeAbility} size={4} />
+			</StatRow>
+		{/if}
 	</StatTable>
 </li>
 

@@ -17,10 +17,9 @@ export interface Unit {
 	health: number;
 	armorClass: number;
 	carryCapacity: number;
-	carryTypes: ("AMMUNITION" | "RANGE_WEAPON" | "MELEE_WEAPON")[];
 
-	marksmanship: number;
-	meleeAbility: number;
+	marksmanship?: number;
+	meleeAbility?: number;
 
 	items: (RangeWeapon | MeleeWeapon)[];
 }
@@ -36,7 +35,6 @@ export const units: { [key: string]: Unit } = {
 		health: 10,
 		armorClass: 3,
 		carryCapacity: 15,
-		carryTypes: ["AMMUNITION", "RANGE_WEAPON", "MELEE_WEAPON"],
 		marksmanship: 2,
 		meleeAbility: 2,
 		items: [
@@ -62,7 +60,6 @@ export const units: { [key: string]: Unit } = {
 		health: 10,
 		armorClass: 3,
 		carryCapacity: 15,
-		carryTypes: ["AMMUNITION", "RANGE_WEAPON", "MELEE_WEAPON"],
 		marksmanship: 3,
 		meleeAbility: 2,
 		items: [
@@ -88,9 +85,7 @@ export const units: { [key: string]: Unit } = {
 		health: 25,
 		armorClass: 4,
 		carryCapacity: 24,
-		carryTypes: ["AMMUNITION"],
 		marksmanship: 3,
-		meleeAbility: 0,
 		items: [
 			{
 				id: "INTERNAL#1",
@@ -130,7 +125,6 @@ export const units: { [key: string]: Unit } = {
 		health: 8,
 		armorClass: 1,
 		carryCapacity: 15,
-		carryTypes: ["AMMUNITION", "RANGE_WEAPON", "MELEE_WEAPON"],
 		marksmanship: 1,
 		meleeAbility: 1,
 		items: [
@@ -156,9 +150,7 @@ export const units: { [key: string]: Unit } = {
 		health: 10,
 		armorClass: 2,
 		carryCapacity: 9,
-		carryTypes: ["AMMUNITION"],
 		marksmanship: 3,
-		meleeAbility: 0,
 		items: [
 			{
 				id: "INTERNAL#1",
@@ -185,9 +177,7 @@ export const units: { [key: string]: Unit } = {
 		health: 22,
 		armorClass: 3,
 		carryCapacity: 24,
-		carryTypes: ["AMMUNITION"],
 		marksmanship: 3,
-		meleeAbility: 0,
 		items: [
 			{
 				id: "INTERNAL#1",

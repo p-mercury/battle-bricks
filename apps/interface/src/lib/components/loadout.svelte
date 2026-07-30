@@ -36,14 +36,18 @@
 				Armor Class:
 				<StatBar value={loadout.unit.armorClass} size={4} />
 			</StatRow>
-			<StatRow>
-				Marksmanship:
-				<StatBar value={loadout.unit.marksmanship} size={4} />
-			</StatRow>
-			<StatRow>
-				Melee Ability:
-				<StatBar value={loadout.unit.meleeAbility} size={4} />
-			</StatRow>
+			{#if loadout.unit.marksmanship}
+				<StatRow>
+					Marksmanship:
+					<StatBar value={loadout.unit.marksmanship} size={4} />
+				</StatRow>
+			{/if}
+			{#if loadout.unit.meleeAbility}
+				<StatRow>
+					Marksmanship:
+					<StatBar value={loadout.unit.meleeAbility} size={4} />
+				</StatRow>
+			{/if}
 		</StatTable>
 		<div class="items-wrapper">
 			<div class="items">
