@@ -115,7 +115,7 @@ export function getAttackStats(attacker: Loadout, defender: Unit) {
 					stats.push({
 						type: "MELEE",
 						weapon: weapon,
-						b1r: HitTable[`${attacker.unit.meleeAbility}/${defender.size}`],
+						b1r: 6 - attacker.unit.meleeAbility,
 						b2: PierceTable[`${weapon.armorPiercing}/${defender.armorClass}`],
 						damage: weapon.damage,
 					});

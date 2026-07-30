@@ -44,7 +44,7 @@
 			{/if}
 			{#if loadout.unit.meleeAbility}
 				<StatRow>
-					Marksmanship:
+					Melee Ability:
 					<StatBar value={loadout.unit.meleeAbility} size={4} />
 				</StatRow>
 			{/if}
