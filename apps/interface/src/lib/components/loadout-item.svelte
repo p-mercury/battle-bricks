@@ -69,10 +69,10 @@
 		flex-direction: column;
 		margin: 0;
 		border: 4px solid lightgray;
+		background-color: white;
 		border-radius: 0.5rem;
 		overflow: hidden;
 		cursor: pointer;
-		overflow: hidden;
 
 		&.selected {
 			border-color: lightcoral;

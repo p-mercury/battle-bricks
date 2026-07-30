@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Attack from "$lib/components/attack.svelte";
-	import Loadout from "$lib/components/loadout.svelte";
+	import LoadoutItem from "$lib/components/loadout-item.svelte";
 	import Unit from "$lib/components/unit.svelte";
 	import { loadouts } from "$lib/loadouts";
 	import { units, type Faction } from "$lib/units";
@@ -23,7 +23,7 @@
 		</select>
 		<ul>
 			{#each Object.values(loadouts).filter( (i) => i.unit.faction.includes(attackerFaction), ) as loadout}
-				<Loadout
+				<LoadoutItem
 					{loadout}
 					selected={selectedAttacker === loadout.id}
 					onclick={() => {
