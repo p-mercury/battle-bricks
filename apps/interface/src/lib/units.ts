@@ -95,7 +95,7 @@ export const units: { [key: string]: Unit } = {
 			{
 				id: "INTERNAL#1",
 				type: "RANGE_WEAPON",
-				name: "Dual Cannons",
+				name: "Laser Cannon",
 				price: 0,
 				weight: 0,
 				ammunitionType: "PLASMA",
@@ -103,7 +103,7 @@ export const units: { [key: string]: Unit } = {
 					min: 4,
 					max: 12,
 				},
-				fireRate: 6,
+				fireRate: 8,
 			},
 			{
 				id: "INTERNAL#2",
@@ -200,7 +200,7 @@ export const units: { [key: string]: Unit } = {
 					min: 4,
 					max: 10,
 				},
-				fireRate: 6,
+				fireRate: 8,
 			},
 			{
 				id: "INTERNAL#2",
