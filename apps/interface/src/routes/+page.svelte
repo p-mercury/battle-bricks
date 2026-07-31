@@ -1,97 +1,77 @@
 <script lang="ts">
-	import Attack from "$lib/components/attack.svelte";
-	import LoadoutItem from "$lib/components/loadout-item.svelte";
-	import Unit from "$lib/components/unit.svelte";
+	import { getFactionName, type Faction } from "$lib/faction";
+	import type { Squad } from "$lib/squad";
+	import { browser } from "$app/env";
 	import { loadouts } from "$lib/loadouts";
-	import { type Faction } from "$lib/faction";
 	import { units } from "$lib/units";
+	import { goto } from "$app/navigation";
 
-	let attackerFaction = $state<Faction>("GALACTIC_REPUBLIC");
-	let defenderFaction = $state<Faction>("SEPARATIST_ALLIANCE");
+	let selectedSquad = $state<string>("");
+	let selectedDefender = $state<Faction>("" as any);
 
-	let selectedAttacker = $state<string>();
-	let selectedDefender = $state<string>();
+	let squads = $derived.by<Record<string, Squad | undefined>>(() => {
+		if (browser) {
+			let item = localStorage.getItem("SQUADS");
+			if (!item) {
+				item = "{}";
+			}
+			return JSON.parse(item);
+		} else {
+			return {};
+		}
+	});
 </script>
 
 <div class="wrapper">
-	<section>
-		<h2>Attacker</h2>
-		<select bind:value={attackerFaction}>
-			<option value="GALACTIC_REPUBLIC">Galactic Republic</option>
-			<option value="REBEL_ALLIANCE">Rebel Alliance</option>
-			<option value="SEPARATIST_ALLIANCE">Separatist Alliance</option>
-			<option value="GALACTIC_EMPIRE">Galactic Empire</option>
+	<h1>Start a new game</h1>
+	<select bind:value={selectedSquad}>
+		<option value="" disabled hidden selected>Select Squad</option>
+		{#each Object.values(squads) as squad}
+			<option value={squad!.id}>
+				{getFactionName(squad!.faction)}
+				{squad!.name}
+			</option>
+		{/each}
+	</select>
+	{#if selectedSquad}
+		<select bind:value={selectedDefender}>
+			<option value="" disabled hidden selected>Select enemy faction</option>
+			{#if squads[selectedSquad]?.faction !== "GALACTIC_REPUBLIC"}
+				<option value="GALACTIC_REPUBLIC">Galactic Republic</option>
+			{/if}
+			{#if squads[selectedSquad]?.faction !== "SEPARATIST_ALLIANCE"}
+				<option value="SEPARATIST_ALLIANCE">Separatist Alliance</option>
+			{/if}
 		</select>
-		<ul>
-			{#each Object.values(loadouts).filter( (i) => i.unit.faction.includes(attackerFaction), ) as loadout}
-				<LoadoutItem
-					{loadout}
-					selected={selectedAttacker === loadout.id}
-					onclick={() => {
-						if (selectedAttacker !== loadout.id) {
-							selectedAttacker = loadout.id;
-						} else {
-							selectedAttacker = undefined;
-						}
-					}}
-				/>
-			{/each}
-		</ul>
-	</section>
-	<section>
-		<h2>Defender</h2>
-		<select bind:value={defenderFaction}>
-			<option value="GALACTIC_REPUBLIC">Galactic Republic</option>
-			<option value="REBEL_ALLIANCE">Rebel Alliance</option>
-			<option value="SEPARATIST_ALLIANCE">Separatist Alliance</option>
-			<option value="GALACTIC_EMPIRE">Galactic Empire</option>
-		</select>
-		<ul>
-			{#each Object.values(units).filter( (i) => i.faction.includes(defenderFaction), ) as unit}
-				<Unit
-					{unit}
-					selected={selectedDefender === unit.id}
-					onclick={() => {
-						if (selectedDefender !== unit.id) {
-							selectedDefender = unit.id;
-						} else {
-							selectedDefender = undefined;
-						}
-					}}
-				/>
-			{/each}
-		</ul>
-	</section>
-	{#if selectedAttacker && selectedDefender}
-		<Attack
-			attacker={loadouts[selectedAttacker]}
-			defender={units[selectedDefender]}
-		/>
+		{#if selectedDefender}
+			<button
+				onclick={() => {
+					localStorage.setItem(
+						"GAME",
+						JSON.stringify({
+							attacker: {
+								name: squads[selectedSquad]!.name,
+								faction: squads[selectedSquad]!.faction,
+								loadouts: squads[selectedSquad]!.loadouts.map((l) => ({
+									...loadouts[l],
+									initiative: 0,
+								})),
+							},
+							defender: {
+								faction: selectedDefender,
+								units: Object.values(units).filter((i) =>
+									i.faction.includes(selectedDefender),
+								),
+							},
+						}),
+					);
+					goto("/game");
+				}}
+			>
+				Start Game
+			</button>
+		{/if}
 	{/if}
 </div>
 
-<style lang="scss">
-	.wrapper {
-		box-sizing: border-box;
-		display: grid;
-		grid-template-columns: auto auto auto 1fr;
-		gap: 2rem;
-		height: 100dvh;
-	}
-
-	ul {
-		margin: 0;
-		padding: 0;
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		height: max-content;
-		width: max-content;
-	}
-
-	section {
-		max-height: 100%;
-		overflow: scroll;
-		padding: 1rem;
-	}
-</style>
+<style lang="scss"></style>
