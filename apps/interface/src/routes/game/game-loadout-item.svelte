@@ -104,7 +104,7 @@
 	li {
 		box-sizing: border-box;
 		width: 100%;
-		height: 12.6rem;
+		height: 14rem;
 		display: flex;
 		flex-direction: column;
 		margin: 0;

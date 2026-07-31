@@ -77,7 +77,7 @@
 				</StatRow>
 				<StatRow>
 					Armor Piercing:
-					<StatBar value={item.armorPiercing} size={4} />
+					<StatBar value={item.armorPiercing} size={4} red />
 				</StatRow>
 			{:else if item.type === "ROCKET_AMMUNITION"}
 				<StatRow>
@@ -90,7 +90,7 @@
 				</StatRow>
 				<StatRow>
 					Splash Radius:
-					<div>{item.splashRadius}m</div>
+					<StatBar value={item.splashRadius} size={4} red />
 				</StatRow>
 			{:else if item.type === "SLUG_AMMUNITION"}
 				<StatRow>
@@ -107,7 +107,7 @@
 				</StatRow>
 				<StatRow>
 					Armor Piercing:
-					<StatBar value={item.armorPiercing} size={4} />
+					<StatBar value={item.armorPiercing} size={4} red />
 				</StatRow>
 			{:else if item.type === "RANGE_WEAPON"}
 				<StatRow>
@@ -125,7 +125,7 @@
 			{:else}
 				<StatRow>
 					Armor Piercing:
-					<StatBar value={item.armorPiercing} size={4} />
+					<StatBar value={item.armorPiercing} size={4} red />
 				</StatRow>
 				<StatRow>
 					Damage:
