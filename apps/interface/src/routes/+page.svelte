@@ -3,7 +3,8 @@
 	import LoadoutItem from "$lib/components/loadout-item.svelte";
 	import Unit from "$lib/components/unit.svelte";
 	import { loadouts } from "$lib/loadouts";
-	import { units, type Faction } from "$lib/units";
+	import { type Faction } from "$lib/faction";
+	import { units } from "$lib/units";
 
 	let attackerFaction = $state<Faction>("GALACTIC_REPUBLIC");
 	let defenderFaction = $state<Faction>("SEPARATIST_ALLIANCE");

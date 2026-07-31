@@ -1,10 +1,5 @@
 import type { MeleeWeapon, RangeWeapon } from "$lib/items";
-
-export type Faction =
-	| "GALACTIC_REPUBLIC"
-	| "REBEL_ALLIANCE"
-	| "SEPARATIST_ALLIANCE"
-	| "GALACTIC_EMPIRE";
+import type { Faction } from "$lib/faction";
 
 export interface Unit {
 	id: string;
@@ -54,7 +49,7 @@ export const units: { [key: string]: Unit } = {
 		id: "UNIT#2",
 		faction: ["GALACTIC_REPUBLIC"],
 		name: "Clone Specialist",
-		price: 200,
+		price: 190,
 		size: 1,
 		speed: 2,
 		health: 10,
@@ -79,7 +74,7 @@ export const units: { [key: string]: Unit } = {
 		id: "UNIT#3",
 		faction: ["GALACTIC_REPUBLIC"],
 		name: "Fighter Tank",
-		price: 450,
+		price: 420,
 		size: 4,
 		speed: 2,
 		health: 25,

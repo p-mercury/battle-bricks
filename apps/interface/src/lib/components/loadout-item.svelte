@@ -25,10 +25,6 @@
 				<div>{loadout.unit.health}hp</div>
 			</StatRow>
 			<StatRow>
-				Carry Weight:
-				<div>{loadout.carryWeight}kg / {loadout.unit.carryCapacity}kg</div>
-			</StatRow>
-			<StatRow>
 				Size:
 				<StatBar value={loadout.unit.size} size={4} />
 			</StatRow>
@@ -39,13 +35,13 @@
 			{#if loadout.unit.marksmanship}
 				<StatRow>
 					Marksmanship:
-					<StatBar value={loadout.unit.marksmanship} size={4} />
+					<StatBar value={loadout.unit.marksmanship} size={4} red />
 				</StatRow>
 			{/if}
 			{#if loadout.unit.meleeAbility}
 				<StatRow>
 					Melee Ability:
-					<StatBar value={loadout.unit.meleeAbility} size={4} />
+					<StatBar value={loadout.unit.meleeAbility} size={4} red />
 				</StatRow>
 			{/if}
 		</StatTable>
@@ -60,47 +56,63 @@
 </li>
 
 <style lang="scss">
+	@use "sass:color";
+
 	li {
 		box-sizing: border-box;
 		width: 100%;
-		height: 16rem;
-		min-height: 16rem;
+		height: 14.2rem;
 		display: flex;
 		flex-direction: column;
 		margin: 0;
-		border: 4px solid lightgray;
+		padding: 0;
+		box-shadow: inset 0 0 0 4px #636669;
 		background-color: white;
 		border-radius: 0.5rem;
 		overflow: hidden;
 		cursor: pointer;
 
+		&:hover {
+			box-shadow: inset 0 0 0 4px color.adjust(#636669, $lightness: -5%);
+
+			h3 {
+				background-color: color.adjust(#636669, $lightness: -5%);
+			}
+		}
+
 		&.selected {
-			border-color: lightcoral;
+			box-shadow: inset 0 0 0 4px #2452b6;
+
+			h3 {
+				background-color: #2452b6;
+			}
 		}
 	}
 
 	h3 {
 		box-sizing: border-box;
 		margin: 0;
-		padding: 0;
 		font-size: 1.1rem;
 		font-weight: 600;
-		background-color: lightgray;
+		background-color: #636669;
+		color: white;
 		width: 100%;
-		padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+		padding: 0.4rem 0.5rem 0.2rem 0.5rem;
 	}
 
 	.content {
 		display: flex;
 		flex: 1;
 		min-height: 0;
-		gap: 1rem;
+		padding: 0 0.2rem 3px;
+		gap: 0.6rem;
 	}
 
 	.items-wrapper {
 		box-sizing: border-box;
 		height: 100%;
 		overflow: scroll;
+		padding: 0.5rem;
 	}
 
 	.items {
@@ -108,6 +120,6 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.2rem;
-		padding: 0.5rem;
+		padding: 0;
 	}
 </style>

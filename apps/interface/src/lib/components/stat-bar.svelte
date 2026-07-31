@@ -1,5 +1,9 @@
 <script lang="ts">
-	let { value, size }: { value: number; size: number } = $props();
+	let {
+		value,
+		size,
+		red = false,
+	}: { value: number; size: number; red?: boolean } = $props();
 
 	let bars = $derived(Array.from({ length: size }, (_, i) => value > i));
 </script>
@@ -7,7 +11,17 @@
 <div>
 	<ul>
 		{#each bars as bar}
-			<li class:active={bar}></li>
+			<li>
+				{#if bar}
+					{#if red}
+						<img src="/stud-red.png" alt="stud" />
+					{:else}
+						<img src="/stud-blue.png" alt="stud" />
+					{/if}
+				{:else}
+					<img src="/stud-gray-light.png" alt="stud" />
+				{/if}
+			</li>
 		{/each}
 	</ul>
 </div>
@@ -23,30 +37,19 @@
 		box-sizing: border-box;
 		display: flex;
 		flex-direction: row;
-		height: 1.2rem;
 		overflow: hidden;
-		gap: 2px;
+		gap: 0.2rem;
 	}
 
 	li {
 		box-sizing: border-box;
 		margin: 0;
-		padding: 0;
+		padding: 0.1rem 0 0 0;
 		list-style: none;
-		height: 100%;
-		aspect-ratio: 1 / 1;
-		background-color: red;
+	}
 
-		&:first-child {
-			border-radius: 0.5rem 0 0 0.5rem;
-		}
-
-		&:last-child {
-			border-radius: 0 0.5rem 0.5rem 0;
-		}
-
-		&.active {
-			background-color: green;
-		}
+	img {
+		height: 1.1rem;
+		width: 1.1rem;
 	}
 </style>

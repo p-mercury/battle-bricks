@@ -1,4 +1,4 @@
-import type { Faction } from "$lib/units";
+import type { Faction } from "$lib/faction";
 
 export interface Squad {
 	id: string;

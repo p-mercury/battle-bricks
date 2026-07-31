@@ -1,18 +1,19 @@
 <script lang="ts">
 	import { loadouts as baseLoadouts, type Loadout } from "$lib/loadouts";
-	import type { Faction } from "$lib/units";
+	import type { Faction } from "$lib/faction";
 	import { untrack } from "svelte";
 	import LoadoutsZone from "./loadouts-zone.svelte";
 	import type { Squad } from "$lib/squad";
 	import { page } from "$app/state";
 	import SquadZone from "./squad-zone.svelte";
+	import { goto } from "$app/navigation";
 
 	const flipDurationMs = 150;
 	let faction = $state<Faction>("GALACTIC_REPUBLIC");
 	let loadouts = $state<{ id: string; loadout: Loadout }[]>([]);
 	let squad = $state<{ id: string; loadout: Loadout }[]>([]);
 	let budget = $derived(
-		squad.reduce((sum, item) => sum - item.loadout.price, 1000),
+		squad.reduce((sum, item) => sum - item.loadout.price, 1400),
 	);
 	let name = $state("");
 
@@ -92,10 +93,13 @@
 				}
 
 				localStorage.setItem("SQUADS", JSON.stringify(squads));
+
+				goto("/squads");
 			}}
 		>
 			Save
 		</button>
+		<button onclick={() => goto("/squads")}> Cancle </button>
 	</header>
 	<div class="loadouts">
 		<LoadoutsZone bind:items={loadouts} {flipDurationMs} />
@@ -108,7 +112,7 @@
 				if (
 					event.detail.items.reduce(
 						(sum, item) => sum - item.loadout.price,
-						1000,
+						1400,
 					) >= 0
 				) {
 					squad = event.detail.items;
@@ -119,7 +123,7 @@
 				const next = items.reduce((sum, item) => sum + item.loadout.price, 0);
 				const prev = squad.reduce((sum, item) => sum + item.loadout.price, 0);
 
-				if (next <= 1000 || next < prev) {
+				if (next <= 1400 || next < prev) {
 					squad = items;
 				} else {
 					squad = [...squad];
