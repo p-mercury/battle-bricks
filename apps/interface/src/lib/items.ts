@@ -7,35 +7,32 @@ export interface Item {
 	weight: number;
 }
 
-export type AmmunitionType = "PLASMA" | "ROCKET" | "SLUG";
+export type AmmunitionType = "BOLT" | "SHELL" | "ROCKET";
 
 export interface Range {
 	min: number;
 	max: number;
 }
 
-export interface PlasmaAmmunition extends Item {
-	type: "PLASMA_AMMUNITION";
-	ammunitionType: "PLASMA";
+export interface BoltAmmunition extends Item {
+	type: "BOLT_AMMUNITION";
+	ammunitionType: "BOLT";
 	capacity: number;
 	damage: string;
 	armorPiercing: number;
-	splashRadius: number;
+}
+
+export interface ShellAmmunition extends Item {
+	type: "SHELL_AMMUNITION";
+	ammunitionType: "SHELL";
+	damage: string;
+	armorPiercing: number;
 }
 
 export interface RocketAmmunition extends Item {
 	type: "ROCKET_AMMUNITION";
 	ammunitionType: "ROCKET";
 	damage: string;
-	splashRadius: number;
-}
-
-export interface SlugAmmunition extends Item {
-	type: "SLUG_AMMUNITION";
-	ammunitionType: "SLUG";
-	capacity: number;
-	damage: string;
-	armorPiercing: number;
 	splashRadius: number;
 }
 
@@ -55,63 +52,92 @@ export interface MeleeWeapon extends Item {
 
 export const items: {
 	[key: string]:
-		| PlasmaAmmunition
+		| BoltAmmunition
+		| ShellAmmunition
 		| RocketAmmunition
-		| SlugAmmunition
 		| RangeWeapon
 		| MeleeWeapon;
 } = {
-	"PLASMA_AMMUNITION#1": {
-		id: "PLASMA_AMMUNITION#1",
-		type: "PLASMA_AMMUNITION",
+	"BOLT_AMMUNITION#1": {
+		id: "BOLT_AMMUNITION#1",
+		type: "BOLT_AMMUNITION",
 		name: "Red Plasma Cartridge",
 		description: "Cheap Tibanna gas blend producing weaker red bolts",
 		price: 5,
-		weight: 3,
-		ammunitionType: "PLASMA",
+		weight: 2,
+		ammunitionType: "BOLT",
 		capacity: 120,
 		damage: "1d6-1",
 		armorPiercing: 1,
-		splashRadius: 0,
 	},
-	"PLASMA_AMMUNITION#2": {
-		id: "PLASMA_AMMUNITION#2",
-		type: "PLASMA_AMMUNITION",
+	"BOLT_AMMUNITION#2": {
+		id: "BOLT_AMMUNITION#2",
+		type: "BOLT_AMMUNITION",
 		name: "Blue Plasma Cartridge",
 		description: "High grade Tibanna gas blend producing blue bolts",
 		price: 10,
-		weight: 3,
-		ammunitionType: "PLASMA",
+		weight: 2,
+		ammunitionType: "BOLT",
 		capacity: 90,
 		damage: "1d6",
 		armorPiercing: 2,
-		splashRadius: 0,
 	},
-	"PLASMA_AMMUNITION#3": {
-		id: "PLASMA_AMMUNITION#3",
-		type: "PLASMA_AMMUNITION",
+	"BOLT_AMMUNITION#3": {
+		id: "BOLT_AMMUNITION#3",
+		type: "BOLT_AMMUNITION",
 		name: "Green Plasma Cartridge",
 		description: "Pure refined Tibanna producing powerful green bolts",
 		price: 15,
-		weight: 3,
-		ammunitionType: "PLASMA",
+		weight: 2,
+		ammunitionType: "BOLT",
 		capacity: 90,
 		damage: "1d6+1",
 		armorPiercing: 2,
-		splashRadius: 0,
 	},
-	"PLASMA_AMMUNITION#4": {
-		id: "PLASMA_AMMUNITIONN#4",
-		type: "PLASMA_AMMUNITION",
+	"BOLT_AMMUNITION#4": {
+		id: "BOLT_AMMUNITIONN#4",
+		type: "BOLT_AMMUNITION",
 		name: "Yellow Plasma Cartridge",
 		description: "High pressure Tibanna producing armor piercing yellow bolts",
 		price: 20,
-		weight: 3,
-		ammunitionType: "PLASMA",
+		weight: 2,
+		ammunitionType: "BOLT",
 		capacity: 60,
 		damage: "1d6+1",
 		armorPiercing: 3,
-		splashRadius: 0,
+	},
+	"SHELL_AMMUNITION#1": {
+		id: "SHELL_AMMUNITION#1",
+		type: "SHELL_AMMUNITION",
+		name: "Red Plasma Shell",
+		description: "Cheap Tibanna gas blend producing weaker blasts",
+		price: 10,
+		weight: 4,
+		ammunitionType: "SHELL",
+		damage: "2d6",
+		armorPiercing: 3,
+	},
+	"SHELL_AMMUNITION#2": {
+		id: "SHELL_AMMUNITION#2",
+		type: "SHELL_AMMUNITION",
+		name: "Blue Plasma Shell",
+		description: "High grade Tibanna gas blend producing blue bolts",
+		price: 20,
+		weight: 4,
+		ammunitionType: "SHELL",
+		damage: "2d6+2",
+		armorPiercing: 3,
+	},
+	"SHELL_AMMUNITION#3": {
+		id: "SHELL_AMMUNITION#3",
+		type: "SHELL_AMMUNITION",
+		name: "Green Plasma Shell",
+		description: "Pure refined Tibanna producing powerful green bolts",
+		price: 30,
+		weight: 4,
+		ammunitionType: "SHELL",
+		damage: "2d6+4",
+		armorPiercing: 4,
 	},
 	"ROCKET_AMMUNITION#1": {
 		id: "ROCKET_AMMUNITION#1",
@@ -120,9 +146,9 @@ export const items: {
 		description:
 			"Anti-personnel rocket that shreds unarmored targets with a wide blast radius",
 		price: 30,
-		weight: 5,
+		weight: 6,
 		ammunitionType: "ROCKET",
-		damage: "1d6+2",
+		damage: "1d6+4",
 		splashRadius: 2,
 	},
 	"ROCKET_AMMUNITION#2": {
@@ -130,7 +156,7 @@ export const items: {
 		type: "ROCKET_AMMUNITION",
 		name: "Ion rocket",
 		price: 40,
-		weight: 5,
+		weight: 6,
 		ammunitionType: "ROCKET",
 		damage: "1d6+4",
 		splashRadius: 1,
@@ -141,7 +167,7 @@ export const items: {
 		name: "Blaster",
 		price: 20,
 		weight: 4,
-		ammunitionType: "PLASMA",
+		ammunitionType: "BOLT",
 		range: {
 			min: 2,
 			max: 12,
@@ -154,7 +180,7 @@ export const items: {
 		name: "Hand Blasters",
 		price: 40,
 		weight: 5,
-		ammunitionType: "PLASMA",
+		ammunitionType: "BOLT",
 		range: {
 			min: 0,
 			max: 8,
@@ -167,7 +193,7 @@ export const items: {
 		name: "Blaster Rifle",
 		price: 30,
 		weight: 5,
-		ammunitionType: "PLASMA",
+		ammunitionType: "BOLT",
 		range: {
 			min: 5,
 			max: 20,

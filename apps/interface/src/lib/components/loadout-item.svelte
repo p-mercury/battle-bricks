@@ -25,6 +25,10 @@
 				<div>{loadout.unit.health}hp</div>
 			</StatRow>
 			<StatRow>
+				Speed:
+				<StatBar value={loadout.unit.speed} size={4} />
+			</StatRow>
+			<StatRow>
 				Size:
 				<StatBar value={loadout.unit.size} size={4} />
 			</StatRow>

@@ -6,8 +6,6 @@
 	let { attacker, defender }: { attacker: Loadout; defender: Unit } = $props();
 
 	let stats = $derived(getAttackStats(attacker, defender));
-
-	$inspect(stats);
 </script>
 
 <ul>
@@ -22,7 +20,7 @@
 					<div>To pierce armor: ≥{stat.b2}</div>
 				{/if}
 				<div>Damage: {stat.damage}</div>
-				{#if stat.ammunition.splashRadius}
+				{#if stat.ammunition.type === "ROCKET_AMMUNITION"}
 					<div>Splash radius: {stat.ammunition.splashRadius}m</div>
 				{/if}
 			{:else}

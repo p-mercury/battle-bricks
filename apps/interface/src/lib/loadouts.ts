@@ -1,9 +1,9 @@
 import { units, type Unit } from "$lib/units";
 import {
 	items,
-	type PlasmaAmmunition,
+	type BoltAmmunition,
+	type ShellAmmunition,
 	type RocketAmmunition,
-	type SlugAmmunition,
 	type MeleeWeapon,
 	type RangeWeapon,
 } from "$lib/items";
@@ -21,13 +21,13 @@ const loadoutConfigs: { [key: string]: LoadoutConfig } = {
 		id: "LOADOUT#1",
 		name: "Clone Scout",
 		unit: "UNIT#1",
-		items: ["RANGE_WEAPON#1", "PLASMA_AMMUNITION#2", "PLASMA_AMMUNITION#2"],
+		items: ["RANGE_WEAPON#1", "BOLT_AMMUNITION#2", "BOLT_AMMUNITION#2"],
 	},
 	"LOADOUT#2": {
 		id: "LOADOUT#2",
 		name: "Clone Sharpshooter",
 		unit: "UNIT#2",
-		items: ["RANGE_WEAPON#3", "PLASMA_AMMUNITION#2"],
+		items: ["RANGE_WEAPON#3", "BOLT_AMMUNITION#2"],
 	},
 
 	"LOADOUT#3": {
@@ -37,8 +37,8 @@ const loadoutConfigs: { [key: string]: LoadoutConfig } = {
 		items: [
 			"MELEE_WEAPON#1",
 			"RANGE_WEAPON#2",
-			"PLASMA_AMMUNITION#2",
-			"PLASMA_AMMUNITION#2",
+			"BOLT_AMMUNITION#2",
+			"BOLT_AMMUNITION#2",
 		],
 	},
 	"LOADOUT#4": {
@@ -46,8 +46,12 @@ const loadoutConfigs: { [key: string]: LoadoutConfig } = {
 		name: "Fighter Tank",
 		unit: "UNIT#3",
 		items: [
-			"PLASMA_AMMUNITION#2",
-			"PLASMA_AMMUNITION#2",
+			"BOLT_AMMUNITION#2",
+			"BOLT_AMMUNITION#2",
+			"SHELL_AMMUNITION#2",
+			"SHELL_AMMUNITION#2",
+			"SHELL_AMMUNITION#2",
+			"SHELL_AMMUNITION#2",
 			"ROCKET_AMMUNITION#1",
 			"ROCKET_AMMUNITION#1",
 		],
@@ -56,22 +60,36 @@ const loadoutConfigs: { [key: string]: LoadoutConfig } = {
 		id: "LOADOUT#5",
 		name: "Droid Scout",
 		unit: "UNIT#4",
-		items: ["RANGE_WEAPON#1", "PLASMA_AMMUNITION#1"],
+		items: ["RANGE_WEAPON#1", "BOLT_AMMUNITION#1"],
 	},
 	"LOADOUT#6": {
 		id: "LOADOUT#6",
 		name: "Super Battle Droid",
 		unit: "UNIT#5",
-		items: ["PLASMA_AMMUNITION#1", "PLASMA_AMMUNITION#1"],
+		items: ["BOLT_AMMUNITION#1", "BOLT_AMMUNITION#1"],
 	},
 	"LOADOUT#7": {
 		id: "LOADOUT#7",
 		name: "Octuptarra",
 		unit: "UNIT#6",
 		items: [
-			"PLASMA_AMMUNITION#1",
-			"PLASMA_AMMUNITION#1",
+			"BOLT_AMMUNITION#1",
+			"BOLT_AMMUNITION#1",
 			"ROCKET_AMMUNITION#1",
+			"ROCKET_AMMUNITION#1",
+			"ROCKET_AMMUNITION#1",
+		],
+	},
+	"LOADOUT#8": {
+		id: "LOADOUT#8",
+		name: "Armored Assault Tank",
+		unit: "UNIT#7",
+		items: [
+			"BOLT_AMMUNITION#1",
+			"BOLT_AMMUNITION#1",
+			"SHELL_AMMUNITION#1",
+			"SHELL_AMMUNITION#1",
+			"SHELL_AMMUNITION#1",
 			"ROCKET_AMMUNITION#1",
 			"ROCKET_AMMUNITION#1",
 		],
@@ -83,9 +101,9 @@ export interface Loadout {
 	name: string;
 	unit: Unit;
 	items: (
-		| PlasmaAmmunition
+		| BoltAmmunition
+		| ShellAmmunition
 		| RocketAmmunition
-		| SlugAmmunition
 		| RangeWeapon
 		| MeleeWeapon
 	)[];

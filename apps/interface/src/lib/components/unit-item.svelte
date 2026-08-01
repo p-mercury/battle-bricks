@@ -23,6 +23,10 @@
 			<div>{unit.health}hp</div>
 		</StatRow>
 		<StatRow>
+			Speed:
+			<StatBar value={unit.speed} size={4} />
+		</StatRow>
+		<StatRow>
 			Size:
 			<StatBar value={unit.size} size={4} />
 		</StatRow>

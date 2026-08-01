@@ -68,6 +68,10 @@
 				</div>
 			</StatRow>
 			<StatRow>
+				Speed:
+				<StatBar value={loadout.unit.speed} size={4} />
+			</StatRow>
+			<StatRow>
 				Size:
 				<StatBar value={loadout.unit.size} size={4} />
 			</StatRow>
@@ -104,7 +108,7 @@
 	li {
 		box-sizing: border-box;
 		width: 100%;
-		height: 14rem;
+		height: 16rem;
 		display: flex;
 		flex-direction: column;
 		margin: 0;

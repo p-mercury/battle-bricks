@@ -1,17 +1,17 @@
 import type { Loadout } from "$lib/loadouts";
-import {
-	type PlasmaAmmunition,
-	type RocketAmmunition,
-	type SlugAmmunition,
-	type RangeWeapon,
-	type MeleeWeapon,
+import type {
+	BoltAmmunition,
+	ShellAmmunition,
+	RocketAmmunition,
+	RangeWeapon,
+	MeleeWeapon,
 } from "$lib/items";
 import type { Unit } from "$lib/units";
 
 interface RangeAttackStat {
 	type: "RANGE";
 	weapon: RangeWeapon;
-	ammunition: PlasmaAmmunition | RocketAmmunition | SlugAmmunition;
+	ammunition: BoltAmmunition | ShellAmmunition | RocketAmmunition;
 	b1r: number;
 	b2?: number;
 	damage: string;
@@ -80,9 +80,9 @@ export function getAttackStats(attacker: Loadout, defender: Unit) {
 			[...attacker.unit.items, ...attacker.items]
 				.filter(
 					(item) =>
-						item.type === "PLASMA_AMMUNITION" ||
-						item.type === "ROCKET_AMMUNITION" ||
-						item.type === "SLUG_AMMUNITION",
+						item.type === "BOLT_AMMUNITION" ||
+						item.type === "SHELL_AMMUNITION" ||
+						item.type === "ROCKET_AMMUNITION",
 				)
 				.map((item) => [item.id, item]),
 		).values(),
@@ -90,6 +90,7 @@ export function getAttackStats(attacker: Loadout, defender: Unit) {
 
 	return weapons.reduce<(RangeAttackStat | MeleeAttackStat)[]>(
 		(stats, weapon) => {
+			console.log(weapon);
 			if (weapon.type === "RANGE_WEAPON") {
 				if (attacker.unit.marksmanship) {
 					ammunitions.forEach((ammunition) => {

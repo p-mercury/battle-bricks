@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type {
-		PlasmaAmmunition,
+		BoltAmmunition,
+		ShellAmmunition,
 		RocketAmmunition,
-		SlugAmmunition,
 		RangeWeapon,
 		MeleeWeapon,
 	} from "$lib/items";
@@ -14,9 +14,9 @@
 		item,
 	}: {
 		item:
-			| PlasmaAmmunition
+			| BoltAmmunition
+			| ShellAmmunition
 			| RocketAmmunition
-			| SlugAmmunition
 			| RangeWeapon
 			| MeleeWeapon;
 	} = $props();
@@ -62,7 +62,7 @@
 				Weight:
 				<div>{item.weight}</div>
 			</StatRow>
-			{#if item.type === "PLASMA_AMMUNITION"}
+			{#if item.type === "BOLT_AMMUNITION"}
 				<StatRow>
 					Type:
 					<div>{item.ammunitionType}</div>
@@ -70,6 +70,19 @@
 				<StatRow>
 					Capacity:
 					<div>{item.capacity}</div>
+				</StatRow>
+				<StatRow>
+					Damage:
+					<div>{item.damage}</div>
+				</StatRow>
+				<StatRow>
+					Armor Piercing:
+					<StatBar value={item.armorPiercing} size={4} red />
+				</StatRow>
+			{:else if item.type === "SHELL_AMMUNITION"}
+				<StatRow>
+					Type:
+					<div>{item.ammunitionType}</div>
 				</StatRow>
 				<StatRow>
 					Damage:
@@ -91,23 +104,6 @@
 				<StatRow>
 					Splash Radius:
 					<StatBar value={item.splashRadius} size={4} red />
-				</StatRow>
-			{:else if item.type === "SLUG_AMMUNITION"}
-				<StatRow>
-					Type:
-					<div>{item.ammunitionType}</div>
-				</StatRow>
-				<StatRow>
-					Capacity:
-					<div>{item.capacity}</div>
-				</StatRow>
-				<StatRow>
-					Damage:
-					<div>{item.damage}</div>
-				</StatRow>
-				<StatRow>
-					Armor Piercing:
-					<StatBar value={item.armorPiercing} size={4} red />
 				</StatRow>
 			{:else if item.type === "RANGE_WEAPON"}
 				<StatRow>
