@@ -5,12 +5,12 @@
 	import type { Game } from "$lib/game";
 	import type { Unit } from "$lib/units";
 	import GameLoadoutItem from "./game-loadout-item.svelte";
+	import NumberInput from "$lib/components/number-input.svelte";
 
 	let game = $state<Game>();
-	let initiative = $state(0);
 	let selectedDefender = $state<Unit>();
 	let selectedAttacker = $derived(
-		game?.attacker.loadouts.find((l) => l.initiative === initiative),
+		game?.attacker.loadouts.find((l) => l.initiative === game?.initiative),
 	);
 
 	$effect(() => {
@@ -31,41 +31,22 @@
 </script>
 
 {#if game}
-	<div>
-		<button
-			disabled={initiative < 1}
-			onclick={(event) => {
-				event.preventDefault();
-				event.stopPropagation();
-				initiative--;
-			}}>-</button
-		>
-		{initiative}
-		<button
-			disabled={initiative > 500}
-			onclick={(event) => {
-				event.preventDefault();
-				event.stopPropagation();
-				initiative++;
-			}}>+</button
-		>
-	</div>
 	<div class="wrapper">
-		<section>
-			<h2>Squad</h2>
+		<header>
+			<NumberInput min={1} max={100} bind:value={game.initiative} />
+		</header>
+		<section class="squad">
 			<ul>
 				{#each game.attacker.loadouts as loadout}
 					<GameLoadoutItem
 						{loadout}
 						bind:initiative={loadout.initiative}
-						bind:health={loadout.unit.health}
-						selected={loadout.initiative === initiative}
+						selected={loadout.initiative === game.initiative}
 					/>
 				{/each}
 			</ul>
 		</section>
-		<section>
-			<h2>Enemy</h2>
+		<section class="defender">
 			<ul>
 				{#each game.defender.units as unit}
 					<UnitItem
@@ -82,9 +63,11 @@
 				{/each}
 			</ul>
 		</section>
-		{#if selectedAttacker && selectedDefender}
-			<Attack attacker={selectedAttacker} defender={selectedDefender} />
-		{/if}
+		<section class="attack">
+			{#if selectedAttacker && selectedDefender}
+				<Attack attacker={selectedAttacker} defender={selectedDefender} />
+			{/if}
+		</section>
 	</div>
 {/if}
 
@@ -92,9 +75,28 @@
 	.wrapper {
 		box-sizing: border-box;
 		display: grid;
-		grid-template-columns: auto auto auto 1fr;
-		gap: 2rem;
+		grid-template:
+			"header header header" 3rem
+			"squad defender attack" 1fr /
+			auto auto 1fr;
+		gap: 1rem;
 		height: 100dvh;
+	}
+
+	header {
+		grid-area: header;
+	}
+
+	.squad {
+		grid-area: squad;
+	}
+
+	.defender {
+		grid-area: defender;
+	}
+
+	.attack {
+		grid-area: attack;
 	}
 
 	ul {

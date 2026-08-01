@@ -49,12 +49,13 @@
 					localStorage.setItem(
 						"GAME",
 						JSON.stringify({
+							initiative: 1,
 							attacker: {
 								name: squads[selectedSquad]!.name,
 								faction: squads[selectedSquad]!.faction,
-								loadouts: squads[selectedSquad]!.loadouts.map((l) => ({
+								loadouts: squads[selectedSquad]!.loadouts.map((l, i) => ({
 									...loadouts[l],
-									initiative: 0,
+									initiative: i * 2 + 1,
 								})),
 							},
 							defender: {

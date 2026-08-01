@@ -3,6 +3,7 @@ import type { Loadout } from "$lib/loadouts";
 import type { Unit } from "$lib/units";
 
 export interface Game {
+	initiative: number;
 	attacker: {
 		name: string;
 		faction: Faction;
