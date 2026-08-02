@@ -8,5 +8,6 @@ allowBuilds:
   "@sentry/cli": false
   esbuild: false
 minimumReleaseAgeExclude:
-  - "@sveltejs/kit@2.70.2"
-  - svelte-dnd-action@0.9.76
+  - "@ai-sdk/gateway@4.0.37"
+  - ai@7.0.48
+  - svelte-dnd-action@0.9.77

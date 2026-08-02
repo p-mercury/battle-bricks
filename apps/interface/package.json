@@ -11,7 +11,7 @@
 		"start": "vite dev"
 	},
 	"dependencies": {
-		"@ai-sdk/openai": "^4.0.24",
+		"@ai-sdk/openai": "^4.0.27",
 		"@aws-lambda-powertools/logger": "^2.34.0",
 		"@bufbuild/protobuf": "^2.13.0",
 		"@connectrpc/connect": "^2.1.2",
@@ -26,14 +26,14 @@
 		"@sveltejs/vite-plugin-svelte": "^7.2.0",
 		"@vitejs/plugin-basic-ssl": "^2.3.0",
 		"@wuchale/svelte": "^0.20.5",
-		"ai": "^7.0.42",
+		"ai": "^7.0.48",
 		"minisearch": "^7.2.0",
 		"sass": "^1.102.0",
 		"svelte": "^5.56.8",
 		"svelte-check": "^4.7.4",
-		"svelte-dnd-action": "^0.9.76",
+		"svelte-dnd-action": "^0.9.77",
 		"typescript": "^6.0.3",
-		"vite": "^8.1.5",
+		"vite": "^8.2.0",
 		"wuchale": "^0.25.6",
 		"zod": "^4.4.3"
 	}

@@ -11,8 +11,8 @@
 	"dependencies": {
 		"@battle-bricks/interface": "workspace:*",
 		"@types/node": "^26.1.2",
-		"aws-cdk-lib": "^2.262.2",
-		"constructs": "^10.7.2",
+		"aws-cdk-lib": "^2.263.0",
+		"constructs": "^10.8.0",
 		"typescript": "^6.0.3"
 	}
 }

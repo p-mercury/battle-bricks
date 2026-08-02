@@ -1,19 +1,18 @@
 <script lang="ts">
-	import type { Loadout } from "$lib/loadouts";
 	import Item from "$lib/components/item.svelte";
 	import StatBar from "$lib/components/stat-bar.svelte";
 	import StatRow from "$lib/components/stat-row.svelte";
 	import StatTable from "$lib/components/stat-table.svelte";
 	import NumberInput from "$lib/components/number-input.svelte";
+	import type { GameLoadout } from "$lib/game";
+	import Switcher from "$lib/components/switcher.svelte";
 
 	let {
 		loadout,
-		initiative = $bindable(),
 		selected = false,
 		onclick = () => {},
 	}: {
-		loadout: Loadout;
-		initiative: number;
+		loadout: GameLoadout;
 		selected?: Boolean;
 		onclick?: () => void;
 	} = $props();
@@ -31,7 +30,10 @@
 	<section class:selected>
 		<header>
 			<h3>{loadout.name}</h3>
-			<NumberInput min={1} max={100} bind:value={initiative} />
+			<Switcher
+				bind:value={loadout.turnComplete}
+				onclick={(event) => event.stopPropagation()}
+			/>
 		</header>
 		<div class="content">
 			<StatTable>
@@ -39,6 +41,15 @@
 					Health:
 					<NumberInput bind:value={loadout.unit.health} />
 				</StatRow>
+				{#if "inCover" in loadout}
+					<StatRow>
+						In Cover:
+						<Switcher
+							bind:value={loadout.inCover}
+							onclick={(event) => event.stopPropagation()}
+						/>
+					</StatRow>
+				{/if}
 				<StatRow>
 					Speed:
 					<StatBar value={loadout.unit.speed} size={4} />
@@ -82,10 +93,15 @@
 		all: unset;
 	}
 
+	.checkbox {
+		width: 1.2rem;
+		height: 1.2rem;
+	}
+
 	section {
 		box-sizing: border-box;
 		width: 100%;
-		height: 16rem;
+		height: 17rem;
 		display: flex;
 		flex-direction: column;
 		margin: 0;

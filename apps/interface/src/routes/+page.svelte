@@ -53,10 +53,15 @@
 							attacker: {
 								name: squads[selectedSquad]!.name,
 								faction: squads[selectedSquad]!.faction,
-								loadouts: squads[selectedSquad]!.loadouts.map((l, i) => ({
-									...loadouts[l],
-									initiative: i * 2 + 1,
-								})),
+								loadouts: squads[selectedSquad]!.loadouts.map((l) => {
+									const loadout = loadouts[l];
+									(loadout as any).color = "";
+									(loadout as any).turnComplete = false;
+									if (loadout.unit.size === 1) {
+										(loadout as any).inCover = false;
+									}
+									return loadout;
+								}),
 							},
 							defender: {
 								faction: selectedDefender,

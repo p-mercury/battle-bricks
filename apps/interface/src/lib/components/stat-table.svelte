@@ -16,5 +16,6 @@
 		gap: 0.5rem;
 		padding: 0.5rem;
 		flex-shrink: 0;
+		height: fit-content;
 	}
 </style>

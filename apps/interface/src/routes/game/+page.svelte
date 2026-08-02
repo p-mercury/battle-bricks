@@ -5,13 +5,10 @@
 	import type { Game } from "$lib/game";
 	import type { Unit } from "$lib/units";
 	import GameLoadoutItem from "./game-loadout-item.svelte";
-	import NumberInput from "$lib/components/number-input.svelte";
 
 	let game = $state<Game>();
 	let selectedDefender = $state<Unit>();
-	let selectedAttacker = $derived(
-		game?.attacker.loadouts.find((l) => l.initiative === game?.initiative),
-	);
+	let selectedAttacker = $state<number>();
 
 	$effect(() => {
 		if (browser) {
@@ -32,16 +29,14 @@
 
 {#if game}
 	<div class="wrapper">
-		<header>
-			<NumberInput min={1} max={100} bind:value={game.initiative} />
-		</header>
+		<header></header>
 		<section class="squad">
 			<ul>
-				{#each game.attacker.loadouts as loadout}
+				{#each game.attacker.loadouts as loadout, i}
 					<GameLoadoutItem
 						{loadout}
-						bind:initiative={loadout.initiative}
-						selected={loadout.initiative === game.initiative}
+						selected={i === selectedAttacker}
+						onclick={() => (selectedAttacker = i)}
 					/>
 				{/each}
 			</ul>
@@ -64,8 +59,11 @@
 			</ul>
 		</section>
 		<section class="attack">
-			{#if selectedAttacker && selectedDefender}
-				<Attack attacker={selectedAttacker} defender={selectedDefender} />
+			{#if selectedAttacker != null && selectedDefender}
+				<Attack
+					attacker={game.attacker.loadouts[selectedAttacker]}
+					defender={selectedDefender}
+				/>
 			{/if}
 		</section>
 	</div>
