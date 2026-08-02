@@ -23,12 +23,15 @@
 				{#if stat.ammunition.type === "ROCKET_AMMUNITION"}
 					<div>Splash radius: {stat.ammunition.splashRadius}m</div>
 				{/if}
-			{:else}
+			{:else if stat.type === "MELEE"}
 				<b>{stat.weapon.name}</b>
 				<div>Attack Speed: {stat.weapon.attackSpeed}</div>
 				<div>To hit: ≥{stat.b1r}</div>
 				<div>To pierce armor: ≥{stat.b2}</div>
 				<div>Damage: {stat.damage}</div>
+			{:else if stat.type === "ACTION"}
+				<b>{stat.name}</b>
+				<div>{stat.description}</div>
 			{/if}
 		</li>
 	{/each}
