@@ -29,7 +29,15 @@
 
 {#if game}
 	<div class="wrapper">
-		<header></header>
+		<header>
+			<button
+				onclick={() => {
+					game?.attacker.loadouts.forEach((_, i) => {
+						game!.attacker.loadouts[i].turnComplete = false;
+					});
+				}}>Clear Turn Complete</button
+			>
+		</header>
 		<section class="squad">
 			<ul>
 				{#each game.attacker.loadouts as loadout, i}

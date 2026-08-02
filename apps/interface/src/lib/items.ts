@@ -50,13 +50,18 @@ export interface MeleeWeapon extends Item {
 	attackSpeed: number;
 }
 
+export interface Action extends Item {
+	type: "ACTION";
+}
+
 export const items: {
 	[key: string]:
 		| BoltAmmunition
 		| ShellAmmunition
 		| RocketAmmunition
 		| RangeWeapon
-		| MeleeWeapon;
+		| MeleeWeapon
+		| Action;
 } = {
 	"BOLT_AMMUNITION#1": {
 		id: "BOLT_AMMUNITION#1",

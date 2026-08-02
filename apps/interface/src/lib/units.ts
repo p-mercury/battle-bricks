@@ -1,4 +1,4 @@
-import type { MeleeWeapon, RangeWeapon } from "$lib/items";
+import type { MeleeWeapon, RangeWeapon, Action } from "$lib/items";
 import type { Faction } from "$lib/faction";
 
 export interface Unit {
@@ -16,7 +16,7 @@ export interface Unit {
 	marksmanship?: number;
 	meleeAbility?: number;
 
-	items: (RangeWeapon | MeleeWeapon)[];
+	items: (RangeWeapon | MeleeWeapon | Action)[];
 }
 
 export const units: { [key: string]: Unit } = {
@@ -43,6 +43,14 @@ export const units: { [key: string]: Unit } = {
 				damage: "1d6-3",
 				attackSpeed: 4,
 			},
+			{
+				id: "INTERNAL#2",
+				type: "ACTION",
+				name: "Sprint",
+				price: 0,
+				weight: 0,
+				description: "Double move",
+			},
 		],
 	},
 	"UNIT#2": {
@@ -68,13 +76,21 @@ export const units: { [key: string]: Unit } = {
 				damage: "1d6-1",
 				attackSpeed: 4,
 			},
+			{
+				id: "INTERNAL#2",
+				type: "ACTION",
+				name: "Sprint",
+				price: 0,
+				weight: 0,
+				description: "Double move",
+			},
 		],
 	},
 	"UNIT#3": {
 		id: "UNIT#3",
 		faction: ["GALACTIC_REPUBLIC"],
 		name: "Fighter Tank",
-		price: 420,
+		price: 360,
 		size: 4,
 		speed: 4,
 		health: 25,
@@ -116,7 +132,7 @@ export const units: { [key: string]: Unit } = {
 		name: "Droid",
 		price: 50,
 		size: 1,
-		speed: 1,
+		speed: 2,
 		health: 8,
 		armorClass: 1,
 		carryCapacity: 15,
@@ -132,6 +148,14 @@ export const units: { [key: string]: Unit } = {
 				armorPiercing: 1,
 				damage: "1d6-3",
 				attackSpeed: 3,
+			},
+			{
+				id: "INTERNAL#2",
+				type: "ACTION",
+				name: "Sprint",
+				price: 0,
+				weight: 0,
+				description: "Double move",
 			},
 		],
 	},
@@ -159,6 +183,14 @@ export const units: { [key: string]: Unit } = {
 					max: 8,
 				},
 				fireRate: 8,
+			},
+			{
+				id: "INTERNAL#2",
+				type: "ACTION",
+				name: "Sprint",
+				price: 0,
+				weight: 0,
+				description: "Double move",
 			},
 		],
 	},

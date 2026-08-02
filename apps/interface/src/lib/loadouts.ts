@@ -46,8 +46,6 @@ const loadoutConfigs: { [key: string]: LoadoutConfig } = {
 		name: "Fighter Tank",
 		unit: "UNIT#3",
 		items: [
-			"BOLT_AMMUNITION#2",
-			"BOLT_AMMUNITION#2",
 			"SHELL_AMMUNITION#2",
 			"SHELL_AMMUNITION#2",
 			"SHELL_AMMUNITION#2",
