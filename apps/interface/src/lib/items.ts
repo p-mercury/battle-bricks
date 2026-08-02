@@ -167,7 +167,7 @@ export const items: {
 		ammunitionType: "ROCKET",
 		damage: "1d6+4",
 		armorPiercing: 4,
-		splashRadius: 1,
+		splashRadius: 0,
 	},
 	"RANGE_WEAPON#1": {
 		id: "RANGE_WEAPON#1",
