@@ -34,6 +34,7 @@ export interface RocketAmmunition extends Item {
 	ammunitionType: "ROCKET";
 	damage: string;
 	splashRadius: number;
+	armorPiercing: number;
 }
 
 export interface RangeWeapon extends Item {
@@ -154,16 +155,18 @@ export const items: {
 		weight: 6,
 		ammunitionType: "ROCKET",
 		damage: "1d6+4",
+		armorPiercing: 1,
 		splashRadius: 2,
 	},
 	"ROCKET_AMMUNITION#2": {
 		id: "ROCKET_AMMUNITION#2",
 		type: "ROCKET_AMMUNITION",
 		name: "Ion rocket",
-		price: 40,
+		price: 30,
 		weight: 6,
 		ammunitionType: "ROCKET",
 		damage: "1d6+4",
+		armorPiercing: 4,
 		splashRadius: 1,
 	},
 	"RANGE_WEAPON#1": {

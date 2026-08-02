@@ -119,7 +119,7 @@ export const units: { [key: string]: Unit } = {
 				weight: 0,
 				ammunitionType: "ROCKET",
 				range: {
-					min: 5,
+					min: 6,
 					max: 12,
 				},
 				fireRate: 2,
@@ -227,7 +227,7 @@ export const units: { [key: string]: Unit } = {
 				weight: 0,
 				ammunitionType: "ROCKET",
 				range: {
-					min: 5,
+					min: 6,
 					max: 12,
 				},
 				fireRate: 1,
@@ -280,7 +280,7 @@ export const units: { [key: string]: Unit } = {
 				weight: 0,
 				ammunitionType: "ROCKET",
 				range: {
-					min: 5,
+					min: 6,
 					max: 12,
 				},
 				fireRate: 2,

@@ -51,7 +51,7 @@ const loadoutConfigs: { [key: string]: LoadoutConfig } = {
 			"SHELL_AMMUNITION#2",
 			"SHELL_AMMUNITION#2",
 			"ROCKET_AMMUNITION#1",
-			"ROCKET_AMMUNITION#1",
+			"ROCKET_AMMUNITION#2",
 		],
 	},
 	"LOADOUT#5": {
@@ -75,7 +75,7 @@ const loadoutConfigs: { [key: string]: LoadoutConfig } = {
 			"BOLT_AMMUNITION#1",
 			"ROCKET_AMMUNITION#1",
 			"ROCKET_AMMUNITION#1",
-			"ROCKET_AMMUNITION#1",
+			"ROCKET_AMMUNITION#2",
 		],
 	},
 	"LOADOUT#8": {
@@ -89,7 +89,7 @@ const loadoutConfigs: { [key: string]: LoadoutConfig } = {
 			"SHELL_AMMUNITION#1",
 			"SHELL_AMMUNITION#1",
 			"ROCKET_AMMUNITION#1",
-			"ROCKET_AMMUNITION#1",
+			"ROCKET_AMMUNITION#2",
 		],
 	},
 };

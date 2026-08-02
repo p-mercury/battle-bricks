@@ -91,12 +91,9 @@ export function getAttackStats(attacker: Loadout, defender: Unit) {
 							weapon: item,
 							ammunition: ammunition,
 							b1r: HitTable[`${attacker.unit.marksmanship}/${defender.size}`],
-							b2:
-								ammunition.ammunitionType !== "ROCKET"
-									? PierceTable[
-											`${ammunition.armorPiercing}/${defender.armorClass}`
-										]
-									: undefined,
+							b2: PierceTable[
+								`${ammunition.armorPiercing}/${defender.armorClass}`
+							],
 							damage: ammunition.damage,
 						});
 					}
