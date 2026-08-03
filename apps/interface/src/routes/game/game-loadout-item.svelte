@@ -6,6 +6,7 @@
 	import NumberInput from "$lib/components/number-input.svelte";
 	import type { GameLoadout } from "$lib/game";
 	import Switcher from "$lib/components/switcher.svelte";
+	import SelectColor from "$lib/components/select-color.svelte";
 
 	let {
 		loadout,
@@ -29,6 +30,7 @@
 <li {onclick} bind:this={liElement}>
 	<section class:selected>
 		<header>
+			<SelectColor bind:value={loadout.color} />
 			<h3>{loadout.name}</h3>
 			<Switcher
 				bind:value={loadout.turnComplete}
@@ -101,7 +103,7 @@
 	section {
 		box-sizing: border-box;
 		width: 100%;
-		height: 17rem;
+		height: 17.2rem;
 		display: flex;
 		flex-direction: column;
 		margin: 0;
@@ -130,20 +132,20 @@
 	}
 
 	header {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
+		display: grid;
+		grid-template-columns: auto 1fr auto;
+		gap: 0.6rem;
 		box-sizing: border-box;
 		margin: 0;
 		background-color: #636669;
 		color: white;
 		width: 100%;
-		padding: 0.4rem 0.5rem 0.4rem 0.5rem;
+		padding: 0.4rem;
 	}
 
 	h3 {
 		font-size: 1.1rem;
+		line-height: 1.8rem;
 		font-weight: 600;
 		margin: 0;
 		padding: 0;

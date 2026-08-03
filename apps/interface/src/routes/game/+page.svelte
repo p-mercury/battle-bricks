@@ -25,6 +25,8 @@
 			localStorage.setItem("GAME", JSON.stringify(game));
 		}
 	});
+
+	$inspect(game);
 </script>
 
 {#if game}

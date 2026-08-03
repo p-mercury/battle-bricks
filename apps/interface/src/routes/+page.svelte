@@ -5,6 +5,7 @@
 	import { loadouts } from "$lib/loadouts";
 	import { units } from "$lib/units";
 	import { goto } from "$app/navigation";
+	import { colors } from "$lib/color";
 
 	let selectedSquad = $state<string>("");
 	let selectedDefender = $state<Faction>("" as any);
@@ -53,9 +54,12 @@
 							attacker: {
 								name: squads[selectedSquad]!.name,
 								faction: squads[selectedSquad]!.faction,
-								loadouts: squads[selectedSquad]!.loadouts.map((l) => {
-									const loadout = loadouts[l];
-									(loadout as any).color = "";
+								loadouts: squads[selectedSquad]!.loadouts.map((l, i) => {
+									const loadout = {
+										...loadouts[l],
+										unit: { ...loadouts[l].unit },
+									};
+									(loadout as any).color = colors[i].hex;
 									(loadout as any).turnComplete = false;
 									if (loadout.unit.size === 1) {
 										(loadout as any).inCover = false;

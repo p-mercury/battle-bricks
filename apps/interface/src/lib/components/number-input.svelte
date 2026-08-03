@@ -9,7 +9,7 @@
 
 		onchange = undefined,
 	}: {
-		value?: number;
+		value: number;
 		min?: number;
 		max?: number;
 		disabled?: boolean;
