@@ -6,11 +6,12 @@
 	import { units } from "$lib/units";
 	import { goto } from "$app/navigation";
 	import { colors } from "$lib/color";
+	import SquadItem from "$lib/components/squad-item.svelte";
 
 	let selectedSquad = $state<string>("");
 	let selectedDefender = $state<Faction>("" as any);
 
-	let squads = $derived.by<Record<string, Squad | undefined>>(() => {
+	let squads = $derived.by<Record<string, Squad>>(() => {
 		if (browser) {
 			let item = localStorage.getItem("SQUADS");
 			if (!item) {
@@ -24,6 +25,14 @@
 </script>
 
 <div class="wrapper">
+	<section>
+		<h2>Squads</h2>
+		<ul>
+			{#each Object.values(squads) as squad}
+				<SquadItem {squad} />
+			{/each}
+		</ul>
+	</section>
 	<h1>Start a new game</h1>
 	<select bind:value={selectedSquad}>
 		<option value="" disabled hidden selected>Select Squad</option>

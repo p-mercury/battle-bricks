@@ -25,22 +25,22 @@
 	});
 </script>
 
-<div class="color-picker" bind:this={containerEl}>
+<div class="color-picker" bind:this={containerEl} style="--color: {value};">
 	<button
 		type="button"
-		class="color-swatch"
-		style="background-color: {value};"
+		class="brick"
 		onclick={() => (open = !open)}
 		aria-label="Select color"
 		aria-expanded={open}
 	></button>
+
 	{#if open}
 		<div class="dropdown">
 			{#each colors as color}
 				<button
 					type="button"
-					class="color-option"
-					style="background-color: {color.hex};"
+					class="brick option"
+					style="--color: {color.hex};"
 					onclick={() => selectColor(color.hex)}
 					aria-label={color.name}
 					title={color.name}
@@ -51,25 +51,38 @@
 	{/if}
 </div>
 
-<style lnag="scss">
+<style lang="scss">
 	.color-picker {
 		position: relative;
 		display: inline-block;
-		height: 1.8rem;
+		height: 100%;
+		width: 100%;
 	}
 
 	button {
 		all: unset;
-		width: 1.8rem;
-		height: 1.8rem;
-		border-radius: 50%;
 		cursor: pointer;
-		padding: 0;
-		margin: 0;
 	}
 
-	button:hover {
-		transform: scale(1.05);
+	.brick {
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-color: var(--color);
+		background-image:
+			linear-gradient(
+				to bottom,
+				rgb(255 255 255 / 0.18) 0 6%,
+				transparent 6% 92%,
+				rgb(0 0 0 / 0.22) 92% 100%
+			),
+			url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Cdefs%3E%3ClinearGradient id='edge' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23fff' stop-opacity='.46'/%3E%3Cstop offset='.46' stop-color='%23fff' stop-opacity='.16'/%3E%3Cstop offset='.54' stop-color='%23000' stop-opacity='.13'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='.39'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='9.15' fill='none' stroke='url(%23edge)' stroke-width='1.6'/%3E%3C/svg%3E");
+		background-size:
+			100% 100%,
+			auto 100%;
+		background-repeat: no-repeat, repeat-x;
+		background-position: center;
+		transition: transform 0.1s ease;
 	}
 
 	.dropdown {
@@ -86,22 +99,18 @@
 		z-index: 10;
 	}
 
-	.color-option {
+	.option {
 		width: 28px;
 		height: 28px;
-		border-radius: 50%;
-		border: 2px solid #ddd;
-		cursor: pointer;
-		padding: 0;
-		transition: transform 0.1s ease;
+		outline: 2px solid transparent;
+		outline-offset: 2px;
 	}
 
-	.color-option:hover {
+	.option:hover {
 		transform: scale(1.1);
 	}
 
-	.color-option.selected {
-		border: 2px solid #333;
-		box-shadow: 0 0 0 2px white inset;
+	.option.selected {
+		outline-color: #333;
 	}
 </style>

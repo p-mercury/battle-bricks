@@ -17,27 +17,18 @@
 		selected?: Boolean;
 		onclick?: () => void;
 	} = $props();
-
-	let liElement: HTMLLIElement;
-
-	$effect(() => {
-		if (selected) {
-			liElement.scrollIntoView({ behavior: "smooth", block: "nearest" });
-		}
-	});
 </script>
 
-<li {onclick} bind:this={liElement}>
-	<section class:selected>
-		<header>
+<li {onclick} class:selected>
+	<section>
+		<header onclick={(e) => e.stopPropagation()}>
 			<SelectColor bind:value={loadout.color} />
-			<h3>{loadout.name}</h3>
-			<Switcher
-				bind:value={loadout.turnComplete}
-				onclick={(event) => event.stopPropagation()}
-			/>
 		</header>
-		<div class="content">
+		{#if loadout.image}
+			<img alt={loadout.name} src={loadout.image} />
+		{/if}
+		<div class="info">
+			<h3>{loadout.name}</h3>
 			<StatTable>
 				<StatRow>
 					Health:
@@ -52,6 +43,10 @@
 						/>
 					</StatRow>
 				{/if}
+			</StatTable>
+		</div>
+		<div class="stats">
+			<StatTable>
 				<StatRow>
 					Speed:
 					<StatBar value={loadout.unit.speed} size={4} />
@@ -77,12 +72,12 @@
 					</StatRow>
 				{/if}
 			</StatTable>
-			<div class="items-wrapper">
-				<div class="items">
-					{#each loadout.items as item}
-						<Item {item} />
-					{/each}
-				</div>
+		</div>
+		<div class="items-wrapper">
+			<div class="items">
+				{#each loadout.items as item}
+					<Item {item} />
+				{/each}
 			</div>
 		</div>
 	</section>
@@ -93,70 +88,49 @@
 
 	li {
 		all: unset;
-	}
+		background: white;
+		border-radius: 0.8rem;
+		padding: 0.5rem;
+		overflow: hidden;
+		box-shadow:
+			0 1px 2px rgba(0, 0, 0, 0.1),
+			0 4px 8px rgba(0, 0, 0, 0.14),
+			0 8px 16px rgba(0, 0, 0, 0.12);
+		cursor: pointer;
 
-	.checkbox {
-		width: 1.2rem;
-		height: 1.2rem;
+		&.selected {
+			outline: 4px solid #2388ff;
+			outline-offset: 2px;
+		}
 	}
 
 	section {
+		display: grid;
+		grid-template:
+			"color color color" 1.2rem
+			"image info items" 8em
+			"stats stats stats" 1fr /
+			8rem auto auto;
+		gap: 0.6rem;
+	}
+
+	img {
+		max-width: 100%;
+		max-height: 100%;
+		grid-area: image;
+		object-fit: contain;
+		border-radius: 0.8rem;
+		background: linear-gradient(135deg, #1c1c1c, #4f424f);
 		box-sizing: border-box;
-		width: 100%;
-		height: 17.2rem;
-		display: flex;
-		flex-direction: column;
-		margin: 0;
-		padding: 0;
-		box-shadow: inset 0 0 0 4px #636669;
-		background-color: white;
-		border-radius: 0.5rem;
-		overflow: hidden;
-		cursor: pointer;
-
-		&:hover {
-			box-shadow: inset 0 0 0 4px color.adjust(#636669, $lightness: -5%);
-
-			header {
-				background-color: color.adjust(#636669, $lightness: -5%);
-			}
-		}
-
-		&.selected {
-			box-shadow: inset 0 0 0 4px #2452b6;
-
-			header {
-				background-color: #2452b6;
-			}
-		}
 	}
 
 	header {
-		display: grid;
-		grid-template-columns: auto 1fr auto;
-		gap: 0.6rem;
-		box-sizing: border-box;
-		margin: 0;
-		background-color: #636669;
-		color: white;
-		width: 100%;
-		padding: 0.4rem;
+		grid-area: color;
+		margin: -0.5rem -0.5rem 0 -0.5rem;
 	}
 
-	h3 {
-		font-size: 1.1rem;
-		line-height: 1.8rem;
-		font-weight: 600;
-		margin: 0;
-		padding: 0;
-	}
-
-	.content {
-		display: flex;
-		flex: 1;
-		min-height: 0;
-		padding: 0 0.2rem 3px;
-		gap: 0.6rem;
+	.stats {
+		grid-area: stats;
 	}
 
 	.items-wrapper {

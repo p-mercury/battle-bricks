@@ -112,7 +112,7 @@
 		padding: 0;
 		display: flex;
 		flex-direction: column;
-		gap: 0.5rem;
+		gap: 0.8rem;
 		height: max-content;
 		width: max-content;
 	}
