@@ -23,34 +23,27 @@
 	let ammunition = $state(0);
 
 	$effect(() => {
-		if (action.type === "RANGE_BOLT") {
+		if (
+			action.type === "RANGE_BOLT" ||
+			action.type === "RANGE_SHELL" ||
+			action.type === "RANGE_ROCKET"
+		) {
 			const newAmmunition = action.ammunition.reduce(
 				(state, item) => state + item.capacity,
 				0,
 			);
-
 			if (newAmmunition != untrack(() => ammunition)) {
 				ammunition = newAmmunition;
 			}
-		} else if (action.type === "RANGE_SHELL") {
-			const newAmmunition = action.ammunition.length + 1;
-			untrack(() => {
-				if (newAmmunition != ammunition) {
-					ammunition = newAmmunition;
-				}
-			});
-		} else if (action.type === "RANGE_ROCKET") {
-			const newAmmunition = action.ammunition.length + 1;
-			untrack(() => {
-				if (newAmmunition != ammunition) {
-					ammunition = newAmmunition;
-				}
-			});
 		}
 	});
 
 	$effect(() => {
-		if (action.type === "RANGE_BOLT") {
+		if (
+			action.type === "RANGE_BOLT" ||
+			action.type === "RANGE_SHELL" ||
+			action.type === "RANGE_ROCKET"
+		) {
 			const newTotal = Math.max(0, Math.trunc(ammunition));
 			untrack(() => {
 				const count = action.ammunition.length;
@@ -88,7 +81,14 @@
 	{:else if action.type === "RANGE_SHELL"}
 		<b>{action.weapon.name} with {action.ammunition[0].name}</b>
 		<div>Fire Rate: {action.weapon.fireRate}</div>
-		<div>Amunition: {ammunition}</div>
+		<div>
+			Amunition:
+			<NumberInput
+				bind:value={ammunition}
+				min={0}
+				max={action.ammunition.length}
+			/>
+		</div>
 		<div>Range: {action.weapon.range.min}-{action.weapon.range.max}m</div>
 		<div>To hit: ≥{action.b1r}</div>
 		{#if action.b2}
@@ -98,7 +98,14 @@
 	{:else if action.type === "RANGE_ROCKET"}
 		<b>{action.weapon.name} with {action.ammunition[0].name}</b>
 		<div>Fire Rate: {action.weapon.fireRate}</div>
-		<div>Amunition: {ammunition}</div>
+		<div>
+			Amunition:
+			<NumberInput
+				bind:value={ammunition}
+				min={0}
+				max={action.ammunition.length}
+			/>
+		</div>
 		<div>Range: {action.weapon.range.min}-{action.weapon.range.max}m</div>
 		<div>To hit: ≥{action.b1r}</div>
 		{#if action.b2}

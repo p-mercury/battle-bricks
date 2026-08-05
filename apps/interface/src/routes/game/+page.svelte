@@ -8,7 +8,7 @@
 
 	let game = $state<Game>();
 	let selectedDefender = $state<Unit>();
-	let selectedAttacker = $state<number>();
+	let selectedAttacker = $state<string>();
 
 	$effect(() => {
 		if (browser) {
@@ -25,21 +25,18 @@
 			localStorage.setItem("GAME", JSON.stringify(game));
 		}
 	});
-
-	$inspect(game);
 </script>
 
 {#if game}
 	<div class="wrapper">
 		<header>
 			<button
-				onclick={() => {
-					game?.attacker.loadouts.forEach((_, i) => {
-						if (game!.attacker.loadouts[i].unit.health) {
-							game!.attacker.loadouts[i].turnComplete = false;
+				onclick={() =>
+					Object.values(game!.attacker.loadouts).forEach(({ id }) => {
+						if (game!.attacker.loadouts[id].unit.health) {
+							game!.attacker.loadouts[id].turnComplete = false;
 						}
-					});
-				}}
+					})}
 			>
 				Clear Turn Complete
 			</button>
@@ -48,12 +45,12 @@
 			<h2>Your Squad</h2>
 			<div>
 				<ul>
-					{#each game.attacker.loadouts.toSorted((a, b) => Number(a.turnComplete) - Number(b.turnComplete)) as loadout, i}
+					{#each Object.values(game!.attacker.loadouts).toSorted((a, b) => Number(a.turnComplete) - Number(b.turnComplete)) as loadout}
 						<GameLoadoutItem
 							{loadout}
 							faction={game.attacker.faction}
-							selected={i === selectedAttacker}
-							onclick={() => (selectedAttacker = i)}
+							selected={loadout.id === selectedAttacker}
+							onclick={() => (selectedAttacker = loadout.id)}
 						/>
 					{/each}
 				</ul>

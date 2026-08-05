@@ -25,6 +25,7 @@ export interface BoltAmmunition extends Item {
 export interface ShellAmmunition extends Item {
 	type: "SHELL_AMMUNITION";
 	ammunitionType: "SHELL";
+	capacity: number;
 	damage: string;
 	armorPiercing: number;
 }
@@ -32,6 +33,7 @@ export interface ShellAmmunition extends Item {
 export interface RocketAmmunition extends Item {
 	type: "ROCKET_AMMUNITION";
 	ammunitionType: "ROCKET";
+	capacity: number;
 	damage: string;
 	splashRadius: number;
 	armorPiercing: number;
@@ -120,6 +122,7 @@ export const items: {
 		price: 10,
 		weight: 4,
 		ammunitionType: "SHELL",
+		capacity: 1,
 		damage: "2d6",
 		armorPiercing: 3,
 	},
@@ -131,6 +134,7 @@ export const items: {
 		price: 20,
 		weight: 4,
 		ammunitionType: "SHELL",
+		capacity: 1,
 		damage: "2d6+2",
 		armorPiercing: 3,
 	},
@@ -142,6 +146,7 @@ export const items: {
 		price: 30,
 		weight: 4,
 		ammunitionType: "SHELL",
+		capacity: 1,
 		damage: "2d6+4",
 		armorPiercing: 4,
 	},
@@ -154,6 +159,7 @@ export const items: {
 		price: 30,
 		weight: 6,
 		ammunitionType: "ROCKET",
+		capacity: 1,
 		damage: "1d6+4",
 		armorPiercing: 1,
 		splashRadius: 2,
@@ -165,6 +171,7 @@ export const items: {
 		price: 30,
 		weight: 6,
 		ammunitionType: "ROCKET",
+		capacity: 1,
 		damage: "1d6+4",
 		armorPiercing: 4,
 		splashRadius: 0,

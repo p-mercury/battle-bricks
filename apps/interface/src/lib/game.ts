@@ -12,7 +12,7 @@ export interface Game {
 	attacker: {
 		name: string;
 		faction: Faction;
-		loadouts: GameLoadout[];
+		loadouts: { [key: string]: GameLoadout };
 	};
 	defender: {
 		faction: Faction;

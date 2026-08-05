@@ -7,6 +7,7 @@
 	import { goto } from "$app/navigation";
 	import { colors } from "$lib/color";
 	import SquadItem from "$lib/components/squad-item.svelte";
+	import type { GameLoadout } from "$lib/game";
 
 	let selectedSquad = $state<string>("");
 	let selectedDefender = $state<Faction>("" as any);
@@ -62,18 +63,22 @@
 							attacker: {
 								name: squads[selectedSquad]!.name,
 								faction: squads[selectedSquad]!.faction,
-								loadouts: squads[selectedSquad]!.loadouts.map((l, i) => {
-									const loadout = {
-										...loadouts[l],
-										unit: { ...loadouts[l].unit },
-									};
-									(loadout as any).color = colors[i].hex;
-									(loadout as any).turnComplete = false;
-									if (loadout.unit.size === 1) {
-										(loadout as any).inCover = false;
-									}
-									return loadout;
-								}),
+								loadouts: Object.fromEntries(
+									squads[selectedSquad]!.loadouts.map((l, i) => {
+										const id = crypto.randomUUID();
+										const loadout: GameLoadout = {
+											...loadouts[l],
+											id: id,
+											unit: { ...loadouts[l].unit },
+											color: colors[i].hex,
+											turnComplete: false,
+										};
+										if (loadout.unit.size === 1) {
+											loadout.inCover = false;
+										}
+										return [id, loadout];
+									}),
+								),
 							},
 							defender: {
 								faction: selectedDefender,
