@@ -48,6 +48,7 @@ const loadoutConfigs: { [key: string]: LoadoutConfig } = {
 	"LOADOUT#4": {
 		id: "LOADOUT#4",
 		name: "Fighter Tank",
+		image: "/fighter-tank.png",
 		unit: "UNIT#3",
 		items: [
 			"SHELL_AMMUNITION#2",
@@ -74,6 +75,7 @@ const loadoutConfigs: { [key: string]: LoadoutConfig } = {
 	},
 	"LOADOUT#7": {
 		id: "LOADOUT#7",
+		image: "/octuptarra.png",
 		name: "Octuptarra",
 		unit: "UNIT#6",
 		items: [

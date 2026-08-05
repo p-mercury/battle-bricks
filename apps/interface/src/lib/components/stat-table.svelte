@@ -12,7 +12,7 @@
 	ul {
 		margin: 0;
 		display: grid;
-		grid-template-columns: auto auto;
+		grid-template-columns: 1fr auto;
 		gap: 0.5rem;
 		padding: 0.5rem;
 		flex-shrink: 0;

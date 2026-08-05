@@ -41,32 +41,39 @@
 			>
 		</header>
 		<section class="squad">
-			<ul>
-				{#each game.attacker.loadouts as loadout, i}
-					<GameLoadoutItem
-						{loadout}
-						selected={i === selectedAttacker}
-						onclick={() => (selectedAttacker = i)}
-					/>
-				{/each}
-			</ul>
+			<h2>Your Squad</h2>
+			<div>
+				<ul>
+					{#each game.attacker.loadouts as loadout, i}
+						<GameLoadoutItem
+							{loadout}
+							faction={game.attacker.faction}
+							selected={i === selectedAttacker}
+							onclick={() => (selectedAttacker = i)}
+						/>
+					{/each}
+				</ul>
+			</div>
 		</section>
 		<section class="defender">
-			<ul>
-				{#each game.defender.units as unit}
-					<UnitItem
-						{unit}
-						selected={selectedDefender?.id === unit.id}
-						onclick={() => {
-							if (selectedDefender?.id !== unit.id) {
-								selectedDefender = unit;
-							} else {
-								selectedDefender = undefined;
-							}
-						}}
-					/>
-				{/each}
-			</ul>
+			<h2>Enemy</h2>
+			<div>
+				<ul>
+					{#each game.defender.units as unit}
+						<UnitItem
+							{unit}
+							selected={selectedDefender?.id === unit.id}
+							onclick={() => {
+								if (selectedDefender?.id !== unit.id) {
+									selectedDefender = unit;
+								} else {
+									selectedDefender = undefined;
+								}
+							}}
+						/>
+					{/each}
+				</ul>
+			</div>
 		</section>
 		<section class="attack">
 			{#if selectedAttacker != null && selectedDefender}
@@ -84,11 +91,13 @@
 		box-sizing: border-box;
 		display: grid;
 		grid-template:
-			"header header header" 3rem
+			"header header header" 1rem
 			"squad defender attack" 1fr /
 			auto auto 1fr;
-		gap: 1rem;
+		gap: 1.2rem;
+		padding: 1rem;
 		height: 100dvh;
+		width: 100dvw;
 	}
 
 	header {
@@ -97,14 +106,62 @@
 
 	.squad {
 		grid-area: squad;
+		display: grid;
+		margin: 0;
+		padding: 0;
+		border-radius: 0.8rem;
+		box-shadow:
+			0 1px 2px rgba(0, 0, 0, 0.1),
+			0 4px 8px rgba(0, 0, 0, 0.14),
+			0 8px 16px rgba(0, 0, 0, 0.12);
+		overflow: hidden;
+
+		h2 {
+			margin: 0;
+			padding: 1rem;
+			font-size: 1.4rem;
+			font-weight: 600;
+		}
+
+		div {
+			max-height: 100%;
+			max-width: 100%;
+			overflow: hidden scroll;
+			padding: 0.5rem 1rem 1rem 1rem;
+		}
 	}
 
 	.defender {
 		grid-area: defender;
+		display: grid;
+		margin: 0;
+		padding: 0;
+		border-radius: 0.8rem;
+		box-shadow:
+			0 1px 2px rgba(0, 0, 0, 0.1),
+			0 4px 8px rgba(0, 0, 0, 0.14),
+			0 8px 16px rgba(0, 0, 0, 0.12);
+		overflow: hidden;
+
+		h2 {
+			margin: 0;
+			padding: 1rem;
+			font-size: 1.4rem;
+			font-weight: 600;
+		}
+
+		div {
+			max-height: 100%;
+			max-width: 100%;
+			overflow: hidden scroll;
+			padding: 0.5rem 1rem 1rem 1rem;
+		}
 	}
 
 	.attack {
 		grid-area: attack;
+		margin: 0;
+		padding: 0;
 	}
 
 	ul {

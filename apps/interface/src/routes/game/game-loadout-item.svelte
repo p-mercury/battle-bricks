@@ -7,12 +7,15 @@
 	import type { GameLoadout } from "$lib/game";
 	import Switcher from "$lib/components/switcher.svelte";
 	import SelectColor from "$lib/components/select-color.svelte";
+	import type { Faction } from "$lib/faction";
 
 	let {
+		faction,
 		loadout,
 		selected = false,
 		onclick = () => {},
 	}: {
+		faction: Faction;
 		loadout: GameLoadout;
 		selected?: Boolean;
 		onclick?: () => void;
@@ -25,11 +28,23 @@
 			<SelectColor bind:value={loadout.color} />
 		</header>
 		{#if loadout.image}
-			<img alt={loadout.name} src={loadout.image} />
+			<img
+				alt={loadout.name}
+				src={loadout.image}
+				class:republic={faction === "GALACTIC_REPUBLIC"}
+				class:separatists={faction === "SEPARATIST_ALLIANCE"}
+			/>
 		{/if}
 		<div class="info">
 			<h3>{loadout.name}</h3>
 			<StatTable>
+				<StatRow>
+					Turn:
+					<Switcher
+						bind:value={loadout.turnComplete}
+						onclick={(event) => event.stopPropagation()}
+					/>
+				</StatRow>
 				<StatRow>
 					Health:
 					<NumberInput bind:value={loadout.unit.health} />
@@ -106,22 +121,32 @@
 
 	section {
 		display: grid;
+		width: 36.85rem;
 		grid-template:
-			"color color color" 1.2rem
-			"image info items" 8em
-			"stats stats stats" 1fr /
+			"color color color" 1.25rem
+			"image info items" 8rem
+			"stats stats items" 1fr /
 			8rem auto auto;
 		gap: 0.6rem;
 	}
 
 	img {
-		max-width: 100%;
-		max-height: 100%;
+		width: 100%;
+		height: 100%;
 		grid-area: image;
 		object-fit: contain;
 		border-radius: 0.8rem;
+		padding: 0.4rem;
 		background: linear-gradient(135deg, #1c1c1c, #4f424f);
 		box-sizing: border-box;
+
+		&.republic {
+			background: linear-gradient(135deg, #1c1c1c, #4f424f);
+		}
+
+		&.separatists {
+			background: linear-gradient(135deg, #2b1515, #2d3f54);
+		}
 	}
 
 	header {
@@ -133,7 +158,19 @@
 		grid-area: stats;
 	}
 
+	.info {
+		grid-area: info;
+
+		h3 {
+			margin: 0;
+			padding: 0 0 0 0.2rem;
+			font-size: 1.2rem;
+			font-weight: 600;
+		}
+	}
+
 	.items-wrapper {
+		grid-area: items;
 		box-sizing: border-box;
 		height: 100%;
 		overflow: scroll;
