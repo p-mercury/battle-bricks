@@ -82,7 +82,7 @@ const PierceTable: Record<string, number> = {
 	"4/4": 3,
 };
 
-export function getActions(attacker: Loadout, defender: Unit) {
+export function getActions(attacker: Loadout, defender?: Unit) {
 	const ammunitions = Array.from(
 		new Map(
 			[...attacker.unit.items, ...attacker.items]
@@ -106,7 +106,7 @@ export function getActions(attacker: Loadout, defender: Unit) {
 		)[]
 	>((stats, item) => {
 		if (item.type === "RANGE_WEAPON") {
-			if (attacker.unit.marksmanship) {
+			if (defender && attacker.unit.marksmanship) {
 				if (item.ammunitionType === "BOLT") {
 					ammunitions.forEach((ammunition) => {
 						if (ammunition.ammunitionType === "BOLT") {
@@ -161,7 +161,7 @@ export function getActions(attacker: Loadout, defender: Unit) {
 				}
 			}
 		} else if (item.type === "MELEE_WEAPON") {
-			if (attacker.unit.meleeAbility) {
+			if (defender && attacker.unit.meleeAbility) {
 				stats.push({
 					type: "MELEE",
 					weapon: item,

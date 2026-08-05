@@ -8,6 +8,9 @@
 	import type { Action } from "$lib/items";
 	import { untrack } from "svelte";
 	import NumberInput from "./number-input.svelte";
+	import Brick from "$lib/components/brick.svelte";
+	import StatTable from "$lib/components/stat-table.svelte";
+	import StatRow from "./stat-row.svelte";
 
 	let {
 		action,
@@ -66,73 +69,169 @@
 </script>
 
 <li>
-	{#if action.type === "RANGE_BOLT"}
-		<b>{action.weapon.name} with {action.ammunition[0].name}</b>
-		<div>Fire Rate: {action.weapon.fireRate}</div>
-		<div>
-			Amunition: <NumberInput bind:value={ammunition} min={0} max={2000} />
+	<section>
+		<header>
+			<Brick />
+		</header>
+		<div class="info">
+			{#if action.type === "RANGE_BOLT"}
+				<h3>{action.weapon.name} with {action.ammunition[0].name}</h3>
+				<StatTable>
+					<StatRow>
+						Fire Rate:
+						<span>{action.weapon.fireRate}</span>
+					</StatRow>
+					<StatRow>
+						Amunition:
+						<NumberInput bind:value={ammunition} min={0} max={2000} />
+					</StatRow>
+					<StatRow>
+						Range:
+						<span>{action.weapon.range.min}-{action.weapon.range.max}m</span>
+					</StatRow>
+					<StatRow>
+						To hit:
+						<span>≥{action.b1r}</span>
+					</StatRow>
+					{#if action.b2}
+						<StatRow>
+							To pierce armor:
+							<span>≥{action.b2}</span>
+						</StatRow>
+					{/if}
+					<StatRow>
+						Damage:
+						<span>{action.damage}</span>
+					</StatRow>
+				</StatTable>
+			{:else if action.type === "RANGE_SHELL"}
+				<h3>{action.weapon.name} with {action.ammunition[0].name}</h3>
+				<StatTable>
+					<StatRow>
+						Fire Rate:
+						<span>{action.weapon.fireRate}</span>
+					</StatRow>
+					<StatRow>
+						Amunition:
+						<NumberInput bind:value={ammunition} min={0} max={2000} />
+					</StatRow>
+					<StatRow>
+						Range:
+						<span>{action.weapon.range.min}-{action.weapon.range.max}m</span>
+					</StatRow>
+					<StatRow>
+						To hit:
+						<span>≥{action.b1r}</span>
+					</StatRow>
+					{#if action.b2}
+						<StatRow>
+							To pierce armor:
+							<span>≥{action.b2}</span>
+						</StatRow>
+					{/if}
+					<StatRow>
+						Damage:
+						<span>{action.damage}</span>
+					</StatRow>
+				</StatTable>
+			{:else if action.type === "RANGE_ROCKET"}
+				<h3>{action.weapon.name} with {action.ammunition[0].name}</h3>
+				<StatTable>
+					<StatRow>
+						Fire Rate:
+						<span>{action.weapon.fireRate}</span>
+					</StatRow>
+					<StatRow>
+						Amunition:
+						<NumberInput bind:value={ammunition} min={0} max={2000} />
+					</StatRow>
+					<StatRow>
+						Range:
+						<span>{action.weapon.range.min}-{action.weapon.range.max}m</span>
+					</StatRow>
+					<StatRow>
+						To hit:
+						<span>≥{action.b1r}</span>
+					</StatRow>
+					{#if action.b2}
+						<StatRow>
+							To pierce armor:
+							<span>≥{action.b2}</span>
+						</StatRow>
+					{/if}
+					<StatRow>
+						Damage:
+						<span>{action.damage}</span>
+					</StatRow>
+				</StatTable>
+			{:else if action.type === "MELEE"}
+				<h3>{action.weapon.name}</h3>
+				<StatTable>
+					<StatRow>
+						Attack Speed:
+						<span>{action.weapon.attackSpeed}</span>
+					</StatRow>
+					<StatRow>
+						To hit:
+						<span>≥{action.b1r}</span>
+					</StatRow>
+					<StatRow>
+						To pierce armor:
+						<span>≥{action.b2}</span>
+					</StatRow>
+					<StatRow>
+						Damage:
+						<span>{action.damage}</span>
+					</StatRow>
+				</StatTable>
+			{:else if action.type === "ACTION"}
+				<h3>{action.name}</h3>
+				<div>
+					<div>{action.description}</div>
+				</div>
+			{/if}
 		</div>
-		<div>Range: {action.weapon.range.min}-{action.weapon.range.max}m</div>
-		<div>To hit: ≥{action.b1r}</div>
-		{#if action.b2}
-			<div>To pierce armor: ≥{action.b2}</div>
-		{/if}
-		<div>Damage: {action.damage}</div>
-	{:else if action.type === "RANGE_SHELL"}
-		<b>{action.weapon.name} with {action.ammunition[0].name}</b>
-		<div>Fire Rate: {action.weapon.fireRate}</div>
-		<div>
-			Amunition:
-			<NumberInput
-				bind:value={ammunition}
-				min={0}
-				max={action.ammunition.length}
-			/>
-		</div>
-		<div>Range: {action.weapon.range.min}-{action.weapon.range.max}m</div>
-		<div>To hit: ≥{action.b1r}</div>
-		{#if action.b2}
-			<div>To pierce armor: ≥{action.b2}</div>
-		{/if}
-		<div>Damage: {action.damage}</div>
-	{:else if action.type === "RANGE_ROCKET"}
-		<b>{action.weapon.name} with {action.ammunition[0].name}</b>
-		<div>Fire Rate: {action.weapon.fireRate}</div>
-		<div>
-			Amunition:
-			<NumberInput
-				bind:value={ammunition}
-				min={0}
-				max={action.ammunition.length}
-			/>
-		</div>
-		<div>Range: {action.weapon.range.min}-{action.weapon.range.max}m</div>
-		<div>To hit: ≥{action.b1r}</div>
-		{#if action.b2}
-			<div>To pierce armor: ≥{action.b2}</div>
-		{/if}
-		<div>Damage: {action.damage}</div>
-		<div>
-			Splash radius: {action.ammunition[0].splashRadius}m
-		</div>
-	{:else if action.type === "MELEE"}
-		<b>{action.weapon.name}</b>
-		<div>Attack Speed: {action.weapon.attackSpeed}</div>
-		<div>To hit: ≥{action.b1r}</div>
-		<div>To pierce armor: ≥{action.b2}</div>
-		<div>Damage: {action.damage}</div>
-	{:else if action.type === "ACTION"}
-		<b>{action.name}</b>
-		<div>{action.description}</div>
-	{/if}
+	</section>
 </li>
 
 <style lang="scss">
+	@use "sass:color";
+
 	li {
+		all: unset;
+		background: white;
+		border-radius: 0.8rem;
 		padding: 0.5rem;
-		list-style: none;
-		border: 2px solid black;
-		border-radius: 0.4rem;
-		background-color: lightsalmon;
+		overflow: hidden;
+		box-shadow:
+			0 1px 2px rgba(0, 0, 0, 0.1),
+			0 4px 8px rgba(0, 0, 0, 0.14),
+			0 8px 16px rgba(0, 0, 0, 0.12);
+		cursor: pointer;
+	}
+
+	section {
+		display: grid;
+		grid-template:
+			"info color" auto /
+			auto 1.25rem;
+		gap: 0.6rem;
+	}
+
+	header {
+		grid-area: color;
+		margin: -0.5rem -0.5rem -0.5rem 0;
+		background-color: #595d60;
+	}
+
+	.info {
+		grid-area: info;
+
+		h3 {
+			margin: 0;
+			padding: 0 0 0 0.2rem;
+			font-size: 1.1rem;
+			font-weight: 600;
+		}
 	}
 </style>

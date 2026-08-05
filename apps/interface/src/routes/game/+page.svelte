@@ -1,14 +1,24 @@
 <script lang="ts">
-	import Attack from "$lib/components/attack.svelte";
 	import UnitItem from "$lib/components/unit-item.svelte";
 	import { browser } from "$app/env";
 	import type { Game } from "$lib/game";
 	import type { Unit } from "$lib/units";
 	import GameLoadoutItem from "./game-loadout-item.svelte";
+	import ActionItem from "$lib/components/action-item.svelte";
+	import { getActions } from "$lib/get-actions";
 
 	let game = $state<Game>();
 	let selectedDefender = $state<Unit>();
 	let selectedAttacker = $state<string>();
+	let actions = $derived.by(() => {
+		if (game && selectedAttacker) {
+			return getActions(
+				game.attacker.loadouts[selectedAttacker],
+				selectedDefender,
+			);
+		}
+		return [];
+	});
 
 	$effect(() => {
 		if (browser) {
@@ -50,7 +60,13 @@
 							{loadout}
 							faction={game.attacker.faction}
 							selected={loadout.id === selectedAttacker}
-							onclick={() => (selectedAttacker = loadout.id)}
+							onclick={() => {
+								if (selectedAttacker !== loadout.id) {
+									selectedAttacker = loadout.id;
+								} else {
+									selectedAttacker = undefined;
+								}
+							}}
 						/>
 					{/each}
 				</ul>
@@ -77,13 +93,15 @@
 				</ul>
 			</div>
 		</section>
-		<section class="attack">
-			{#if selectedAttacker != null && selectedDefender}
-				<Attack
-					attacker={game.attacker.loadouts[selectedAttacker]}
-					defender={selectedDefender}
-				/>
-			{/if}
+		<section class="actions">
+			<h2>Actions</h2>
+			<div>
+				<ul>
+					{#each actions as action}
+						<ActionItem {action} />
+					{/each}
+				</ul>
+			</div>
 		</section>
 	</div>
 {/if}
@@ -93,9 +111,9 @@
 		box-sizing: border-box;
 		display: grid;
 		grid-template:
-			"header header header" 1rem
-			"squad defender attack" 1fr /
-			auto auto 1fr;
+			"header header header header" 1rem
+			"squad defender actions ." 1fr /
+			auto auto minmax(24rem, auto) 1fr;
 		gap: 1rem;
 		padding: 0.5rem;
 		height: 100dvh;
@@ -108,7 +126,8 @@
 
 	.squad {
 		grid-area: squad;
-		display: grid;
+		display: flex;
+		flex-direction: column;
 		margin: 0;
 		padding: 0;
 		border-radius: 0.8rem;
@@ -120,7 +139,7 @@
 
 		h2 {
 			margin: 0;
-			padding: 1rem;
+			padding: 0.5rem 1rem 0 1rem;
 			font-size: 1.4rem;
 			font-weight: 600;
 		}
@@ -135,7 +154,8 @@
 
 	.defender {
 		grid-area: defender;
-		display: grid;
+		display: flex;
+		flex-direction: column;
 		margin: 0;
 		padding: 0;
 		border-radius: 0.8rem;
@@ -147,7 +167,7 @@
 
 		h2 {
 			margin: 0;
-			padding: 1rem;
+			padding: 0.5rem 1rem 0 1rem;
 			font-size: 1.4rem;
 			font-weight: 600;
 		}
@@ -160,10 +180,32 @@
 		}
 	}
 
-	.attack {
-		grid-area: attack;
+	.actions {
+		grid-area: actions;
+		display: flex;
+		flex-direction: column;
 		margin: 0;
 		padding: 0;
+		border-radius: 0.8rem;
+		box-shadow:
+			0 1px 2px rgba(0, 0, 0, 0.1),
+			0 4px 8px rgba(0, 0, 0, 0.14),
+			0 8px 16px rgba(0, 0, 0, 0.12);
+		overflow: hidden;
+
+		h2 {
+			margin: 0;
+			padding: 0.5rem 1rem 0 1rem;
+			font-size: 1.4rem;
+			font-weight: 600;
+		}
+
+		div {
+			max-height: 100%;
+			max-width: 100%;
+			overflow: hidden scroll;
+			padding: 0.5rem 1rem 1rem 1rem;
+		}
 	}
 
 	ul {
@@ -173,7 +215,7 @@
 		flex-direction: column;
 		gap: 0.8rem;
 		height: max-content;
-		width: max-content;
+		width: 100%;
 	}
 
 	section {
