@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { getAttackStats } from "$lib/get-attack-stats";
+	import { getActions } from "$lib/get-actions";
 	import type { Loadout } from "$lib/loadouts";
 	import type { Unit } from "$lib/units";
 	import ActionItem from "./action-item.svelte";
 
 	let { attacker, defender }: { attacker: Loadout; defender: Unit } = $props();
 
-	let actions = $derived(getAttackStats(attacker, defender));
+	let actions = $derived(getActions(attacker, defender));
 </script>
 
 <ul>

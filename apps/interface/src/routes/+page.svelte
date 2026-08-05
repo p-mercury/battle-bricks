@@ -59,7 +59,6 @@
 					localStorage.setItem(
 						"GAME",
 						JSON.stringify({
-							initiative: 1,
 							attacker: {
 								name: squads[selectedSquad]!.name,
 								faction: squads[selectedSquad]!.faction,

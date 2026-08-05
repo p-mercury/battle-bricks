@@ -4,7 +4,7 @@
 		RangeBoltAction,
 		RangeRocketAction,
 		RangeShellAction,
-	} from "$lib/get-attack-stats";
+	} from "$lib/get-actions";
 	import type { Action } from "$lib/items";
 	import { untrack } from "svelte";
 	import NumberInput from "./number-input.svelte";

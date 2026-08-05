@@ -82,7 +82,7 @@ const PierceTable: Record<string, number> = {
 	"4/4": 3,
 };
 
-export function getAttackStats(attacker: Loadout, defender: Unit) {
+export function getActions(attacker: Loadout, defender: Unit) {
 	const ammunitions = Array.from(
 		new Map(
 			[...attacker.unit.items, ...attacker.items]
@@ -126,7 +126,7 @@ export function getAttackStats(attacker: Loadout, defender: Unit) {
 					});
 				} else if (item.ammunitionType === "SHELL") {
 					ammunitions.forEach((ammunition) => {
-						if (ammunition.ammunitionType === "BOLT") {
+						if (ammunition.ammunitionType === "SHELL") {
 							stats.push({
 								type: "RANGE_SHELL",
 								weapon: item,
@@ -143,7 +143,7 @@ export function getAttackStats(attacker: Loadout, defender: Unit) {
 					});
 				} else if (item.ammunitionType === "ROCKET") {
 					ammunitions.forEach((ammunition) => {
-						if (ammunition.ammunitionType === "BOLT") {
+						if (ammunition.ammunitionType === "ROCKET") {
 							stats.push({
 								type: "RANGE_ROCKET",
 								weapon: item,
