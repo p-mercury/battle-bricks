@@ -9,16 +9,34 @@ import type {
 } from "$lib/items";
 import type { Unit } from "$lib/units";
 
-interface RangeAttackStat {
-	type: "RANGE";
+export interface RangeBoltAction {
+	type: "RANGE_BOLT";
 	weapon: RangeWeapon;
-	ammunition: BoltAmmunition | ShellAmmunition | RocketAmmunition;
+	ammunition: BoltAmmunition[];
 	b1r: number;
 	b2?: number;
 	damage: string;
 }
 
-interface MeleeAttackStat {
+export interface RangeShellAction {
+	type: "RANGE_SHELL";
+	weapon: RangeWeapon;
+	ammunition: ShellAmmunition[];
+	b1r: number;
+	b2?: number;
+	damage: string;
+}
+
+export interface RangeRocketAction {
+	type: "RANGE_ROCKET";
+	weapon: RangeWeapon;
+	ammunition: RocketAmmunition[];
+	b1r: number;
+	b2?: number;
+	damage: string;
+}
+
+export interface MeleeAction {
 	type: "MELEE";
 	weapon: MeleeWeapon;
 	b1r: number;
@@ -79,25 +97,68 @@ export function getAttackStats(attacker: Loadout, defender: Unit) {
 	);
 
 	return [...attacker.unit.items, ...attacker.items].reduce<
-		(RangeAttackStat | MeleeAttackStat | Action)[]
+		(
+			| RangeBoltAction
+			| RangeShellAction
+			| RangeRocketAction
+			| MeleeAction
+			| Action
+		)[]
 	>((stats, item) => {
-		console.log(item);
 		if (item.type === "RANGE_WEAPON") {
 			if (attacker.unit.marksmanship) {
-				ammunitions.forEach((ammunition) => {
-					if (ammunition.ammunitionType === item.ammunitionType) {
-						stats.push({
-							type: "RANGE",
-							weapon: item,
-							ammunition: ammunition,
-							b1r: HitTable[`${attacker.unit.marksmanship}/${defender.size}`],
-							b2: PierceTable[
-								`${ammunition.armorPiercing}/${defender.armorClass}`
-							],
-							damage: ammunition.damage,
-						});
-					}
-				});
+				if (item.ammunitionType === "BOLT") {
+					ammunitions.forEach((ammunition) => {
+						if (ammunition.ammunitionType === "BOLT") {
+							stats.push({
+								type: "RANGE_BOLT",
+								weapon: item,
+								ammunition: [...attacker.unit.items, ...attacker.items].filter(
+									(a) => a.id === ammunition.id,
+								) as any,
+								b1r: HitTable[`${attacker.unit.marksmanship}/${defender.size}`],
+								b2: PierceTable[
+									`${ammunition.armorPiercing}/${defender.armorClass}`
+								],
+								damage: ammunition.damage,
+							});
+						}
+					});
+				} else if (item.ammunitionType === "SHELL") {
+					ammunitions.forEach((ammunition) => {
+						if (ammunition.ammunitionType === "BOLT") {
+							stats.push({
+								type: "RANGE_SHELL",
+								weapon: item,
+								ammunition: [...attacker.unit.items, ...attacker.items].filter(
+									(a) => a.id === ammunition.id,
+								) as any,
+								b1r: HitTable[`${attacker.unit.marksmanship}/${defender.size}`],
+								b2: PierceTable[
+									`${ammunition.armorPiercing}/${defender.armorClass}`
+								],
+								damage: ammunition.damage,
+							});
+						}
+					});
+				} else if (item.ammunitionType === "ROCKET") {
+					ammunitions.forEach((ammunition) => {
+						if (ammunition.ammunitionType === "BOLT") {
+							stats.push({
+								type: "RANGE_ROCKET",
+								weapon: item,
+								ammunition: [...attacker.unit.items, ...attacker.items].filter(
+									(a) => a.id === ammunition.id,
+								) as any,
+								b1r: HitTable[`${attacker.unit.marksmanship}/${defender.size}`],
+								b2: PierceTable[
+									`${ammunition.armorPiercing}/${defender.armorClass}`
+								],
+								damage: ammunition.damage,
+							});
+						}
+					});
+				}
 			}
 		} else if (item.type === "MELEE_WEAPON") {
 			if (attacker.unit.meleeAbility) {

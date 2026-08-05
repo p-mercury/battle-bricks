@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Item from "$lib/components/item.svelte";
 	import StatBar from "$lib/components/stat-bar.svelte";
 	import StatRow from "$lib/components/stat-row.svelte";
 	import StatTable from "$lib/components/stat-table.svelte";
@@ -88,13 +87,13 @@
 				{/if}
 			</StatTable>
 		</div>
-		<div class="items-wrapper">
+		<!-- <div class="items-wrapper">
 			<div class="items">
 				{#each loadout.items as item}
 					<Item {item} />
 				{/each}
 			</div>
-		</div>
+		</div> -->
 	</section>
 </li>
 
@@ -121,12 +120,12 @@
 
 	section {
 		display: grid;
-		width: 36.85rem;
+		width: 23.3rem;
 		grid-template:
-			"color color color" 1.25rem
-			"image info items" 8rem
-			"stats stats items" 1fr /
-			8rem auto auto;
+			"color color" 1.25rem
+			"image info" 8rem
+			"stats stats" 1fr /
+			8rem auto;
 		gap: 0.6rem;
 	}
 

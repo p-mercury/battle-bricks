@@ -95,7 +95,7 @@
 
 	section {
 		display: grid;
-		width: 21.9rem;
+		width: 23.3rem;
 		grid-template:
 			"color color" 1.25rem
 			"image info" 8rem
@@ -126,7 +126,7 @@
 	header {
 		grid-area: color;
 		margin: -0.5rem -0.5rem 0 -0.5rem;
-		background-color: darkgray;
+		background-color: #595d60;
 	}
 
 	.stats {
