@@ -33,15 +33,19 @@
 				ammunition = newAmmunition;
 			}
 		} else if (action.type === "RANGE_SHELL") {
-			const newAmmunition = action.ammunition.length;
-			if (newAmmunition != untrack(() => ammunition)) {
-				ammunition = newAmmunition;
-			}
+			const newAmmunition = action.ammunition.length + 1;
+			untrack(() => {
+				if (newAmmunition != ammunition) {
+					ammunition = newAmmunition;
+				}
+			});
 		} else if (action.type === "RANGE_ROCKET") {
-			const newAmmunition = action.ammunition.length;
-			if (newAmmunition != untrack(() => ammunition)) {
-				ammunition = newAmmunition;
-			}
+			const newAmmunition = action.ammunition.length + 1;
+			untrack(() => {
+				if (newAmmunition != ammunition) {
+					ammunition = newAmmunition;
+				}
+			});
 		}
 	});
 
