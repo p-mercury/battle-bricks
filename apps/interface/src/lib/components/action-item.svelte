@@ -113,7 +113,11 @@
 					</StatRow>
 					<StatRow>
 						Amunition:
-						<NumberInput bind:value={ammunition} min={0} max={2000} />
+						<NumberInput
+							bind:value={ammunition}
+							min={0}
+							max={action.ammunition.length}
+						/>
 					</StatRow>
 					<StatRow>
 						Range:
@@ -143,7 +147,11 @@
 					</StatRow>
 					<StatRow>
 						Amunition:
-						<NumberInput bind:value={ammunition} min={0} max={2000} />
+						<NumberInput
+							bind:value={ammunition}
+							min={0}
+							max={action.ammunition.length}
+						/>
 					</StatRow>
 					<StatRow>
 						Range:
