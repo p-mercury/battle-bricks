@@ -4,6 +4,7 @@ import type { Faction } from "$lib/faction";
 export interface Unit {
 	id: string;
 	faction: Faction[];
+	image?: string;
 	name: string;
 	description?: string;
 	price: number;
@@ -23,6 +24,7 @@ export const units: { [key: string]: Unit } = {
 	"UNIT#1": {
 		id: "UNIT#1",
 		faction: ["GALACTIC_REPUBLIC"],
+		image: "/unit-clone.png",
 		name: "Clone Trooper",
 		price: 160,
 		size: 1,
@@ -56,6 +58,7 @@ export const units: { [key: string]: Unit } = {
 	"UNIT#2": {
 		id: "UNIT#2",
 		faction: ["GALACTIC_REPUBLIC"],
+		image: "/unit-clone-specialist.png",
 		name: "Clone Specialist",
 		price: 190,
 		size: 1,
@@ -89,6 +92,7 @@ export const units: { [key: string]: Unit } = {
 	"UNIT#3": {
 		id: "UNIT#3",
 		faction: ["GALACTIC_REPUBLIC"],
+		image: "/fighter-tank.png",
 		name: "Fighter Tank",
 		price: 360,
 		size: 4,
@@ -129,6 +133,7 @@ export const units: { [key: string]: Unit } = {
 	"UNIT#4": {
 		id: "UNIT#4",
 		faction: ["SEPARATIST_ALLIANCE"],
+		image: "/unit-droid.png",
 		name: "Droid",
 		price: 50,
 		size: 1,
@@ -162,6 +167,7 @@ export const units: { [key: string]: Unit } = {
 	"UNIT#5": {
 		id: "UNIT#5",
 		faction: ["SEPARATIST_ALLIANCE"],
+		image: "/unit-super-battle-droid.png",
 		name: "Super Battle Droid",
 		price: 150,
 		size: 1,
@@ -197,6 +203,7 @@ export const units: { [key: string]: Unit } = {
 	"UNIT#6": {
 		id: "UNIT#6",
 		faction: ["SEPARATIST_ALLIANCE"],
+		image: "/octuptarra.png",
 		name: "Octuptarra",
 		price: 350,
 		size: 4,
@@ -237,6 +244,7 @@ export const units: { [key: string]: Unit } = {
 	"UNIT#7": {
 		id: "UNIT#7",
 		faction: ["SEPARATIST_ALLIANCE"],
+		image: "/armored-assault-tank.png",
 		name: "Armored Assault Tank",
 		price: 400,
 		size: 4,

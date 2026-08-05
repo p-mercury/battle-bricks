@@ -35,16 +35,20 @@
 			<button
 				onclick={() => {
 					game?.attacker.loadouts.forEach((_, i) => {
-						game!.attacker.loadouts[i].turnComplete = false;
+						if (game!.attacker.loadouts[i].unit.health) {
+							game!.attacker.loadouts[i].turnComplete = false;
+						}
 					});
-				}}>Clear Turn Complete</button
+				}}
 			>
+				Clear Turn Complete
+			</button>
 		</header>
 		<section class="squad">
 			<h2>Your Squad</h2>
 			<div>
 				<ul>
-					{#each game.attacker.loadouts as loadout, i}
+					{#each game.attacker.loadouts.toSorted((a, b) => Number(a.turnComplete) - Number(b.turnComplete)) as loadout, i}
 						<GameLoadoutItem
 							{loadout}
 							faction={game.attacker.faction}
@@ -62,6 +66,7 @@
 					{#each game.defender.units as unit}
 						<UnitItem
 							{unit}
+							faction={game.defender.faction}
 							selected={selectedDefender?.id === unit.id}
 							onclick={() => {
 								if (selectedDefender?.id !== unit.id) {
@@ -94,8 +99,8 @@
 			"header header header" 1rem
 			"squad defender attack" 1fr /
 			auto auto 1fr;
-		gap: 1.2rem;
-		padding: 1rem;
+		gap: 1rem;
+		padding: 0.5rem;
 		height: 100dvh;
 		width: 100dvw;
 	}

@@ -1,95 +1,146 @@
 <script lang="ts">
+	import StatBar from "$lib/components/stat-bar.svelte";
+	import StatRow from "$lib/components/stat-row.svelte";
+	import StatTable from "$lib/components/stat-table.svelte";
+	import type { Faction } from "$lib/faction";
 	import type { Unit } from "$lib/units";
-	import StatBar from "./stat-bar.svelte";
-	import StatRow from "./stat-row.svelte";
-	import StatTable from "./stat-table.svelte";
+	import Brick from "./brick.svelte";
 
 	let {
+		faction,
 		unit,
 		selected = false,
 		onclick = () => {},
-	}: { unit: Unit; selected?: Boolean; onclick?: () => void } = $props();
+	}: {
+		faction?: Faction;
+		unit: Unit;
+		selected?: Boolean;
+		onclick?: () => void;
+	} = $props();
 </script>
 
 <li {onclick} class:selected>
-	<h3>{unit.name}</h3>
-	<StatTable>
-		<StatRow>
-			Price:
-			<div>{unit.price}c</div>
-		</StatRow>
-		<StatRow>
-			Health:
-			<div>{unit.health}hp</div>
-		</StatRow>
-		<StatRow>
-			Speed:
-			<StatBar value={unit.speed} size={4} />
-		</StatRow>
-		<StatRow>
-			Size:
-			<StatBar value={unit.size} size={4} />
-		</StatRow>
-		<StatRow>
-			Armor Class:
-			<StatBar value={unit.armorClass} size={4} />
-		</StatRow>
-		{#if unit.marksmanship}
-			<StatRow>
-				Marksmanship:
-				<StatBar value={unit.marksmanship} size={4} red />
-			</StatRow>
+	<section>
+		<header>
+			<Brick />
+		</header>
+		{#if unit.image}
+			<img
+				alt={unit.name}
+				src={unit.image}
+				class:republic={faction === "GALACTIC_REPUBLIC"}
+				class:separatists={faction === "SEPARATIST_ALLIANCE"}
+			/>
 		{/if}
-		{#if unit.meleeAbility}
-			<StatRow>
-				Melee Ability:
-				<StatBar value={unit.meleeAbility} size={4} red />
-			</StatRow>
-		{/if}
-	</StatTable>
+		<div class="info">
+			<h3>{unit.name}</h3>
+			<StatTable>
+				<StatRow>
+					Health:
+					<div>{unit.health}hp</div>
+				</StatRow>
+				<StatRow>
+					Speed:
+					<StatBar value={unit.speed} size={4} />
+				</StatRow>
+				<StatRow>
+					Size:
+					<StatBar value={unit.size} size={4} />
+				</StatRow>
+			</StatTable>
+		</div>
+		<div class="stats">
+			<StatTable>
+				<StatRow>
+					Armor Class:
+					<StatBar value={unit.armorClass} size={4} />
+				</StatRow>
+				{#if unit.marksmanship}
+					<StatRow>
+						Marksmanship:
+						<StatBar value={unit.marksmanship} size={4} red />
+					</StatRow>
+				{/if}
+				{#if unit.meleeAbility}
+					<StatRow>
+						Melee Ability:
+						<StatBar value={unit.meleeAbility} size={4} red />
+					</StatRow>
+				{/if}
+			</StatTable>
+		</div>
+	</section>
 </li>
 
 <style lang="scss">
 	@use "sass:color";
 
 	li {
-		box-sizing: border-box;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		margin: 0;
-		box-shadow: inset 0 0 0 4px #636669;
-		border-radius: 0.5rem;
+		all: unset;
+		background: white;
+		border-radius: 0.8rem;
+		padding: 0.5rem;
 		overflow: hidden;
+		box-shadow:
+			0 1px 2px rgba(0, 0, 0, 0.1),
+			0 4px 8px rgba(0, 0, 0, 0.14),
+			0 8px 16px rgba(0, 0, 0, 0.12);
 		cursor: pointer;
-		overflow: hidden;
-
-		&:hover {
-			box-shadow: inset 0 0 0 4px color.adjust(#636669, $lightness: -5%);
-
-			h3 {
-				background-color: color.adjust(#636669, $lightness: -5%);
-			}
-		}
 
 		&.selected {
-			box-shadow: inset 0 0 0 4px #2452b6;
-
-			h3 {
-				background-color: #2452b6;
-			}
+			outline: 4px solid #2388ff;
+			outline-offset: 2px;
 		}
 	}
 
-	h3 {
-		color: white;
-		box-sizing: border-box;
-		margin: 0;
-		padding: 0;
-		font-size: 1.1rem;
-		font-weight: 600;
-		background-color: #636669;
+	section {
+		display: grid;
+		width: 21.9rem;
+		grid-template:
+			"color color" 1.25rem
+			"image info" 8rem
+			"stats stats" 1fr /
+			8rem auto;
+		gap: 0.6rem;
+	}
+
+	img {
 		width: 100%;
-		padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+		height: 100%;
+		grid-area: image;
+		object-fit: contain;
+		border-radius: 0.8rem;
+		padding: 0.4rem;
+		background: linear-gradient(135deg, #1c1c1c, #4f424f);
+		box-sizing: border-box;
+
+		&.republic {
+			background: linear-gradient(135deg, #1c1c1c, #4f424f);
+		}
+
+		&.separatists {
+			background: linear-gradient(135deg, #2b1515, #2d3f54);
+		}
+	}
+
+	header {
+		grid-area: color;
+		margin: -0.5rem -0.5rem 0 -0.5rem;
+		background-color: darkgray;
+	}
+
+	.stats {
+		grid-area: stats;
+	}
+
+	.info {
+		grid-area: info;
+
+		h3 {
+			margin: 0;
+			padding: 0 0 0 0.2rem;
+			font-size: 1.2rem;
+			font-weight: 600;
+		}
 	}
 </style>
