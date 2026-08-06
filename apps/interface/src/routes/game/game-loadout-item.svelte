@@ -21,87 +21,92 @@
 	} = $props();
 </script>
 
-<li {onclick} class:selected>
-	<section>
-		<header onclick={(e) => e.stopPropagation()}>
-			<SelectColor bind:value={loadout.color} />
-		</header>
-		{#if loadout.image}
-			<img
-				alt={loadout.name}
-				src={loadout.image}
-				class:republic={faction === "GALACTIC_REPUBLIC"}
-				class:separatists={faction === "SEPARATIST_ALLIANCE"}
-			/>
-		{/if}
-		<div class="info">
-			<h3>{loadout.name}</h3>
-			<StatTable>
+<section {onclick} class:selected>
+	<header onclick={(e) => e.stopPropagation()}>
+		<SelectColor bind:value={loadout.color} />
+	</header>
+	{#if loadout.image}
+		<img
+			alt={loadout.name}
+			src={loadout.image}
+			class:republic={faction === "GALACTIC_REPUBLIC"}
+			class:separatists={faction === "SEPARATIST_ALLIANCE"}
+		/>
+	{/if}
+	<div class="info">
+		<h3>{loadout.name}</h3>
+		<StatTable>
+			<StatRow>
+				Turn:
+				<Switcher
+					bind:value={loadout.turnComplete}
+					onclick={(event) => event.stopPropagation()}
+				/>
+			</StatRow>
+			<StatRow>
+				Health:
+				<NumberInput bind:value={loadout.unit.health} />
+			</StatRow>
+			{#if "inCover" in loadout}
 				<StatRow>
-					Turn:
+					In Cover:
 					<Switcher
-						bind:value={loadout.turnComplete}
+						bind:value={loadout.inCover}
 						onclick={(event) => event.stopPropagation()}
 					/>
 				</StatRow>
+			{/if}
+		</StatTable>
+	</div>
+	<div class="stats">
+		<StatTable>
+			<StatRow>
+				Speed:
+				<StatBar value={loadout.unit.speed} size={4} />
+			</StatRow>
+			<StatRow>
+				Size:
+				<StatBar value={loadout.unit.size} size={4} />
+			</StatRow>
+			<StatRow>
+				Armor Class:
+				<StatBar value={loadout.unit.armorClass} size={4} />
+			</StatRow>
+			{#if loadout.unit.marksmanship}
 				<StatRow>
-					Health:
-					<NumberInput bind:value={loadout.unit.health} />
+					Marksmanship:
+					<StatBar value={loadout.unit.marksmanship} size={4} red />
 				</StatRow>
-				{#if "inCover" in loadout}
-					<StatRow>
-						In Cover:
-						<Switcher
-							bind:value={loadout.inCover}
-							onclick={(event) => event.stopPropagation()}
-						/>
-					</StatRow>
-				{/if}
-			</StatTable>
-		</div>
-		<div class="stats">
-			<StatTable>
+			{/if}
+			{#if loadout.unit.meleeAbility}
 				<StatRow>
-					Speed:
-					<StatBar value={loadout.unit.speed} size={4} />
+					Melee Ability:
+					<StatBar value={loadout.unit.meleeAbility} size={4} red />
 				</StatRow>
-				<StatRow>
-					Size:
-					<StatBar value={loadout.unit.size} size={4} />
-				</StatRow>
-				<StatRow>
-					Armor Class:
-					<StatBar value={loadout.unit.armorClass} size={4} />
-				</StatRow>
-				{#if loadout.unit.marksmanship}
-					<StatRow>
-						Marksmanship:
-						<StatBar value={loadout.unit.marksmanship} size={4} red />
-					</StatRow>
-				{/if}
-				{#if loadout.unit.meleeAbility}
-					<StatRow>
-						Melee Ability:
-						<StatBar value={loadout.unit.meleeAbility} size={4} red />
-					</StatRow>
-				{/if}
-			</StatTable>
-		</div>
-		<!-- <div class="items-wrapper">
+			{/if}
+		</StatTable>
+	</div>
+	<!-- <div class="items-wrapper">
 			<div class="items">
 				{#each loadout.items as item}
 					<Item {item} />
 				{/each}
 			</div>
 		</div> -->
-	</section>
-</li>
+</section>
 
 <style lang="scss">
 	@use "sass:color";
 
-	li {
-		all: unset;
+	section {
+		display: grid;
+		width: 21.8rem;
+		grid-template:
+			"color color" 1.25rem
+			"image info" 8rem
+			"stats stats" 1fr /
+			8rem auto;
+		gap: 0.6rem;
 		background: white;
 		border-radius: 0.8rem;
 		padding: 0.5rem;
@@ -116,17 +121,6 @@
 			outline: 4px solid #2388ff;
 			outline-offset: 2px;
 		}
-	}
-
-	section {
-		display: grid;
-		width: 23.3rem;
-		grid-template:
-			"color color" 1.25rem
-			"image info" 8rem
-			"stats stats" 1fr /
-			8rem auto;
-		gap: 0.6rem;
 	}
 
 	img {

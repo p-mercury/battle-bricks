@@ -6,6 +6,9 @@
 	import GameLoadoutItem from "./game-loadout-item.svelte";
 	import ActionItem from "$lib/components/action-item.svelte";
 	import { getActions } from "$lib/get-actions";
+	import { flip } from "svelte/animate";
+	import { quintInOut, quintOut } from "svelte/easing";
+	import { fade } from "svelte/transition";
 
 	let game = $state<Game>();
 	let selectedDefender = $state<Unit>();
@@ -55,19 +58,21 @@
 			<h2>Your Squad</h2>
 			<div>
 				<ul>
-					{#each Object.values(game!.attacker.loadouts).toSorted((a, b) => Number(a.turnComplete) - Number(b.turnComplete)) as loadout}
-						<GameLoadoutItem
-							{loadout}
-							faction={game.attacker.faction}
-							selected={loadout.id === selectedAttacker}
-							onclick={() => {
-								if (selectedAttacker !== loadout.id) {
-									selectedAttacker = loadout.id;
-								} else {
-									selectedAttacker = undefined;
-								}
-							}}
-						/>
+					{#each Object.values(game!.attacker.loadouts).toSorted((a, b) => Number(a.turnComplete) - Number(b.turnComplete)) as loadout (loadout.id)}
+						<li animate:flip={{ duration: 800, easing: quintOut }}>
+							<GameLoadoutItem
+								{loadout}
+								faction={game.attacker.faction}
+								selected={loadout.id === selectedAttacker}
+								onclick={() => {
+									if (selectedAttacker !== loadout.id) {
+										selectedAttacker = loadout.id;
+									} else {
+										selectedAttacker = undefined;
+									}
+								}}
+							/>
+						</li>
 					{/each}
 				</ul>
 			</div>
@@ -76,19 +81,21 @@
 			<h2>Enemy</h2>
 			<div>
 				<ul>
-					{#each game.defender.units as unit}
-						<UnitItem
-							{unit}
-							faction={game.defender.faction}
-							selected={selectedDefender?.id === unit.id}
-							onclick={() => {
-								if (selectedDefender?.id !== unit.id) {
-									selectedDefender = unit;
-								} else {
-									selectedDefender = undefined;
-								}
-							}}
-						/>
+					{#each game.defender.units as unit (unit.id)}
+						<li animate:flip={{ duration: 800, easing: quintOut }}>
+							<UnitItem
+								{unit}
+								faction={game.defender.faction}
+								selected={selectedDefender?.id === unit.id}
+								onclick={() => {
+									if (selectedDefender?.id !== unit.id) {
+										selectedDefender = unit;
+									} else {
+										selectedDefender = undefined;
+									}
+								}}
+							/>
+						</li>
 					{/each}
 				</ul>
 			</div>
@@ -98,7 +105,9 @@
 			<div>
 				<ul>
 					{#each actions as action}
-						<ActionItem {action} />
+						<li in:fade={{ duration: 600, easing: quintInOut }}>
+							<ActionItem {action} />
+						</li>
 					{/each}
 				</ul>
 			</div>
@@ -222,5 +231,9 @@
 		max-height: 100%;
 		overflow: scroll;
 		padding: 1rem;
+	}
+
+	li {
+		all: unset;
 	}
 </style>

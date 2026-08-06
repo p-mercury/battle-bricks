@@ -37,7 +37,7 @@
 		box-sizing: border-box;
 		display: flex;
 		flex-direction: row;
-		overflow: hidden;
+		overflow: visible;
 		gap: 0.2rem;
 	}
 
@@ -51,5 +51,8 @@
 	img {
 		height: 1.1rem;
 		width: 1.1rem;
+		filter: drop-shadow(0 0.16rem 0.1rem rgba(0, 0, 0, 0.55))
+			drop-shadow(0 0.04rem 0.03rem rgba(0, 0, 0, 0.3))
+			drop-shadow(0 0.02rem 0.02rem rgba(255, 255, 255, 0.65));
 	}
 </style>

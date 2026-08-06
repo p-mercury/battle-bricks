@@ -68,145 +68,142 @@
 	});
 </script>
 
-<li>
-	<section>
-		<header>
-			<Brick />
-		</header>
-		<div class="info">
-			{#if action.type === "RANGE_BOLT"}
-				<h3>{action.weapon.name} with {action.ammunition[0].name}</h3>
-				<StatTable>
-					<StatRow>
-						Fire Rate:
-						<span>{action.weapon.fireRate}</span>
-					</StatRow>
-					<StatRow>
-						Amunition:
-						<NumberInput bind:value={ammunition} min={0} max={2000} />
-					</StatRow>
-					<StatRow>
-						Range:
-						<span>{action.weapon.range.min}-{action.weapon.range.max}m</span>
-					</StatRow>
-					<StatRow>
-						To hit:
-						<span>≥{action.b1r}</span>
-					</StatRow>
-					{#if action.b2}
-						<StatRow>
-							To pierce armor:
-							<span>≥{action.b2}</span>
-						</StatRow>
-					{/if}
-					<StatRow>
-						Damage:
-						<span>{action.damage}</span>
-					</StatRow>
-				</StatTable>
-			{:else if action.type === "RANGE_SHELL"}
-				<h3>{action.weapon.name} with {action.ammunition[0].name}</h3>
-				<StatTable>
-					<StatRow>
-						Fire Rate:
-						<span>{action.weapon.fireRate}</span>
-					</StatRow>
-					<StatRow>
-						Amunition:
-						<NumberInput
-							bind:value={ammunition}
-							min={0}
-							max={action.ammunition.length}
-						/>
-					</StatRow>
-					<StatRow>
-						Range:
-						<span>{action.weapon.range.min}-{action.weapon.range.max}m</span>
-					</StatRow>
-					<StatRow>
-						To hit:
-						<span>≥{action.b1r}</span>
-					</StatRow>
-					{#if action.b2}
-						<StatRow>
-							To pierce armor:
-							<span>≥{action.b2}</span>
-						</StatRow>
-					{/if}
-					<StatRow>
-						Damage:
-						<span>{action.damage}</span>
-					</StatRow>
-				</StatTable>
-			{:else if action.type === "RANGE_ROCKET"}
-				<h3>{action.weapon.name} with {action.ammunition[0].name}</h3>
-				<StatTable>
-					<StatRow>
-						Fire Rate:
-						<span>{action.weapon.fireRate}</span>
-					</StatRow>
-					<StatRow>
-						Amunition:
-						<NumberInput
-							bind:value={ammunition}
-							min={0}
-							max={action.ammunition.length}
-						/>
-					</StatRow>
-					<StatRow>
-						Range:
-						<span>{action.weapon.range.min}-{action.weapon.range.max}m</span>
-					</StatRow>
-					<StatRow>
-						To hit:
-						<span>≥{action.b1r}</span>
-					</StatRow>
-					{#if action.b2}
-						<StatRow>
-							To pierce armor:
-							<span>≥{action.b2}</span>
-						</StatRow>
-					{/if}
-					<StatRow>
-						Damage:
-						<span>{action.damage}</span>
-					</StatRow>
-				</StatTable>
-			{:else if action.type === "MELEE"}
-				<h3>{action.weapon.name}</h3>
-				<StatTable>
-					<StatRow>
-						Attack Speed:
-						<span>{action.weapon.attackSpeed}</span>
-					</StatRow>
-					<StatRow>
-						To hit:
-						<span>≥{action.b1r}</span>
-					</StatRow>
+<section>
+	<header>
+		<Brick />
+	</header>
+	<div class="info">
+		{#if action.type === "RANGE_BOLT"}
+			<h3>{action.weapon.name} with {action.ammunition[0].name}</h3>
+			<StatTable>
+				<StatRow>
+					Fire Rate:
+					<span>{action.weapon.fireRate}</span>
+				</StatRow>
+				<StatRow>
+					Amunition:
+					<NumberInput bind:value={ammunition} min={0} max={2000} />
+				</StatRow>
+				<StatRow>
+					Range:
+					<span>{action.weapon.range.min}-{action.weapon.range.max}m</span>
+				</StatRow>
+				<StatRow>
+					To hit:
+					<span>≥{action.b1r}</span>
+				</StatRow>
+				{#if action.b2}
 					<StatRow>
 						To pierce armor:
 						<span>≥{action.b2}</span>
 					</StatRow>
+				{/if}
+				<StatRow>
+					Damage:
+					<span>{action.damage}</span>
+				</StatRow>
+			</StatTable>
+		{:else if action.type === "RANGE_SHELL"}
+			<h3>{action.weapon.name} with {action.ammunition[0].name}</h3>
+			<StatTable>
+				<StatRow>
+					Fire Rate:
+					<span>{action.weapon.fireRate}</span>
+				</StatRow>
+				<StatRow>
+					Amunition:
+					<NumberInput
+						bind:value={ammunition}
+						min={0}
+						max={action.ammunition.length}
+					/>
+				</StatRow>
+				<StatRow>
+					Range:
+					<span>{action.weapon.range.min}-{action.weapon.range.max}m</span>
+				</StatRow>
+				<StatRow>
+					To hit:
+					<span>≥{action.b1r}</span>
+				</StatRow>
+				{#if action.b2}
 					<StatRow>
-						Damage:
-						<span>{action.damage}</span>
+						To pierce armor:
+						<span>≥{action.b2}</span>
 					</StatRow>
-				</StatTable>
-			{:else if action.type === "ACTION"}
-				<h3>{action.name}</h3>
-				<div>
-					<div>{action.description}</div>
-				</div>
-			{/if}
-		</div>
-	</section>
-</li>
+				{/if}
+				<StatRow>
+					Damage:
+					<span>{action.damage}</span>
+				</StatRow>
+			</StatTable>
+		{:else if action.type === "RANGE_ROCKET"}
+			<h3>{action.weapon.name} with {action.ammunition[0].name}</h3>
+			<StatTable>
+				<StatRow>
+					Fire Rate:
+					<span>{action.weapon.fireRate}</span>
+				</StatRow>
+				<StatRow>
+					Amunition:
+					<NumberInput
+						bind:value={ammunition}
+						min={0}
+						max={action.ammunition.length}
+					/>
+				</StatRow>
+				<StatRow>
+					Range:
+					<span>{action.weapon.range.min}-{action.weapon.range.max}m</span>
+				</StatRow>
+				<StatRow>
+					To hit:
+					<span>≥{action.b1r}</span>
+				</StatRow>
+				{#if action.b2}
+					<StatRow>
+						To pierce armor:
+						<span>≥{action.b2}</span>
+					</StatRow>
+				{/if}
+				<StatRow>
+					Damage:
+					<span>{action.damage}</span>
+				</StatRow>
+			</StatTable>
+		{:else if action.type === "MELEE"}
+			<h3>{action.weapon.name}</h3>
+			<StatTable>
+				<StatRow>
+					Attack Speed:
+					<span>{action.weapon.attackSpeed}</span>
+				</StatRow>
+				<StatRow>
+					To hit:
+					<span>≥{action.b1r}</span>
+				</StatRow>
+				<StatRow>
+					To pierce armor:
+					<span>≥{action.b2}</span>
+				</StatRow>
+				<StatRow>
+					Damage:
+					<span>{action.damage}</span>
+				</StatRow>
+			</StatTable>
+		{:else if action.type === "ACTION"}
+			<h3>{action.name}</h3>
+			<div>
+				<div>{action.description}</div>
+			</div>
+		{/if}
+	</div>
+</section>
 
 <style lang="scss">
 	@use "sass:color";
 
-	li {
-		all: unset;
+	section {
 		background: white;
 		border-radius: 0.8rem;
 		padding: 0.5rem;
@@ -216,9 +213,6 @@
 			0 4px 8px rgba(0, 0, 0, 0.14),
 			0 8px 16px rgba(0, 0, 0, 0.12);
 		cursor: pointer;
-	}
-
-	section {
 		display: grid;
 		grid-template:
 			"info color" auto /

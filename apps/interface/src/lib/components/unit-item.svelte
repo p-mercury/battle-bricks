@@ -19,64 +19,61 @@
 	} = $props();
 </script>
 
-<li {onclick} class:selected>
-	<section>
-		<header>
-			<Brick />
-		</header>
-		{#if unit.image}
-			<img
-				alt={unit.name}
-				src={unit.image}
-				class:republic={faction === "GALACTIC_REPUBLIC"}
-				class:separatists={faction === "SEPARATIST_ALLIANCE"}
-			/>
-		{/if}
-		<div class="info">
-			<h3>{unit.name}</h3>
-			<StatTable>
+<section {onclick} class:selected>
+	<header>
+		<Brick />
+	</header>
+	{#if unit.image}
+		<img
+			alt={unit.name}
+			src={unit.image}
+			class:republic={faction === "GALACTIC_REPUBLIC"}
+			class:separatists={faction === "SEPARATIST_ALLIANCE"}
+		/>
+	{/if}
+	<div class="info">
+		<h3>{unit.name}</h3>
+		<StatTable>
+			<StatRow>
+				Health:
+				<div>{unit.health}hp</div>
+			</StatRow>
+			<StatRow>
+				Speed:
+				<StatBar value={unit.speed} size={4} />
+			</StatRow>
+			<StatRow>
+				Size:
+				<StatBar value={unit.size} size={4} />
+			</StatRow>
+		</StatTable>
+	</div>
+	<div class="stats">
+		<StatTable>
+			<StatRow>
+				Armor Class:
+				<StatBar value={unit.armorClass} size={4} />
+			</StatRow>
+			{#if unit.marksmanship}
 				<StatRow>
-					Health:
-					<div>{unit.health}hp</div>
+					Marksmanship:
+					<StatBar value={unit.marksmanship} size={4} red />
 				</StatRow>
+			{/if}
+			{#if unit.meleeAbility}
 				<StatRow>
-					Speed:
-					<StatBar value={unit.speed} size={4} />
+					Melee Ability:
+					<StatBar value={unit.meleeAbility} size={4} red />
 				</StatRow>
-				<StatRow>
-					Size:
-					<StatBar value={unit.size} size={4} />
-				</StatRow>
-			</StatTable>
-		</div>
-		<div class="stats">
-			<StatTable>
-				<StatRow>
-					Armor Class:
-					<StatBar value={unit.armorClass} size={4} />
-				</StatRow>
-				{#if unit.marksmanship}
-					<StatRow>
-						Marksmanship:
-						<StatBar value={unit.marksmanship} size={4} red />
-					</StatRow>
-				{/if}
-				{#if unit.meleeAbility}
-					<StatRow>
-						Melee Ability:
-						<StatBar value={unit.meleeAbility} size={4} red />
-					</StatRow>
-				{/if}
-			</StatTable>
-		</div>
-	</section>
-</li>
+			{/if}
+		</StatTable>
+	</div>
+</section>
 
 <style lang="scss">
 	@use "sass:color";
 
-	li {
-		all: unset;
+	section {
 		background: white;
 		border-radius: 0.8rem;
 		padding: 0.5rem;
@@ -86,16 +83,12 @@
 			0 4px 8px rgba(0, 0, 0, 0.14),
 			0 8px 16px rgba(0, 0, 0, 0.12);
 		cursor: pointer;
-
 		&.selected {
 			outline: 4px solid #2388ff;
 			outline-offset: 2px;
 		}
-	}
-
-	section {
 		display: grid;
-		width: 23.3rem;
+		width: 21.8rem;
 		grid-template:
 			"color color" 1.25rem
 			"image info" 8rem
