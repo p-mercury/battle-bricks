@@ -13,7 +13,7 @@
 	let loadouts = $state<{ id: string; loadout: Loadout }[]>([]);
 	let squad = $state<{ id: string; loadout: Loadout }[]>([]);
 	let budget = $derived(
-		squad.reduce((sum, item) => sum - item.loadout.price, 1400),
+		squad.reduce((sum, item) => sum - item.loadout.price, 1500),
 	);
 	let name = $state("");
 
@@ -47,6 +47,8 @@
 			}
 		}
 	});
+
+	$inspect(loadouts);
 </script>
 
 <div class="wrapper">
@@ -112,7 +114,7 @@
 				if (
 					event.detail.items.reduce(
 						(sum, item) => sum - item.loadout.price,
-						1400,
+						1500,
 					) >= 0
 				) {
 					squad = event.detail.items;
@@ -123,7 +125,7 @@
 				const next = items.reduce((sum, item) => sum + item.loadout.price, 0);
 				const prev = squad.reduce((sum, item) => sum + item.loadout.price, 0);
 
-				if (next <= 1400 || next < prev) {
+				if (next <= 1500 || next < prev) {
 					squad = items;
 				} else {
 					squad = [...squad];

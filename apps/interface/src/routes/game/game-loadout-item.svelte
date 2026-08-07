@@ -35,6 +35,8 @@
 	{/if}
 	<div class="info">
 		<h3>{loadout.name}</h3>
+	</div>
+	<div class="stats">
 		<StatTable>
 			<StatRow>
 				Turn:
@@ -56,10 +58,6 @@
 					/>
 				</StatRow>
 			{/if}
-		</StatTable>
-	</div>
-	<div class="stats">
-		<StatTable>
 			<StatRow>
 				Speed:
 				<StatBar value={loadout.unit.speed} size={4} />
@@ -100,16 +98,16 @@
 
 	section {
 		display: grid;
-		width: 21.8rem;
+		width: 21.55rem;
 		grid-template:
 			"color color" 1.25rem
-			"image info" 8rem
-			"stats stats" 1fr /
+			"image stats" 8rem
+			"info stats" auto /
 			8rem auto;
-		gap: 0.6rem;
+		gap: 0.4rem;
 		background: white;
 		border-radius: 0.8rem;
-		padding: 0.5rem;
+		padding: 0.6rem;
 		overflow: hidden;
 		box-shadow:
 			0 1px 2px rgba(0, 0, 0, 0.1),
@@ -144,11 +142,12 @@
 
 	header {
 		grid-area: color;
-		margin: -0.5rem -0.5rem 0 -0.5rem;
+		margin: -0.6rem -0.6rem 0 -0.6rem;
 	}
 
 	.stats {
 		grid-area: stats;
+		padding-left: 0.3rem;
 	}
 
 	.info {
@@ -156,7 +155,7 @@
 
 		h3 {
 			margin: 0;
-			padding: 0 0 0 0.2rem;
+			padding: 0;
 			font-size: 1.2rem;
 			font-weight: 600;
 		}

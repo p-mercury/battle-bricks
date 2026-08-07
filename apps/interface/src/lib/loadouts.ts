@@ -75,9 +75,16 @@ const loadoutConfigs: { [key: string]: LoadoutConfig } = {
 	},
 	"LOADOUT#7": {
 		id: "LOADOUT#7",
+		image: "/dwarf-spider-droid.png",
+		name: "Dwarf Spider Droid",
+		unit: "UNIT#6",
+		items: ["BOLT_AMMUNITION#1", "BOLT_AMMUNITION#1"],
+	},
+	"LOADOUT#8": {
+		id: "LOADOUT#8",
 		image: "/octuptarra.png",
 		name: "Octuptarra",
-		unit: "UNIT#6",
+		unit: "UNIT#7",
 		items: [
 			"BOLT_AMMUNITION#1",
 			"BOLT_AMMUNITION#1",
@@ -86,11 +93,11 @@ const loadoutConfigs: { [key: string]: LoadoutConfig } = {
 			"ROCKET_AMMUNITION#2",
 		],
 	},
-	"LOADOUT#8": {
-		id: "LOADOUT#8",
+	"LOADOUT#9": {
+		id: "LOADOUT#9",
 		image: "/armored-assault-tank.png",
 		name: "Armored Assault Tank",
-		unit: "UNIT#7",
+		unit: "UNIT#8",
 		items: [
 			"BOLT_AMMUNITION#1",
 			"BOLT_AMMUNITION#1",

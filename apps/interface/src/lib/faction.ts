@@ -7,14 +7,14 @@ export type Faction =
 export function getFactionName(t: Faction): string {
 	switch (t) {
 		case "GALACTIC_REPUBLIC":
-			return /* @wc-ignore */ "Galactic Republic";
+			return "Galactic Republic";
 		case "REBEL_ALLIANCE":
-			return /* @wc-ignore */ "Rebel Alliance";
+			return "Rebel Alliance";
 		case "SEPARATIST_ALLIANCE":
-			return /* @wc-ignore */ "Separatist Alliance";
+			return "Separatist Alliance";
 		case "GALACTIC_EMPIRE":
-			return /* @wc-ignore */ "Galactic Empire";
+			return "Galactic Empire";
 		default:
-			return /* @wc-include */ "Unknown";
+			return "Unknown";
 	}
 }

@@ -206,7 +206,7 @@
 	section {
 		background: white;
 		border-radius: 0.8rem;
-		padding: 0.5rem;
+		padding: 0.6rem;
 		overflow: hidden;
 		box-shadow:
 			0 1px 2px rgba(0, 0, 0, 0.1),
@@ -222,16 +222,17 @@
 
 	header {
 		grid-area: color;
-		margin: -0.5rem -0.5rem -0.5rem 0;
+		margin: -0.6rem -0.6rem -0.6rem 0;
 		background-color: #595d60;
 	}
 
 	.info {
 		grid-area: info;
+		padding: 0.1rem;
 
 		h3 {
 			margin: 0;
-			padding: 0 0 0 0.2rem;
+			padding: 0 0 0.5rem 0;
 			font-size: 1.1rem;
 			font-weight: 600;
 		}

@@ -23,7 +23,7 @@
 			</StatRow>
 			<StatRow>
 				Price:
-				<div>{burdget}/1400c</div>
+				<div>{burdget}/1500c</div>
 			</StatRow>
 			<StatRow>
 				Units:
