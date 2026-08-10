@@ -124,7 +124,7 @@ export const units: { [key: string]: Unit } = {
 				ammunitionType: "ROCKET",
 				range: {
 					min: 6,
-					max: 12,
+					max: 14,
 				},
 				fireRate: 2,
 			},
@@ -222,9 +222,9 @@ export const units: { [key: string]: Unit } = {
 				ammunitionType: "BOLT",
 				range: {
 					min: 2,
-					max: 10,
+					max: 14,
 				},
-				fireRate: 8,
+				fireRate: 6,
 			},
 			{
 				id: "INTERNAL#2",
@@ -271,7 +271,7 @@ export const units: { [key: string]: Unit } = {
 				ammunitionType: "ROCKET",
 				range: {
 					min: 6,
-					max: 12,
+					max: 14,
 				},
 				fireRate: 1,
 			},
@@ -325,7 +325,7 @@ export const units: { [key: string]: Unit } = {
 				ammunitionType: "ROCKET",
 				range: {
 					min: 6,
-					max: 12,
+					max: 14,
 				},
 				fireRate: 2,
 			},

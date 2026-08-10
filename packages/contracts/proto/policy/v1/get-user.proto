@@ -1,0 +1,12 @@
+syntax = "proto3";
+package policy.v1;
+
+import "policy/v1/user.proto";
+
+option go_package = "contracts/dist/policy/v1;policy";
+
+message GetUserRequest {}
+
+message GetUserResponse {
+  User user = 1;
+}

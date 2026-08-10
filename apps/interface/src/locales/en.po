@@ -1165,8 +1165,8 @@ msgstr "Select Platform"
 
 #: ../../packages/ui-web/dist/lib/services/catalogue/product-status.svelte.js
 #: ../../packages/ui-web/dist/lib/services/custom-parts/form-status.svelte.js
-#: ../../packages/ui-web/dist/lib/services/identity-customer/organisation-status.svelte.js
-#: ../../packages/ui-web/dist/lib/services/identity-customer/user-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity/organisation-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity/user-status.svelte.js
 #: ../../packages/ui-web/dist/lib/services/identity-staff/user-status.svelte.js
 #: ../../packages/ui-web/dist/lib/services/purchasing/order-status.svelte.js
 msgctxt "status"
@@ -1175,8 +1175,8 @@ msgstr "Deleted"
 
 #: ../../packages/ui-web/dist/lib/services/catalogue/product-status.svelte.js
 #: ../../packages/ui-web/dist/lib/services/custom-parts/form-status.svelte.js
-#: ../../packages/ui-web/dist/lib/services/identity-customer/organisation-status.svelte.js
-#: ../../packages/ui-web/dist/lib/services/identity-customer/user-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity/organisation-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity/user-status.svelte.js
 #: ../../packages/ui-web/dist/lib/services/identity-staff/user-status.svelte.js
 msgctxt "status"
 msgid "Active"
@@ -1190,9 +1190,9 @@ msgstr "Unlisted"
 
 #: ../../packages/ui-web/dist/lib/services/catalogue/product-status.svelte.js
 #: ../../packages/ui-web/dist/lib/services/custom-parts/form-status.svelte.js
-#: ../../packages/ui-web/dist/lib/services/identity-customer/organisation-status.svelte.js
-#: ../../packages/ui-web/dist/lib/services/identity-customer/platform-status.svelte.js
-#: ../../packages/ui-web/dist/lib/services/identity-customer/user-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity/organisation-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity/platform-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity/user-status.svelte.js
 #: ../../packages/ui-web/dist/lib/services/identity-staff/user-status.svelte.js
 #: ../../packages/ui-web/dist/lib/services/purchasing/order-status.svelte.js
 msgctxt "status"
@@ -1211,8 +1211,8 @@ msgstr "Training"
 #: ../../packages/ui-web/dist/lib/services/common/currency.svelte.js
 #: ../../packages/ui-web/dist/lib/services/common/language.svelte.js
 #: ../../packages/ui-web/dist/lib/services/custom-parts/equipment-type.svelte.js
-#: ../../packages/ui-web/dist/lib/services/identity-customer/purchasing-integration.svelte.js
-#: ../../packages/ui-web/dist/lib/services/identity-customer/sales-integration.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity/purchasing-integration.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity/sales-integration.svelte.js
 #: ../../packages/ui-web/dist/lib/services/zoho-customer/connection-status.svelte.js
 msgid "Unknown"
 msgstr "Unknown"
@@ -1225,34 +1225,34 @@ msgstr "EUR"
 msgid "USD"
 msgstr "USD"
 
-#: ../../packages/ui-web/dist/lib/services/identity-customer/user-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity/user-status.svelte.js
 #: ../../packages/ui-web/dist/lib/services/identity-staff/user-status.svelte.js
 msgctxt "status"
 msgid "Invited"
 msgstr "Invited"
 
-#: ../../packages/ui-web/dist/lib/services/identity-customer/user-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity/user-status.svelte.js
 #: ../../packages/ui-web/dist/lib/services/identity-staff/user-status.svelte.js
 msgctxt "status"
 msgid "Deactivated"
 msgstr "Deactivated"
 
-#: ../../packages/ui-web/dist/lib/services/identity-customer/platform-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity/platform-status.svelte.js
 msgctxt "status"
 msgid "Disabled"
 msgstr "Disabled"
 
-#: ../../packages/ui-web/dist/lib/services/identity-customer/platform-status.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity/platform-status.svelte.js
 msgctxt "status"
 msgid "Enabled"
 msgstr "Enabled"
 
-#: ../../packages/ui-web/dist/lib/services/identity-customer/purchasing-integration.svelte.js
-#: ../../packages/ui-web/dist/lib/services/identity-customer/sales-integration.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity/purchasing-integration.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity/sales-integration.svelte.js
 msgid "None"
 msgstr "None"
 
-#: ../../packages/ui-web/dist/lib/services/identity-customer/sales-integration.svelte.js
+#: ../../packages/ui-web/dist/lib/services/identity/sales-integration.svelte.js
 msgid "ZOHO CRM"
 msgstr "ZOHO CRM"
 

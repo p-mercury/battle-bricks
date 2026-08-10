@@ -1,0 +1,20 @@
+syntax = "proto3";
+package identity.events;
+
+import "common/v1/correlation.proto";
+import "eventregistry/v1/options.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "contracts/dist/identity/events;identityevents";
+
+message UserDeleted {
+  option (eventregistry.v1.event) = {
+    detail_types: ["user.deleted"]
+  };
+
+  string id = 1;
+  repeated common.v1.Correlation correlations = 2;
+  uint64 version = 3;
+  google.protobuf.Timestamp created_time = 4;
+  google.protobuf.Timestamp modified_time = 5;
+}

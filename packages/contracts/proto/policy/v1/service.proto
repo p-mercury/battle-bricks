@@ -1,0 +1,15 @@
+syntax = "proto3";
+package policy.v1;
+
+import "policy/v1/evaluate.proto";
+import "policy/v1/get-user.proto";
+
+option go_package = "contracts/dist/policy/v1;policy";
+
+service Internal {
+  rpc Evaluate(EvaluateRequest) returns (EvaluateResponse);
+}
+
+service External {
+  rpc GetUser(GetUserRequest) returns (GetUserResponse);
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+package identity.v1;
+
+import "identity/v1/jwk.proto";
+
+option go_package = "contracts/dist/identity/v1;identity";
+
+message ListJwksRequest {}
+
+message ListJwksResponse {
+  repeated Jwk jwks = 1;
+}

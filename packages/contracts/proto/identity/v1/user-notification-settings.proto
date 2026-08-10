@@ -1,0 +1,34 @@
+syntax = "proto3";
+package identity.v1;
+
+import "buf/validate/validate.proto";
+
+option go_package = "contracts/dist/identity/v1;identity";
+
+message UserNotificationSettings {
+  Topic newsletter = 1;
+
+  Topic purchasing_quotation_priced = 2;
+  Topic purchasing_order_confirmed = 3;
+
+  message Topic {
+    bool enabled = 1;
+    repeated Method methods = 2 [(buf.validate.field).repeated = {
+      unique: true
+      min_items: 1
+      items: {
+        enum: {
+          defined_only: true
+          not_in: [0]
+        }
+      }
+    }];
+
+    enum Method {
+      METHOD_UNSPECIFIED = 0;
+      METHOD_EMAIL = 1;
+      METHOD_IN_APP = 2;
+      METHOD_PUSH = 3;
+    }
+  }
+}

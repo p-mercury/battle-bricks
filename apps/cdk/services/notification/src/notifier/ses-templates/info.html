@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="color-scheme" content="light dark" />
+		<meta name="supported-color-schemes" content="light dark" />
+		<style>
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				color: #001426;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			.page {
+				width: 100%;
+				box-sizing: border-box;
+			}
+
+			.main {
+				padding: 40px 40px 30px 30px;
+				box-sizing: border-box;
+				max-width: 700px;
+			}
+
+			.logo {
+				width: 150px;
+				height: auto;
+				display: block;
+				margin: 0 0 26px 0;
+			}
+
+			.paragraph {
+				font-size: 18px;
+				line-height: 1.6;
+				margin: 0 0 22px 0;
+			}
+
+			.label {
+				font-size: 18px;
+				line-height: 1.6;
+				margin: 0 0 10px 0;
+			}
+
+			.list {
+				margin: 0 0 28px 22px;
+				padding: 0;
+				font-size: 18px;
+				line-height: 1.7;
+			}
+
+			.signature {
+				font-size: 18px;
+				line-height: 1.6;
+				margin: 0;
+			}
+
+			.footer {
+				background: #e7e9ed;
+				padding: 26px 40px 32px 30px;
+				box-sizing: border-box;
+				color: #7b848e;
+			}
+
+			.footer a {
+				text-decoration: none;
+			}
+
+			.footer-content {
+				max-width: 700px;
+			}
+
+			.footer-text {
+				font-size: 14px;
+				line-height: 1.6;
+				margin: 0 0 14px 0;
+			}
+
+			.footer-links a {
+				color: #2196f3;
+				text-decoration: none;
+				font-size: 16px;
+				margin-right: 18px;
+			}
+
+			.footer-row {
+				margin-top: 18px;
+				overflow: hidden;
+			}
+
+			.footer-powered {
+				float: left;
+				margin: 0;
+				white-space: nowrap;
+				font-size: 13px;
+				line-height: 26px;
+				color: #7b848e;
+			}
+
+			.footer-icons {
+				float: right;
+				white-space: nowrap;
+			}
+
+			.footer-icons a {
+				display: inline-block;
+				margin-left: 8px;
+				vertical-align: middle;
+			}
+
+			.footer-icons img {
+				width: 26px;
+				height: 26px;
+				display: block;
+				border: 0;
+			}
+
+			.jumper-gray-logo,
+			.vierroth-logo,
+			.powered-text {
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.jumper-gray-logo {
+				height: 20px;
+				width: auto;
+			}
+
+			.vierroth-logo {
+				height: 18px;
+				width: auto;
+				margin-left: 4px;
+				margin-bottom: 3px;
+			}
+
+			.powered-text {
+				margin: 0 4px;
+				color: #7b848e;
+				line-height: 1;
+			}
+
+			@media (prefers-color-scheme: dark) {
+				body {
+					color: #e5e7eb;
+				}
+				.paragraph,
+				.label,
+				.list,
+				.signature {
+					color: #d1d1d6 !important;
+				}
+				.footer {
+					background: #1f2937 !important;
+					color: #9ca3af !important;
+				}
+				.footer-text a {
+					color: #60a5fa !important;
+				}
+				.footer-links a {
+					color: #60a5fa !important;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="page">
+			<div class="main">
+				<img class="logo" src="assets/jumper-logo-red.png" alt="Jumper.de" />
+				{{#each paragraphs}}
+				<p class="paragraph">{{content}}</p>
+				{{/each}}
+				<p class="signature">
+					{{signature.thanks}}<br />
+					{{signature.name}}
+				</p>
+			</div>
+			<div class="footer">
+				<div class="footer-content">
+					<p class="footer-text">
+						You are receiving this email because you opted in to receive updates
+						from jumper.de. If you no longer wish to receive these emails, you
+						can
+						<a href="https://jumper.de/account/settings">unsubscribe here</a>.
+					</p>
+					<div class="footer-row">
+						<p class="footer-powered">
+							<img
+								src="assets/jumper-logo-gray.png"
+								alt="Jumper.de"
+								class="jumper-gray-logo"
+							/>
+							<span class="powered-text">a service by</span>
+							<img
+								src="assets/vierroth-gmbh.png"
+								alt="vierroth GmbH"
+								class="vierroth-logo"
+							/>
+						</p>
+
+						<div class="footer-icons">
+							<a href="https://jumper.de">
+								<img src="assets/globe.png" alt="Website" />
+							</a>
+							<a href="https://www.linkedin.com/company/vierroth/">
+								<img src="assets/linkedin.png" alt="LinkedIn" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,19 @@
+syntax = "proto3";
+package filestaging.v1;
+
+import "filestaging/v1/file-status.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "contracts/dist/filestaging/v1;filestaging";
+
+message File {
+  string id = 1;
+  FileStatus status = 2;
+  string name = 3;
+  string checksum = 4;
+  google.protobuf.Timestamp expires_time = 5;
+  optional string content_type = 6;
+  optional uint64 content_length = 7;
+  optional string user_id = 8;
+  optional string url = 9;
+}

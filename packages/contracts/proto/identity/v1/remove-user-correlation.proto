@@ -1,0 +1,26 @@
+syntax = "proto3";
+package identity.v1;
+
+import "buf/validate/validate.proto";
+import "common/rules.proto";
+import "identity/rules.proto";
+import "identity/v1/user.proto";
+
+option go_package = "contracts/dist/identity/v1;identity";
+
+message RemoveUserCorrelationRequest {
+  string id = 1 [(buf.validate.field).string.(identity.user_id) = true];
+
+  string provider = 2 [(buf.validate.field).string.(common.correlation_provider) = true];
+
+  string kind = 3 [(buf.validate.field).string.(common.correlation_kind) = true];
+}
+
+message RemoveUserCorrelationResponse {
+  User user = 1;
+}
+
+message RemoveUserCorrelationContext {
+  RemoveUserCorrelationRequest request = 1;
+  User subject = 2;
+}

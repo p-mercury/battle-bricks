@@ -20,4 +20,5 @@ createPipeline(APP, {
 	hostname: "battlebricks.games",
 	certificateId: "8b41fce0-bfe3-451d-ac2e-18f57aa243ac",
 	namespace: "production.battlebricks",
+	activeRegions: ["eu-central-1", "eu-west-1"],
 });

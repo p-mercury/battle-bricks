@@ -1,0 +1,10 @@
+syntax = "proto3";
+package common.v1;
+
+option go_package = "contracts/dist/common/v1;common";
+
+enum Currency {
+  CURRENCY_UNSPECIFIED = 0;
+  CURRENCY_EUR = 1;
+  CURRENCY_USD = 2;
+}

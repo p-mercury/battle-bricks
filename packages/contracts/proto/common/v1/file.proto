@@ -1,0 +1,29 @@
+syntax = "proto3";
+package common.v1;
+
+option go_package = "contracts/dist/common/v1;common";
+
+message File {
+  string id = 1;
+
+  // Checksum of the file contents (e.g. SHA-256) for integrity verification.
+  string checksum = 2;
+
+  // MIME type of the file (e.g. "application/pdf", "image/png").
+  string type = 3;
+
+  // File size in bytes.
+  uint64 size = 4;
+}
+
+message GetFileResponse {
+  File file = 1;
+
+  // URL for inline viewing in the browser.
+  // Served with `Content-Disposition: inline`,
+  string inline_url = 2;
+
+  // URL that triggers download in the browser.
+  // Served with `Content-Disposition: attachment`.
+  string attachment_url = 3;
+}

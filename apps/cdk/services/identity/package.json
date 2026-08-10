@@ -1,0 +1,33 @@
+{
+	"name": "@battle-bricks/identity-service",
+	"private": true,
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		},
+		"./dist/*": "./dist/*.js",
+		"./permissions": "./dist/permissions.ts"
+	},
+	"scripts": {
+		"build": "tsc",
+		"install": "go mod download",
+		"lint": "tsc"
+	},
+	"dependencies": {
+		"@aws-cdk/aws-lambda-go-alpha": "^2.263.0-alpha.0",
+		"@battle-bricks/backbone": "workspace:*",
+		"@battle-bricks/contracts": "workspace:*",
+		"@battle-bricks/policy-service": "workspace:*",
+		"@bufbuild/buf": "^1.72.0",
+		"@bufbuild/protobuf": "^2.13.0",
+		"@bufbuild/protoc-gen-es": "^2.13.0",
+		"@connectrpc/connect": "^2.1.2",
+		"@flit/cdk-bucket-mesh": "^0.7.1",
+		"@types/node": "^26.2.0",
+		"aws-cdk-lib": "^2.263.0",
+		"constructs": "^10.8.1",
+		"typescript": "^6.0.3"
+	}
+}

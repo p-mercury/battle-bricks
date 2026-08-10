@@ -1,0 +1,12 @@
+syntax = "proto3";
+package filestaging.v1;
+
+option go_package = "contracts/dist/filestaging/v1;filestaging";
+
+enum FileStatus {
+  FILE_STATUS_UNSPECIFIED = 0;
+  FILE_STATUS_CREATED = 1;
+  FILE_STATUS_CHECKING = 2;
+  FILE_STATUS_VALID = 3;
+  FILE_STATUS_INVALID = 4;
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+package filestaging.v1;
+
+import "buf/validate/validate.proto";
+import "filestaging/rules.proto";
+import "filestaging/v1/upload-session.proto";
+
+option go_package = "contracts/dist/filestaging/v1;filestaging";
+
+message CreateUploadSessionRequest {
+  string name = 1 [(buf.validate.field).string.(filestaging.file_name) = true];
+  string checksum = 2 [(buf.validate.field).string.pattern = "^[A-Za-z0-9+/]{43}=$"];
+}
+
+message CreateUploadSessionResponse {
+  UploadSession session = 1;
+}
+
+message CreateUploadSessionContext {
+  CreateUploadSessionRequest request = 1;
+}

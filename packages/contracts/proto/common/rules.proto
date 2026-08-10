@@ -1,0 +1,19 @@
+syntax = "proto2";
+package common;
+
+import "buf/validate/validate.proto";
+
+option go_package = "contracts/dist/common;common";
+
+extend buf.validate.StringRules {
+  optional bool correlation_provider = 80000000 [(buf.validate.predefined).cel = {
+    id: "string.common_correlation_provider"
+    message: "Must be valid correlation provider"
+    expression: "size(this) >= 1 && size(this) <= 80 && this.matches('^[A-Za-z][A-Za-z0-9]*$')"
+  }];
+  optional bool correlation_kind = 80000001 [(buf.validate.predefined).cel = {
+    id: "string.common_correlation_kind"
+    message: "Must be valid correlation kind"
+    expression: "size(this) >= 1 && size(this) <= 80 && this.matches('^[A-Za-z][A-Za-z0-9]*$')"
+  }];
+}

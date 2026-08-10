@@ -1,0 +1,48 @@
+syntax = "proto3";
+package identity.events;
+
+import "common/v1/correlation.proto";
+import "common/v1/language.proto";
+import "eventregistry/v1/options.proto";
+import "google/protobuf/timestamp.proto";
+import "identity/v1/user-notification-settings.proto";
+import "identity/v1/user-status.proto";
+
+option go_package = "contracts/dist/identity/events;identityevents";
+
+message UserUpserted {
+  option (eventregistry.v1.event) = {
+    detail_types: [
+      "user.created",
+      "user.updated"
+    ]
+  };
+
+  string id = 1;
+  repeated common.v1.Correlation correlations = 2;
+  uint64 version = 3;
+  google.protobuf.Timestamp created_time = 4;
+  google.protobuf.Timestamp modified_time = 5;
+
+  repeated ChangedField changed_fields = 6;
+
+  string organisation_id = 7;
+  string email_address = 8;
+  identity.v1.UserStatus status = 9;
+  string name = 10;
+  optional string job_title = 11;
+  common.v1.Language language = 12;
+  identity.v1.UserNotificationSettings notification_settings = 13;
+
+  enum ChangedField {
+    CHANGED_FIELD_UNSPECIFIED = 0;
+    CHANGED_FIELD_CORRELATIONS = 1;
+    CHANGED_FIELD_ORGANISATION_ID = 2;
+    CHANGED_FIELD_EMAIL_ADDRESS = 3;
+    CHANGED_FIELD_STATUS = 4;
+    CHANGED_FIELD_NAME = 5;
+    CHANGED_FIELD_JOB_TITLE = 6;
+    CHANGED_FIELD_LANGUAGE = 7;
+    CHANGED_FIELD_NOTIFICATION_SETTINGS = 8;
+  }
+}

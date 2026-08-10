@@ -1,0 +1,22 @@
+syntax = "proto3";
+package eventregistry.v1;
+
+import "google/protobuf/descriptor.proto";
+
+option go_package = "protoc-gen-event-registry/dist/eventregistry/v1;options";
+
+message FileOptions {
+  string source = 1;
+}
+
+extend google.protobuf.FileOptions {
+  FileOptions event_file = 52050;
+}
+
+message EventOptions {
+  repeated string detail_types = 1;
+}
+
+extend google.protobuf.MessageOptions {
+  EventOptions event = 52060;
+}

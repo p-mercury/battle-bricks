@@ -1,0 +1,11 @@
+{
+	"name": "@battle-bricks/protoc-gen-event-registry",
+	"private": true,
+	"scripts": {
+		"build": "pnpm exec buf generate && go install",
+		"install": "go mod download"
+	},
+	"dependencies": {
+		"@bufbuild/protoc-gen-es": "^2.13.0"
+	}
+}

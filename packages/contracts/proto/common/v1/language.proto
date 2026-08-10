@@ -1,0 +1,11 @@
+syntax = "proto3";
+package common.v1;
+
+option go_package = "contracts/dist/common/v1;common";
+
+enum Language {
+  LANGUAGE_UNSPECIFIED = 0;
+  LANGUAGE_EN = 1;
+  LANGUAGE_DE = 2;
+  LANGUAGE_BG = 3;
+}

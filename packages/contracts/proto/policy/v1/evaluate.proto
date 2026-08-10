@@ -1,0 +1,31 @@
+syntax = "proto3";
+package policy.v1;
+
+import "buf/validate/validate.proto";
+import "google/protobuf/struct.proto";
+
+option go_package = "contracts/dist/policy/v1;policy";
+
+message EvaluateRequest {
+  string service = 1 [
+    (buf.validate.field).string.min_len = 1,
+    (buf.validate.field).string.max_len = 80,
+    (buf.validate.field).string.pattern = "^[A-Za-z_]*$"
+  ];
+  string method = 2 [
+    (buf.validate.field).string.min_len = 1,
+    (buf.validate.field).string.max_len = 80,
+    (buf.validate.field).string.pattern = "^[A-Za-z_]*$"
+  ];
+  string user_id = 3 [(buf.validate.field).string.pattern = "^[sc]-[0-9A-Za-z]{12}$"];
+  optional bytes context = 4 [
+    (buf.validate.field).bytes.min_len = 1,
+    (buf.validate.field).bytes.max_len = 100000
+  ];
+}
+
+message EvaluateResponse {
+  string id = 1;
+  bool authz = 2;
+  map<string, google.protobuf.Value> output_mask = 3;
+}

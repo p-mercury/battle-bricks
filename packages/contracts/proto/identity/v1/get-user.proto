@@ -1,0 +1,21 @@
+syntax = "proto3";
+package identity.v1;
+
+import "buf/validate/validate.proto";
+import "identity/rules.proto";
+import "identity/v1/user.proto";
+
+option go_package = "contracts/dist/identity/v1;identity";
+
+message GetUserRequest {
+  optional string id = 1 [(buf.validate.field).string.(identity.user_id) = true];
+}
+
+message GetUserResponse {
+  User user = 1;
+}
+
+message GetUserContext {
+  GetUserRequest request = 1;
+  User subject = 2;
+}

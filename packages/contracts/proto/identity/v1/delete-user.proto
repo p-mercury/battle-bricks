@@ -1,0 +1,27 @@
+syntax = "proto3";
+package identity.v1;
+
+import "buf/validate/validate.proto";
+import "common/v1/correlation.proto";
+import "google/protobuf/timestamp.proto";
+import "identity/rules.proto";
+import "identity/v1/user.proto";
+
+option go_package = "contracts/dist/identity/v1;identity";
+
+message DeleteUserRequest {
+  string id = 1 [(buf.validate.field).string.(identity.user_id) = true];
+}
+
+message DeleteUserResponse {
+  string id = 1;
+  repeated common.v1.Correlation correlations = 2;
+  uint64 version = 3;
+  google.protobuf.Timestamp created_time = 4;
+  google.protobuf.Timestamp modified_time = 5;
+}
+
+message DeleteUserContext {
+  DeleteUserRequest request = 1;
+  User subject = 2;
+}

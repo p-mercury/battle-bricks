@@ -1,0 +1,19 @@
+syntax = "proto2";
+package filestaging;
+
+import "buf/validate/validate.proto";
+
+option go_package = "contracts/dist/filestaging;filestaging";
+
+extend buf.validate.StringRules {
+  optional bool file_id = 84000000 [(buf.validate.predefined).cel = {
+    id: "string.file_staging_file_id"
+    message: "Must be valid file ID"
+    expression: "this.matches('^[0-9A-Za-z]{40}$')"
+  }];
+  optional bool file_name = 84000001 [(buf.validate.predefined).cel = {
+    id: "string.file_staging_file_name"
+    message: "Must be valid file name"
+    expression: "this.matches('^[A-Za-z0-9._\\\\[\\\\]()&-]{1,100}$')"
+  }];
+}

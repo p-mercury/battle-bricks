@@ -1,0 +1,11 @@
+syntax = "proto3";
+package policy.v1;
+
+import "identity/v1/user-status.proto";
+
+option go_package = "contracts/dist/policy/v1;policy";
+
+message User {
+  string id = 1;
+  identity.v1.UserStatus status = 2;
+}

@@ -1,0 +1,26 @@
+syntax = "proto3";
+package common.v1;
+
+import "buf/validate/validate.proto";
+
+option go_package = "contracts/dist/common/v1;common";
+
+message Correlation {
+  string provider = 1 [
+    (buf.validate.field).string.min_len = 1,
+    (buf.validate.field).string.max_len = 80,
+    (buf.validate.field).string.pattern = "^[A-Za-z][A-Za-z0-9]*$"
+  ];
+
+  string kind = 2 [
+    (buf.validate.field).string.min_len = 1,
+    (buf.validate.field).string.max_len = 80,
+    (buf.validate.field).string.pattern = "^[A-Za-z][A-Za-z0-9]*$"
+  ];
+
+  string id = 3 [
+    (buf.validate.field).string.min_len = 1,
+    (buf.validate.field).string.max_len = 256,
+    (buf.validate.field).string.pattern = "^[^\\s]+$"
+  ];
+}

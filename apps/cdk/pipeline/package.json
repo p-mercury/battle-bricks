@@ -8,13 +8,17 @@
 	},
 	"dependencies": {
 		"@battle-bricks/backbone": "workspace:*",
+		"@battle-bricks/file-staging-service": "workspace:*",
 		"@battle-bricks/front-end": "workspace:*",
-		"@flit/cdk-pipeline": "^2.6.0",
-		"@types/node": "^26.1.2",
-		"aws-cdk": "^2.1134.0",
+		"@battle-bricks/identity-service": "workspace:*",
+		"@battle-bricks/notification-service": "workspace:*",
+		"@battle-bricks/policy-service": "workspace:*",
+		"@flit/cdk-pipeline": "^2.7.0",
+		"@types/node": "^26.2.0",
+		"aws-cdk": "^2.1135.1",
 		"aws-cdk-lib": "^2.263.0",
-		"constructs": "^10.8.0",
-		"esbuild": "^0.28.1",
+		"constructs": "^10.8.1",
+		"esbuild": "^0.28.2",
 		"typescript": "^6.0.3"
 	}
 }

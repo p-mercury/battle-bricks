@@ -1,0 +1,7 @@
+syntax = "proto3";
+package filestaging.events;
+
+import "eventregistry/v1/options.proto";
+
+option go_package = "contracts/dist/filestaging/events;filestagingevents";
+option (eventregistry.v1.event_file) = {source: "file.staging"};

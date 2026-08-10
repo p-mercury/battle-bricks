@@ -1,6 +1,8 @@
 packages:
   - "./apps/*"
   - "./apps/cdk/*"
+  - "./apps/cdk/services/*"
+  - "./packages/*"
 shamefullyHoist: true
 allowBuilds:
   "@bufbuild/buf": true
@@ -11,3 +13,17 @@ minimumReleaseAgeExclude:
   - "@ai-sdk/gateway@4.0.37"
   - ai@7.0.48
   - svelte-dnd-action@0.9.77
+  - "@flit/svelte-form@2.7.0"
+  - "@sentry/browser-utils@10.70.0"
+  - "@sentry/browser@10.70.0"
+  - "@sentry/cloudflare@10.70.0"
+  - "@sentry/core@10.70.0"
+  - "@sentry/feedback@10.70.0"
+  - "@sentry/node-core@10.70.0"
+  - "@sentry/node@10.70.0"
+  - "@sentry/opentelemetry@10.70.0"
+  - "@sentry/replay-canvas@10.70.0"
+  - "@sentry/replay@10.70.0"
+  - "@sentry/server-utils@10.70.0"
+  - "@sentry/svelte@10.70.0"
+  - "@sentry/sveltekit@10.70.0"

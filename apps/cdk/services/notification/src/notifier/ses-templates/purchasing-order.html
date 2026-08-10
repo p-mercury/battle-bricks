@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="color-scheme" content="light dark" />
+		<meta name="supported-color-schemes" content="light dark" />
+		<style>
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				color: #001426;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			.page {
+				width: 100%;
+				box-sizing: border-box;
+			}
+
+			.main {
+				padding: 40px 30px 34px 30px;
+				box-sizing: border-box;
+				max-width: 700px;
+			}
+
+			.logo {
+				width: 150px;
+				height: auto;
+				display: block;
+				margin: 0 0 26px 0;
+			}
+
+			.paragraph {
+				font-size: 18px;
+				line-height: 1.6;
+				margin: 0 0 22px 0;
+			}
+
+			.btn {
+				display: inline-block;
+				background-color: #001426;
+				color: #ffffff;
+				text-decoration: none;
+				padding: 8px 10px;
+				border-radius: 8px;
+				font-size: 14px;
+				letter-spacing: 1px;
+			}
+
+			.download {
+				width: 24px;
+				height: 24px;
+			}
+
+			.btn-wrap {
+				margin: 0 0 18px 0;
+			}
+
+			.btn-cell {
+				padding-right: 8px;
+			}
+
+			.header-cell {
+				padding: 0;
+				vertical-align: top;
+			}
+
+			.btn-cell {
+				padding-left: 16px;
+				vertical-align: top;
+				text-align: right;
+				white-space: nowrap;
+			}
+
+			.order {
+				width: 100%;
+				margin: 22px 0 28px 0;
+				border: 1px solid #d9dde3;
+				border-radius: 14px;
+				border-collapse: separate;
+				overflow: hidden;
+			}
+
+			.order a {
+				text-decoration: none;
+				color: #001426;
+			}
+
+			.order-header {
+				padding: 22px 20px 16px 20px;
+				border-bottom: 1px solid #d9dde3;
+			}
+
+			.table-title {
+				margin: 0 0 12px 0;
+				font-size: 22px;
+				line-height: 1.2;
+				font-weight: 700;
+				color: #001426;
+			}
+
+			.table-meta {
+				margin: 0;
+				font-size: 14px;
+				line-height: 1.6;
+				color: #7b848e;
+			}
+
+			.table {
+				width: 100%;
+				border-collapse: collapse;
+				table-layout: fixed;
+			}
+
+			.column-header {
+				padding: 14px 0;
+				font-size: 16px;
+				font-weight: 700;
+				line-height: 1.4;
+				color: #001426;
+				border-bottom: 1px solid #d9dde3;
+			}
+
+			.column-header:first-child,
+			.cell:first-child {
+				padding-left: 18px;
+			}
+
+			.column-header:last-child,
+			.cell:last-child {
+				padding-right: 18px;
+			}
+
+			.cell {
+				padding: 20px 0;
+				font-size: 16px;
+				line-height: 1.5;
+				vertical-align: top;
+				color: #001426;
+			}
+
+			.divide {
+				border-bottom: 1px solid #d9dde3;
+			}
+
+			.text-main {
+				font-size: 16px;
+				font-weight: 400;
+				color: #001426;
+			}
+
+			.sub {
+				font-size: 14px;
+				color: #7b848e;
+			}
+
+			.summary {
+				padding: 18px 20px 16px 20px;
+			}
+
+			.summary-table {
+				width: 100%;
+				border-collapse: collapse;
+				table-layout: fixed;
+			}
+
+			.summary-label {
+				padding: 4px 0;
+				font-size: 14px;
+				line-height: 1.5;
+				color: #7b848e;
+			}
+
+			.summary-value {
+				padding: 4px 0;
+				font-size: 14px;
+				line-height: 1.5;
+				color: #001426;
+				text-align: right;
+				white-space: nowrap;
+			}
+
+			.total-label {
+				font-size: 18px;
+				font-weight: 700;
+				color: #001426;
+				padding-top: 8px;
+			}
+
+			.total-value {
+				font-size: 18px;
+				font-weight: 700;
+				color: #001426;
+				padding-top: 8px;
+			}
+
+			.signature {
+				font-size: 18px;
+				line-height: 1.6;
+				margin: 0;
+			}
+
+			.footer {
+				background: #e7e9ed;
+				padding: 26px 40px 32px 30px;
+				box-sizing: border-box;
+				color: #7b848e;
+			}
+
+			.footer a {
+				text-decoration: none;
+			}
+
+			.footer-content {
+				max-width: 700px;
+			}
+
+			.footer-text {
+				font-size: 14px;
+				line-height: 1.6;
+				margin: 0 0 14px 0;
+			}
+			.footer-row {
+				margin-top: 18px;
+				overflow: hidden;
+			}
+
+			.footer-powered {
+				float: left;
+				margin: 0;
+				white-space: nowrap;
+				font-size: 13px;
+				line-height: 26px;
+				color: #7b848e;
+			}
+
+			.footer-icons {
+				float: right;
+				white-space: nowrap;
+			}
+
+			.footer-icons a {
+				display: inline-block;
+				margin-left: 8px;
+				vertical-align: middle;
+			}
+
+			.footer-icons img {
+				width: 26px;
+				height: 26px;
+				display: block;
+				border: 0;
+			}
+
+			.jumper-gray-logo,
+			.vierroth-logo,
+			.powered-text {
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.jumper-gray-logo {
+				height: 20px;
+				width: auto;
+			}
+
+			.vierroth-logo {
+				height: 18px;
+				width: auto;
+				margin-left: 4px;
+				margin-bottom: 3px;
+			}
+
+			.powered-text {
+				margin: 0 4px;
+				color: #7b848e;
+				line-height: 1;
+			}
+
+			@media (prefers-color-scheme: dark) {
+				body {
+					color: #e5e7eb;
+				}
+
+				.paragraph,
+				.signature {
+					color: #d1d1d6 !important;
+				}
+
+				.btn {
+					display: inline-block;
+					background: #001426;
+					color: #ffffff !important;
+					text-decoration: none;
+					padding: 10px;
+					border-radius: 8px;
+					font-size: 14px;
+					letter-spacing: 1px;
+				}
+
+				.download {
+					width: 16px;
+					height: 16px;
+				}
+
+				.order {
+					border-color: #374151 !important;
+				}
+
+				.order-header,
+				.column-header,
+				.divide {
+					border-color: #374151 !important;
+				}
+
+				.table-title,
+				.column-header,
+				.cell,
+				.text-main,
+				.summary-value,
+				.total-label,
+				.total-value {
+					color: #e5e7eb !important;
+				}
+
+				.table-meta,
+				.sub,
+				.summary-label {
+					color: #9ca3af;
+				}
+
+				.footer {
+					background: #1f2937 !important;
+					color: #9ca3af !important;
+				}
+
+				.footer-text a {
+					color: #60a5fa !important;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="page">
+			<div class="main">
+				<img class="logo" src="assets/jumper-logo-red.png" alt="Jumper.de" />
+
+				{{#each preActionParagraphs}}
+				<p class="paragraph">{{content}}</p>
+				{{/each}}
+
+				<div class="order">
+					{{#with order}}
+					<a href="{{href}}">
+						<div class="order-header">
+							<table cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td class="header-cell">
+										{{#if title}}
+										<p class="table-title">{{title}}</p>
+										{{/if}} {{#each metadata}}
+										<p class="table-meta">{{content}}</p>
+										{{/each}}
+									</td>
+
+									<td class="btn-cell">
+										<a class="btn" href="{{href}}"
+											><img
+												class="download"
+												src="assets/download.png"
+												alt="Jumper.de"
+											/>
+										</a>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div>
+							<table
+								class="table"
+								cellpadding="0"
+								cellspacing="0"
+								border="0"
+								width="100%"
+							>
+								<colgroup>
+									<col width="52%" />
+									<col width="14%" />
+									<col width="30%" />
+								</colgroup>
+
+								<tr class="row">
+									<td class="column-header">{{productRowLabel}}</td>
+									<td class="column-header">{{quantityRowLabel}}</td>
+									<td class="column-header" align="right">{{priceRowLabel}}</td>
+								</tr>
+
+								{{#each lines}}
+								<tr class="row">
+									<td class="cell divide">
+										<span class="text-main">{{code}}</span><br />
+										<span class="sub">{{name}}</span>
+									</td>
+									<td class="cell divide">({{quantity}}x)</td>
+									<td class="cell divide" align="right">
+										<span class="text-main">{{price}}</span><br />
+										<span class="sub">{{unitPrice}}</span>
+									</td>
+								</tr>
+								{{/each}}
+							</table>
+						</div>
+						<div class="summary">
+							<table
+								class="summary-table"
+								cellpadding="0"
+								cellspacing="0"
+								border="0"
+								width="100%"
+							>
+								<colgroup>
+									<col width="52%" />
+									<col width="16%" />
+									<col width="32%" />
+								</colgroup>
+								{{#if subTotal}}
+								<tr>
+									<td class="summary-label">{{subTotalTotalLabel}}</td>
+									<td>&nbsp;</td>
+									<td class="summary-value">{{subTotal}}</td>
+								</tr>
+								{{/if}}{{#if discount}}
+								<tr>
+									<td class="summary-label">{{discountTotalLabel}}</td>
+									<td>&nbsp;</td>
+									<td class="summary-value">{{discount}}</td>
+								</tr>
+								{{/if}}{{#if tax}}
+								<tr>
+									<td class="summary-label">{{taxLabel}}</td>
+									<td>&nbsp;</td>
+									<td class="summary-value">{{tax}}</td>
+								</tr>
+								{{/if}}{{#if grandTotal}}
+								<tr>
+									<td class="summary-label total-label">{{grandTotalLabel}}</td>
+									<td>&nbsp;</td>
+									<td class="summary-value total-value">{{grandTotal}}</td>
+								</tr>
+								{{/if}}
+							</table>
+						</div>
+					</a>
+					{{/with}}
+				</div>
+
+				{{#each postActionParagraphs}}
+				<p class="paragraph">{{content}}</p>
+				{{/each}}
+
+				<p class="signature">
+					{{signature.thanks}}<br />
+					{{signature.name}}
+				</p>
+			</div>
+
+			<div class="footer">
+				<div class="footer-content">
+					<p class="footer-text">
+						You are receiving this email because you opted in to receive updates
+						from jumper.de. If you no longer wish to receive these emails, you
+						can
+						<a href="https://jumper.de/account/settings">unsubscribe here</a>.
+					</p>
+					<div class="footer-row">
+						<p class="footer-powered">
+							<img
+								src="assets/jumper-logo-gray.png"
+								alt="Jumper.de"
+								class="jumper-gray-logo"
+							/>
+							<span class="powered-text">a service by</span>
+							<img
+								src="assets/vierroth-gmbh.png"
+								alt="vierroth GmbH"
+								class="vierroth-logo"
+							/>
+						</p>
+
+						<div class="footer-icons">
+							<a href="https://jumper.de">
+								<img src="assets/globe.png" alt="Website" />
+							</a>
+							<a href="https://www.linkedin.com/company/vierroth/">
+								<img src="assets/linkedin.png" alt="LinkedIn" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

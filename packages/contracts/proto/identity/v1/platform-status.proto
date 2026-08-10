@@ -1,0 +1,10 @@
+syntax = "proto3";
+package identity.v1;
+
+option go_package = "contracts/dist/identity/v1;identity";
+
+enum PlatformStatus {
+  PLATFORM_STATUS_UNSPECIFIED = 0;
+  PLATFORM_STATUS_DISABLED = 1;
+  PLATFORM_STATUS_ENABLED = 2;
+}

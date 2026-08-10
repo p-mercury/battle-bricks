@@ -1,1 +1,15 @@
 go 1.26.3
+
+use (
+	./apps/cdk/backbone
+	./apps/cdk/services/file-staging
+	./apps/cdk/services/identity
+	./apps/cdk/services/notification
+	./apps/cdk/services/policy
+	./packages/connect-kit-go
+	./packages/contracts
+	./packages/dynamo-kit-go
+	./packages/file-kit-go
+	./packages/protoc-gen-event-registry
+	./packages/sigv4-http
+)

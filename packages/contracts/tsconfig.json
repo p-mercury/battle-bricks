@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"module": "nodenext",
+		"target": "esnext",
+		"declaration": true,
+		"strict": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"noImplicitThis": true,
+		"alwaysStrict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": false,
+		"inlineSourceMap": true,
+		"inlineSources": true,
+		"strictPropertyInitialization": false,
+		"skipLibCheck": true
+	},
+	"exclude": ["./node_modules"]
+}

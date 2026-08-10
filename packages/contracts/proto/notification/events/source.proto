@@ -1,0 +1,7 @@
+syntax = "proto3";
+package notification.events;
+
+import "eventregistry/v1/options.proto";
+
+option go_package = "contracts/dist/notification/events;notificationevents";
+option (eventregistry.v1.event_file) = {source: "notification"};

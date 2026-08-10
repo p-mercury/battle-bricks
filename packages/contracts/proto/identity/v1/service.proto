@@ -1,0 +1,29 @@
+syntax = "proto3";
+package identity.v1;
+
+import "identity/v1/create-password-change-session.proto";
+import "identity/v1/delete-user.proto";
+import "identity/v1/get-user.proto";
+import "identity/v1/invite-user.proto";
+import "identity/v1/list-jwks.proto";
+import "identity/v1/remove-user-correlation.proto";
+import "identity/v1/update-user.proto";
+
+option go_package = "contracts/dist/identity/v1;identity";
+
+service Internal {
+  rpc CreatePasswordChangeSession(CreatePasswordChangeSessionRequest) returns (CreatePasswordChangeSessionResponse);
+  rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse);
+  rpc GetUser(GetUserRequest) returns (GetUserResponse);
+  rpc InviteUser(InviteUserRequest) returns (InviteUserResponse);
+  rpc ListJwks(ListJwksRequest) returns (ListJwksResponse);
+  rpc RemoveUserCorrelation(RemoveUserCorrelationRequest) returns (RemoveUserCorrelationResponse);
+  rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
+}
+
+service External {
+  rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse);
+  rpc GetUser(GetUserRequest) returns (GetUserResponse);
+  rpc InviteUser(InviteUserRequest) returns (InviteUserResponse);
+  rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
+}

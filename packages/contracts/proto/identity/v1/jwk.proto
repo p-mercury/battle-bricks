@@ -1,0 +1,12 @@
+syntax = "proto3";
+package identity.v1;
+
+option go_package = "contracts/dist/identity/v1;identity";
+
+message Jwk {
+  string kid = 1;
+  string kty = 2;
+  string alg = 3;
+  string n = 4;
+  string e = 5;
+}

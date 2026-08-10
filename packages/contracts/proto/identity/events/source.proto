@@ -1,0 +1,7 @@
+syntax = "proto3";
+package identity.events;
+
+import "eventregistry/v1/options.proto";
+
+option go_package = "contracts/dist/identity/events;identityevents";
+option (eventregistry.v1.event_file) = {source: "identity.customer"};

@@ -1,0 +1,475 @@
+<!doctype html>
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="color-scheme" content="light dark" />
+		<meta name="supported-color-schemes" content="light dark" />
+
+		<style>
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				color: #192e3d;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			.page {
+				width: 100%;
+				box-sizing: border-box;
+			}
+
+			.main {
+				width: 100%;
+				max-width: 700px;
+				padding: 40px 40px 34px 30px;
+				box-sizing: border-box;
+			}
+
+			/* Shared section layout */
+
+			.section {
+				margin: 0;
+			}
+
+			.section + .section {
+				margin-top: 34px;
+				padding-top: 30px;
+				border-top: 1px solid #e7e9ed;
+			}
+
+			/* Text section */
+
+			.section-text {
+				margin: 0;
+			}
+
+			.section-text-content {
+				margin: 0;
+				color: #192e3d;
+				font-size: 16px;
+				font-weight: 400;
+			}
+
+			/* Notice section */
+
+			.section-notice {
+				margin: 0;
+				padding-left: 16px;
+				border-left: 2px solid #e11f26;
+			}
+
+			.section-notice-content {
+				margin: 0;
+				color: #192e3d;
+				font-size: 16px;
+				font-weight: 400;
+			}
+
+			/* List section */
+
+			.section-list {
+				margin: 0;
+			}
+
+			.section-list-title {
+				margin: 0 0 20px;
+				color: #7b848e;
+				font-size: 12px;
+				font-weight: 400;
+				text-transform: uppercase;
+			}
+
+			.section-list-items {
+				width: 100%;
+				border-collapse: collapse;
+			}
+
+			.section-list-item td {
+				padding: 0 0 16px;
+				vertical-align: top;
+			}
+
+			.section-list-item:last-child td {
+				padding-bottom: 0;
+			}
+
+			.section-list-bullet {
+				width: 20px;
+				color: #e11f26;
+				font-size: 16px;
+				font-weight: 700;
+			}
+
+			.section-list-content {
+				color: #192e3d;
+				font-size: 16px;
+				font-weight: 400;
+			}
+
+			/* Card section */
+
+			.section-card {
+				margin: 0;
+			}
+
+			.section-card-layout {
+				width: 100%;
+				border-collapse: collapse;
+			}
+
+			.section-card-image-cell {
+				width: 180px;
+				padding: 0 40px 0 0;
+				vertical-align: middle;
+			}
+
+			.section-card-image {
+				display: block;
+				width: 180px;
+				height: 180px;
+				border: 0;
+				border-radius: 12px;
+				object-fit: cover;
+				background-color: #f0f4f6;
+			}
+
+			.section-card-content {
+				padding: 0;
+				vertical-align: middle;
+			}
+
+			.section-card-title {
+				margin: 0 0 16px;
+				color: #192e3d;
+				font-size: 26px;
+				font-weight: 700;
+			}
+
+			.section-card-text {
+				margin: 0;
+				color: #192e3d;
+				font-size: 16px;
+				font-weight: 400;
+			}
+
+			/* Article section */
+
+			.section-article {
+				margin: 0;
+			}
+
+			.section-article-title {
+				margin: 0 0 48px;
+				color: #192e3d;
+				font-size: 26px;
+				font-weight: 700;
+			}
+
+			.section-article-image {
+				display: block;
+				width: 100%;
+				max-width: 630px;
+				height: auto;
+				margin: 0 0 48px;
+				border: 0;
+				border-radius: 12px;
+				object-fit: cover;
+				background-color: #edf1f4;
+			}
+
+			.section-article-paragraph {
+				margin: 0 0 28px;
+				color: #192e3d;
+				font-size: 20px;
+				font-weight: 400;
+			}
+
+			.section-article-paragraph:last-child {
+				margin-bottom: 0;
+			}
+
+			.main-action {
+				margin: 34px 0 0;
+				text-align: center;
+			}
+
+			.main-action-button {
+				display: inline-block;
+				padding: 10px;
+				border-radius: 8px;
+				background-color: #001426;
+				color: #ffffff !important;
+				font-size: 14px;
+				letter-spacing: 1px;
+				text-decoration: none;
+			}
+
+			@media only screen and (max-width: 600px) {
+				.section-card-image-cell,
+				.section-card-content {
+					display: block !important;
+					width: 100% !important;
+					box-sizing: border-box !important;
+				}
+
+				.section-card-image-cell {
+					padding: 0 0 24px !important;
+				}
+
+				.section-card-image {
+					display: block !important;
+					width: 100% !important;
+					max-width: 100% !important;
+					height: auto !important;
+					border-radius: 12px;
+				}
+
+				.section-card-content {
+					padding: 0 !important;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="page">
+			<main class="main">
+				{{#if greeting}}
+				<section class="section">
+					<div class="section-text">
+						<p class="section-text-content">{{greeting}}</p>
+					</div>
+				</section>
+				{{/if}} {{#each sections}} {{#if text}}
+				<section class="section">
+					<div class="section-text">
+						<p class="section-text-content">{{text.content}}</p>
+					</div>
+				</section>
+				{{/if}} {{#if notice}}
+				<section class="section">
+					<div class="section-notice">
+						<p class="section-notice-content">{{notice.content}}</p>
+					</div>
+				</section>
+				{{/if}} {{#if list}}
+				<section class="section">
+					<div class="section-list">
+						{{#if list.title}}
+						<p class="section-list-title">{{list.title}}</p>
+						{{/if}}
+
+						<table
+							class="section-list-items"
+							role="presentation"
+							cellpadding="0"
+							cellspacing="0"
+							border="0"
+							width="100%"
+						>
+							{{#each list.content}}
+							<tr class="section-list-item">
+								<td class="section-list-bullet">•</td>
+								<td class="section-list-content">{{this}}</td>
+							</tr>
+							{{/each}}
+						</table>
+					</div>
+				</section>
+				{{/if}} {{#if card}}
+				<section class="section">
+					<div class="section-card">
+						<table
+							class="section-card-layout"
+							role="presentation"
+							cellpadding="0"
+							cellspacing="0"
+							border="0"
+							width="100%"
+						>
+							<tr>
+								{{#if card.image}}
+								<td class="section-card-image-cell">
+									<img
+										class="section-card-image"
+										src="{{card.image.src}}"
+										alt="{{card.image.alt}}"
+										width="180"
+										height="180"
+									/>
+								</td>
+								{{/if}}
+
+								<td class="section-card-content">
+									{{#if card.title}}
+									<h2 class="section-card-title">{{card.title}}</h2>
+									{{/if}} {{#if card.content}}
+									<p class="section-card-text">{{card.content}}</p>
+									{{/if}} {{#if card.bullets}}
+									<table
+										class="section-list-items section-card-list"
+										role="presentation"
+										cellpadding="0"
+										cellspacing="0"
+										border="0"
+										width="100%"
+									>
+										{{#each card.bullets}}
+										<tr class="section-list-item">
+											<td class="section-list-bullet">•</td>
+											<td class="section-list-content">{{this}}</td>
+										</tr>
+										{{/each}}
+									</table>
+									{{/if}}
+								</td>
+							</tr>
+						</table>
+					</div>
+				</section>
+				{{/if}} {{#if article}}
+				<section class="section">
+					<div class="section-article">
+						{{#if article.title}}
+						<h2 class="section-article-title">{{article.title}}</h2>
+						{{/if}} {{#if article.image}}
+						<img
+							class="section-article-image"
+							src="{{article.image.src}}"
+							alt="{{article.image.alt}}"
+							width="630"
+						/>
+						{{/if}} {{#if article.content}}
+						<div class="section-article-content">
+							{{#each article.content}}
+							<p class="section-article-paragraph">{{this}}</p>
+							{{/each}}
+						</div>
+						{{/if}}
+					</div>
+				</section>
+				{{/if}} {{/each}} {{#if mainAction}}
+				<p class="main-action">
+					<a class="main-action-button" href="{{mainAction.href}}">
+						{{mainAction.label}}
+					</a>
+				</p>
+				{{/if}} {{#if signature}}
+				<section class="section">
+					<div class="section-text">
+						<p class="section-text-content">
+							{{#if signature.thanks}} {{signature.thanks}}<br />
+							{{/if}} {{signature.name}}
+						</p>
+					</div>
+				</section>
+				{{/if}}
+			</main>
+			<div class="footer">
+				<div class="footer-content">
+					<p class="footer-text">
+						You are receiving this email because you opted in to receive updates
+						from jumper.de. If you no longer wish to receive these emails, you
+						can
+						<a href="https://jumper.de/account/settings"> unsubscribe here </a>.
+					</p>
+
+					<div class="footer-row">
+						<p class="footer-powered">
+							<img
+								src="assets/jumper-logo-gray.png"
+								alt="Jumper.de"
+								class="jumper-gray-logo"
+							/>
+							<span class="powered-text">a service by</span>
+							<img
+								src="assets/vierroth-gmbh.png"
+								alt="vierroth GmbH"
+								class="vierroth-logo"
+							/>
+						</p>
+
+						<div class="footer-icons">
+							<a href="https://jumper.de">
+								<img src="assets/globe.png" alt="Website" />
+							</a>
+
+							<a href="https://www.linkedin.com/company/vierroth/">
+								<img src="assets/linkedin.png" alt="LinkedIn" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+<!--
+	{
+		"greeting": "",
+		"sections": [
+			{
+				"text": {
+					"content": "sdfsdf",
+				}
+			},
+			{
+				"notice": {
+					"content": "sdfsdf",
+				}
+			},
+			{
+				"list": {
+					"title": "List title"
+					"content": [
+						"item 1",
+						"item 2",
+						"item 3"
+					]
+				}
+			},
+			{
+				"card": {
+					"image": {
+						"alt": "Image title",
+						"src": "#"
+					},
+					"title": "List title",
+					"content": "Some text",
+					"bullets": [
+								"detail 1",
+								"detail 2",
+							]
+				}
+			}
+			{
+				"article": {
+					"title": "Lorem Ipsum",
+					"image": {
+						"alt": "Article image",
+						"src": "#"
+					},
+					"content": [
+						"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer auctor risus non nulla vulputate, et dictum est pretium. Nam consectetur nisl nec risus maximus vestibulum. Curabitur elementum vitae lectus ut condimentum.",
+						"Morbi posuere, neque in maximus posuere, lectus odio tempus ex, porttitor tempor velit metus vel tortor. Vivamus sodales, ante id imperdiet convallis, risus mauris hendrerit quam, vitae rhoncus quam nisi sed lacus."
+					]
+				}
+			}
+		],
+		"mainAction": {
+			"label": "View all updates",
+			"href": "#"
+		},
+		"signature": {
+			"thanks": "",
+			"name": ""
+		}
+	}
+-->

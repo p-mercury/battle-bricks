@@ -1,0 +1,17 @@
+syntax = "proto3";
+package filestaging.v1;
+
+import "filestaging/v1/create-upload-session.proto";
+import "filestaging/v1/get-file.proto";
+
+option go_package = "contracts/dist/filestaging/v1;filestaging";
+
+service Internal {
+  rpc CreateUploadSession(CreateUploadSessionRequest) returns (CreateUploadSessionResponse);
+  rpc GetFile(GetFileRequest) returns (GetFileResponse);
+}
+
+service External {
+  rpc CreateUploadSession(CreateUploadSessionRequest) returns (CreateUploadSessionResponse);
+  rpc GetFile(GetFileRequest) returns (GetFileResponse);
+}

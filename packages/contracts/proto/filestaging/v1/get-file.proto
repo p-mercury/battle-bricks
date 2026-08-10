@@ -1,0 +1,21 @@
+syntax = "proto3";
+package filestaging.v1;
+
+import "buf/validate/validate.proto";
+import "filestaging/rules.proto";
+import "filestaging/v1/file.proto";
+
+option go_package = "contracts/dist/filestaging/v1;filestaging";
+
+message GetFileRequest {
+  string id = 1 [(buf.validate.field).string.(filestaging.file_id) = true];
+}
+
+message GetFileResponse {
+  File file = 1;
+}
+
+message GetFileContext {
+  GetFileRequest request = 1;
+  File subject = 2;
+}

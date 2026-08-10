@@ -1,0 +1,24 @@
+version: v2
+inputs:
+  - directory: ./../../
+plugins:
+  - local: [go, tool, protoc-gen-go]
+    out: dist
+    include_imports: true
+    opt: paths=source_relative
+  - local: [go, tool, protoc-gen-connect-go]
+    out: dist
+    opt: paths=source_relative
+  - local: [pnpm, exec, protoc-gen-es]
+    out: dist
+    include_imports: true
+    opt:
+      - target=js+dts
+      - import_extension=js
+  - local: [go, tool, protoc-gen-jsonschema]
+    out: dist/json-schema
+    opt:
+      - target=json-strict-bundle
+  - local: protoc-gen-event-registry
+    out: dist
+    opt: paths=source_relative
