@@ -23,14 +23,14 @@ importers:
   apps/cdk/backbone:
     dependencies:
       "@aws-cdk/aws-lambda-go-alpha":
-        specifier: ^2.263.0-alpha.0
-        version: 2.263.0-alpha.0(aws-cdk-lib@2.263.0(constructs@10.8.1))(constructs@10.8.1)
+        specifier: ^2.264.0-alpha.0
+        version: 2.264.0-alpha.0(aws-cdk-lib@2.264.0(constructs@10.8.1))(constructs@10.8.1)
       "@types/node":
         specifier: ^26.2.0
         version: 26.2.0
       aws-cdk-lib:
-        specifier: ^2.263.0
-        version: 2.263.0(constructs@10.8.1)
+        specifier: ^2.264.0
+        version: 2.264.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -47,8 +47,8 @@ importers:
         specifier: ^26.2.0
         version: 26.2.0
       aws-cdk-lib:
-        specifier: ^2.263.0
-        version: 2.263.0(constructs@10.8.1)
+        specifier: ^2.264.0
+        version: 2.264.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -78,7 +78,7 @@ importers:
         version: link:../services/policy
       "@flit/cdk-pipeline":
         specifier: ^2.7.0
-        version: 2.7.0(aws-cdk-lib@2.263.0(constructs@10.8.1))(constructs@10.8.1)
+        version: 2.7.0(aws-cdk-lib@2.264.0(constructs@10.8.1))(constructs@10.8.1)
       "@types/node":
         specifier: ^26.2.0
         version: 26.2.0
@@ -86,8 +86,8 @@ importers:
         specifier: ^2.1135.1
         version: 2.1135.1
       aws-cdk-lib:
-        specifier: ^2.263.0
-        version: 2.263.0(constructs@10.8.1)
+        specifier: ^2.264.0
+        version: 2.264.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -101,8 +101,8 @@ importers:
   apps/cdk/services/file-staging:
     dependencies:
       "@aws-cdk/aws-lambda-go-alpha":
-        specifier: ^2.263.0-alpha.0
-        version: 2.263.0-alpha.0(aws-cdk-lib@2.263.0(constructs@10.8.1))(constructs@10.8.1)
+        specifier: ^2.264.0-alpha.0
+        version: 2.264.0-alpha.0(aws-cdk-lib@2.264.0(constructs@10.8.1))(constructs@10.8.1)
       "@battle-bricks/backbone":
         specifier: workspace:*
         version: link:../../backbone
@@ -125,8 +125,8 @@ importers:
         specifier: ^26.2.0
         version: 26.2.0
       aws-cdk-lib:
-        specifier: ^2.263.0
-        version: 2.263.0(constructs@10.8.1)
+        specifier: ^2.264.0
+        version: 2.264.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -140,8 +140,8 @@ importers:
   apps/cdk/services/identity:
     dependencies:
       "@aws-cdk/aws-lambda-go-alpha":
-        specifier: ^2.263.0-alpha.0
-        version: 2.263.0-alpha.0(aws-cdk-lib@2.263.0(constructs@10.8.1))(constructs@10.8.1)
+        specifier: ^2.264.0-alpha.0
+        version: 2.264.0-alpha.0(aws-cdk-lib@2.264.0(constructs@10.8.1))(constructs@10.8.1)
       "@battle-bricks/backbone":
         specifier: workspace:*
         version: link:../../backbone
@@ -165,13 +165,13 @@ importers:
         version: 2.1.2(@bufbuild/protobuf@2.13.0)
       "@flit/cdk-bucket-mesh":
         specifier: ^0.7.1
-        version: 0.7.1(aws-cdk-lib@2.263.0(constructs@10.8.1))(constructs@10.8.1)
+        version: 0.7.1(aws-cdk-lib@2.264.0(constructs@10.8.1))(constructs@10.8.1)
       "@types/node":
         specifier: ^26.2.0
         version: 26.2.0
       aws-cdk-lib:
-        specifier: ^2.263.0
-        version: 2.263.0(constructs@10.8.1)
+        specifier: ^2.264.0
+        version: 2.264.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -182,8 +182,8 @@ importers:
   apps/cdk/services/notification:
     dependencies:
       "@aws-cdk/aws-lambda-go-alpha":
-        specifier: ^2.263.0-alpha.0
-        version: 2.263.0-alpha.0(aws-cdk-lib@2.263.0(constructs@10.8.1))(constructs@10.8.1)
+        specifier: ^2.264.0-alpha.0
+        version: 2.264.0-alpha.0(aws-cdk-lib@2.264.0(constructs@10.8.1))(constructs@10.8.1)
       "@battle-bricks/backbone":
         specifier: workspace:*
         version: link:../../backbone
@@ -206,8 +206,8 @@ importers:
         specifier: ^26.2.0
         version: 26.2.0
       aws-cdk-lib:
-        specifier: ^2.263.0
-        version: 2.263.0(constructs@10.8.1)
+        specifier: ^2.264.0
+        version: 2.264.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -224,8 +224,8 @@ importers:
   apps/cdk/services/policy:
     dependencies:
       "@aws-cdk/aws-lambda-go-alpha":
-        specifier: ^2.263.0-alpha.0
-        version: 2.263.0-alpha.0(aws-cdk-lib@2.263.0(constructs@10.8.1))(constructs@10.8.1)
+        specifier: ^2.264.0-alpha.0
+        version: 2.264.0-alpha.0(aws-cdk-lib@2.264.0(constructs@10.8.1))(constructs@10.8.1)
       "@battle-bricks/backbone":
         specifier: workspace:*
         version: link:../../backbone
@@ -248,8 +248,8 @@ importers:
         specifier: ^26.2.0
         version: 26.2.0
       aws-cdk-lib:
-        specifier: ^2.263.0
-        version: 2.263.0(constructs@10.8.1)
+        specifier: ^2.264.0
+        version: 2.264.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -260,11 +260,14 @@ importers:
   apps/interface:
     dependencies:
       "@ai-sdk/openai":
-        specifier: ^4.0.36
-        version: 4.0.36(zod@4.4.3)
+        specifier: ^4.0.37
+        version: 4.0.37(zod@4.4.3)
       "@aws-lambda-powertools/logger":
         specifier: ^2.34.0
         version: 2.34.0
+      "@battle-bricks/contracts":
+        specifier: workspace:*
+        version: link:../../packages/contracts
       "@bufbuild/protobuf":
         specifier: ^2.13.0
         version: 2.13.0
@@ -283,6 +286,9 @@ importers:
       "@flit/sveltekit-adapter-cdk":
         specifier: ^2.6.0
         version: 2.6.0(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.8)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)))(constructs@10.8.1)(svelte@5.56.8)(typescript@6.0.3)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0))
+      "@open-policy-agent/opa-wasm":
+        specifier: ^1.10.0
+        version: 1.10.0
       "@sentry/sveltekit":
         specifier: ^10.70.0
         version: 10.70.0(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@sveltejs/kit@2.70.2(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.8)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)))(svelte@5.56.8)(typescript@6.0.3)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)))(svelte@5.56.8)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0))
@@ -305,8 +311,8 @@ importers:
         specifier: ^0.20.5
         version: 0.20.5(svelte@5.56.8)
       ai:
-        specifier: ^7.0.58
-        version: 7.0.58(zod@4.4.3)
+        specifier: ^7.0.59
+        version: 7.0.59(zod@4.4.3)
       minisearch:
         specifier: ^7.2.0
         version: 7.2.0
@@ -352,8 +358,8 @@ importers:
         specifier: ^2.13.0
         version: 2.13.0(@bufbuild/protobuf@2.13.0)
       aws-cdk-lib:
-        specifier: ^2.263.0
-        version: 2.263.0(constructs@10.8.1)
+        specifier: ^2.264.0
+        version: 2.264.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -374,28 +380,28 @@ importers:
   packages/sigv4-http: {}
 
 packages:
-  "@ai-sdk/gateway@4.0.46":
+  "@ai-sdk/gateway@4.0.47":
     resolution:
       {
-        integrity: sha512-LIAO6kAG8fpXQb9L0iwPk1FIbXftvqnyC56v5NEAzeWTeL8fUsy/Hx86VPBTWEDFdwbVprjWifJOAqS6AOj3mA==,
+        integrity: sha512-BuWWlA8atWEnEJzN4eamCpGZWkoK9V3TCyNaMwgRIazhqkgWkA1Wp36si3j2JeVYzlvlEAOWrJ92dr92j/Vkqg==,
       }
     engines: { node: ">=22" }
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
 
-  "@ai-sdk/openai@4.0.36":
+  "@ai-sdk/openai@4.0.37":
     resolution:
       {
-        integrity: sha512-wHJNArBdjJPXb8GXcA+FslbRt+7qIE1KoHSAVi+CeBFidinVrTVBZKFMJz3mNZMj8YILBMl/VIvTD/oGFjX6/g==,
+        integrity: sha512-rQIdkvqHaqyu94zMJKkhucRwsyTpYUmI+vrH/Dm1Erc6ypURikOV+9e51Pni6RL8IxFlu2bv6y8hA1ghzCy7Gw==,
       }
     engines: { node: ">=22" }
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
 
-  "@ai-sdk/provider-utils@5.0.25":
+  "@ai-sdk/provider-utils@5.0.26":
     resolution:
       {
-        integrity: sha512-xscPPHCSjCHWrdhai25sbHCJeKNLW/3D1uSpUZa4cEtTKXA8OnPQ3+Rfu1SmM5Ea/Mf8Dfn3cllw9zeMzo/zFA==,
+        integrity: sha512-0mqhqx+Dcv+msI84+zkbLXmnCHb/mpkYJ9DU3HBvB1px+UjFQss4lLZqRCSzJ0w3NxwQk4Ishk7cP0r8wEQD5w==,
       }
     engines: { node: ">=22" }
     peerDependencies:
@@ -408,10 +414,10 @@ packages:
       }
     engines: { node: ">=22" }
 
-  "@apm-js-collab/code-transformer-bundler-plugins@0.7.3":
+  "@apm-js-collab/code-transformer-bundler-plugins@0.7.4":
     resolution:
       {
-        integrity: sha512-qNbPwuMZ8f5ZuGj/ttPeB7a6C/S1bB6tNYaEL5vNiRKydSAxa4AU0gxCWgaP4fVju+AuwhcumSFjrEcGF9Dv7Q==,
+        integrity: sha512-nAfOeZPSUAQvJa1iFT/5oCrTm5YQhMMrfCNthNnaXHZiOQhu1KGuLoIx7HtbAi3wfwaBYLaICPIeenIaEwcXIg==,
       }
     engines: { node: ">=18.0.0" }
 
@@ -440,20 +446,20 @@ packages:
         integrity: sha512-pDiuqH+qY3zM9lhhLjbKJ1tnKOHzQ2V4Wr/3qsxyKeKAkuPMI/BVGvZG1PbrikUw949cGVTfVEt4ETKKYnrj0Q==,
       }
 
-  "@aws-cdk/aws-lambda-go-alpha@2.263.0-alpha.0":
+  "@aws-cdk/aws-lambda-go-alpha@2.264.0-alpha.0":
     resolution:
       {
-        integrity: sha512-26QlNTD39Nk0UrALGVnd4f59U+fs7nZ28PzVwL8M6BwJUVykV1wKwZc9FqEUQvRSvMDJqRJuYC3gNeE0582LWA==,
+        integrity: sha512-KSKTNtyYAHLfXp8UONyysFXkQzuDT0Ce5J3og7iXk0xbHaDNd+2VMu/OBuVGoNirBYrWxJGggNngv/oAV/+l1A==,
       }
     engines: { node: ">= 20.0.0" }
     peerDependencies:
-      aws-cdk-lib: ^2.263.0
+      aws-cdk-lib: ^2.264.0
       constructs: ^10.5.0
 
-  "@aws-cdk/cloud-assembly-schema@54.15.0":
+  "@aws-cdk/cloud-assembly-schema@54.17.0":
     resolution:
       {
-        integrity: sha512-eWdbH+SRmxeTSyECibUdP4MkRqhoXJ7GMFiHJgIt5081sU4D42tsNmwe8rPHQHyFXRTwauxdLNdhJeykOv8+Cg==,
+        integrity: sha512-wV1GmMM5AvDkiJIenb9aJcBiGTa5KwX/C/mIjFZCsWsB5b1rEMLnwMageqrOpL2mWKicpxqS8ofF/Yte4Lm3Dg==,
       }
     engines: { node: ">= 18.0.0" }
     bundledDependencies:
@@ -714,24 +720,6 @@ packages:
       }
     peerDependencies:
       "@bufbuild/protobuf": ^2.7.0
-
-  "@emnapi/core@2.0.0-alpha.3":
-    resolution:
-      {
-        integrity: sha512-AZypUeJ/yByuxyS7BlSNRDOMLMlROYtjYdIAuBmJssVz1UJDSeYxLrdizhXCFYhedC5bqd/ASy8EuNXbVVXp9g==,
-      }
-
-  "@emnapi/runtime@2.0.0-alpha.3":
-    resolution:
-      {
-        integrity: sha512-hFPAhMUjJD9BSyCANEISPOogeXC9Zo9ZQl7L6vKnaVsMkCtzznaW/naYypeyl0Gv5rYfWYsZbpixTMpjDJzQeA==,
-      }
-
-  "@emnapi/wasi-threads@2.0.1":
-    resolution:
-      {
-        integrity: sha512-9DsSk+o5NBX0CCJT8s0EROGSGxjR/tKu6aBTaVyq+SjAEQH4XcdcRxPBRzsBLizTTJ49MJjF+jgu3qnO9GLQcQ==,
-      }
 
   "@esbuild/aix-ppc64@0.28.2":
     resolution:
@@ -1034,15 +1022,11 @@ packages:
         integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==,
       }
 
-  "@napi-rs/wasm-runtime@1.2.2":
+  "@open-policy-agent/opa-wasm@1.10.0":
     resolution:
       {
-        integrity: sha512-JfB4kuJQjaoHuCTseIINHtHWeJnvgEcxjwA5t/Y00ZgaOO1Crz3fjT/p8kT28zA/Caz7oiUMn3d6H2yOVCVwuw==,
+        integrity: sha512-ymR/nFS3nO9o24j9xowGGQaf+Gmb813QcxUpVZkfRlJkawKWqSIllnEH15agyWjijmOIyhA+OBErenx6N3jphw==,
       }
-    engines: { node: ^20.19.0 || ^22.13.0 || >=23.5.0 }
-    peerDependencies:
-      "@emnapi/core": ^1.7.1 || ^2.0.0-alpha.3
-      "@emnapi/runtime": ^1.7.1 || ^2.0.0-alpha.3
 
   "@opentelemetry/api-logs@0.220.0":
     resolution:
@@ -1110,10 +1094,10 @@ packages:
       }
     engines: { node: ">=14" }
 
-  "@oxc-project/types@0.142.0":
+  "@oxc-project/types@0.143.0":
     resolution:
       {
-        integrity: sha512-7W+2q5AKQVU36fkaryontrHn3YDt1RyUYXatw9i5H8ocYe2sPKSFB6eS8WNPeRKiN1qAWWZUPm7gwFzJGrccqQ==,
+        integrity: sha512-u6JZdLBTLotrNC9Vd6vPssINdzcCzleKAH6EJKImQb7GtYvX5keN2dxkoK44stCc4tffE6QQRtZTXVSzsLUlWA==,
       }
 
   "@parcel/watcher-android-arm64@2.6.0":
@@ -1243,140 +1227,133 @@ packages:
         integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==,
       }
 
-  "@rolldown/binding-android-arm64@1.2.1":
+  "@rolldown/binding-android-arm64@1.2.3":
     resolution:
       {
-        integrity: sha512-02hOeOSryYxVrOIphmLAsqnCJWxwlzFk+pEt/N/i6OgT3lShHO7xGCU5cpgchRDHboAEbSjzgGh+O/u1GswQmA==,
+        integrity: sha512-zrJtHDcaZJ1Fp7xf4hNl+7seH9Cn/N5TwLYkhgXREtBwAd/jaqW3uqeHxpDugJLVICWg4eW44kOQEGJ1r6jCGw==,
       }
     engines: { node: ^20.19.0 || >=22.12.0 }
     cpu: [arm64]
     os: [android]
 
-  "@rolldown/binding-darwin-arm64@1.2.1":
+  "@rolldown/binding-darwin-arm64@1.2.3":
     resolution:
       {
-        integrity: sha512-fMsTOnN0OjFm3CyppWPitKnc8UlliVARUULW6cfU6AIqjdtgmSFWSk9vecHzZduv/yMWIHDlRhM1e8Iff9uAfA==,
+        integrity: sha512-ieIiibVCp0tX7TLu2cafoNPv8wJyYi01ekXpbf8q2j7F4rGAhhXb/eQh7ge9DRBY78GwmRQtvjZDux7EDbA8kA==,
       }
     engines: { node: ^20.19.0 || >=22.12.0 }
     cpu: [arm64]
     os: [darwin]
 
-  "@rolldown/binding-darwin-x64@1.2.1":
+  "@rolldown/binding-darwin-x64@1.2.3":
     resolution:
       {
-        integrity: sha512-1wjKdz/XLGKHaTNHjQveQ/B23TKx4ItAqm1JbyVuvNPc4Ze0Fb48s49TAd/2zcplPl8okE/UbTgmlVfwT7eFeQ==,
+        integrity: sha512-Zh9tCon19eDXJoihx0rqKhMUlMYqzwj3aPsSuHmI4RWZh62dWUL+DJN4C5YQya5TcQBJU/Fe8+rY0jhXTQITqA==,
       }
     engines: { node: ^20.19.0 || >=22.12.0 }
     cpu: [x64]
     os: [darwin]
 
-  "@rolldown/binding-freebsd-x64@1.2.1":
+  "@rolldown/binding-freebsd-x64@1.2.3":
     resolution:
       {
-        integrity: sha512-Fa0jHR07E7YBN4vOEsbVf2briYNsuOowfLJaXULZM0ldMlaCaj2LJgLMbMe4iacRyZmvR8efFhgR9wKuGclQUg==,
+        integrity: sha512-nGbJWewA1wrXXZiQhjAT5rhibGfns5ZNkDVqxsO6zJ3f3YvpoDNNmGMSbbhLuXKjNScaBJVOAboztAWVespQMg==,
       }
     engines: { node: ^20.19.0 || >=22.12.0 }
     cpu: [x64]
     os: [freebsd]
 
-  "@rolldown/binding-linux-arm-gnueabihf@1.2.1":
+  "@rolldown/binding-linux-arm-gnueabihf@1.2.3":
     resolution:
       {
-        integrity: sha512-pzkgu1SSHGgRRyRZ4fbmSgmajbVt+epaLP99NDjFft69v/ypfTi6swBMiVdh2EkQ0OSnHE1lZDM7DRGkyAzUpA==,
+        integrity: sha512-QNniJr5Kml0kDEB98jiDOJjXNroxIIi0IXIbdYzY26Xt1pVbeP62+KnoIZLwirOymX/0jDk/2gI/bNUv7A7OIw==,
       }
     engines: { node: ^20.19.0 || >=22.12.0 }
     cpu: [arm]
     os: [linux]
 
-  "@rolldown/binding-linux-arm64-gnu@1.2.1":
+  "@rolldown/binding-linux-arm64-gnu@1.2.3":
     resolution:
       {
-        integrity: sha512-QI5SEDY8cbiYWHx0VO4vIc3UlS6a32vXHjU8Qy/17adEmZIPuByJg13UEvo9c/UCiUkdcVWY83C+b+JrwnNyUg==,
+        integrity: sha512-TkqEAcmmvH3I/q4114NB4RVt6241Dao48pF45uLcFGrwAaIn0iITgTAKP/dLjbN0R4buJjGb91+UHSoFmpgIWw==,
       }
     engines: { node: ^20.19.0 || >=22.12.0 }
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
 
-  "@rolldown/binding-linux-arm64-musl@1.2.1":
+  "@rolldown/binding-linux-arm64-musl@1.2.3":
     resolution:
       {
-        integrity: sha512-Sm41FyCeXqmYcERoYOCbGIL5hNfd8w9LQ7Y61Bev48HkcjaJqV/iiVOaiDxjVTRMS+QKrZmD8cfPt4uMVnvM+A==,
+        integrity: sha512-NHqjnxpsndf4MPymxteFAWHHfkTL8HjWh1KB7z23ofZ6QO2euONuxDXjat69dKZRALnGypg8k8SsK8vZJoXv1Q==,
       }
     engines: { node: ^20.19.0 || >=22.12.0 }
     cpu: [arm64]
     os: [linux]
     libc: [musl]
 
-  "@rolldown/binding-linux-ppc64-gnu@1.2.1":
+  "@rolldown/binding-linux-ppc64-gnu@1.2.3":
     resolution:
       {
-        integrity: sha512-2x+WhXTGl9yJYPbltW/BSEPTVz9OIWQyER4N+gJEDWkkn904eRcBzELqh/Hf7K0w/ubGbKNMv0ZC+94QK/IFEg==,
+        integrity: sha512-6tbrbwfz5GB9DQ4Jwo6hy9v+vR31xZlvzZ6n5Xut6Hhx5PvrA9q/HsK8KMaYQp063iqZGXwNvZtYNLD7EM/x0w==,
       }
     engines: { node: ^20.19.0 || >=22.12.0 }
     cpu: [ppc64]
     os: [linux]
     libc: [glibc]
 
-  "@rolldown/binding-linux-s390x-gnu@1.2.1":
+  "@rolldown/binding-linux-s390x-gnu@1.2.3":
     resolution:
       {
-        integrity: sha512-eEjmQpuRQayHPWWnywaWHkFT3ToPbP3RYy42VVd/B9aBGDA+Ol25EIWHxKQST3IiWJjikCWUF7KtbfqwZrzVwQ==,
+        integrity: sha512-oyuXxXmoZHjXC917IAPFAAv4wWAa0cM9afk8nx1+9/jNNOX1uPf8yDA6p7G0RypOfw/X0PQt5IfoquY1um+zSg==,
       }
     engines: { node: ^20.19.0 || >=22.12.0 }
     cpu: [s390x]
     os: [linux]
     libc: [glibc]
 
-  "@rolldown/binding-linux-x64-gnu@1.2.1":
+  "@rolldown/binding-linux-x64-gnu@1.2.3":
     resolution:
       {
-        integrity: sha512-/Orga1fZYkLc/56jBICcHrKchl8Z2UKdDSr3LG9ToWO1lQ6a4Livk9Xz+9WN91zsz5QR3XQz2NNoSDEvP6qadw==,
+        integrity: sha512-TytMwF2KVGqP2tgd0I1OY0PAv78dZRAYcF5ssDzjM34SUXCED3uXvSd5+lHoC0bTD6eEdFz7LdQNCO1y0oVk9w==,
       }
     engines: { node: ^20.19.0 || >=22.12.0 }
     cpu: [x64]
     os: [linux]
     libc: [glibc]
 
-  "@rolldown/binding-linux-x64-musl@1.2.1":
+  "@rolldown/binding-linux-x64-musl@1.2.3":
     resolution:
       {
-        integrity: sha512-xxBJRL+0q0Kce7orznGWLuylHDY65vuARXZRpX+hPdv+DqK2c3NlCsVA98tlWzWNEE7yPqA/1NQ5nnCrj49Y5A==,
+        integrity: sha512-/E9m3qstrJFVPoULV25mVQblSNExY2+kBsYe4sy0Tn0yOOgJ8wZbZt3KnRbF/XeU2Gl1STKUQnDNTqhIE5MD4A==,
       }
     engines: { node: ^20.19.0 || >=22.12.0 }
     cpu: [x64]
     os: [linux]
     libc: [musl]
 
-  "@rolldown/binding-openharmony-arm64@1.2.1":
+  "@rolldown/binding-openharmony-arm64@1.2.3":
     resolution:
       {
-        integrity: sha512-M6AdXIXw3s+/8XpKMzdGDEXGS1S7kwUsy+rcTIUIOx5Ge4nXKCtAFHFV9YKkXvGcC5WMoTjAteLzlsQROVI0Yw==,
+        integrity: sha512-Kr0OcsoQI816i6HOl3vFHpd1K0eZyh76zgfj4c1nTyaTsd5r2Mj1lwM4R90y/qaCfmTn9eHy0SKwi98eitRxug==,
       }
     engines: { node: ^20.19.0 || >=22.12.0 }
     cpu: [arm64]
     os: [openharmony]
 
-  "@rolldown/binding-wasm32-wasi@1.2.1":
+  "@rolldown/binding-win32-arm64-msvc@1.2.3":
     resolution:
       {
-        integrity: sha512-/TX0SoRGojHzSAHpfVBbavRVSazg5U3h3Y3VXfcc0cdugq6kxdqw8LPGFiPr+/7gE/60zRcsOY2Vi9b9eT0jww==,
-      }
-    engines: { node: ^20.19.0 || ^22.13.0 || >=23.5.0 }
-
-  "@rolldown/binding-win32-arm64-msvc@1.2.1":
-    resolution:
-      {
-        integrity: sha512-EvRrivJieyHG+AO9lleZWgq+g0+S7oV2C51yuqlcyU/R9net+sI4Pj0F+lUoP2bEr6TWX3SqFaaS0SzfLxSzkw==,
+        integrity: sha512-hOtMwTqnME+/gJcH/PCZ0wn0zPUjiWOgkHpxbSJpfGKMezHltx1S7/k1SitzVa7Ww2cqrDDaFbZEhcJZO8o+Jw==,
       }
     engines: { node: ^20.19.0 || >=22.12.0 }
     cpu: [arm64]
     os: [win32]
 
-  "@rolldown/binding-win32-x64-msvc@1.2.1":
+  "@rolldown/binding-win32-x64-msvc@1.2.3":
     resolution:
       {
-        integrity: sha512-Z4eCmn5QJ/5+azF9knpLWKfVd9aidn0mAe9TpJgvBLId9Ax3t0+JVxBmT25Bv7NBbVW1TZyKjQjQReouMeH5UQ==,
+        integrity: sha512-ekcqMMkI2PlhYnfzQnB/cEdYUVVJViWvoUyLrbzgDoi3Snfc1mVBwdnc306ufA5ejy8JSPjT2RlW1nQSjW7efg==,
       }
     engines: { node: ^20.19.0 || >=22.12.0 }
     cpu: [x64]
@@ -1402,10 +1379,10 @@ packages:
       }
     engines: { node: ">=18" }
 
-  "@sentry/bundler-plugins@10.69.0":
+  "@sentry/bundler-plugins@10.70.0":
     resolution:
       {
-        integrity: sha512-I1otnSJIH4IOugLp+kcBbT0Kcex+J8xnHuUyzMAwCYSpZ0FMVvA723uNmkMdW0PxRRw0oEhe0qDB+t+ZjHxUiA==,
+        integrity: sha512-M+a32VOZVeTUxF+QecQ+OHYj8hb5FeppKwwWpTQ9cfS6ixgoNUK7/B7NhB2XbfxE3F1BcGvOxyS+AB+fvPfSRQ==,
       }
     engines: { node: ">= 18" }
     peerDependencies:
@@ -1517,13 +1494,6 @@ packages:
         integrity: sha512-fO9PLmHdVURcSPUpWCItWAtgKiMwGdJHbovoSEyLplX5sxs2ugvI4CBPTrkkgqhObnZOD0CnWBKDzSVQYBKEyQ==,
       }
     engines: { node: ">=14" }
-
-  "@sentry/core@10.69.0":
-    resolution:
-      {
-        integrity: sha512-+uuqVEeiDzYuAKjZLqsROKXvRTbl/QeH0gfGRtpYib1cud4rAFWRIkFmcR7Jb7JGFYwmReyQotiTj/hcDszTZg==,
-      }
-    engines: { node: ">=18" }
 
   "@sentry/core@10.70.0":
     resolution:
@@ -1646,10 +1616,10 @@ packages:
       svelte: ^5.1.0
       vite: ">=5.0.0 || >=6.0.0"
 
-  "@sveltejs/acorn-typescript@1.0.11":
+  "@sveltejs/acorn-typescript@1.0.12":
     resolution:
       {
-        integrity: sha512-LFuZUkjJ9iF7JZye/aG5XM0SFcQ5VyL0oVX4WJ9dc0Va3R3s0OauX1BESVCb+YN/ol8TAfqGDDAQsTG627Y5kw==,
+        integrity: sha512-J1jNYG23QWd67UfrQSFHtjhV37r9mVi0gdc12A3MWPldOjRK35Xk+um+qACPVjgw3AleiqoyEAhok8Wm3q46NA==,
       }
     peerDependencies:
       acorn: ^8.9.0
@@ -1745,12 +1715,6 @@ packages:
       }
     cpu: [arm64]
     os: [win32]
-
-  "@tybys/wasm-util@0.10.3":
-    resolution:
-      {
-        integrity: sha512-F3fo1MYrRJYL3zER0OUOmkutjr1Vp23m7OsSgp7nq4SP6OqX6C/56XFIPAl5bt3zaBRjmW7SGz3u/6LwFpYcOg==,
-      }
 
   "@types/aws-lambda@8.10.162":
     resolution:
@@ -1859,10 +1823,10 @@ packages:
       }
     engines: { node: ">= 6.0.0" }
 
-  ai@7.0.58:
+  ai@7.0.59:
     resolution:
       {
-        integrity: sha512-GfgO90CQQ0yYuoxJAUOeQ6tviyYw1BUIDygSZ1q3Ce6kSc93tYmB5eltKY/NxC0YOouAax7JvDqVnYxvIAr04Q==,
+        integrity: sha512-p10cqg8KvLIZi7Gk+XsQjoYoLENoDdEYvehP0rSo6Wg15nbCmP+nwIy1rOIX+WGIDWGdI+jmhjVx5fXShBVC3w==,
       }
     engines: { node: ">=22" }
     peerDependencies:
@@ -1911,6 +1875,28 @@ packages:
       - yaml
       - mime-types
 
+  aws-cdk-lib@2.264.0:
+    resolution:
+      {
+        integrity: sha512-TzeWc4aM2qftdoWzIgqV7DotzUO9+DqYLXHvL2qygZqkrJdvITTp8ojHstxYPH40FfA+RL4x5hVfa52NCTB0ZA==,
+      }
+    engines: { node: ">= 20.0.0" }
+    peerDependencies:
+      constructs: ^10.5.0
+    bundledDependencies:
+      - "@aws/cloudformation-validate"
+      - "@balena/dockerignore"
+      - "@aws-cdk/cloud-assembly-api"
+      - case
+      - fs-extra
+      - ignore
+      - jsonschema
+      - minimatch
+      - punycode
+      - semver
+      - yaml
+      - mime-types
+
   aws-cdk@2.1135.1:
     resolution:
       {
@@ -1933,10 +1919,10 @@ packages:
       }
     engines: { node: 18 || 20 || >=22 }
 
-  baseline-browser-mapping@2.11.9:
+  baseline-browser-mapping@2.11.13:
     resolution:
       {
-        integrity: sha512-cp447VUsGS07+n1Dqf7YSQ8maeJrjEhaDxTm1ZefbqDtypHBC5GzGMQbklR6IPR13Y8OAJRHZWEMtZipJLCttg==,
+        integrity: sha512-k9HNuUVMlqVjQ9UHzfPjIqiDbWw7WqT1AoT7GL8VwvF3r0ZfArtgiSPAlmupyNquNgOJHTuH4CKYf8ttMTWBTQ==,
       }
     engines: { node: ">=6.0.0" }
     hasBin: true
@@ -1948,18 +1934,18 @@ packages:
       }
     engines: { node: 20 || >=22 }
 
-  browserslist@4.28.7:
+  browserslist@4.28.8:
     resolution:
       {
-        integrity: sha512-JxV13hNrFxqjOc8alRbq9dK1MM79NEXYpma2B2J4wAtpWS5zIEIKqWPGCl7N4o7Uc7B7itylh7SuDujATRyyTw==,
+        integrity: sha512-V2NpofLblG64mfOtSgDhOJESZEGogzDMBv/q+W6oc4LXWP/q75eOXoOaaOu1EOadB9U4Bwx/e0yzbvwKH8zalA==,
       }
     engines: { node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7 }
     hasBin: true
 
-  caniuse-lite@1.0.30001806:
+  caniuse-lite@1.0.30001809:
     resolution:
       {
-        integrity: sha512-72Cuvd95zbSYPKq6Fhg8eDJRlzgWDf7/mtoZv6Qe/DYNCEBdNxoA3+rZAU2ZhGCpZlns3EssFavaZomckT5Uuw==,
+        integrity: sha512-xxWVywk6a6Arlk+hymeycyn/VgqEfLDxupvhH/xiY5SJ/18kmi9o6MiO320DCUzypORHLtvh0I4i04tUhCNHNQ==,
       }
 
   ccount@2.0.1:
@@ -2105,10 +2091,10 @@ packages:
       }
     engines: { node: ">=12" }
 
-  electron-to-chromium@1.5.399:
+  electron-to-chromium@1.5.403:
     resolution:
       {
-        integrity: sha512-lEcqhErbHjXRvd41rnWLpzbyU/IXfIYo7QwaFWmxGeLiLyY2TBCdHnWY88vB+p3ubnihRypDm66panXl7TylLA==,
+        integrity: sha512-MQsYmdaLzvaCX5j+ZZBr5Fm6uCCnPQcRtlvmvRlWqrXy+BH2O4ffXIAScF+JQznQWB9brWp4lSD9Z4yNmaf2BA==,
       }
 
   es-module-lexer@2.3.1:
@@ -2145,10 +2131,10 @@ packages:
       }
     engines: { node: ">=0.10" }
 
-  esrap@2.3.0:
+  esrap@2.3.2:
     resolution:
       {
-        integrity: sha512-GQ/7RN8uOtEfNpzZzBMTzW9JBcX42oaSVtPzdF+6cEL8pqIL094iUpr9jzYGn4O4P/1S60dJ6izyT8F4LYARng==,
+        integrity: sha512-40GyiEJevYKXzYTHtZkFqAgTjLOuFcaXMao8TPyOlnWTlkHDlvZ6mPMJaJyOqVwrVCgomEG1WhJd81w0X+IcCw==,
       }
     peerDependencies:
       "@typescript-eslint/types": ^8.2.0
@@ -2597,10 +2583,10 @@ packages:
         integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==,
       }
 
-  nanoid@3.3.16:
+  nanoid@3.3.18:
     resolution:
       {
-        integrity: sha512-bzlKTyNJ7+LdGIIwy8ijFpIqEQIvafahV7eYykJ8Cvh42EdJeODoJ6gUJXpQJvej1BddH8OqTXZNE/KfbWAu8Q==,
+        integrity: sha512-DTg4MJbGMWkfi6VZFdNt2/caMbQy4Ou+Op/hJQvGEWcnVfoA1QA+xzRKAzw9jD6+GVOOeYr/mIcuDSdug6F6+w==,
       }
     engines: { node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1 }
     hasBin: true
@@ -2623,10 +2609,10 @@ packages:
       encoding:
         optional: true
 
-  node-releases@2.0.51:
+  node-releases@2.0.53:
     resolution:
       {
-        integrity: sha512-wRNIrw4DmVLKQlbgOMdkMx27Wrpzes2hh5Jtbi2bjPd+4wJstWIqP5A+lscnqbm0xxmT5Bpg8Lec5ItEBwx6BQ==,
+        integrity: sha512-D9UOmYG3UH1V+ENW56t5QXBwJw1YEY18ruVeus89Rw+SyIgjPkCO84bRzO3uNIYosJbNwiabWVn48o3uJLjxFQ==,
       }
     engines: { node: ">=18" }
 
@@ -2691,10 +2677,10 @@ packages:
         integrity: sha512-r6Q21sKsY1AjTVVjOuU02VYKVNQGJNQHjTIvs4dEbeuuYfxgYk/DGD2mqqq4RDaVkwdSq0VEtmQUOPe/wH8X3g==,
       }
 
-  postcss@8.5.25:
+  postcss@8.5.26:
     resolution:
       {
-        integrity: sha512-DTPx3RWSSnWyzLxQnlH0rJP+EW5ekl16ZU4/psbIhA0e53kJfdgaN5vKM+xP7yJtXVu+nfdVFmlgFDEKAe4Pyw==,
+        integrity: sha512-u82N74LFzG8ca+dD8puPnplTXoGH4fTPpVGuIbt36G3qvNlkvfD0lEAZSxaly3KX8TS/L1A1gsCEmvKmBcVbkQ==,
       }
     engines: { node: ^10 || ^12 || >=14 }
 
@@ -2781,10 +2767,10 @@ packages:
       }
     engines: { node: ">= 14.18.0" }
 
-  readdirp@5.0.0:
+  readdirp@5.1.1:
     resolution:
       {
-        integrity: sha512-9u/XQ1pvrQtYyMpZe7DXKv2p5CNvyVwzUB6uhLAnQwHMSgKMBR62lc7AHljaeteeHXn11XTAaLLUVZYVZyuRBQ==,
+        integrity: sha512-Kko+Y5XQ6fM+Ce3dq3m9YGxnacYZYl9cA1wZjaF3Vbry2L3i1qVg8+CAgNPsXRArPMUMCaOR7oa9Nqntc43JKA==,
       }
     engines: { node: ">= 20.19.0" }
 
@@ -2801,10 +2787,10 @@ packages:
         integrity: sha512-q1b3N5QkRUWUl7iyylaaj3kOpIT0N2i9MqIEQXP73GVsN9cw3fdx8X63cEmWhJGi2PPCF23Ijp7ktmd39rawIA==,
       }
 
-  rolldown@1.2.1:
+  rolldown@1.2.3:
     resolution:
       {
-        integrity: sha512-4FKJhg8d3OiyQOA6Q1Q0hoFFpW9/OoX+VsHzpECsdsIZoOArrAK90gl59YK/Z+gnDel45bgJZK03ozH/9bCqEw==,
+        integrity: sha512-rn9wpmxplLf7NLNyCk9FyWh3FM43DbY8jOzCdEPzH7uflhTftRbCEpqi6Ly2osgoU8OwObtmavMbWLaWy4LX7A==,
       }
     engines: { node: ^20.19.0 || >=22.12.0 }
     hasBin: true
@@ -2897,6 +2883,12 @@ packages:
     resolution:
       {
         integrity: sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q==,
+      }
+
+  sprintf-js@1.1.3:
+    resolution:
+      {
+        integrity: sha512-Oo+0REFV59/rz3gfJNKQiBlwfHaSESl1pcGyABQsnnIfWOFt6JNj5gCog2U6MLZ//IGYD+nA8nI+mTShREReaA==,
       }
 
   string-character-is-astral-surrogate@3.1.3:
@@ -3032,12 +3024,6 @@ packages:
         integrity: sha512-kRj8B+YHZCc9kQYdWfJB2/oUl9rA99qbowYYBtr4ui4mZyAQ2JpvVBd/6U2YloATfqBhBTSMhTpgBHtU0Mf3Rg==,
       }
 
-  tslib@2.8.1:
-    resolution:
-      {
-        integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==,
-      }
-
   turbo@2.10.9:
     resolution:
       {
@@ -3104,10 +3090,10 @@ packages:
         integrity: sha512-m+vIdyeCOpdr/QeQCu2EzxX/ohgS8KbnPDgFni4dQsfSCtpz8UqDyY5GjRru8PDKuYn7Fq19j1CQ+nJSsGKOzg==,
       }
 
-  update-browserslist-db@1.2.3:
+  update-browserslist-db@1.3.1:
     resolution:
       {
-        integrity: sha512-Js0m9cx+qOgDxo0eMiFGEueWztz+d4+M3rGlmKPT+T4IS/jP4ylw3Nwpu6cpTTP8R1MAC1kF4VbdLt3ARf209w==,
+        integrity: sha512-ZZ61DsRsOnakl74HAmp3oSN4aXUmEWXf+i/yv0h7tIBfICc3VdrFErQKUUKPgu3AMsTUMbcongALEN4l6GSUrQ==,
       }
     hasBin: true
     peerDependencies:
@@ -3215,6 +3201,13 @@ packages:
         integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==,
       }
 
+  yaml@1.10.3:
+    resolution:
+      {
+        integrity: sha512-vIYeF1u3CjlhAFekPPAk2h/Kv4T3mAkMox5OymRiJQB0spDP10LHvt+K7G9Ny6NuuMAb25/6n1qyUjAcGNf/AA==,
+      }
+    engines: { node: ">= 6" }
+
   yaml@2.9.0:
     resolution:
       {
@@ -3249,20 +3242,20 @@ packages:
       }
 
 snapshots:
-  "@ai-sdk/gateway@4.0.46(zod@4.4.3)":
+  "@ai-sdk/gateway@4.0.47(zod@4.4.3)":
     dependencies:
       "@ai-sdk/provider": 4.0.7
-      "@ai-sdk/provider-utils": 5.0.25(zod@4.4.3)
+      "@ai-sdk/provider-utils": 5.0.26(zod@4.4.3)
       "@vercel/oidc": 3.2.0
       zod: 4.4.3
 
-  "@ai-sdk/openai@4.0.36(zod@4.4.3)":
+  "@ai-sdk/openai@4.0.37(zod@4.4.3)":
     dependencies:
       "@ai-sdk/provider": 4.0.7
-      "@ai-sdk/provider-utils": 5.0.25(zod@4.4.3)
+      "@ai-sdk/provider-utils": 5.0.26(zod@4.4.3)
       zod: 4.4.3
 
-  "@ai-sdk/provider-utils@5.0.25(zod@4.4.3)":
+  "@ai-sdk/provider-utils@5.0.26(zod@4.4.3)":
     dependencies:
       "@ai-sdk/provider": 4.0.7
       "@standard-schema/spec": 1.1.0
@@ -3275,7 +3268,7 @@ snapshots:
     dependencies:
       json-schema: 0.4.0
 
-  "@apm-js-collab/code-transformer-bundler-plugins@0.7.3":
+  "@apm-js-collab/code-transformer-bundler-plugins@0.7.4":
     dependencies:
       "@apm-js-collab/code-transformer": 0.18.1
       es-module-lexer: 2.3.1
@@ -3303,12 +3296,12 @@ snapshots:
 
   "@aws-cdk/asset-node-proxy-agent-v6@2.1.2": {}
 
-  "@aws-cdk/aws-lambda-go-alpha@2.263.0-alpha.0(aws-cdk-lib@2.263.0(constructs@10.8.1))(constructs@10.8.1)":
+  "@aws-cdk/aws-lambda-go-alpha@2.264.0-alpha.0(aws-cdk-lib@2.264.0(constructs@10.8.1))(constructs@10.8.1)":
     dependencies:
-      aws-cdk-lib: 2.263.0(constructs@10.8.1)
+      aws-cdk-lib: 2.264.0(constructs@10.8.1)
       constructs: 10.8.1
 
-  "@aws-cdk/cloud-assembly-schema@54.15.0": {}
+  "@aws-cdk/cloud-assembly-schema@54.17.0": {}
 
   "@aws-lambda-powertools/commons@2.34.0":
     dependencies:
@@ -3361,7 +3354,7 @@ snapshots:
     dependencies:
       "@babel/compat-data": 7.29.7
       "@babel/helper-validator-option": 7.29.7
-      browserslist: 4.28.7
+      browserslist: 4.28.8
       lru-cache: 5.1.1
       semver: 6.3.1
 
@@ -3479,22 +3472,6 @@ snapshots:
     dependencies:
       "@bufbuild/protobuf": 2.13.0
 
-  "@emnapi/core@2.0.0-alpha.3":
-    dependencies:
-      "@emnapi/wasi-threads": 2.0.1
-      tslib: 2.8.1
-    optional: true
-
-  "@emnapi/runtime@2.0.0-alpha.3":
-    dependencies:
-      tslib: 2.8.1
-    optional: true
-
-  "@emnapi/wasi-threads@2.0.1":
-    dependencies:
-      tslib: 2.8.1
-    optional: true
-
   "@esbuild/aix-ppc64@0.28.2":
     optional: true
 
@@ -3575,14 +3552,14 @@ snapshots:
 
   "@flit/accepted-language@0.1.0": {}
 
-  "@flit/cdk-bucket-mesh@0.7.1(aws-cdk-lib@2.263.0(constructs@10.8.1))(constructs@10.8.1)":
+  "@flit/cdk-bucket-mesh@0.7.1(aws-cdk-lib@2.264.0(constructs@10.8.1))(constructs@10.8.1)":
     dependencies:
-      aws-cdk-lib: 2.263.0(constructs@10.8.1)
+      aws-cdk-lib: 2.264.0(constructs@10.8.1)
       constructs: 10.8.1
 
-  "@flit/cdk-pipeline@2.7.0(aws-cdk-lib@2.263.0(constructs@10.8.1))(constructs@10.8.1)":
+  "@flit/cdk-pipeline@2.7.0(aws-cdk-lib@2.264.0(constructs@10.8.1))(constructs@10.8.1)":
     dependencies:
-      aws-cdk-lib: 2.263.0(constructs@10.8.1)
+      aws-cdk-lib: 2.264.0(constructs@10.8.1)
       constructs: 10.8.1
 
   "@flit/svelte-form@2.7.0":
@@ -3622,12 +3599,10 @@ snapshots:
       "@jridgewell/resolve-uri": 3.1.2
       "@jridgewell/sourcemap-codec": 1.5.5
 
-  "@napi-rs/wasm-runtime@1.2.2(@emnapi/core@2.0.0-alpha.3)(@emnapi/runtime@2.0.0-alpha.3)":
+  "@open-policy-agent/opa-wasm@1.10.0":
     dependencies:
-      "@emnapi/core": 2.0.0-alpha.3
-      "@emnapi/runtime": 2.0.0-alpha.3
-      "@tybys/wasm-util": 0.10.3
-    optional: true
+      sprintf-js: 1.1.3
+      yaml: 1.10.3
 
   "@opentelemetry/api-logs@0.220.0":
     dependencies:
@@ -3672,7 +3647,7 @@ snapshots:
 
   "@opentelemetry/semantic-conventions@1.43.0": {}
 
-  "@oxc-project/types@0.142.0": {}
+  "@oxc-project/types@0.143.0": {}
 
   "@parcel/watcher-android-arm64@2.6.0":
     optional: true
@@ -3733,53 +3708,46 @@ snapshots:
 
   "@polka/url@1.0.0-next.29": {}
 
-  "@rolldown/binding-android-arm64@1.2.1":
+  "@rolldown/binding-android-arm64@1.2.3":
     optional: true
 
-  "@rolldown/binding-darwin-arm64@1.2.1":
+  "@rolldown/binding-darwin-arm64@1.2.3":
     optional: true
 
-  "@rolldown/binding-darwin-x64@1.2.1":
+  "@rolldown/binding-darwin-x64@1.2.3":
     optional: true
 
-  "@rolldown/binding-freebsd-x64@1.2.1":
+  "@rolldown/binding-freebsd-x64@1.2.3":
     optional: true
 
-  "@rolldown/binding-linux-arm-gnueabihf@1.2.1":
+  "@rolldown/binding-linux-arm-gnueabihf@1.2.3":
     optional: true
 
-  "@rolldown/binding-linux-arm64-gnu@1.2.1":
+  "@rolldown/binding-linux-arm64-gnu@1.2.3":
     optional: true
 
-  "@rolldown/binding-linux-arm64-musl@1.2.1":
+  "@rolldown/binding-linux-arm64-musl@1.2.3":
     optional: true
 
-  "@rolldown/binding-linux-ppc64-gnu@1.2.1":
+  "@rolldown/binding-linux-ppc64-gnu@1.2.3":
     optional: true
 
-  "@rolldown/binding-linux-s390x-gnu@1.2.1":
+  "@rolldown/binding-linux-s390x-gnu@1.2.3":
     optional: true
 
-  "@rolldown/binding-linux-x64-gnu@1.2.1":
+  "@rolldown/binding-linux-x64-gnu@1.2.3":
     optional: true
 
-  "@rolldown/binding-linux-x64-musl@1.2.1":
+  "@rolldown/binding-linux-x64-musl@1.2.3":
     optional: true
 
-  "@rolldown/binding-openharmony-arm64@1.2.1":
+  "@rolldown/binding-openharmony-arm64@1.2.3":
     optional: true
 
-  "@rolldown/binding-wasm32-wasi@1.2.1":
-    dependencies:
-      "@emnapi/core": 2.0.0-alpha.3
-      "@emnapi/runtime": 2.0.0-alpha.3
-      "@napi-rs/wasm-runtime": 1.2.2(@emnapi/core@2.0.0-alpha.3)(@emnapi/runtime@2.0.0-alpha.3)
+  "@rolldown/binding-win32-arm64-msvc@1.2.3":
     optional: true
 
-  "@rolldown/binding-win32-arm64-msvc@1.2.1":
-    optional: true
-
-  "@rolldown/binding-win32-x64-msvc@1.2.1":
+  "@rolldown/binding-win32-x64-msvc@1.2.3":
     optional: true
 
   "@rolldown/pluginutils@1.0.1": {}
@@ -3798,11 +3766,11 @@ snapshots:
       "@sentry/replay": 10.70.0
       "@sentry/replay-canvas": 10.70.0
 
-  "@sentry/bundler-plugins@10.69.0":
+  "@sentry/bundler-plugins@10.70.0":
     dependencies:
       "@babel/core": 7.29.7
       "@sentry/cli": 2.58.6
-      "@sentry/core": 10.69.0
+      "@sentry/core": 10.70.0
       dotenv: 17.4.2
       find-up: 5.0.0
       glob: 13.0.6
@@ -3866,10 +3834,6 @@ snapshots:
 
   "@sentry/conventions@0.16.0": {}
 
-  "@sentry/core@10.69.0":
-    dependencies:
-      "@sentry/conventions": 0.16.0
-
   "@sentry/core@10.70.0":
     dependencies:
       "@sentry/conventions": 0.16.0
@@ -3926,7 +3890,7 @@ snapshots:
 
   "@sentry/server-utils@10.70.0":
     dependencies:
-      "@apm-js-collab/code-transformer-bundler-plugins": 0.7.3
+      "@apm-js-collab/code-transformer-bundler-plugins": 0.7.4
       "@apm-js-collab/tracing-hooks": 0.13.0
       "@sentry/conventions": 0.16.0
       "@sentry/core": 10.70.0
@@ -3949,7 +3913,7 @@ snapshots:
       "@sentry/node": 10.70.0(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))
       "@sentry/svelte": 10.70.0(svelte@5.56.8)
       "@sentry/vite-plugin": 5.4.0
-      "@sveltejs/acorn-typescript": 1.0.11(acorn@8.18.0)
+      "@sveltejs/acorn-typescript": 1.0.12(acorn@8.18.0)
       "@sveltejs/kit": 2.70.2(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.8)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)))(svelte@5.56.8)(typescript@6.0.3)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0))
       acorn: 8.18.0
       magic-string: 0.30.21
@@ -3969,7 +3933,7 @@ snapshots:
 
   "@sentry/vite-plugin@5.4.0":
     dependencies:
-      "@sentry/bundler-plugins": 10.69.0
+      "@sentry/bundler-plugins": 10.70.0
     transitivePeerDependencies:
       - encoding
       - rollup
@@ -3989,7 +3953,7 @@ snapshots:
       vite: 8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)
       zimmerframe: 1.1.4
 
-  "@sveltejs/acorn-typescript@1.0.11(acorn@8.18.0)":
+  "@sveltejs/acorn-typescript@1.0.12(acorn@8.18.0)":
     dependencies:
       acorn: 8.18.0
 
@@ -4000,7 +3964,7 @@ snapshots:
   "@sveltejs/kit@2.70.2(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.8)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)))(svelte@5.56.8)(typescript@6.0.3)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0))":
     dependencies:
       "@standard-schema/spec": 1.1.0
-      "@sveltejs/acorn-typescript": 1.0.11(acorn@8.18.0)
+      "@sveltejs/acorn-typescript": 1.0.12(acorn@8.18.0)
       "@sveltejs/vite-plugin-svelte": 7.3.0(svelte@5.56.8)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0))
       "@types/cookie": 0.6.0
       acorn: 8.18.0
@@ -4045,11 +4009,6 @@ snapshots:
     optional: true
 
   "@turbo/windows-arm64@2.10.9":
-    optional: true
-
-  "@tybys/wasm-util@0.10.3":
-    dependencies:
-      tslib: 2.8.1
     optional: true
 
   "@types/aws-lambda@8.10.162": {}
@@ -4104,11 +4063,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ai@7.0.58(zod@4.4.3):
+  ai@7.0.59(zod@4.4.3):
     dependencies:
-      "@ai-sdk/gateway": 4.0.46(zod@4.4.3)
+      "@ai-sdk/gateway": 4.0.47(zod@4.4.3)
       "@ai-sdk/provider": 4.0.7
-      "@ai-sdk/provider-utils": 5.0.25(zod@4.4.3)
+      "@ai-sdk/provider-utils": 5.0.26(zod@4.4.3)
       zod: 4.4.3
 
   aria-query@5.3.1: {}
@@ -4121,7 +4080,14 @@ snapshots:
     dependencies:
       "@aws-cdk/asset-awscli-v1": 2.2.282
       "@aws-cdk/asset-node-proxy-agent-v6": 2.1.2
-      "@aws-cdk/cloud-assembly-schema": 54.15.0
+      "@aws-cdk/cloud-assembly-schema": 54.17.0
+      constructs: 10.8.1
+
+  aws-cdk-lib@2.264.0(constructs@10.8.1):
+    dependencies:
+      "@aws-cdk/asset-awscli-v1": 2.2.282
+      "@aws-cdk/asset-node-proxy-agent-v6": 2.1.2
+      "@aws-cdk/cloud-assembly-schema": 54.17.0
       constructs: 10.8.1
 
   aws-cdk@2.1135.1: {}
@@ -4130,21 +4096,21 @@ snapshots:
 
   balanced-match@4.0.4: {}
 
-  baseline-browser-mapping@2.11.9: {}
+  baseline-browser-mapping@2.11.13: {}
 
   brace-expansion@5.0.9:
     dependencies:
       balanced-match: 4.0.4
 
-  browserslist@4.28.7:
+  browserslist@4.28.8:
     dependencies:
-      baseline-browser-mapping: 2.11.9
-      caniuse-lite: 1.0.30001806
-      electron-to-chromium: 1.5.399
-      node-releases: 2.0.51
-      update-browserslist-db: 1.2.3(browserslist@4.28.7)
+      baseline-browser-mapping: 2.11.13
+      caniuse-lite: 1.0.30001809
+      electron-to-chromium: 1.5.403
+      node-releases: 2.0.53
+      update-browserslist-db: 1.3.1(browserslist@4.28.8)
 
-  caniuse-lite@1.0.30001806: {}
+  caniuse-lite@1.0.30001809: {}
 
   ccount@2.0.1: {}
 
@@ -4158,7 +4124,7 @@ snapshots:
 
   chokidar@5.0.0:
     dependencies:
-      readdirp: 5.0.0
+      readdirp: 5.1.1
 
   cjs-module-lexer@2.2.0: {}
 
@@ -4198,7 +4164,7 @@ snapshots:
 
   dotenv@17.4.2: {}
 
-  electron-to-chromium@1.5.399: {}
+  electron-to-chromium@1.5.403: {}
 
   es-module-lexer@2.3.1: {}
 
@@ -4239,7 +4205,7 @@ snapshots:
     dependencies:
       estraverse: 5.3.0
 
-  esrap@2.3.0:
+  esrap@2.3.2:
     dependencies:
       "@jridgewell/sourcemap-codec": 1.5.5
 
@@ -4466,7 +4432,7 @@ snapshots:
 
   ms@2.1.3: {}
 
-  nanoid@3.3.16: {}
+  nanoid@3.3.18: {}
 
   node-addon-api@7.1.1:
     optional: true
@@ -4475,7 +4441,7 @@ snapshots:
     dependencies:
       whatwg-url: 5.0.0
 
-  node-releases@2.0.51: {}
+  node-releases@2.0.53: {}
 
   object-boolean-combinations@6.2.3:
     dependencies:
@@ -4505,9 +4471,9 @@ snapshots:
 
   pofile@1.1.4: {}
 
-  postcss@8.5.25:
+  postcss@8.5.26:
     dependencies:
-      nanoid: 3.3.16
+      nanoid: 3.3.18
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
@@ -4551,7 +4517,7 @@ snapshots:
 
   readdirp@4.1.2: {}
 
-  readdirp@5.0.0: {}
+  readdirp@5.1.1: {}
 
   require-in-the-middle@8.0.1:
     dependencies:
@@ -4562,26 +4528,25 @@ snapshots:
 
   rfdc@1.4.1: {}
 
-  rolldown@1.2.1:
+  rolldown@1.2.3:
     dependencies:
-      "@oxc-project/types": 0.142.0
+      "@oxc-project/types": 0.143.0
       "@rolldown/pluginutils": 1.0.1
     optionalDependencies:
-      "@rolldown/binding-android-arm64": 1.2.1
-      "@rolldown/binding-darwin-arm64": 1.2.1
-      "@rolldown/binding-darwin-x64": 1.2.1
-      "@rolldown/binding-freebsd-x64": 1.2.1
-      "@rolldown/binding-linux-arm-gnueabihf": 1.2.1
-      "@rolldown/binding-linux-arm64-gnu": 1.2.1
-      "@rolldown/binding-linux-arm64-musl": 1.2.1
-      "@rolldown/binding-linux-ppc64-gnu": 1.2.1
-      "@rolldown/binding-linux-s390x-gnu": 1.2.1
-      "@rolldown/binding-linux-x64-gnu": 1.2.1
-      "@rolldown/binding-linux-x64-musl": 1.2.1
-      "@rolldown/binding-openharmony-arm64": 1.2.1
-      "@rolldown/binding-wasm32-wasi": 1.2.1
-      "@rolldown/binding-win32-arm64-msvc": 1.2.1
-      "@rolldown/binding-win32-x64-msvc": 1.2.1
+      "@rolldown/binding-android-arm64": 1.2.3
+      "@rolldown/binding-darwin-arm64": 1.2.3
+      "@rolldown/binding-darwin-x64": 1.2.3
+      "@rolldown/binding-freebsd-x64": 1.2.3
+      "@rolldown/binding-linux-arm-gnueabihf": 1.2.3
+      "@rolldown/binding-linux-arm64-gnu": 1.2.3
+      "@rolldown/binding-linux-arm64-musl": 1.2.3
+      "@rolldown/binding-linux-ppc64-gnu": 1.2.3
+      "@rolldown/binding-linux-s390x-gnu": 1.2.3
+      "@rolldown/binding-linux-x64-gnu": 1.2.3
+      "@rolldown/binding-linux-x64-musl": 1.2.3
+      "@rolldown/binding-openharmony-arm64": 1.2.3
+      "@rolldown/binding-win32-arm64-msvc": 1.2.3
+      "@rolldown/binding-win32-x64-msvc": 1.2.3
 
   sade@1.8.1:
     dependencies:
@@ -4632,6 +4597,8 @@ snapshots:
   source-map@0.6.1: {}
 
   space-separated-tokens@2.0.2: {}
+
+  sprintf-js@1.1.3: {}
 
   string-character-is-astral-surrogate@3.1.3: {}
 
@@ -4684,7 +4651,7 @@ snapshots:
     dependencies:
       "@jridgewell/remapping": 2.3.5
       "@jridgewell/sourcemap-codec": 1.5.5
-      "@sveltejs/acorn-typescript": 1.0.11(acorn@8.18.0)
+      "@sveltejs/acorn-typescript": 1.0.12(acorn@8.18.0)
       "@types/estree": 1.0.9
       "@types/trusted-types": 2.0.7
       acorn: 8.18.0
@@ -4693,7 +4660,7 @@ snapshots:
       clsx: 2.1.1
       devalue: 5.9.0
       esm-env: 1.2.2
-      esrap: 2.3.0
+      esrap: 2.3.2
       is-reference: 3.0.3
       locate-character: 3.0.0
       magic-string: 0.30.21
@@ -4725,9 +4692,6 @@ snapshots:
   tr46@0.0.3: {}
 
   trim-lines@3.0.1: {}
-
-  tslib@2.8.1:
-    optional: true
 
   turbo@2.10.9:
     optionalDependencies:
@@ -4769,9 +4733,9 @@ snapshots:
       unist-util-is: 6.0.1
       unist-util-visit-parents: 6.0.2
 
-  update-browserslist-db@1.2.3(browserslist@4.28.7):
+  update-browserslist-db@1.3.1(browserslist@4.28.8):
     dependencies:
-      browserslist: 4.28.7
+      browserslist: 4.28.8
       escalade: 3.2.0
       picocolors: 1.1.1
 
@@ -4789,8 +4753,8 @@ snapshots:
     dependencies:
       lightningcss: 1.33.0
       picomatch: 4.0.5
-      postcss: 8.5.25
-      rolldown: 1.2.1
+      postcss: 8.5.26
+      rolldown: 1.2.3
       tinyglobby: 0.2.17
     optionalDependencies:
       "@types/node": 26.2.0
@@ -4816,7 +4780,7 @@ snapshots:
 
   wuchale@0.25.6:
     dependencies:
-      "@sveltejs/acorn-typescript": 1.0.11(acorn@8.18.0)
+      "@sveltejs/acorn-typescript": 1.0.12(acorn@8.18.0)
       acorn: 8.18.0
       chokidar: 5.0.0
       magic-string: 0.30.21
@@ -4825,6 +4789,8 @@ snapshots:
       tinyglobby: 0.2.17
 
   yallist@3.1.1: {}
+
+  yaml@1.10.3: {}
 
   yaml@2.9.0: {}
 

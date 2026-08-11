@@ -10,20 +10,9 @@ allowBuilds:
   "@sentry/cli": false
   esbuild: false
 minimumReleaseAgeExclude:
-  - "@ai-sdk/gateway@4.0.37"
-  - ai@7.0.48
-  - svelte-dnd-action@0.9.77
-  - "@flit/svelte-form@2.7.0"
-  - "@sentry/browser-utils@10.70.0"
-  - "@sentry/browser@10.70.0"
-  - "@sentry/cloudflare@10.70.0"
-  - "@sentry/core@10.70.0"
-  - "@sentry/feedback@10.70.0"
-  - "@sentry/node-core@10.70.0"
-  - "@sentry/node@10.70.0"
-  - "@sentry/opentelemetry@10.70.0"
-  - "@sentry/replay-canvas@10.70.0"
-  - "@sentry/replay@10.70.0"
-  - "@sentry/server-utils@10.70.0"
-  - "@sentry/svelte@10.70.0"
-  - "@sentry/sveltekit@10.70.0"
+  - "@ai-sdk/gateway@4.0.47"
+  - "@ai-sdk/openai@4.0.37"
+  - "@ai-sdk/provider-utils@5.0.26"
+  - "@aws-cdk/aws-lambda-go-alpha@2.264.0-alpha.0"
+  - ai@7.0.59
+  - aws-cdk-lib@2.264.0

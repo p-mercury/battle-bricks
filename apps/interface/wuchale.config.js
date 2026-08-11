@@ -34,12 +34,12 @@ export default defineConfig({
 		batchSize: 50,
 		parallel: 1,
 		group: {
-			en: [["en"], ["de"], ["bg"]],
+			en: [["en"], ["de"]],
 		},
 		translate: async (messages, instruction) => {
 			const { text } = await generateText({
 				model: mammouth("gpt-5.5"),
-				instructions: PROJECT_CONTEXT + instruction,
+				instructions: instruction,
 				prompt: messages,
 			});
 			return text
@@ -49,6 +49,3 @@ export default defineConfig({
 		},
 	},
 });
-
-const PROJECT_CONTEXT =
-	"This is a marketplace enabling organisations to sell and purchase spare parts for industrial machinery. The tone should be professional but approachable. The platfrom is called jumper.de so do not translate jumper or jumper.de unless its talking about something else. If technical terms such as MT-9510, Conversion Kit, Lead Backer or Device Carrier appear, do not translate them, just copy them over. Respond with raw text content only, do not wrap your response in markdown code blocks. ";
