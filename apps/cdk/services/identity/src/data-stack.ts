@@ -11,6 +11,7 @@ import { BucketMesh } from "@flit/cdk-bucket-mesh";
 import {
 	ClientAttributes,
 	FeaturePlan,
+	LambdaVersion,
 	ManagedLoginVersion,
 	OAuthScope,
 	StringAttribute,
@@ -22,9 +23,11 @@ import {
 } from "aws-cdk-lib/aws-cognito";
 import { ARecord, RecordTarget } from "aws-cdk-lib/aws-route53";
 import { UserPoolDomainTarget } from "aws-cdk-lib/aws-route53-targets";
+import { Effect, Policy, PolicyStatement } from "aws-cdk-lib/aws-iam";
 
 import { IdentityServiceDataRegionalStack } from "./data-regional-stack.js";
 import { PostConfirmationHandler } from "./congito-triggers/post-confirmation/index.js";
+import { PreTokenGenerationHandler } from "./congito-triggers/pre-token-generation/index.js";
 
 export interface IdentityServiceDataStackProps extends StackProps {
 	readonly backboneStack: BackboneStack;
@@ -97,10 +100,49 @@ export class IdentityServiceDataStack extends Stack {
 		});
 
 		this.userPool.addTrigger(
-			UserPoolOperation.POST_CONFIRMATION,
-			new PostConfirmationHandler(this, "PostConfirmationHandler", {
+			UserPoolOperation.PRE_TOKEN_GENERATION_CONFIG,
+			new PreTokenGenerationHandler(this, "PreTokenGenerationHandler", {
 				backboneStack: props.backboneStack,
 				table: this.table,
+			}),
+			LambdaVersion.V2_0,
+		);
+
+		const postConfirmation = new PostConfirmationHandler(
+			this,
+			"PostConfirmationHandler",
+			{
+				backboneStack: props.backboneStack,
+				table: this.table,
+			},
+		);
+
+		this.userPool.addTrigger(
+			UserPoolOperation.POST_CONFIRMATION,
+			postConfirmation,
+		);
+
+		postConfirmation.role!.attachInlinePolicy(
+			new Policy(this, "PostConfirmationCognitoPolicy", {
+				statements: [
+					new PolicyStatement({
+						effect: Effect.ALLOW,
+						actions: [
+							"cognito-idp:AdminDeleteUser",
+							"cognito-idp:AdminGetDevice",
+							"cognito-idp:AdminUserGlobalSignOut",
+							"cognito-idp:AdminListUserAuthEvents",
+							"cognito-idp:AdminCreateUser",
+							"cognito-idp:AdminDisableUser",
+							"cognito-idp:AdminSetUserSettings",
+							"cognito-idp:AdminRemoveUserFromGroup",
+							"cognito-idp:AdminAddUserToGroup",
+							"cognito-idp:AdminUpdateUserAttributes",
+							"cognito-idp:AdminGetUser",
+						],
+						resources: [this.userPool.userPoolArn],
+					}),
+				],
 			}),
 		);
 

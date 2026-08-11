@@ -9,7 +9,7 @@ extend buf.validate.StringRules {
   optional bool user_id = 81000000 [(buf.validate.predefined).cel = {
     id: "string.identity_customer_user_id"
     message: "Must be a customer user ID"
-    expression: "this.matches('^c-[0-9A-Za-z]{12}$')"
+    expression: "this.matches('^[0-9A-Za-z]{12}$')"
   }];
   optional bool user_name = 81000002 [(buf.validate.predefined).cel = {
     id: "string.identity_customer_user_name"

@@ -3,6 +3,7 @@ package policy.v1;
 
 import "buf/validate/validate.proto";
 import "google/protobuf/struct.proto";
+import "identity/rules.proto";
 
 option go_package = "contracts/dist/policy/v1;policy";
 
@@ -17,7 +18,7 @@ message EvaluateRequest {
     (buf.validate.field).string.max_len = 80,
     (buf.validate.field).string.pattern = "^[A-Za-z_]*$"
   ];
-  string user_id = 3 [(buf.validate.field).string.pattern = "^[sc]-[0-9A-Za-z]{12}$"];
+  string user_id = 3 [(buf.validate.field).string.(identity.user_id) = true];
   optional bytes context = 4 [
     (buf.validate.field).bytes.min_len = 1,
     (buf.validate.field).bytes.max_len = 100000

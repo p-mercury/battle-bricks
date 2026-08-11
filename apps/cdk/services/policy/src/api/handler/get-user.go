@@ -52,7 +52,7 @@ func (s *Handler) GetUser(
 				errors.New("User not found"))
 		}
 
-		var u *dynamo.CustomerUser
+		var u *dynamo.User
 		if err = attributevalue.UnmarshalMap(response.Item, &u); err != nil {
 			logger.Error("Error parsing item of type 'USER'", slog.Any("item", response.Item), slog.Any("error", err))
 			return nil, connectkit.NewUnexpected()

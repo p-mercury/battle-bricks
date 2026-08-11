@@ -19,7 +19,7 @@ func (s *Handler) ListJwks(
 	ctx context.Context,
 	req *connect.Request[identity.ListJwksRequest],
 ) (*connect.Response[identity.ListJwksResponse], error) {
-	logger := ctx.Value("logger").(*slog.Logger)
+	logger := connectkit.GetLogger(ctx)
 
 	rep, err := Http.Get(*UserPoolProviderUrl + "/.well-known/jwks.json")
 	if err != nil {

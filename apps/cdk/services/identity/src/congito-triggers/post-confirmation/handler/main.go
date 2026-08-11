@@ -50,6 +50,7 @@ func handleRequest(ctx context.Context, event events.CognitoEventUserPoolsPostCo
 	item := map[string]dynamoTypes.AttributeValue{
 		"pk":           &dynamoTypes.AttributeValueMemberS{Value: "USER#" + id},
 		"sk":           &dynamoTypes.AttributeValueMemberS{Value: "USER"},
+		"type":         &dynamoTypes.AttributeValueMemberS{Value: "USER"},
 		"cognitoId":    &dynamoTypes.AttributeValueMemberS{Value: event.Request.UserAttributes["sub"]},
 		"emailAddress": &dynamoTypes.AttributeValueMemberS{Value: event.Request.UserAttributes["email"]},
 		"name":         &dynamoTypes.AttributeValueMemberS{Value: event.Request.UserAttributes["fullname"]},
@@ -84,7 +85,7 @@ func handleRequest(ctx context.Context, event events.CognitoEventUserPoolsPostCo
 			UserPoolId: &event.UserPoolID,
 			Username:   new(event.Request.UserAttributes["sub"]),
 			UserAttributes: []cognitoTypes.AttributeType{
-				{Name: new("userId"), Value: new(id)},
+				{Name: new("custom:userId"), Value: new(id)},
 			},
 		})
 		if err != nil {

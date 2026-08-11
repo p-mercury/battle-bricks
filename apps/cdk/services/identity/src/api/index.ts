@@ -84,6 +84,20 @@ export class Api extends GoFunction {
 		props.backboneRegionalStack.secondaryEventBus.grantPutEventsTo(this);
 		props.dataStack.table.grantReadWriteData(this);
 		props.regionalTable.grantReadData(this);
+		props.dataStack.userPool.grant(
+			this,
+			"cognito-idp:AdminDeleteUser",
+			"cognito-idp:AdminGetDevice",
+			"cognito-idp:AdminUserGlobalSignOut",
+			"cognito-idp:AdminListUserAuthEvents",
+			"cognito-idp:AdminCreateUser",
+			"cognito-idp:AdminDisableUser",
+			"cognito-idp:AdminSetUserSettings",
+			"cognito-idp:AdminRemoveUserFromGroup",
+			"cognito-idp:AdminAddUserToGroup",
+			"cognito-idp:AdminUpdateUserAttributes",
+			"cognito-idp:AdminGetUser",
+		);
 		this.addToRolePolicy(
 			new PolicyStatement({
 				actions: ["execute-api:Invoke"],
