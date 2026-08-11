@@ -10,12 +10,13 @@ import {
 	Tracing,
 } from "aws-cdk-lib/aws-lambda";
 import { BackboneStack } from "@battle-bricks/backbone";
-
-import { IdentityServiceDataStack } from "../../data-stack.js";
+import { TableV2 } from "aws-cdk-lib/aws-dynamodb";
+import { UserPool } from "aws-cdk-lib/aws-cognito";
 
 export interface PostConfirmationHandlerProps {
 	readonly backboneStack: BackboneStack;
-	readonly dataStack: IdentityServiceDataStack;
+	readonly table: TableV2;
+	readonly userPool: UserPool;
 }
 
 export class PostConfirmationHandler extends GoFunction {
@@ -44,16 +45,16 @@ export class PostConfirmationHandler extends GoFunction {
 				EVENT_BUS_NAME: props.backboneStack.primaryEventBus.eventBusName,
 				EVENT_BUS_ENDPOINT_ID:
 					props.backboneStack.eventBusGlobalEndpoint.attrEndpointId,
-				TABLE_NAME: props.dataStack.table.tableName,
-				TABLE_WRITE_REGION: props.dataStack.region,
+				TABLE_NAME: props.table.tableName,
+				TABLE_WRITE_REGION: Stack.of(scope).region,
 
-				USER_POOL_ID: props.dataStack.userPool.userPoolId,
-				USER_POOL_PROVIDER_URL: props.dataStack.userPool.userPoolProviderUrl,
+				USER_POOL_ID: props.userPool.userPoolId,
+				USER_POOL_PROVIDER_URL: props.userPool.userPoolProviderUrl,
 			},
 		});
 
 		props.backboneStack.primaryEventBus.grantPutEventsTo(this);
 		props.backboneStack.secondaryEventBus.grantPutEventsTo(this);
-		props.dataStack.table.grantReadWriteData(this);
+		props.table.grantReadWriteData(this);
 	}
 }
