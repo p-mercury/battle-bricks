@@ -23,9 +23,6 @@ var (
 	Cognito     *cognitoidentityprovider.Client
 	Http        *http.Client
 
-	UserPoolId          *string
-	UserPoolProviderUrl *string
-
 	StackName          string
 	Namespace          string
 	ApiUrl             string
@@ -45,9 +42,6 @@ func init() {
 	Hostname = new(os.Getenv("HOSTNAME"))
 	EventBusName = new(os.Getenv("EVENT_BUS_NAME"))
 	EventBusEndpointId = new(os.Getenv("EVENT_BUS_ENDPOINT_ID"))
-
-	UserPoolId = new(os.Getenv("USER_POOL_ID"))
-	UserPoolProviderUrl = new(os.Getenv("USER_POOL_PROVIDER_URL"))
 
 	{
 		cfg, err := config.LoadDefaultConfig(context.Background(), config.WithRegion(os.Getenv("TABLE_WRITE_REGION")))

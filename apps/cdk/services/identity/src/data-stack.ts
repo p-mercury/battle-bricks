@@ -101,7 +101,6 @@ export class IdentityServiceDataStack extends Stack {
 			new PostConfirmationHandler(this, "PostConfirmationHandler", {
 				backboneStack: props.backboneStack,
 				table: this.table,
-				userPool: this.userPool,
 			}),
 		);
 

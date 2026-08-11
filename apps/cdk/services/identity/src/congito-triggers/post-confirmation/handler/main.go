@@ -81,7 +81,7 @@ func handleRequest(ctx context.Context, event events.CognitoEventUserPoolsPostCo
 
 	{
 		_, err := Cognito.AdminUpdateUserAttributes(ctx, &cognitoidentityprovider.AdminUpdateUserAttributesInput{
-			UserPoolId: UserPoolId,
+			UserPoolId: &event.UserPoolID,
 			Username:   new(event.Request.UserAttributes["sub"]),
 			UserAttributes: []cognitoTypes.AttributeType{
 				{Name: new("userId"), Value: new(id)},

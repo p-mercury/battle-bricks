@@ -11,12 +11,10 @@ import {
 } from "aws-cdk-lib/aws-lambda";
 import { BackboneStack } from "@battle-bricks/backbone";
 import { TableV2 } from "aws-cdk-lib/aws-dynamodb";
-import { UserPool } from "aws-cdk-lib/aws-cognito";
 
 export interface PostConfirmationHandlerProps {
 	readonly backboneStack: BackboneStack;
 	readonly table: TableV2;
-	readonly userPool: UserPool;
 }
 
 export class PostConfirmationHandler extends GoFunction {
@@ -47,9 +45,6 @@ export class PostConfirmationHandler extends GoFunction {
 					props.backboneStack.eventBusGlobalEndpoint.attrEndpointId,
 				TABLE_NAME: props.table.tableName,
 				TABLE_WRITE_REGION: Stack.of(scope).region,
-
-				USER_POOL_ID: props.userPool.userPoolId,
-				USER_POOL_PROVIDER_URL: props.userPool.userPoolProviderUrl,
 			},
 		});
 
