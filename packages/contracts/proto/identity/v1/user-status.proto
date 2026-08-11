@@ -6,7 +6,6 @@ option go_package = "contracts/dist/identity/v1;identity";
 enum UserStatus {
   USER_STATUS_UNSPECIFIED = 0;
   USER_STATUS_DELETED = 1;
-  USER_STATUS_INVITED = 2;
-  USER_STATUS_ACTIVE = 3;
-  USER_STATUS_DEACTIVATED = 4;
+  USER_STATUS_ACTIVE = 2;
+  USER_STATUS_DEACTIVATED = 3;
 }

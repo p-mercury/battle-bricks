@@ -46,6 +46,9 @@ export class PostConfirmationHandler extends GoFunction {
 					props.backboneStack.eventBusGlobalEndpoint.attrEndpointId,
 				TABLE_NAME: props.dataStack.table.tableName,
 				TABLE_WRITE_REGION: props.dataStack.region,
+
+				USER_POOL_ID: props.dataStack.userPool.userPoolId,
+				USER_POOL_PROVIDER_URL: props.dataStack.userPool.userPoolProviderUrl,
 			},
 		});
 

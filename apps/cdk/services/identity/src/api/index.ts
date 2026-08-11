@@ -16,11 +16,6 @@ import {
 } from "aws-cdk-lib/aws-cloudwatch";
 import { BackboneRegionalStack } from "@battle-bricks/backbone";
 import { ITable } from "aws-cdk-lib/aws-dynamodb";
-import {
-	UserPool,
-	UserPoolClient,
-	UserPoolDomain,
-} from "aws-cdk-lib/aws-cognito";
 
 import { IdentityServiceDataStack } from "../data-stack.js";
 
@@ -29,9 +24,6 @@ export interface ApiProps {
 	readonly dataStack: IdentityServiceDataStack;
 	readonly regionalTable: ITable;
 	readonly reservedConcurrentExecutions?: number;
-	readonly userPool: UserPool;
-	readonly userPoolClient: UserPoolClient;
-	readonly userPoolDomain: UserPoolDomain;
 }
 
 export class Api extends GoFunction {
@@ -71,12 +63,12 @@ export class Api extends GoFunction {
 				TABLE_NAME: props.dataStack.table.tableName,
 				TABLE_WRITE_REGION: props.dataStack.region,
 
-				USER_POOL_ID: props.userPool.userPoolId,
-				USER_POOL_URL: props.userPoolDomain.baseUrl(),
-				USER_POOL_PROVIDER_URL: props.userPool.userPoolProviderUrl,
-				USER_POOL_CLIENT_ID: props.userPoolClient.userPoolClientId,
+				USER_POOL_ID: props.dataStack.userPool.userPoolId,
+				USER_POOL_URL: props.dataStack.userPoolDomain.baseUrl(),
+				USER_POOL_PROVIDER_URL: props.dataStack.userPool.userPoolProviderUrl,
+				USER_POOL_CLIENT_ID: props.dataStack.userPoolClient.userPoolClientId,
 				USER_POOL_CLIENT_SECRET:
-					props.userPoolClient.userPoolClientSecret.unsafeUnwrap(),
+					props.dataStack.userPoolClient.userPoolClientSecret.unsafeUnwrap(),
 			},
 		});
 

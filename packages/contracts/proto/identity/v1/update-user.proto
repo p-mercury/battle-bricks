@@ -4,7 +4,6 @@ package identity.v1;
 import "buf/validate/validate.proto";
 import "common/v1/correlation.proto";
 import "common/v1/language.proto";
-import "filestaging/rules.proto";
 import "identity/rules.proto";
 import "identity/v1/user-notification-settings.proto";
 import "identity/v1/user-status.proto";
@@ -27,11 +26,9 @@ message UpdateUserRequest {
       string: {
         in: [
           "correlations",
-          "email_address",
-          "image",
-          "name",
-          "job_title",
           "status",
+          "email_address",
+          "name",
           "language",
           "notification_settings"
         ]
@@ -41,19 +38,7 @@ message UpdateUserRequest {
 
   repeated common.v1.Correlation correlations = 4 [(buf.validate.field).repeated = {max_items: 20}];
 
-  optional string email_address = 5 [(buf.validate.field).string.email = true];
-
-  optional string image = 6 [(buf.validate.field).string.(filestaging.file_id) = true];
-
-  optional string name = 7 [(buf.validate.field).string.(identity.user_name) = true];
-
-  optional string job_title = 8 [
-    (buf.validate.field).string.min_len = 1,
-    (buf.validate.field).string.max_len = 80,
-    (buf.validate.field).string.pattern = "^[A-Za-z ]*$"
-  ];
-
-  optional UserStatus status = 9 [(buf.validate.field).enum = {
+  optional UserStatus status = 5 [(buf.validate.field).enum = {
     defined_only: true
     not_in: [
       0,
@@ -62,12 +47,16 @@ message UpdateUserRequest {
     ]
   }];
 
-  optional common.v1.Language language = 10 [(buf.validate.field).enum = {
+  optional string email_address = 6 [(buf.validate.field).string.email = true];
+
+  optional string name = 7 [(buf.validate.field).string.(identity.user_name) = true];
+
+  optional common.v1.Language language = 8 [(buf.validate.field).enum = {
     defined_only: true
     not_in: [0]
   }];
 
-  UserNotificationSettings notification_settings = 11;
+  UserNotificationSettings notification_settings = 9;
 }
 
 message UpdateUserResponse {

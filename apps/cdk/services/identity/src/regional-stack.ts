@@ -53,9 +53,6 @@ export class IdentityServiceRegionalStack extends Stack {
 				backboneRegionalStack: props.backboneRegionalStack,
 				dataStack: props.dataStack,
 				regionalTable,
-				userPool: props.dataStack.userPool,
-				userPoolDomain: props.dataStack.userPoolDomain,
-				userPoolClient: props.dataStack.userPoolClient,
 			}),
 		);
 		new HttpRoute(this, `${Internal.typeName}.Get`, {
@@ -84,9 +81,6 @@ export class IdentityServiceRegionalStack extends Stack {
 				dataStack: props.dataStack,
 				regionalTable,
 				reservedConcurrentExecutions: 4,
-				userPool: props.dataStack.userPool,
-				userPoolDomain: props.dataStack.userPoolDomain,
-				userPoolClient: props.dataStack.userPoolClient,
 			}),
 		);
 		new HttpRoute(this, `${External.typeName}.Get`, {

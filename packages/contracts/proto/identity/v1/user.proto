@@ -16,12 +16,9 @@ message User {
   google.protobuf.Timestamp created_time = 4;
   google.protobuf.Timestamp modified_time = 5;
 
-  string organisation_id = 6;
+  UserStatus status = 6;
   string email_address = 7;
-  UserStatus status = 8;
-  string name = 9;
-  optional string job_title = 10;
-  optional string image = 11;
-  common.v1.Language language = 12;
-  UserNotificationSettings notification_settings = 13;
+  string name = 8;
+  common.v1.Language language = 9;
+  UserNotificationSettings notification_settings = 10;
 }

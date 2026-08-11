@@ -15,7 +15,6 @@ import (
 	"time"
 
 	"connectrpc.com/connect"
-	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/feature/dynamodb/attributevalue"
 	"github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider"
 	cognitoTypes "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider/types"
@@ -167,17 +166,6 @@ func (s *Handler) UpdateUser(
 			conditionExpression.WriteString(" #nam <> :nam OR")
 		}
 
-		if slices.Contains(req.Msg.UpdateMask, "job_title") {
-			if req.Msg.JobTitle == nil {
-				return nil, connectkit.NewInvalidArgument("job_title")
-			}
-
-			updateExpression.WriteString(", #jot = :jot")
-			expressionAttributeNames["#jot"] = "jobTitle"
-			expressionAttributeValues[":jot"] = &dynamoTypes.AttributeValueMemberS{Value: *req.Msg.JobTitle}
-			conditionExpression.WriteString(" #jot <> :jot OR")
-		}
-
 		if slices.Contains(req.Msg.UpdateMask, "status") {
 			if req.Msg.Status == nil {
 				return nil, connectkit.NewInvalidArgument("status")
@@ -287,7 +275,7 @@ func (s *Handler) UpdateUser(
 			UserPoolId: UserPoolId,
 			Username:   &cognitoId,
 			UserAttributes: []cognitoTypes.AttributeType{
-				{Name: aws.String("email"), Value: aws.String(emailAddress)},
+				{Name: new("email"), Value: new(emailAddress)},
 			},
 		})
 		if err != nil {
@@ -331,13 +319,6 @@ func (s *Handler) UpdateUser(
 		}
 	}
 
-	if slices.Contains(req.Msg.UpdateMask, "job_title") {
-		user.JobTitle = req.Msg.JobTitle
-		if user.JobTitle != req.Msg.JobTitle {
-			changedFields = append(changedFields, identityevents.UserUpserted_CHANGED_FIELD_JOB_TITLE)
-		}
-	}
-
 	if slices.Contains(req.Msg.UpdateMask, "status") {
 		user.Status = *req.Msg.Status
 		if user.Status != *req.Msg.Status {
@@ -369,11 +350,9 @@ func (s *Handler) UpdateUser(
 
 			ChangedFields: changedFields,
 
-			OrganisationId:       user.OrganisationId,
 			EmailAddress:         user.EmailAddress,
 			Status:               user.Status,
 			Name:                 user.Name,
-			JobTitle:             user.JobTitle,
 			Language:             user.Language,
 			NotificationSettings: user.NotificationSettings,
 		})

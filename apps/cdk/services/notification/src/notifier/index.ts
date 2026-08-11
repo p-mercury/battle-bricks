@@ -4,7 +4,6 @@ import { fileURLToPath } from "url";
 import { GoFunction } from "@aws-cdk/aws-lambda-go-alpha";
 import { Architecture, Runtime, Tracing } from "aws-cdk-lib/aws-lambda";
 import * as IdentityEvent from "@battle-bricks/contracts/identity/events/registry";
-import * as IdentityStaffEvent from "@battle-bricks/contracts/identity/events/registry";
 import { BackboneRegionalStack } from "@battle-bricks/backbone";
 import { SqsEventSource } from "aws-cdk-lib/aws-lambda-event-sources";
 import { Rule } from "aws-cdk-lib/aws-events";
@@ -124,19 +123,6 @@ export class Notifier extends Construct {
 						),
 					],
 					detailType: [IdentityEvent.UserCreatedDetailType],
-				},
-				targets: [new SqsQueue(bufferQueue)],
-			});
-
-			new Rule(this, "IdentityStaffRule", {
-				eventBus,
-				eventPattern: {
-					source: [
-						IdentityStaffEvent.getSource(
-							props.backboneRegionalStack.namespace.namespaceName,
-						),
-					],
-					detailType: [IdentityStaffEvent.UserCreatedDetailType],
 				},
 				targets: [new SqsQueue(bufferQueue)],
 			});

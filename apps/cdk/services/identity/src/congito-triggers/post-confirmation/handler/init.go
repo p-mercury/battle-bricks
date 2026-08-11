@@ -8,6 +8,7 @@ import (
 	"os"
 
 	"github.com/aws/aws-sdk-go-v2/config"
+	"github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider"
 	"github.com/aws/aws-sdk-go-v2/service/dynamodb"
 	"github.com/aws/aws-sdk-go-v2/service/eventbridge"
 	"github.com/aws/aws-xray-sdk-go/instrumentation/awsv2"
@@ -19,7 +20,11 @@ var (
 	DynamoRead  *dynamodb.Client
 	DynamoWrite *dynamodb.Client
 	EventBus    *eventbridge.Client
+	Cognito     *cognitoidentityprovider.Client
 	Http        *http.Client
+
+	UserPoolId          *string
+	UserPoolProviderUrl *string
 
 	StackName          string
 	Namespace          string
@@ -41,6 +46,9 @@ func init() {
 	EventBusName = new(os.Getenv("EVENT_BUS_NAME"))
 	EventBusEndpointId = new(os.Getenv("EVENT_BUS_ENDPOINT_ID"))
 
+	UserPoolId = new(os.Getenv("USER_POOL_ID"))
+	UserPoolProviderUrl = new(os.Getenv("USER_POOL_PROVIDER_URL"))
+
 	{
 		cfg, err := config.LoadDefaultConfig(context.Background(), config.WithRegion(os.Getenv("TABLE_WRITE_REGION")))
 		if err != nil {
@@ -51,6 +59,7 @@ func init() {
 		awsv2.AWSV2Instrumentor(&cfg.APIOptions)
 
 		DynamoWrite = dynamodb.NewFromConfig(cfg)
+		Cognito = cognitoidentityprovider.NewFromConfig(cfg)
 	}
 
 	cfg, err := config.LoadDefaultConfig(context.Background(), config.WithRegion(os.Getenv("AWS_REGION")))
