@@ -19,14 +19,9 @@ func (s *Handler) ListJwks(
 	ctx context.Context,
 	req *connect.Request[identity.ListJwksRequest],
 ) (*connect.Response[identity.ListJwksResponse], error) {
-	logger := connectkit.GetLogger(ctx)
-	authCtx := connectkit.GetAuthContext(ctx)
+	logger := ctx.Value("logger").(*slog.Logger)
 
-	if authCtx.Iam == nil {
-		return nil, connectkit.NewUnauthorized()
-	}
-
-	rep, err := Http.Get("https://" + *Auth0ClientDomain + "/.well-known/jwks.json")
+	rep, err := Http.Get(*UserPoolProviderUrl + "/.well-known/jwks.json")
 	if err != nil {
 		logger.Error("Error retriving jwks", slog.Any("error", err))
 		return nil, connectkit.NewUnexpected()

@@ -1,9 +1,9 @@
 package main
 
 import (
-	"contracts/dist/policy/v1/policyconnect"
 	"connectkit"
 	"context"
+	"contracts/dist/policy/v1/policyconnect"
 	"log"
 	"log/slog"
 	"net/http"
@@ -12,8 +12,8 @@ import (
 
 	"connectrpc.com/connect"
 	"connectrpc.com/validate"
-	"github.com/auth0/go-auth0/management"
 	"github.com/aws/aws-sdk-go-v2/config"
+	"github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider"
 	"github.com/aws/aws-sdk-go-v2/service/dynamodb"
 	"github.com/aws/aws-sdk-go-v2/service/eventbridge"
 	"github.com/aws/aws-xray-sdk-go/instrumentation/awsv2"
@@ -24,8 +24,8 @@ var (
 	Logger      *slog.Logger
 	DynamoRead  *dynamodb.Client
 	DynamoWrite *dynamodb.Client
-	Auth0       *management.Management
 	EventBus    *eventbridge.Client
+	Cognito     *cognitoidentityprovider.Client
 	Http        *http.Client
 
 	PolicyService policyconnect.InternalClient
@@ -38,11 +38,11 @@ var (
 	EventBusName       *string
 	EventBusEndpointId *string
 
-	Auth0Audience       *string
-	Auth0ClientId       *string
-	Auth0ClientDomain   *string
-	Auth0ClientSecret   *string
-	Auth0ConnnectinName *string
+	UserPoolId           *string
+	UserPoolUrl          *string
+	UserPoolProviderUrl  *string
+	UserPoolClientId     *string
+	UserPoolClientSecret *string
 
 	AuthHandler            *OAuthHandler
 	MonitoringInterceptor  connect.UnaryInterceptorFunc
@@ -62,11 +62,11 @@ func init() {
 	EventBusName = new(os.Getenv("EVENT_BUS_NAME"))
 	EventBusEndpointId = new(os.Getenv("EVENT_BUS_ENDPOINT_ID"))
 
-	Auth0Audience = new(os.Getenv("AUTH0_AUDIENCE"))
-	Auth0ClientId = new(os.Getenv("AUTH0_CLIENT_ID"))
-	Auth0ClientDomain = new(os.Getenv("AUTH0_CLIENT_DOMAIN"))
-	Auth0ClientSecret = new(os.Getenv("AUTH0_CLIENT_SECRET"))
-	Auth0ConnnectinName = new(os.Getenv("AUTH0_CONNECTION_NAME"))
+	UserPoolId = new(os.Getenv("USER_POOL_ID"))
+	UserPoolUrl = new(os.Getenv("USER_POOL_URL"))
+	UserPoolProviderUrl = new(os.Getenv("USER_POOL_PROVIDER_URL"))
+	UserPoolClientId = new(os.Getenv("USER_POOL_CLIENT_ID"))
+	UserPoolClientSecret = new(os.Getenv("USER_POOL_CLIENT_SECRET"))
 
 	{
 		cfg, err := config.LoadDefaultConfig(context.Background(), config.WithRegion(os.Getenv("TABLE_WRITE_REGION")))
@@ -78,6 +78,7 @@ func init() {
 		awsv2.AWSV2Instrumentor(&cfg.APIOptions)
 
 		DynamoWrite = dynamodb.NewFromConfig(cfg)
+		Cognito = cognitoidentityprovider.NewFromConfig(cfg)
 	}
 
 	cfg, err := config.LoadDefaultConfig(context.Background(), config.WithRegion(os.Getenv("AWS_REGION")))
@@ -93,23 +94,12 @@ func init() {
 	Http = xray.Client(nil)
 
 	{
-		auth0, err := management.New(
-			os.Getenv("AUTH0_MANAGEMENT_CLIENT_DOMAIN"),
-			management.WithClientCredentials(context.Background(), os.Getenv("AUTH0_MANAGEMENT_CLIENT_ID"), os.Getenv("AUTH0_MANAGEMENT_CLIENT_SECRET")),
-		)
-		if err != nil {
-			Logger.Error("Error initializing the auth0 management API client", slog.Any("error", err))
-			log.Fatal()
-		}
-		Auth0 = auth0
-	}
-
-	{
 		authHandler, err := NewAuthHandler(
 			context.Background(),
-			*Auth0ClientDomain,
-			*Auth0ClientId,
-			*Auth0ClientSecret)
+			*UserPoolUrl,
+			*UserPoolProviderUrl,
+			*UserPoolClientId,
+			*UserPoolClientSecret)
 		if err != nil {
 			Logger.Error("Error creating auth handler", slog.Any("error", err))
 			log.Fatal()

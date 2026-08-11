@@ -12,7 +12,6 @@ import (
 
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
-	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/service/dynamodb"
 	dynamoTypes "github.com/aws/aws-sdk-go-v2/service/dynamodb/types"
 	"github.com/aws/aws-sdk-go-v2/service/eventbridge"
@@ -51,21 +50,21 @@ func generateLedgerKey(event events.CognitoEventUserPoolsPostConfirmation) (*str
 func handleRequest(ctx context.Context, event events.CognitoEventUserPoolsPostConfirmation) (events.CognitoEventUserPoolsPostConfirmation, error) {
 	ctx, segment := xray.BeginSubsegment(ctx, "Handler")
 	segment.AddAnnotation("Stack", StackName)
-	segment.AddAnnotation("Service", ServiceName)
 	defer segment.Close(nil)
 
 	timestamp := time.Now().UnixMilli()
 
 	Logger.Info("Event", slog.Any("event", event))
 
-	if event.TriggerSource == "PostConfirmation_ConfirmForgotPassword" {
+	if event.TriggerSource != "PostConfirmation_ConfirmSignUp" {
 		return event, nil
 	}
 
 	item := map[string]dynamoTypes.AttributeValue{
-		"pk":           &dynamoTypes.AttributeValueMemberS{Value: event.Request.UserAttributes["sub"]},
+		"pk":           &dynamoTypes.AttributeValueMemberS{Value: "USER#" + event.Request.UserAttributes["sub"]},
 		"sk":           &dynamoTypes.AttributeValueMemberS{Value: "USER"},
 		"emailAddress": &dynamoTypes.AttributeValueMemberS{Value: event.Request.UserAttributes["email"]},
+		"name":         &dynamoTypes.AttributeValueMemberS{Value: event.Request.UserAttributes["fullname"]},
 		"language":     &dynamoTypes.AttributeValueMemberN{Value: "0"},
 		"provider":     &dynamoTypes.AttributeValueMemberS{Value: "Cognito"},
 		"createdTime":  &dynamoTypes.AttributeValueMemberN{Value: strconv.FormatInt(timestamp, 10)},
@@ -82,10 +81,10 @@ func handleRequest(ctx context.Context, event events.CognitoEventUserPoolsPostCo
 		}
 	}
 
-	_, err := Dynamo.PutItem(ctx, &dynamodb.PutItemInput{
+	_, err := DynamoWrite.PutItem(ctx, &dynamodb.PutItemInput{
 		TableName:           TableName,
 		Item:                item,
-		ConditionExpression: aws.String("attribute_not_exists(pk)"),
+		ConditionExpression: new("attribute_not_exists(pk)"),
 	})
 	if err != nil {
 		Logger.Error("Error creating dynamo user", slog.Any("error", err))
@@ -101,9 +100,9 @@ func handleRequest(ctx context.Context, event events.CognitoEventUserPoolsPostCo
 				Entries: []eventTypes.PutEventsRequestEntry{
 					{
 						EventBusName: EventBusName,
-						Source:       aws.String(*Namespace + ".identity"),
-						DetailType:   aws.String("USER_CREATED"),
-						Detail:       aws.String(string(eventDetail)),
+						Source:       new(Namespace + ".identity"),
+						DetailType:   new("USER_CREATED"),
+						Detail:       new(string(eventDetail)),
 					},
 				},
 			})

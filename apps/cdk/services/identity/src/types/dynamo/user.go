@@ -18,12 +18,10 @@ type User struct {
 	CreatedTime  int64
 	ModifiedTime int64
 
-	OrganisationId       string
 	Status               identity.UserStatus
 	EmailAddress         string
-	Name                 *string
-	JobTitle             *string
-	Auth0Id              string
+	Name                 string
+	CognitoId            string
 	Language             common.Language
 	NotificationSettings struct {
 		Newsletter                NotificationSettingsTopic

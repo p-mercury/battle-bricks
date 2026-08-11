@@ -19,11 +19,6 @@ func parseDynamoUser(item *dynamo.User) *identity.User {
 		})
 	}
 
-	name := item.EmailAddress
-	if item.Name != nil {
-		name = *item.Name
-	}
-
 	notificationSettings := &identity.UserNotificationSettings{
 		Newsletter: &identity.UserNotificationSettings_Topic{
 			Enabled: item.NotificationSettings.Newsletter.Enabled,
@@ -66,11 +61,9 @@ func parseDynamoUser(item *dynamo.User) *identity.User {
 		CreatedTime:  timestamppb.New(time.UnixMilli(item.CreatedTime)),
 		ModifiedTime: timestamppb.New(time.UnixMilli(item.ModifiedTime)),
 
-		OrganisationId:       item.OrganisationId,
 		EmailAddress:         item.EmailAddress,
 		Status:               item.Status,
-		Name:                 name,
-		JobTitle:             item.JobTitle,
+		Name:                 item.Name,
 		Language:             item.Language,
 		NotificationSettings: notificationSettings,
 	}

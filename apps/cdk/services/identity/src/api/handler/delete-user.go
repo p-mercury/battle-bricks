@@ -13,6 +13,7 @@ import (
 
 	"connectrpc.com/connect"
 	"github.com/aws/aws-sdk-go-v2/feature/dynamodb/attributevalue"
+	"github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider"
 	"github.com/aws/aws-sdk-go-v2/service/dynamodb"
 	dynamoTypes "github.com/aws/aws-sdk-go-v2/service/dynamodb/types"
 	"github.com/aws/aws-sdk-go-v2/service/eventbridge"
@@ -28,7 +29,7 @@ func (s *Handler) DeleteUser(
 	authCtx := connectkit.GetAuthContext(ctx)
 	timestamp := time.Now().Truncate(time.Millisecond)
 
-	var auth0Id string
+	var cognitoId string
 	var user *identity.User
 	{
 		response, err := DynamoWrite.GetItem(ctx, &dynamodb.GetItemInput{
@@ -49,6 +50,7 @@ func (s *Handler) DeleteUser(
 				return nil, connectkit.NewUnexpected()
 			}
 
+			cognitoId = item.CognitoId
 			user = parseDynamoUser(&item)
 		}
 	}
@@ -107,9 +109,12 @@ func (s *Handler) DeleteUser(
 		}
 	}
 
-	err := Auth0.User.Delete(ctx, auth0Id)
+	_, err := Cognito.AdminDeleteUser(ctx, &cognitoidentityprovider.AdminDeleteUserInput{
+		UserPoolId: UserPoolId,
+		Username:   new(cognitoId),
+	})
 	if err != nil {
-		logger.Error("Error deleting auth0 user", slog.Any("error", err))
+		logger.Error("Error deleting cognito user", slog.Any("error", err))
 	}
 
 	user.Version++

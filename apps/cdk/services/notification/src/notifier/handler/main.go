@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	identityevents "contracts/dist/identity/events"
 	"encoding/json"
 	"log/slog"
 
@@ -25,8 +24,6 @@ func handleMessage(ctx context.Context, message events.SQSMessage) (err error) {
 	}
 
 	switch event.Source {
-	case identityevents.GetSource(Namespace):
-		return handlerIdentityEvent(ctx, event)
 	}
 
 	return nil

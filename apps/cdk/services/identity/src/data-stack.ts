@@ -13,16 +13,18 @@ import {
 	FeaturePlan,
 	ManagedLoginVersion,
 	OAuthScope,
+	StringAttribute,
 	UserPool,
 	UserPoolClient,
 	UserPoolClientIdentityProvider,
 	UserPoolDomain,
-	UserPoolEmail,
+	UserPoolOperation,
 } from "aws-cdk-lib/aws-cognito";
 import { ARecord, RecordTarget } from "aws-cdk-lib/aws-route53";
 import { UserPoolDomainTarget } from "aws-cdk-lib/aws-route53-targets";
 
 import { IdentityServiceDataRegionalStack } from "./data-regional-stack.js";
+import { PostConfirmationHandler } from "./congito-triggers/post-confirmation/index.js";
 
 export interface IdentityServiceDataStackProps extends StackProps {
 	readonly backboneStack: BackboneStack;
@@ -86,22 +88,21 @@ export class IdentityServiceDataStack extends Stack {
 			signInAliases: { email: true },
 			autoVerify: { email: true },
 			keepOriginal: { email: true },
-			email: UserPoolEmail.withSES({
-				sesRegion: "eu-west-1",
-				sesVerifiedDomain: "bullscreener.io",
-				fromEmail: "support@bullscreener.io",
-				fromName: "Bull Screener",
-			}),
+			customAttributes: {
+				userId: new StringAttribute({ mutable: true, minLen: 12, maxLen: 12 }),
+			},
+			standardAttributes: {
+				fullname: { required: true, mutable: true },
+			},
 		});
 
-		// this.userPool.addTrigger(
-		// 	UserPoolOperation.POST_CONFIRMATION,
-		// 	new PostConfirmationHandler(this, "PostConfirmationHandler", {
-		// 		table: this.table,
-		// 		eventBus: props.backboneStack.eventBus,
-		// 		namespace: props.backboneStack.namespace,
-		// 	}),
-		// );
+		this.userPool.addTrigger(
+			UserPoolOperation.POST_CONFIRMATION,
+			new PostConfirmationHandler(this, "PostConfirmationHandler", {
+				backboneStack: props.backboneStack,
+				dataStack: this,
+			}),
+		);
 
 		this.userPoolDomain = this.userPool.addDomain("CustomDomain", {
 			managedLoginVersion: ManagedLoginVersion.NEWER_MANAGED_LOGIN,
@@ -124,8 +125,10 @@ export class IdentityServiceDataStack extends Stack {
 			preventUserExistenceErrors: true,
 			refreshTokenValidity: Duration.days(8),
 			accessTokenValidity: Duration.hours(2),
+			readAttributes: new ClientAttributes()
+				.withStandardAttributes({ email: true })
+				.withCustomAttributes("userId"),
 			writeAttributes: new ClientAttributes(),
-			readAttributes: new ClientAttributes(),
 			enableTokenRevocation: true,
 			enablePropagateAdditionalUserContextData: true,
 			refreshTokenRotationGracePeriod: Duration.seconds(0),

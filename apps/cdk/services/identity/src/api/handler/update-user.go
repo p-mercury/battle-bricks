@@ -3,6 +3,8 @@ package main
 import (
 	"connectkit"
 	"context"
+	identityevents "contracts/dist/identity/events"
+	"contracts/dist/identity/v1"
 	"errors"
 	"fmt"
 	"identity/src/types/dynamo"
@@ -12,12 +14,11 @@ import (
 	"strings"
 	"time"
 
-	identityevents "contracts/dist/identity/events"
-	"contracts/dist/identity/v1"
-
 	"connectrpc.com/connect"
-	"github.com/auth0/go-auth0/management"
+	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/feature/dynamodb/attributevalue"
+	"github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider"
+	cognitoTypes "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider/types"
 	"github.com/aws/aws-sdk-go-v2/service/dynamodb"
 	"github.com/aws/aws-sdk-go-v2/service/dynamodb/types"
 	dynamoTypes "github.com/aws/aws-sdk-go-v2/service/dynamodb/types"
@@ -34,7 +35,7 @@ func (s *Handler) UpdateUser(
 	authCtx := connectkit.GetAuthContext(ctx)
 	timestamp := time.Now().Truncate(time.Millisecond)
 
-	var auth0Id string
+	var cognitoId string
 	var user *identity.User
 	{
 		response, err := DynamoWrite.GetItem(ctx, &dynamodb.GetItemInput{
@@ -55,6 +56,7 @@ func (s *Handler) UpdateUser(
 				return nil, connectkit.NewUnexpected()
 			}
 
+			cognitoId = item.CognitoId
 			user = parseDynamoUser(&item)
 		}
 	}
@@ -281,9 +283,15 @@ func (s *Handler) UpdateUser(
 
 		emailAddress := strings.ToLower(*req.Msg.EmailAddress)
 
-		err := Auth0.User.Update(ctx, auth0Id, &management.User{Email: &emailAddress})
+		_, err := Cognito.AdminUpdateUserAttributes(ctx, &cognitoidentityprovider.AdminUpdateUserAttributesInput{
+			UserPoolId: UserPoolId,
+			Username:   &cognitoId,
+			UserAttributes: []cognitoTypes.AttributeType{
+				{Name: aws.String("email"), Value: aws.String(emailAddress)},
+			},
+		})
 		if err != nil {
-			logger.Error("Error updating auth0 email", slog.Any("error", err))
+			logger.Error("Error updating cognito email", slog.Any("error", err))
 			return nil, connectkit.NewUnexpected()
 		}
 	}

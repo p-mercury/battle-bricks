@@ -15,15 +15,15 @@ import (
 	"golang.org/x/oauth2"
 )
 
-func NewAuthHandler(ctx context.Context, clientUrl string, clientId string, clientSecret string) (*OAuthHandler, error) {
+func NewAuthHandler(ctx context.Context, oauth2Url string, issuerUrl string, clientId string, clientSecret string) (*OAuthHandler, error) {
 	handler := &OAuthHandler{
-		clientUrl:    clientUrl,
 		clientId:     clientId,
 		clientSecret: clientSecret,
+		oauth2Url:    oauth2Url,
 	}
 
 	{
-		provider, err := oidc.NewProvider(ctx, "https://"+clientUrl+"/")
+		provider, err := oidc.NewProvider(ctx, issuerUrl)
 		if err != nil {
 			Logger.Error("Error creating provider", slog.Any("error", err))
 			return nil, err
@@ -40,10 +40,10 @@ func NewAuthHandler(ctx context.Context, clientUrl string, clientId string, clie
 }
 
 type OAuthHandler struct {
-	clientUrl     string
 	clientId      string
 	clientSecret  string
 	authenticator oauth2.Config
+	oauth2Url     string
 }
 
 func (handler OAuthHandler) ServeHTTP(w http.ResponseWriter, req *http.Request) {
@@ -59,7 +59,7 @@ func (handler OAuthHandler) ServeHTTP(w http.ResponseWriter, req *http.Request) 
 	switch path.Base(req.URL.Path) {
 
 	case "authorize":
-		authorizeUrl, err := url.Parse("https://" + handler.clientUrl + "/authorize")
+		authorizeUrl, err := url.Parse(*UserPoolUrl + "/oauth2/authorize")
 		if err != nil {
 			logger.Error("Error creating authorize url", slog.Any("error", err))
 			if segment != nil {
@@ -75,7 +75,6 @@ func (handler OAuthHandler) ServeHTTP(w http.ResponseWriter, req *http.Request) 
 		query.Set("response_type", req.URL.Query().Get("response_type"))
 		query.Set("scope", req.URL.Query().Get("scope"))
 		query.Set("state", req.URL.Query().Get("state"))
-		query.Set("audience", *Auth0Audience)
 		authorizeUrl.RawQuery = query.Encode()
 
 		w.Header().Add("set-cookie", "accessToken=;HttpOnly;Secure;SameSite=Strict;Path=/;Max-Age=0")
@@ -86,21 +85,21 @@ func (handler OAuthHandler) ServeHTTP(w http.ResponseWriter, req *http.Request) 
 	case "code":
 		code := req.URL.Query().Get("code")
 		if code == "" {
-			logger.Warn("Missing code query parameters")
+			logger.Warn("Missing code search parameters")
 			if segment != nil {
 				segment.Error = true
 			}
-			http.Error(w, "Missing code query parameters", 500)
+			http.Error(w, "Missing code search parameters", 500)
 			return
 		}
 
 		redirectUri := req.URL.Query().Get("redirectUri")
 		if redirectUri == "" {
-			logger.Warn("Missing redirectUri query parameters")
+			logger.Warn("Missing redirectUri search parameters")
 			if segment != nil {
 				segment.Error = true
 			}
-			http.Error(w, "Missing redirectUri query parameters", 500)
+			http.Error(w, "Missing redirectUri search parameters", 500)
 			return
 		}
 
@@ -145,7 +144,7 @@ func (handler OAuthHandler) ServeHTTP(w http.ResponseWriter, req *http.Request) 
 
 		payload := strings.NewReader("grant_type=refresh_token&client_id=" + handler.clientId + "&client_secret=" + handler.clientSecret + "&refresh_token=" + refreshToken)
 
-		request, err := http.NewRequest(http.MethodPost, "https://"+handler.clientUrl+"/oauth/token", payload)
+		request, err := http.NewRequest("POST", handler.oauth2Url+"/oauth2/token", payload)
 		if err != nil {
 			logger.Warn("Response error", slog.Any("error", err))
 			if segment != nil {
@@ -214,7 +213,7 @@ func (handler OAuthHandler) ServeHTTP(w http.ResponseWriter, req *http.Request) 
 		return
 
 	case "signout":
-		logoutUrl, err := url.Parse("https://" + handler.clientUrl + "/v2/logout")
+		logoutUrl, err := url.Parse(handler.oauth2Url + "/logout")
 		if err != nil {
 			logger.Error("Error creating logout url", slog.Any("error", err))
 			if segment != nil {
@@ -225,7 +224,8 @@ func (handler OAuthHandler) ServeHTTP(w http.ResponseWriter, req *http.Request) 
 		}
 
 		query := logoutUrl.Query()
-		query.Set("returnTo", req.URL.Query().Get("redirect"))
+		query.Set("client_id", handler.clientId)
+		query.Set("logout_uri", req.URL.Query().Get("redirect"))
 		logoutUrl.RawQuery = query.Encode()
 
 		w.Header().Add("set-cookie", "accessToken=;HttpOnly;Secure;SameSite=Strict;Path=/;Max-Age=0")
