@@ -4,7 +4,7 @@ import { BackboneRegionalStack } from "@battle-bricks/backbone";
 import {
 	Internal,
 	External,
-} from "@battle-bricks/contracts/identity/v1/service_pb";
+} from "@battle-bricks/contracts/catalogue/v1/service_pb";
 import {
 	HttpMethod,
 	HttpRoute,
