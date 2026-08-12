@@ -1,0 +1,9 @@
+syntax = "proto3";
+package catalogue.v1;
+
+option go_package = "contracts/dist/catalogue/v1;catalogue";
+
+message Range {
+  uint32 min = 1;
+  uint32 max = 2;
+}

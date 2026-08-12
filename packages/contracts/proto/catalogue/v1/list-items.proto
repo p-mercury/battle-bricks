@@ -1,0 +1,16 @@
+syntax = "proto3";
+package catalogue.v1;
+
+import "catalogue/v1/item.proto";
+
+option go_package = "contracts/dist/catalogue/v1;catalogue";
+
+message ListItemsRequest {}
+
+message ListItemsResponse {
+  repeated Item items = 1;
+}
+
+message ListItemsContext {
+  ListItemsRequest request = 1;
+}

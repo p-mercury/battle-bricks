@@ -1,0 +1,15 @@
+syntax = "proto3";
+package catalogue.v1;
+
+option go_package = "contracts/dist/catalogue/v1;catalogue";
+
+message Loadout {
+  string id = 1;
+  uint64 version = 2;
+
+  optional string image = 3;
+  string name = 4;
+  optional string description = 5;
+  string unit = 6;
+  repeated string items = 7;
+}

@@ -1,0 +1,49 @@
+syntax = "proto3";
+package catalogue.v1;
+
+import "catalogue/v1/faction.proto";
+import "catalogue/v1/item.proto";
+
+option go_package = "contracts/dist/catalogue/v1;catalogue";
+
+message Unit {
+  string id = 1;
+  uint64 version = 2;
+
+  repeated Faction factions = 3;
+  optional string image = 4;
+  string name = 5;
+  optional string description = 6;
+  uint32 price = 7;
+  uint32 size = 9;
+  uint32 speed = 10;
+  uint32 health = 11;
+  uint32 armor_class = 12;
+  uint32 carry_capacity = 13;
+
+  uint32 marksmanship = 14;
+  uint32 melee_ability = 15;
+
+  repeated Action actions = 16;
+  repeated Item items = 17;
+
+  message Action {
+    string name = 1;
+    optional string description = 2;
+  }
+
+  message Item {
+    string name = 1;
+    optional string description = 2;
+
+    oneof details {
+      Blaster blaster = 3;
+      BlasterBolt blaster_bolt = 4;
+      Cannon cannon = 5;
+      CannonShell cannon_shell = 6;
+      Launcher launcher = 7;
+      LauncherRocket launcher_rocket = 8;
+      MeleeWeapon melee_weapon = 9;
+    }
+  }
+}

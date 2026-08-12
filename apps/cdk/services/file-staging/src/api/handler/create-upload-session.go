@@ -39,7 +39,7 @@ func (s *Handler) CreateUploadSession(
 		}
 	}
 
-	id, err := connectkit.NewBase62Id("", 40)
+	id, err := connectkit.NewBase62Id("fs-", 40)
 	if err != nil {
 		logger.Error("Error generating id", slog.Any("error", err))
 		return nil, connectkit.NewUnexpected()

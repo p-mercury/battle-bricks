@@ -1,0 +1,10 @@
+syntax = "proto3";
+package common.v1;
+
+option go_package = "contracts/dist/common/v1;common";
+
+message DiceRoll {
+  uint32 count = 1;
+  uint32 sides = 2;
+  int32 modifier = 3;
+}

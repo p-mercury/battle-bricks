@@ -1,0 +1,66 @@
+syntax = "proto3";
+package catalogue.v1;
+
+import "catalogue/v1/range.proto";
+import "common/v1/dice-roll.proto";
+
+option go_package = "contracts/dist/catalogue/v1;catalogue";
+
+message Item {
+  string id = 1;
+  uint64 version = 2;
+
+  string name = 3;
+  optional string description = 4;
+  uint32 price = 5;
+  uint32 weight = 6;
+
+  oneof details {
+    Blaster blaster = 7;
+    BlasterBolt blaster_bolt = 8;
+    Cannon cannon = 9;
+    CannonShell cannon_shell = 10;
+    Launcher launcher = 11;
+    LauncherRocket launcher_rocket = 12;
+    MeleeWeapon melee_weapon = 13;
+  }
+}
+
+message Blaster {
+  Range range = 1;
+  uint32 fire_rate = 2;
+}
+
+message Cannon {
+  Range range = 1;
+  uint32 fire_rate = 2;
+}
+
+message Launcher {
+  uint32 fire_rate = 1;
+}
+
+message MeleeWeapon {
+  uint32 attack_speed = 1;
+  uint32 armor_piercing = 2;
+  common.v1.DiceRoll damage = 3;
+}
+
+message BlasterBolt {
+  uint32 capacity = 1;
+  uint32 armor_piercing = 2;
+  common.v1.DiceRoll damage = 3;
+}
+
+message CannonShell {
+  uint32 splash_radius = 1;
+  uint32 armor_piercing = 2;
+  common.v1.DiceRoll damage = 3;
+}
+
+message LauncherRocket {
+  Range range = 1;
+  uint32 armor_piercing = 2;
+  uint32 splash_radius = 3;
+  common.v1.DiceRoll damage = 4;
+}

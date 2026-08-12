@@ -1,0 +1,12 @@
+syntax = "proto3";
+package catalogue.v1;
+
+option go_package = "contracts/dist/catalogue/v1;catalogue";
+
+enum Faction {
+  FACTION_UNSPECIFIED = 0;
+  FACTION_GALACTIC_REPUBLIC = 1;
+  FACTION_REBEL_ALLIANCE = 2;
+  FACTION_SEPARATIST_ALLIANCE = 3;
+  FACTION_GALACTIC_EMPIRE = 4;
+}

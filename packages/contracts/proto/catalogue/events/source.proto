@@ -1,0 +1,7 @@
+syntax = "proto3";
+package catalogue.events;
+
+import "eventregistry/v1/options.proto";
+
+option go_package = "contracts/dist/catalogue/events;catalogueevents";
+option (eventregistry.v1.event_file) = {source: "catalogue.customer"};

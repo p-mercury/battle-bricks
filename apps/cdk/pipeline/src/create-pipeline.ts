@@ -27,6 +27,10 @@ import {
 	IdentityServiceRegionalStack,
 } from "@battle-bricks/identity-service";
 import {
+	CatalogueServiceDataStack,
+	CatalogueServiceRegionalStack,
+} from "@battle-bricks/catalogue-service";
+import {
 	FileStagingServiceDataStack,
 	FileStagingServiceRegionalStack,
 } from "@battle-bricks/file-staging-service";
@@ -136,6 +140,54 @@ export function createPipeline(scope: App, props: CreatePipelineProps) {
 				region: "eu-west-1",
 			},
 			backboneStack: BACKBONE,
+		},
+	);
+
+	const CATALOGUE_SERVICE_DATA = new CatalogueServiceDataStack(
+		scope,
+		`${props.stackPrefix}CatalogueServiceData`,
+		{
+			stackName: `BattleBricks${props.stackPrefix}CatalogueServiceData`,
+			terminationProtection: true,
+			crossRegionReferences: true,
+			tags: props.tags,
+			env: {
+				account: props.account,
+				region: "eu-central-1",
+			},
+			backboneStack: BACKBONE,
+		},
+	);
+
+	const CATALOGUE_SERVICE_EU_CENTRAL = new CatalogueServiceRegionalStack(
+		scope,
+		`${props.stackPrefix}CatalogueServiceEuCentral1`,
+		{
+			stackName: `BattleBricks${props.stackPrefix}CatalogueServiceRegional`,
+			crossRegionReferences: true,
+			tags: props.tags,
+			env: {
+				account: props.account,
+				region: "eu-central-1",
+			},
+			backboneRegionalStack: BACKBONE_EU_CENTRAL,
+			dataStack: CATALOGUE_SERVICE_DATA,
+		},
+	);
+
+	const CATALOGUE_SERVICE_EU_WEST = new CatalogueServiceRegionalStack(
+		scope,
+		`${props.stackPrefix}CatalogueServiceEuWest1`,
+		{
+			stackName: `BattleBricks${props.stackPrefix}CatalogueServiceRegional`,
+			crossRegionReferences: true,
+			tags: props.tags,
+			env: {
+				account: props.account,
+				region: "eu-west-1",
+			},
+			backboneRegionalStack: BACKBONE_EU_WEST,
+			dataStack: CATALOGUE_SERVICE_DATA,
 		},
 	);
 
@@ -463,6 +515,10 @@ export function createPipeline(scope: App, props: CreatePipelineProps) {
 				stageName: "ServiceDataStacks",
 				segments: [
 					new StackSegment({
+						stack: CATALOGUE_SERVICE_DATA,
+						input: BUILD_ARTIFACT,
+					}),
+					new StackSegment({
 						stack: FILE_STAGING_SERVICE_DATA,
 						input: BUILD_ARTIFACT,
 					}),
@@ -488,6 +544,10 @@ export function createPipeline(scope: App, props: CreatePipelineProps) {
 				stageName: "ServiceStacksEuCentral1",
 				segments: [
 					new StackSegment({
+						stack: CATALOGUE_SERVICE_EU_CENTRAL,
+						input: BUILD_ARTIFACT,
+					}),
+					new StackSegment({
 						stack: FILE_STAGING_SERVICE_EU_CENTRAL,
 						input: BUILD_ARTIFACT,
 					}),
@@ -512,6 +572,10 @@ export function createPipeline(scope: App, props: CreatePipelineProps) {
 			{
 				stageName: "ServiceStacksEuWest1",
 				segments: [
+					new StackSegment({
+						stack: CATALOGUE_SERVICE_EU_WEST,
+						input: BUILD_ARTIFACT,
+					}),
 					new StackSegment({
 						stack: FILE_STAGING_SERVICE_EU_WEST,
 						input: BUILD_ARTIFACT,

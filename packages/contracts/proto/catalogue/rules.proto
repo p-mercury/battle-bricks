@@ -1,0 +1,14 @@
+syntax = "proto2";
+package catalogue;
+
+import "buf/validate/validate.proto";
+
+option go_package = "contracts/dist/identity;identity";
+
+extend buf.validate.StringRules {
+  optional bool user_id = 82000000 [(buf.validate.predefined).cel = {
+    id: "string.identity_customer_user_id"
+    message: "Must be a customer user ID"
+    expression: "this.matches('^[0-9A-Za-z]{12}$')"
+  }];
+}

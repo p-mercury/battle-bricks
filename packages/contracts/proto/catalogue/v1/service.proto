@@ -1,0 +1,17 @@
+syntax = "proto3";
+package catalogue.v1;
+
+import "catalogue/v1/list-items.proto";
+import "catalogue/v1/list-units.proto";
+
+option go_package = "contracts/dist/catalogue/v1;catalogue";
+
+service Internal {
+  rpc ListItems(ListItemsRequest) returns (ListItemsResponse);
+  rpc ListUnits(ListUnitsRequest) returns (ListUnitsResponse);
+}
+
+service External {
+  rpc ListItems(ListItemsRequest) returns (ListItemsResponse);
+  rpc ListUnits(ListUnitsRequest) returns (ListUnitsResponse);
+}
