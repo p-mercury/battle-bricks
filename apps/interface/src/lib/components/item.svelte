@@ -1,24 +1,14 @@
 <script lang="ts">
-	import type {
-		BoltAmmunition,
-		ShellAmmunition,
-		RocketAmmunition,
-		RangeWeapon,
-		MeleeWeapon,
-	} from "$lib/items";
 	import StatBar from "./stat-bar.svelte";
 	import StatTable from "./stat-table.svelte";
 	import StatRow from "./stat-row.svelte";
+	import type { Item } from "@battle-bricks/contracts/catalogue/v1/item_pb";
+	import DiceRoll from "./dice-roll.svelte";
 
 	let {
 		item,
 	}: {
-		item:
-			| BoltAmmunition
-			| ShellAmmunition
-			| RocketAmmunition
-			| RangeWeapon
-			| MeleeWeapon;
+		item: Item;
 	} = $props();
 
 	let isOpen = $state(false);
@@ -62,70 +52,76 @@
 				Weight:
 				<div>{item.weight}</div>
 			</StatRow>
-			{#if item.type === "BOLT_AMMUNITION"}
-				<StatRow>
-					Type:
-					<div>{item.ammunitionType}</div>
-				</StatRow>
+			{#if item.details.case === "blasterBolt"}
 				<StatRow>
 					Capacity:
-					<div>{item.capacity}</div>
+					<div>{item.details.value.capacity}</div>
 				</StatRow>
 				<StatRow>
 					Damage:
-					<div>{item.damage}</div>
+					<DiceRoll roll={item.details.value.damage} />
 				</StatRow>
 				<StatRow>
 					Armor Piercing:
-					<StatBar value={item.armorPiercing} size={4} red />
+					<StatBar value={item.details.value.armorPiercing} size={4} red />
 				</StatRow>
-			{:else if item.type === "SHELL_AMMUNITION"}
-				<StatRow>
-					Type:
-					<div>{item.ammunitionType}</div>
-				</StatRow>
+			{:else if item.details.case === "cannonShell"}
 				<StatRow>
 					Damage:
-					<div>{item.damage}</div>
+					<DiceRoll roll={item.details.value.damage} />
 				</StatRow>
 				<StatRow>
 					Armor Piercing:
-					<StatBar value={item.armorPiercing} size={4} red />
+					<StatBar value={item.details.value.armorPiercing} size={4} red />
 				</StatRow>
-			{:else if item.type === "ROCKET_AMMUNITION"}
-				<StatRow>
-					Type:
-					<div>{item.ammunitionType}</div>
-				</StatRow>
+			{:else if item.details.case === "launcherRocket"}
 				<StatRow>
 					Damage:
-					<div>{item.damage}</div>
+					<DiceRoll roll={item.details.value.damage} />
 				</StatRow>
 				<StatRow>
 					Splash Radius:
-					<StatBar value={item.splashRadius} size={4} red />
+					<StatBar value={item.details.value.splashRadius} size={4} red />
 				</StatRow>
-			{:else if item.type === "RANGE_WEAPON"}
-				<StatRow>
-					Type:
-					<div>{item.ammunitionType}</div>
-				</StatRow>
+			{:else if item.details.case === "blaster"}
 				<StatRow>
 					Range:
-					<div>{item.range.min}-{item.range.max}m</div>
+					<div>
+						{item.details.value.range!.min}-{item.details.value.range!.max}m
+					</div>
 				</StatRow>
 				<StatRow>
 					Fire Rate:
-					<div>{item.fireRate}</div>
+					<div>{item.details.value.fireRate}</div>
 				</StatRow>
-			{:else}
+			{:else if item.details.case === "cannon"}
+				<StatRow>
+					Range:
+					<div>
+						{item.details.value.range!.min}-{item.details.value.range!.max}m
+					</div>
+				</StatRow>
+				<StatRow>
+					Fire Rate:
+					<div>{item.details.value.fireRate}</div>
+				</StatRow>
+			{:else if item.details.case === "launcher"}
+				<StatRow>
+					Fire Rate:
+					<div>{item.details.value.fireRate}</div>
+				</StatRow>
+			{:else if item.details.case === "meleeWeapon"}
+				<StatRow>
+					Attack Speed:
+					<StatBar value={item.details.value.attackSpeed} size={4} red />
+				</StatRow>
 				<StatRow>
 					Armor Piercing:
-					<StatBar value={item.armorPiercing} size={4} red />
+					<StatBar value={item.details.value.armorPiercing} size={4} red />
 				</StatRow>
 				<StatRow>
 					Damage:
-					<div>{item.damage}</div>
+					<DiceRoll roll={item.details.value.damage} />
 				</StatRow>
 			{/if}
 		</StatTable>
@@ -171,7 +167,7 @@
 		margin: 0;
 		padding: 0;
 		color: white;
-		font-size: 1rem;
+		font-size: 0.9rem;
 		font-weight: 600;
 	}
 

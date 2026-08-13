@@ -119,12 +119,8 @@ msgstr "Клас на бронята: <0/>"
 msgid "New Squad"
 msgstr "Нов отряд"
 
-#: src/lib/components/item.svelte
-#: src/lib/components/item.svelte
-#: src/lib/components/item.svelte
-#: src/lib/components/item.svelte
-msgid "Type: <0/>"
-msgstr "Тип: <0/>"
+#~ msgid "Type: <0/>"
+#~ msgstr "Тип: <0/>"
 
 #: src/lib/components/item.svelte
 msgid "Capacity: <0/>"
@@ -154,10 +150,12 @@ msgstr "Радиус на поражение: <0/>"
 #. 0.0: action.weapon.range.min; 0.1: action.weapon.range.max
 #. 0.0: action.weapon.range.min; 0.1: action.weapon.range.max
 #. 0.0: action.weapon.range.min; 0.1: action.weapon.range.max
-#. 0.0: item.range.min; 0.1: item.range.max
+#. 0.0: item.details.value.range!.min; 0.1: item.details.value.range!.max
+#. 0.0: item.details.value.range!.min; 0.1: item.details.value.range!.max
 #: src/lib/components/action-item.svelte
 #: src/lib/components/action-item.svelte
 #: src/lib/components/action-item.svelte
+#: src/lib/components/item.svelte
 #: src/lib/components/item.svelte
 msgid "Range: <0>{0}-{1}m</0>"
 msgstr "Обхват: <0>{0}-{1} м</0>"
@@ -165,6 +163,8 @@ msgstr "Обхват: <0>{0}-{1} м</0>"
 #: src/lib/components/action-item.svelte
 #: src/lib/components/action-item.svelte
 #: src/lib/components/action-item.svelte
+#: src/lib/components/item.svelte
+#: src/lib/components/item.svelte
 #: src/lib/components/item.svelte
 msgid "Fire Rate: <0/>"
 msgstr "Скорострелност: <0/>"
@@ -177,12 +177,12 @@ msgstr "Цена: <0/>"
 msgid "Weight: <0/>"
 msgstr "Тегло: <0/>"
 
-#. 0.0: loadout.price
+#. 0.0: loadout.unit.price + loadout.items.reduce((total, item) => total + item.price, 0)
 #: src/lib/components/loadout-item.svelte
 msgid "Price: <0>{0}c</0>"
 msgstr "Цена: <0>{0} кр.</0>"
 
-#. 0.0: loadout.unit.health
+#. 0.0: loadout.unit!.health
 #. 0.0: unit.health
 #: src/lib/components/loadout-item.svelte
 #: src/lib/components/unit-item.svelte
@@ -236,6 +236,7 @@ msgid "{0} with {1}"
 msgstr "{0} с {1}"
 
 #: src/lib/components/action-item.svelte
+#: src/lib/components/item.svelte
 msgid "Attack Speed: <0/>"
 msgstr "Скорост на атака: <0/>"
 
@@ -264,3 +265,8 @@ msgstr "Отказ"
 #: src/lib/components/select-color.svelte
 msgid "Select color"
 msgstr "Изберете цвят"
+
+#. 0: roll.count; 1: roll.sides; 2: roll.modifier ? roll.modifier > 0 ? `+${roll.modifier}` \\: roll.modifier \\: ""
+#: src/lib/components/dice-roll.svelte
+msgid "{0}d{1}{2}"
+msgstr "{0}d{1}{2}"

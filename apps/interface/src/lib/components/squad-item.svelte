@@ -1,15 +1,28 @@
 <script lang="ts">
 	import { getFactionName } from "$lib/faction";
-	import { loadouts } from "$lib/loadouts";
 	import type { Squad } from "$lib/squad";
+	import type { Loadout } from "@battle-bricks/contracts/catalogue/v1/loadout_pb";
 	import StatRow from "./stat-row.svelte";
 	import StatTable from "./stat-table.svelte";
 
-	let { squad, onclick = () => {} }: { squad: Squad; onclick?: () => void } =
-		$props();
+	let {
+		squad,
+		loadouts,
+		onclick = () => {},
+	}: {
+		squad: Squad;
+		loadouts: { [k: string]: Loadout };
+		onclick?: () => void;
+	} = $props();
 
 	let burdget = $derived(
-		squad.loadouts.reduce((sum, i) => sum + loadouts[i].price, 0),
+		squad.loadouts.reduce(
+			(a, i) =>
+				a +
+				loadouts[i].unit!.price +
+				loadouts[i].items.reduce((total, item) => total + item.price, 0),
+			0,
+		),
 	);
 </script>
 

@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
 	import { getFactionName, type Faction } from "$lib/faction";
 	import type { Squad } from "$lib/squad";
 	import { browser } from "$app/env";
@@ -97,4 +97,4 @@
 	{/if}
 </div>
 
-<style lang="scss"></style>
+<style lang="scss"></style> -->

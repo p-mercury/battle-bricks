@@ -1,31 +1,40 @@
 <script lang="ts">
-	import { loadouts as baseLoadouts, type Loadout } from "$lib/loadouts";
-	import type { Faction } from "$lib/faction";
 	import { untrack } from "svelte";
 	import LoadoutsZone from "./loadouts-zone.svelte";
 	import type { Squad } from "$lib/squad";
 	import { page } from "$app/state";
 	import SquadZone from "./squad-zone.svelte";
 	import { goto } from "$app/navigation";
+	import type { Loadout } from "@battle-bricks/contracts/catalogue/v1/loadout_pb";
+	import type { PageData } from "./$types";
+	import { Faction } from "@battle-bricks/contracts/catalogue/v1/faction_pb";
+
+	let { data }: { data: PageData } = $props();
 
 	const flipDurationMs = 150;
-	let faction = $state<Faction>("GALACTIC_REPUBLIC");
+	let faction = $state<Faction>(Faction.GALACTIC_REPUBLIC);
 	let loadouts = $state<{ id: string; loadout: Loadout }[]>([]);
 	let squad = $state<{ id: string; loadout: Loadout }[]>([]);
 	let budget = $derived(
-		squad.reduce((sum, item) => sum - item.loadout.price, 1500),
+		squad.reduce(
+			(a, item) =>
+				a -
+				(item.loadout.unit!.price +
+					item.loadout.items.reduce((b, item) => b + item.price, 0)),
+			1500,
+		),
 	);
 	let name = $state("");
 
 	$effect(() => {
-		loadouts = Object.values(baseLoadouts)
-			.filter((i) => i.unit.faction.includes(faction))
+		loadouts = Object.values(data.loadouts)
+			.filter((i) => i.unit!.factions.includes(faction))
 			.map((i) => ({
 				id: crypto.randomUUID(),
 				loadout: i,
 			}));
 		squad = untrack(() => squad).filter((i) =>
-			i.loadout.unit.faction.includes(faction),
+			i.loadout.unit!.factions.includes(faction),
 		);
 	});
 
@@ -42,7 +51,7 @@
 				name = s.name;
 				squad = s.loadouts.map((l) => ({
 					id: crypto.randomUUID(),
-					loadout: baseLoadouts[l],
+					loadout: data.loadouts[l],
 				}));
 			}
 		}
@@ -52,10 +61,10 @@
 <div class="wrapper">
 	<header>
 		<select bind:value={faction}>
-			<option value="GALACTIC_REPUBLIC">Galactic Republic</option>
-			<option value="REBEL_ALLIANCE">Rebel Alliance</option>
-			<option value="SEPARATIST_ALLIANCE">Separatist Alliance</option>
-			<option value="GALACTIC_EMPIRE">Galactic Empire</option>
+			<option value={Faction.GALACTIC_REPUBLIC}>Galactic Republic</option>
+			<option value={Faction.REBEL_ALLIANCE}>Rebel Alliance</option>
+			<option value={Faction.SEPARATIST_ALLIANCE}>Separatist Alliance</option>
+			<option value={Faction.GALACTIC_EMPIRE}>Galactic Empire</option>
 		</select>
 		<input type="text" placeholder="name" bind:value={name} />
 		<ln>Budget: {budget}</ln>
@@ -111,7 +120,10 @@
 			handleConsider={(event) => {
 				if (
 					event.detail.items.reduce(
-						(sum, item) => sum - item.loadout.price,
+						(a, item) =>
+							a -
+							item.loadout.unit!.price +
+							item.loadout.items.reduce((b, item) => b + item.price, 0),
 						1500,
 					) >= 0
 				) {
@@ -120,8 +132,20 @@
 			}}
 			handleFinalize={(event) => {
 				const items = event.detail.items;
-				const next = items.reduce((sum, item) => sum + item.loadout.price, 0);
-				const prev = squad.reduce((sum, item) => sum + item.loadout.price, 0);
+				const next = items.reduce(
+					(a, item) =>
+						a -
+						item.loadout.unit!.price +
+						item.loadout.items.reduce((b, item) => b + item.price, 0),
+					1500,
+				);
+				const prev = squad.reduce(
+					(a, item) =>
+						a -
+						item.loadout.unit!.price +
+						item.loadout.items.reduce((b, item) => b + item.price, 0),
+					1500,
+				);
 
 				if (next <= 1500 || next < prev) {
 					squad = items;
@@ -139,7 +163,7 @@
 		grid-template:
 			"header header" 4rem
 			"loadouts squad" 1fr /
-			1fr 1fr;
+			auto 1fr;
 		height: 100dvh;
 		width: 100dvw;
 	}

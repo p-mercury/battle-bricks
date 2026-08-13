@@ -76,7 +76,7 @@ func (s *Handler) Evaluate(
 			Status: identity.UserStatus(u.Status),
 		}
 
-		jsonString, err := protojson.Marshal(rawUser)
+		jsonString, err := protojson.Marshal(rawUser.User)
 		if err != nil {
 			logger.Error("Error json marshaling user", slog.Any("error", err))
 			return nil, connectkit.NewUnexpected()

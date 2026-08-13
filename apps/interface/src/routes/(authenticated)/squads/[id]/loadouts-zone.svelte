@@ -1,6 +1,6 @@
 <script lang="ts">
 	import LoadoutItem from "$lib/components/loadout-item.svelte";
-	import { type Loadout } from "$lib/loadouts";
+	import type { Loadout } from "@battle-bricks/contracts/catalogue/v1/loadout_pb";
 	import {
 		dndzone,
 		TRIGGERS,

@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
 	import type {
 		MeleeAction,
 		RangeBoltAction,
@@ -237,4 +237,4 @@
 			font-weight: 600;
 		}
 	}
-</style>
+</style> -->

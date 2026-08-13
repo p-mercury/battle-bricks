@@ -3,6 +3,9 @@
 	import { goto } from "$app/navigation";
 	import SquadItem from "$lib/components/squad-item.svelte";
 	import type { Squad } from "$lib/squad";
+	import type { PageData } from "./$types";
+
+	let { data }: { data: PageData } = $props();
 
 	let squads = $derived.by<{ [key: string]: Squad }>(() => {
 		if (browser) {
@@ -20,7 +23,11 @@
 <button onclick={() => goto("/squads/new")}>New Squad</button>
 <ul>
 	{#each Object.values(squads) as squad}
-		<SquadItem {squad} onclick={() => goto(`/squads/${squad.id}`)} />
+		<SquadItem
+			{squad}
+			loadouts={data.loadouts}
+			onclick={() => goto(`/squads/${squad.id}`)}
+		/>
 	{/each}
 </ul>
 

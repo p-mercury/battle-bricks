@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
 	import UnitItem from "$lib/components/unit-item.svelte";
 	import { browser } from "$app/env";
 	import type { Game } from "$lib/game";
@@ -236,4 +236,4 @@
 	li {
 		all: unset;
 	}
-</style>
+</style> -->

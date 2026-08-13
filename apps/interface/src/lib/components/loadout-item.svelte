@@ -1,9 +1,10 @@
 <script lang="ts">
-	import type { Loadout } from "$lib/loadouts";
-	import Item from "./item.svelte";
-	import StatBar from "./stat-bar.svelte";
-	import StatRow from "./stat-row.svelte";
-	import StatTable from "./stat-table.svelte";
+	import type { Loadout } from "@battle-bricks/contracts/catalogue/v1/loadout_pb";
+	import Item from "$lib/components/item.svelte";
+	import StatBar from "$lib/components/stat-bar.svelte";
+	import StatRow from "$lib/components/stat-row.svelte";
+	import StatTable from "$lib/components/stat-table.svelte";
+	import Brick from "$lib/components/brick.svelte";
 
 	let {
 		loadout,
@@ -12,43 +13,56 @@
 	}: { loadout: Loadout; selected?: Boolean; onclick?: () => void } = $props();
 </script>
 
-<li {onclick} class:selected>
-	<h3>{loadout.name}</h3>
-	<div class="content">
-		<StatTable>
-			<StatRow>
-				Price:
-				<div>{loadout.price}c</div>
-			</StatRow>
-			<StatRow>
-				Health:
-				<div>{loadout.unit.health}hp</div>
-			</StatRow>
-			<StatRow>
-				Speed:
-				<StatBar value={loadout.unit.speed} size={4} />
-			</StatRow>
-			<StatRow>
-				Size:
-				<StatBar value={loadout.unit.size} size={4} />
-			</StatRow>
-			<StatRow>
-				Armor Class:
-				<StatBar value={loadout.unit.armorClass} size={4} />
-			</StatRow>
-			{#if loadout.unit.marksmanship}
+<section {onclick} class:selected>
+	<header>
+		<Brick />
+	</header>
+	{#if loadout.unit}
+		{#if loadout.unit.image}
+			<img alt={loadout.unit.name} src={loadout.unit.image} />
+		{/if}
+		<div class="info">
+			<h3>{loadout.unit.name}</h3>
+		</div>
+		<div class="stats">
+			<StatTable>
 				<StatRow>
-					Marksmanship:
-					<StatBar value={loadout.unit.marksmanship} size={4} red />
+					Price:
+					<div>
+						{loadout.unit.price +
+							loadout.items.reduce((total, item) => total + item.price, 0)}c
+					</div>
 				</StatRow>
-			{/if}
-			{#if loadout.unit.meleeAbility}
 				<StatRow>
-					Melee Ability:
-					<StatBar value={loadout.unit.meleeAbility} size={4} red />
+					Health:
+					<div>{loadout.unit!.health}hp</div>
 				</StatRow>
-			{/if}
-		</StatTable>
+				<StatRow>
+					Speed:
+					<StatBar value={loadout.unit.speed} size={4} />
+				</StatRow>
+				<StatRow>
+					Size:
+					<StatBar value={loadout.unit.size} size={4} />
+				</StatRow>
+				<StatRow>
+					Armor Class:
+					<StatBar value={loadout.unit.armorClass} size={4} />
+				</StatRow>
+				{#if loadout.unit.marksmanship}
+					<StatRow>
+						Marksmanship:
+						<StatBar value={loadout.unit.marksmanship} size={4} red />
+					</StatRow>
+				{/if}
+				{#if loadout.unit.meleeAbility}
+					<StatRow>
+						Melee Ability:
+						<StatBar value={loadout.unit.meleeAbility} size={4} red />
+					</StatRow>
+				{/if}
+			</StatTable>
+		</div>
 		<div class="items-wrapper">
 			<div class="items">
 				{#each loadout.items as item}
@@ -56,67 +70,66 @@
 				{/each}
 			</div>
 		</div>
-	</div>
-</li>
+	{/if}
+</section>
 
 <style lang="scss">
 	@use "sass:color";
 
-	li {
-		box-sizing: border-box;
-		width: 100%;
-		height: 14.2rem;
-		display: flex;
-		flex-direction: column;
-		margin: 0;
-		padding: 0;
-		box-shadow: inset 0 0 0 4px #636669;
-		background-color: white;
-		border-radius: 0.5rem;
+	section {
+		background: white;
+		border-radius: 0.8rem;
+		padding: 0.6rem;
 		overflow: hidden;
+		box-shadow:
+			0 1px 2px rgba(0, 0, 0, 0.1),
+			0 4px 8px rgba(0, 0, 0, 0.14),
+			0 8px 16px rgba(0, 0, 0, 0.12);
 		cursor: pointer;
-
-		&:hover {
-			box-shadow: inset 0 0 0 4px color.adjust(#636669, $lightness: -5%);
-
-			h3 {
-				background-color: color.adjust(#636669, $lightness: -5%);
-			}
-		}
-
 		&.selected {
-			box-shadow: inset 0 0 0 4px #2452b6;
-
-			h3 {
-				background-color: #2452b6;
-			}
+			outline: 4px solid #2388ff;
+			outline-offset: 2px;
 		}
-	}
-
-	h3 {
-		box-sizing: border-box;
-		margin: 0;
-		font-size: 1.1rem;
-		font-weight: 600;
-		background-color: #636669;
-		color: white;
-		width: 100%;
-		padding: 0.4rem 0.5rem 0.2rem 0.5rem;
-	}
-
-	.content {
-		display: flex;
-		flex: 1;
-		min-height: 0;
-		padding: 0 0.2rem 3px;
+		display: grid;
+		width: 33.7rem;
+		height: 15rem;
+		grid-template:
+			"color color color" 1.25rem
+			"image stats items" 8rem
+			"info stats items" auto /
+			8rem min-content 1fr;
 		gap: 0.6rem;
 	}
 
-	.items-wrapper {
-		box-sizing: border-box;
+	img {
+		width: 100%;
 		height: 100%;
-		overflow: scroll;
-		padding: 0.5rem;
+		grid-area: image;
+		object-fit: contain;
+		border-radius: 0.8rem;
+		padding: 0.4rem;
+		background: linear-gradient(135deg, #1c1c1c, #4f424f);
+		box-sizing: border-box;
+
+		&.republic {
+			background: linear-gradient(135deg, #1c1c1c, #4f424f);
+		}
+
+		&.separatists {
+			background: linear-gradient(135deg, #2b1515, #2d3f54);
+		}
+	}
+
+	header {
+		grid-area: color;
+		margin: -0.6rem -0.6rem 0 -0.6rem;
+		background-color: #595d60;
+	}
+
+	.items-wrapper {
+		grid-area: items;
+		overflow-y: scroll;
+		padding-left: 0.1rem;
 	}
 
 	.items {
@@ -125,5 +138,21 @@
 		flex-direction: column;
 		gap: 0.2rem;
 		padding: 0;
+	}
+
+	.stats {
+		grid-area: stats;
+		padding-left: 0.3rem;
+	}
+
+	.info {
+		grid-area: info;
+
+		h3 {
+			margin: 0;
+			padding: 0;
+			font-size: 1.2rem;
+			font-weight: 600;
+		}
 	}
 </style>

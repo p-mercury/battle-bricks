@@ -1,6 +1,6 @@
-import type { Faction } from "$lib/faction";
-import type { Loadout } from "$lib/loadouts";
-import type { Unit } from "$lib/units";
+import type { Faction } from "@battle-bricks/contracts/catalogue/v1/faction_pb";
+import type { Loadout } from "@battle-bricks/contracts/catalogue/v1/loadout_pb";
+import type { Unit } from "@battle-bricks/contracts/catalogue/v1/unit_pb";
 
 export interface GameLoadout extends Loadout {
 	color: string;

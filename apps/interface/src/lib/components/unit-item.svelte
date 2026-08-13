@@ -2,9 +2,9 @@
 	import StatBar from "$lib/components/stat-bar.svelte";
 	import StatRow from "$lib/components/stat-row.svelte";
 	import StatTable from "$lib/components/stat-table.svelte";
-	import type { Faction } from "$lib/faction";
-	import type { Unit } from "$lib/units";
+	import { Faction } from "@battle-bricks/contracts/catalogue/v1/faction_pb";
 	import Brick from "./brick.svelte";
+	import type { Unit } from "@battle-bricks/contracts/catalogue/v1/unit_pb";
 
 	let {
 		faction,
@@ -27,8 +27,8 @@
 		<img
 			alt={unit.name}
 			src={unit.image}
-			class:republic={faction === "GALACTIC_REPUBLIC"}
-			class:separatists={faction === "SEPARATIST_ALLIANCE"}
+			class:republic={faction === Faction.GALACTIC_REPUBLIC}
+			class:separatists={faction === Faction.SEPARATIST_ALLIANCE}
 		/>
 	{/if}
 	<div class="info">

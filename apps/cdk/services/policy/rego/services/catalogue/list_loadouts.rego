@@ -12,5 +12,5 @@ authz if {
 
 decision := {
 	"authz": authz,
-	"output_mask": {"items": authz},
+	"output_mask": {"loadouts": authz},
 }
