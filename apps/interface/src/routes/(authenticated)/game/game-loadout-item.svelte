@@ -101,9 +101,9 @@
 		width: 21.55rem;
 		grid-template:
 			"color color" 1.25rem
-			"image stats" 7rem
+			"image stats" 8rem
 			"info stats" auto /
-			7rem auto;
+			8rem auto;
 		gap: 0.4rem;
 		background: white;
 		border-radius: 0.8rem;
