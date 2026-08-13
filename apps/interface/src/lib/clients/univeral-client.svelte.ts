@@ -6,6 +6,7 @@ import {
 	type Transport,
 	makeAnyClient,
 } from "@connectrpc/connect";
+import { External as CatalogueService } from "@battle-bricks/contracts/catalogue/v1/service_pb";
 import { External as FileStagingService } from "@battle-bricks/contracts/filestaging/v1/service_pb";
 import { External as IdentityService } from "@battle-bricks/contracts/identity/v1/service_pb";
 import { External as PolicyService } from "@battle-bricks/contracts/policy/v1/service_pb";
@@ -91,6 +92,7 @@ class Client {
 	private readonly fetch;
 	private url;
 
+	public readonly catalogue;
 	public readonly fileStaging;
 	public readonly identity;
 	public readonly policy;
@@ -147,6 +149,7 @@ class Client {
 
 		const policyClient = createConnectClient(PolicyService, transport);
 
+		this.catalogue = createConnectClient(CatalogueService, transport);
 		this.fileStaging = createConnectClient(FileStagingService, transport);
 		this.identity = createConnectClient(IdentityService, transport);
 		this.policy = {

@@ -1,6 +1,9 @@
 syntax = "proto3";
 package catalogue.v1;
 
+import "catalogue/v1/item.proto";
+import "catalogue/v1/unit.proto";
+
 option go_package = "contracts/dist/catalogue/v1;catalogue";
 
 message Loadout {
@@ -10,6 +13,6 @@ message Loadout {
   optional string image = 3;
   string name = 4;
   optional string description = 5;
-  string unit = 6;
-  repeated string items = 7;
+  Unit unit = 6;
+  repeated Item items = 7;
 }

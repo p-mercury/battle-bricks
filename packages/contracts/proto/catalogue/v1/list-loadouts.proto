@@ -1,0 +1,16 @@
+syntax = "proto3";
+package catalogue.v1;
+
+import "catalogue/v1/loadout.proto";
+
+option go_package = "contracts/dist/catalogue/v1;catalogue";
+
+message ListLoadoutsRequest {}
+
+message ListLoadoutsResponse {
+  repeated Loadout loadouts = 1;
+}
+
+message ListLoadoutsContext {
+  ListLoadoutsRequest request = 1;
+}

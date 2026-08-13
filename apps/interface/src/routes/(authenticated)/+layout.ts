@@ -5,5 +5,18 @@ import { getClient } from "$lib/clients/univeral-client.svelte";
 export const load: LayoutLoad = async (event) => {
 	loadLocale(event.data.locale);
 	const client = getClient(event);
-	return { policyUser: (await client.policy.getUser({})).user };
+
+	const [{ user }, { units }, { items }, { loadouts }] = await Promise.all([
+		client.policy.getUser({}),
+		client.catalogue.listUnits({}),
+		client.catalogue.listItems({}),
+		client.catalogue.listLoadouts({}),
+	]);
+
+	return {
+		policyUser: user,
+		units: Object.fromEntries(units.map((i) => [i.id, i])),
+		items: Object.fromEntries(items.map((i) => [i.id, i])),
+		loadouts: Object.fromEntries(loadouts.map((i) => [i.id, i])),
+	};
 };

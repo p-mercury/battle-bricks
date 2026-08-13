@@ -47,8 +47,6 @@
 			}
 		}
 	});
-
-	$inspect(loadouts);
 </script>
 
 <div class="wrapper">

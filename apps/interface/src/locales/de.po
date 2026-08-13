@@ -7,6 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: src/routes/(authenticated)/squads/[id]/+page.svelte
 #: src/routes/squads/[id]/+page.svelte
 msgid "Save"
 msgstr "Speichern"
@@ -31,11 +32,13 @@ msgstr "Trupps"
 msgid "Select Squad"
 msgstr "Trupp auswählen"
 
+#: src/routes/(authenticated)/squads/[id]/+page.svelte
 #: src/routes/+page.svelte
 #: src/routes/squads/[id]/+page.svelte
 msgid "Galactic Republic"
 msgstr "Galaktische Republik"
 
+#: src/routes/(authenticated)/squads/[id]/+page.svelte
 #: src/routes/+page.svelte
 #: src/routes/squads/[id]/+page.svelte
 msgid "Separatist Alliance"
@@ -111,6 +114,7 @@ msgstr "Größe: <0/>"
 msgid "Armor Class: <0/>"
 msgstr "Rüstungsklasse: <0/>"
 
+#: src/routes/(authenticated)/squads/+page.svelte
 #: src/routes/squads/+page.svelte
 msgid "New Squad"
 msgstr "Neuer Trupp"
@@ -235,19 +239,24 @@ msgstr "{0} mit {1}"
 msgid "Attack Speed: <0/>"
 msgstr "Angriffsgeschwindigkeit: <0/>"
 
+#: src/routes/(authenticated)/squads/[id]/+page.svelte
 #: src/routes/squads/[id]/+page.svelte
 msgid "Rebel Alliance"
 msgstr "Rebellenallianz"
 
+#: src/routes/(authenticated)/squads/[id]/+page.svelte
 #: src/routes/squads/[id]/+page.svelte
 msgid "Galactic Empire"
 msgstr "Galaktisches Imperium"
 
 #. 0: budget
+#. 0: budget
+#: src/routes/(authenticated)/squads/[id]/+page.svelte
 #: src/routes/squads/[id]/+page.svelte
 msgid "Budget: {0}"
 msgstr "Budget: {0}"
 
+#: src/routes/(authenticated)/squads/[id]/+page.svelte
 #: src/routes/squads/[id]/+page.svelte
 msgid "Cancle"
 msgstr "Abbrechen"
