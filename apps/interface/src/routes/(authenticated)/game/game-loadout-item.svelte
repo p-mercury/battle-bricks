@@ -101,9 +101,9 @@
 		width: 21.55rem;
 		grid-template:
 			"color color" 1.25rem
-			"image stats" 8rem
+			"image stats" 7rem
 			"info stats" auto /
-			8rem auto;
+			7rem auto;
 		gap: 0.4rem;
 		background: white;
 		border-radius: 0.8rem;
@@ -156,7 +156,7 @@
 		h3 {
 			margin: 0;
 			padding: 0;
-			font-size: 1.2rem;
+			font-size: 1.1rem;
 			font-weight: 600;
 		}
 	}

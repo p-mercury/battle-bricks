@@ -120,11 +120,14 @@
 		box-sizing: border-box;
 		display: grid;
 		grid-template:
-			"header header header header" 1rem
-			"squad defender actions ." 1fr /
-			auto auto minmax(24rem, auto) 1fr;
-		gap: 1rem;
-		padding: 0.5rem;
+			". . . . . . ." 0.5rem
+			". header header header header header ." 1.5rem
+			". . . . . . ." 0.5rem
+			". squad . defender . actions ." 1fr /
+			0.5rem min-content 0.5rem min-content 0.5rem minmax(24rem, auto) minmax(
+				0.5rem,
+				1fr
+			);
 		height: 100dvh;
 		width: 100dvw;
 	}
@@ -157,7 +160,7 @@
 			max-height: 100%;
 			max-width: 100%;
 			overflow: hidden scroll;
-			padding: 0.5rem 1rem 1rem 1rem;
+			padding: 0.5rem;
 		}
 	}
 
@@ -185,7 +188,7 @@
 			max-height: 100%;
 			max-width: 100%;
 			overflow: hidden scroll;
-			padding: 0.5rem 1rem 1rem 1rem;
+			padding: 0.5rem;
 		}
 	}
 
@@ -213,7 +216,7 @@
 			max-height: 100%;
 			max-width: 100%;
 			overflow: hidden scroll;
-			padding: 0.5rem 1rem 1rem 1rem;
+			padding: 0.5rem;
 		}
 	}
 
@@ -225,12 +228,6 @@
 		gap: 0.8rem;
 		height: max-content;
 		width: 100%;
-	}
-
-	section {
-		max-height: 100%;
-		overflow: scroll;
-		padding: 1rem;
 	}
 
 	li {
