@@ -4,6 +4,7 @@ import (
 	"connectkit"
 	"context"
 	"contracts/dist/catalogue/v1"
+	"contracts/dist/common/v1"
 	"log/slog"
 
 	"connectrpc.com/connect"
@@ -31,6 +32,269 @@ func (s *Handler) ListItems(
 	}
 
 	return connect.NewResponse(&catalogue.ListItemsResponse{Items: []*catalogue.Item{
-		&catalogue.Item{},
+		{
+			Id:          "CV1AILTJNoyVKD7Uon63",
+			Version:     1,
+			Name:        "Red Plasma Cartridge",
+			Description: new("Cheap Tibanna gas blend producing weaker red bolts"),
+			Price:       5,
+			Weight:      2,
+			Details: &catalogue.Item_BlasterBolt{
+				BlasterBolt: &catalogue.BlasterBolt{
+					Capacity:      45,
+					ArmorPiercing: 1,
+					Damage: &common.DiceRoll{
+						Count:    1,
+						Sides:    6,
+						Modifier: -1,
+					},
+				},
+			},
+		},
+		{
+			Id:          "d2D9WroLYwyxAWaUpG1u",
+			Version:     1,
+			Name:        "Blue Plasma Cartridge",
+			Description: new("High grade Tibanna gas blend producing blue bolts"),
+			Price:       10,
+			Weight:      2,
+			Details: &catalogue.Item_BlasterBolt{
+				BlasterBolt: &catalogue.BlasterBolt{
+					Capacity:      40,
+					ArmorPiercing: 2,
+					Damage: &common.DiceRoll{
+						Count:    1,
+						Sides:    6,
+						Modifier: 0,
+					},
+				},
+			},
+		},
+		{
+			Id:          "qL0jBLWBgS6D5mXTcxF5",
+			Version:     1,
+			Name:        "Green Plasma Cartridge",
+			Description: new("Pure refined Tibanna producing powerful green bolts"),
+			Price:       15,
+			Weight:      2,
+			Details: &catalogue.Item_BlasterBolt{
+				BlasterBolt: &catalogue.BlasterBolt{
+					Capacity:      35,
+					ArmorPiercing: 2,
+					Damage: &common.DiceRoll{
+						Count:    1,
+						Sides:    6,
+						Modifier: 1,
+					},
+				},
+			},
+		},
+		{
+			Id:          "QMdY2xQJD9UEcLDwTNTp",
+			Version:     1,
+			Name:        "Yellow Plasma Cartridge",
+			Description: new("High pressure Tibanna producing armor piercing yellow bolts"),
+			Price:       20,
+			Weight:      2,
+			Details: &catalogue.Item_BlasterBolt{
+				BlasterBolt: &catalogue.BlasterBolt{
+					Capacity:      30,
+					ArmorPiercing: 3,
+					Damage: &common.DiceRoll{
+						Count:    1,
+						Sides:    6,
+						Modifier: 1,
+					},
+				},
+			},
+		},
+		{
+			Id:          "Agkg3j4cpGdmzIda67jD",
+			Version:     1,
+			Name:        "Red Plasma Shell",
+			Description: new("Cheap Tibanna gas blend producing weaker blasts"),
+			Price:       10,
+			Weight:      4,
+			Details: &catalogue.Item_CannonShell{
+				CannonShell: &catalogue.CannonShell{
+					SplashRadius:  0,
+					ArmorPiercing: 3,
+					Damage: &common.DiceRoll{
+						Count:    2,
+						Sides:    6,
+						Modifier: 0,
+					},
+				},
+			},
+		},
+		{
+			Id:          "bJeepLfSKSzI1yznvTUM",
+			Version:     1,
+			Name:        "Blue Plasma Shell",
+			Description: new("High grade Tibanna gas blend producing blue bolts"),
+			Price:       20,
+			Weight:      4,
+			Details: &catalogue.Item_CannonShell{
+				CannonShell: &catalogue.CannonShell{
+					SplashRadius:  0,
+					ArmorPiercing: 3,
+					Damage: &common.DiceRoll{
+						Count:    2,
+						Sides:    6,
+						Modifier: 2,
+					},
+				},
+			},
+		},
+		{
+			Id:          "bPC0uxvBFkmHWaHDrHoB",
+			Version:     1,
+			Name:        "Green Plasma Shell",
+			Description: new("Pure refined Tibanna producing powerful green bolts"),
+			Price:       30,
+			Weight:      4,
+			Details: &catalogue.Item_CannonShell{
+				CannonShell: &catalogue.CannonShell{
+					SplashRadius:  0,
+					ArmorPiercing: 4,
+					Damage: &common.DiceRoll{
+						Count:    2,
+						Sides:    6,
+						Modifier: 4,
+					},
+				},
+			},
+		},
+		{
+			Id:          "xl4SlN7caFSq68DPxhr3",
+			Version:     1,
+			Name:        "Fragmentation rocket",
+			Description: new("Anti-personnel rocket that shreds lightly armored targets with a wide blast radius"),
+			Price:       30,
+			Weight:      6,
+			Details: &catalogue.Item_LauncherRocket{
+				LauncherRocket: &catalogue.LauncherRocket{
+					Range: &catalogue.Range{
+						Min: 6,
+						Max: 14,
+					},
+					SplashRadius:  2,
+					ArmorPiercing: 1,
+					Damage: &common.DiceRoll{
+						Count:    1,
+						Sides:    6,
+						Modifier: 4,
+					},
+				},
+			},
+		},
+		{
+			Id:          "2A06zTJVEAHqG8Ax4w7k",
+			Version:     1,
+			Name:        "Ion rocket",
+			Description: new("Anti-vehicle rocket for piercing thick armor"),
+			Price:       30,
+			Weight:      6,
+			Details: &catalogue.Item_LauncherRocket{
+				LauncherRocket: &catalogue.LauncherRocket{
+					Range: &catalogue.Range{
+						Min: 6,
+						Max: 14,
+					},
+					SplashRadius:  0,
+					ArmorPiercing: 4,
+					Damage: &common.DiceRoll{
+						Count:    1,
+						Sides:    6,
+						Modifier: 4,
+					},
+				},
+			},
+		},
+		{
+			Id:      "Kq0BO0W0rH2Ko0kyydLI",
+			Version: 1,
+			Name:    "Blaster",
+			Price:   20,
+			Weight:  4,
+			Details: &catalogue.Item_Blaster{
+				Blaster: &catalogue.Blaster{
+					Range: &catalogue.Range{
+						Min: 2,
+						Max: 12,
+					},
+					FireRate: 6,
+				},
+			},
+		},
+		{
+			Id:      "OiFq73Vk00ob7p8IuKAb",
+			Version: 1,
+			Name:    "Hand Blasters",
+			Price:   35,
+			Weight:  5,
+			Details: &catalogue.Item_Blaster{
+				Blaster: &catalogue.Blaster{
+					Range: &catalogue.Range{
+						Min: 0,
+						Max: 8,
+					},
+					FireRate: 8,
+				},
+			},
+		},
+		{
+			Id:      "UG60YI7qn8DJryG9pmR7",
+			Version: 1,
+			Name:    "Blaster Rifle",
+			Price:   30,
+			Weight:  5,
+			Details: &catalogue.Item_Blaster{
+				Blaster: &catalogue.Blaster{
+					Range: &catalogue.Range{
+						Min: 5,
+						Max: 20,
+					},
+					FireRate: 4,
+				},
+			},
+		},
+		{
+			Id:      "AoM09AjZL8hUMhTYLIYY",
+			Version: 1,
+			Name:    "Vibroblade",
+			Price:   15,
+			Weight:  1,
+			Details: &catalogue.Item_MeleeWeapon{
+				MeleeWeapon: &catalogue.MeleeWeapon{
+					AttackSpeed:   5,
+					ArmorPiercing: 2,
+					Damage: &common.DiceRoll{
+						Count:    1,
+						Sides:    6,
+						Modifier: 0,
+					},
+				},
+			},
+		},
+		{
+			Id:          "sxBkc0uTTc66u2Bi8fG1",
+			Version:     1,
+			Name:        "",
+			Description: new(""),
+			Price:       25,
+			Weight:      2,
+			Details: &catalogue.Item_MeleeWeapon{
+				MeleeWeapon: &catalogue.MeleeWeapon{
+					AttackSpeed:   4,
+					ArmorPiercing: 3,
+					Damage: &common.DiceRoll{
+						Count:    1,
+						Sides:    6,
+						Modifier: 2,
+					},
+				},
+			},
+		},
 	}}), nil
 }

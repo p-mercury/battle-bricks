@@ -22,90 +22,106 @@ const loadoutConfigs: { [key: string]: LoadoutConfig } = {
 		id: "LOADOUT#1",
 		image: "/clone-scout.png",
 		name: "Clone Scout",
-		unit: "UNIT#1",
-		items: ["RANGE_WEAPON#1", "BOLT_AMMUNITION#2", "BOLT_AMMUNITION#2"],
+		unit: "vEPHxbpBSxzeNluR4b9U",
+		items: [
+			"Kq0BO0W0rH2Ko0kyydLI", // Blaster
+			"d2D9WroLYwyxAWaUpG1u", // Blue Bolts
+			"d2D9WroLYwyxAWaUpG1u", // Blue Bolts
+		],
 	},
 	"LOADOUT#2": {
 		id: "LOADOUT#2",
 		image: "/clone-sharpshooter.png",
 		name: "Clone Sharpshooter",
-		unit: "UNIT#2",
-		items: ["RANGE_WEAPON#3", "BOLT_AMMUNITION#2"],
+		unit: "AFFXxbwBD1aNFYbt25m7",
+		items: [
+			"UG60YI7qn8DJryG9pmR7", // Blaster Rifle
+			"d2D9WroLYwyxAWaUpG1u", // Blue Bolts
+		],
 	},
 
 	"LOADOUT#3": {
 		id: "LOADOUT#3",
 		image: "/clone-commander.png",
 		name: "Clone Commander",
-		unit: "UNIT#2",
+		unit: "AFFXxbwBD1aNFYbt25m7",
 		items: [
-			"MELEE_WEAPON#1",
-			"RANGE_WEAPON#2",
-			"BOLT_AMMUNITION#2",
-			"BOLT_AMMUNITION#2",
+			"AoM09AjZL8hUMhTYLIYY", // Vibroblade
+			"OiFq73Vk00ob7p8IuKAb", // Hand Blasters
+			"d2D9WroLYwyxAWaUpG1u", // Blue Bolts
+			"d2D9WroLYwyxAWaUpG1u", // Blue Bolts
 		],
 	},
 	"LOADOUT#4": {
 		id: "LOADOUT#4",
 		name: "Fighter Tank",
 		image: "/fighter-tank.png",
-		unit: "UNIT#3",
+		unit: "buMbZfN6zRflygTOVHaG",
 		items: [
-			"SHELL_AMMUNITION#2",
-			"SHELL_AMMUNITION#2",
-			"SHELL_AMMUNITION#2",
-			"SHELL_AMMUNITION#2",
-			"ROCKET_AMMUNITION#1",
-			"ROCKET_AMMUNITION#2",
+			"bJeepLfSKSzI1yznvTUM", // Blue Shell
+			"bJeepLfSKSzI1yznvTUM", // Blue Shell
+			"bJeepLfSKSzI1yznvTUM", // Blue Shell
+			"bJeepLfSKSzI1yznvTUM", // Blue Shell
+			"xl4SlN7caFSq68DPxhr3", // Fragmentation rocket
+			"2A06zTJVEAHqG8Ax4w7k", // Ion rocket
 		],
 	},
 	"LOADOUT#5": {
 		id: "LOADOUT#5",
 		image: "/droid-scout.png",
 		name: "Droid Scout",
-		unit: "UNIT#4",
-		items: ["RANGE_WEAPON#1", "BOLT_AMMUNITION#1"],
+		unit: "5LDT5irCFiLuKt6wQMvo",
+		items: [
+			"Kq0BO0W0rH2Ko0kyydLI", // Blaster
+			"CV1AILTJNoyVKD7Uon63", // Red Bolts
+		],
 	},
 	"LOADOUT#6": {
 		id: "LOADOUT#6",
 		image: "/super-battle-droid.png",
 		name: "Super Battle Droid",
-		unit: "UNIT#5",
-		items: ["BOLT_AMMUNITION#1", "BOLT_AMMUNITION#1"],
+		unit: "6EpGE8Td4gLWkcYgDIW9",
+		items: [
+			"CV1AILTJNoyVKD7Uon63", // Red Bolts
+			"CV1AILTJNoyVKD7Uon63", // Red Bolts
+		],
 	},
 	"LOADOUT#7": {
 		id: "LOADOUT#7",
 		image: "/dwarf-spider-droid.png",
 		name: "Dwarf Spider Droid",
-		unit: "UNIT#6",
-		items: ["BOLT_AMMUNITION#1", "BOLT_AMMUNITION#1"],
+		unit: "R4ov67MKvT4YFauIDJnV",
+		items: [
+			"CV1AILTJNoyVKD7Uon63", // Red Bolts
+			"CV1AILTJNoyVKD7Uon63", // Red Bolts
+		],
 	},
 	"LOADOUT#8": {
 		id: "LOADOUT#8",
 		image: "/octuptarra.png",
 		name: "Octuptarra",
-		unit: "UNIT#7",
+		unit: "19eF4NtFTiuBXPCLFCNU",
 		items: [
-			"BOLT_AMMUNITION#1",
-			"BOLT_AMMUNITION#1",
-			"ROCKET_AMMUNITION#1",
-			"ROCKET_AMMUNITION#1",
-			"ROCKET_AMMUNITION#2",
+			"CV1AILTJNoyVKD7Uon63", // Red Bolts
+			"CV1AILTJNoyVKD7Uon63", // Red Bolts
+			"xl4SlN7caFSq68DPxhr3", // Fragmentation rocket
+			"xl4SlN7caFSq68DPxhr3", // Fragmentation rocket
+			"2A06zTJVEAHqG8Ax4w7k", // Ion rocket
 		],
 	},
 	"LOADOUT#9": {
 		id: "LOADOUT#9",
 		image: "/armored-assault-tank.png",
 		name: "Armored Assault Tank",
-		unit: "UNIT#8",
+		unit: "7JSXGhVxkJUuNjZFp3KY",
 		items: [
-			"BOLT_AMMUNITION#1",
-			"BOLT_AMMUNITION#1",
-			"SHELL_AMMUNITION#1",
-			"SHELL_AMMUNITION#1",
-			"SHELL_AMMUNITION#1",
-			"ROCKET_AMMUNITION#1",
-			"ROCKET_AMMUNITION#2",
+			"CV1AILTJNoyVKD7Uon63", // Red Bolts
+			"CV1AILTJNoyVKD7Uon63", // Red Bolts
+			"bJeepLfSKSzI1yznvTUM", // Red Shell
+			"bJeepLfSKSzI1yznvTUM", // Red Shell
+			"bJeepLfSKSzI1yznvTUM", // Red Shell
+			"xl4SlN7caFSq68DPxhr3", // Fragmentation rocket
+			"2A06zTJVEAHqG8Ax4w7k", // Ion rocket
 		],
 	},
 };

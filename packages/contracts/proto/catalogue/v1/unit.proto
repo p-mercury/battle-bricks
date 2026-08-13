@@ -21,8 +21,8 @@ message Unit {
   uint32 armor_class = 12;
   uint32 carry_capacity = 13;
 
-  uint32 marksmanship = 14;
-  uint32 melee_ability = 15;
+  optional uint32 marksmanship = 14;
+  optional uint32 melee_ability = 15;
 
   repeated Action actions = 16;
   repeated Item items = 17;
