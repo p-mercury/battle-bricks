@@ -1,0 +1,19 @@
+syntax = "proto3";
+package catalogue.v1;
+
+import "catalogue/v1/faction.proto";
+import "catalogue/v1/loadout.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "contracts/dist/catalogue/v1;catalogue";
+
+message Squad {
+  string id = 1;
+  uint64 version = 3;
+  google.protobuf.Timestamp created_time = 4;
+  google.protobuf.Timestamp modified_time = 5;
+
+  string name = 6;
+  Faction faction = 7;
+  repeated Loadout loadouts = 8;
+}

@@ -160,7 +160,7 @@
 			max-height: 100%;
 			max-width: 100%;
 			overflow: hidden scroll;
-			padding: 0.5rem;
+			padding: 0.8rem;
 		}
 	}
 
@@ -188,7 +188,7 @@
 			max-height: 100%;
 			max-width: 100%;
 			overflow: hidden scroll;
-			padding: 0.5rem;
+			padding: 0.8rem;
 		}
 	}
 
@@ -216,7 +216,7 @@
 			max-height: 100%;
 			max-width: 100%;
 			overflow: hidden scroll;
-			padding: 0.5rem;
+			padding: 0.8rem;
 		}
 	}
 

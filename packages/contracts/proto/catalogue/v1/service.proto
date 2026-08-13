@@ -1,20 +1,29 @@
 syntax = "proto3";
 package catalogue.v1;
 
+import "catalogue/v1/create-squad.proto";
 import "catalogue/v1/list-items.proto";
 import "catalogue/v1/list-loadouts.proto";
+import "catalogue/v1/list-squads.proto";
 import "catalogue/v1/list-units.proto";
+import "catalogue/v1/update-squad.proto";
 
 option go_package = "contracts/dist/catalogue/v1;catalogue";
 
 service Internal {
+  rpc CreateSquad(CreateSquadRequest) returns (CreateSquadResponse);
   rpc ListItems(ListItemsRequest) returns (ListItemsResponse);
   rpc ListLoadouts(ListLoadoutsRequest) returns (ListLoadoutsResponse);
+  rpc ListSquads(ListSquadsRequest) returns (ListSquadsResponse);
   rpc ListUnits(ListUnitsRequest) returns (ListUnitsResponse);
+  rpc UpdateSquad(UpdateSquadRequest) returns (UpdateSquadResponse);
 }
 
 service External {
+  rpc CreateSquad(CreateSquadRequest) returns (CreateSquadResponse);
   rpc ListItems(ListItemsRequest) returns (ListItemsResponse);
   rpc ListLoadouts(ListLoadoutsRequest) returns (ListLoadoutsResponse);
+  rpc ListSquads(ListSquadsRequest) returns (ListSquadsResponse);
   rpc ListUnits(ListUnitsRequest) returns (ListUnitsResponse);
+  rpc UpdateSquad(UpdateSquadRequest) returns (UpdateSquadResponse);
 }

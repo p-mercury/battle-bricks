@@ -1,0 +1,54 @@
+syntax = "proto3";
+package catalogue.v1;
+
+import "buf/validate/validate.proto";
+import "catalogue/rules.proto";
+import "catalogue/v1/faction.proto";
+import "catalogue/v1/squad.proto";
+import "common/v1/correlation.proto";
+
+option go_package = "contracts/dist/catalogue/v1;catalogue";
+
+message UpdateSquadRequest {
+  string id = 1 [(buf.validate.field).string.(catalogue.squad_id) = true];
+
+  // The resource version the client expects to update.
+  // When provided, the update succeeds only if it matches the current product version.
+  // When omitted, the update is performed without optimistic concurrency checking.
+  optional uint64 version = 2;
+
+  repeated string update_mask = 3 [(buf.validate.field).repeated = {
+    min_items: 1
+    unique: true
+    items: {
+      string: {
+        in: [
+          "correlations",
+          "name",
+          "faction",
+          "loadouts"
+        ]
+      }
+    }
+  }];
+
+  repeated common.v1.Correlation correlations = 4 [(buf.validate.field).repeated = {max_items: 20}];
+
+  optional string name = 5;
+
+  optional Faction faction = 6 [(buf.validate.field).enum = {
+    defined_only: true
+    not_in: [0]
+  }];
+
+  repeated string loadouts = 7;
+}
+
+message UpdateSquadResponse {
+  Squad squad = 1;
+}
+
+message UpdateSquadContext {
+  UpdateSquadRequest request = 1;
+  Squad subject = 2;
+}

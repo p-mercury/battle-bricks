@@ -14,8 +14,6 @@
 	let selectedSquad = $state<string>("");
 	let selectedDefender = $state<Faction>("" as any);
 
-	$inspect(data.loadouts);
-
 	let squads = $derived.by<Record<string, Squad>>(() => {
 		if (browser) {
 			let item = localStorage.getItem("SQUADS");

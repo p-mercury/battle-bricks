@@ -1,0 +1,16 @@
+syntax = "proto3";
+package catalogue.v1;
+
+import "catalogue/v1/squad.proto";
+
+option go_package = "contracts/dist/catalogue/v1;catalogue";
+
+message ListSquadsRequest {}
+
+message ListSquadsResponse {
+  repeated Squad squads = 1;
+}
+
+message ListSquadsContext {
+  ListSquadsRequest request = 1;
+}

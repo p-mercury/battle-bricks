@@ -6,9 +6,24 @@ import "buf/validate/validate.proto";
 option go_package = "contracts/dist/identity;identity";
 
 extend buf.validate.StringRules {
-  optional bool user_id = 82000000 [(buf.validate.predefined).cel = {
-    id: "string.identity_customer_user_id"
-    message: "Must be a customer user ID"
-    expression: "this.matches('^[0-9A-Za-z]{12}$')"
+  optional bool unit_id = 82000000 [(buf.validate.predefined).cel = {
+    id: "string.identity_customer_unit_id"
+    message: "Must be a unit ID"
+    expression: "this.matches('^[0-9A-Za-z]{20}$')"
+  }];
+  optional bool item_id = 82000001 [(buf.validate.predefined).cel = {
+    id: "string.identity_customer_item_id"
+    message: "Must be a item ID"
+    expression: "this.matches('^[0-9A-Za-z]{20}$')"
+  }];
+  optional bool loadout_id = 82000002 [(buf.validate.predefined).cel = {
+    id: "string.identity_customer_loadout_id"
+    message: "Must be a loadout ID"
+    expression: "this.matches('^[0-9A-Za-z]{20}$')"
+  }];
+  optional bool squad_id = 82000003 [(buf.validate.predefined).cel = {
+    id: "string.identity_customer_squad_id"
+    message: "Must be a squad ID"
+    expression: "this.matches('^[0-9A-Za-z]{20}$')"
   }];
 }

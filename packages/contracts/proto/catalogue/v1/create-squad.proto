@@ -1,0 +1,33 @@
+syntax = "proto3";
+package catalogue.v1;
+
+import "buf/validate/validate.proto";
+import "catalogue/v1/faction.proto";
+import "catalogue/v1/squad.proto";
+import "common/v1/correlation.proto";
+import "identity/rules.proto";
+
+option go_package = "contracts/dist/catalogue/v1;catalogue";
+
+message CreateSquadRequest {
+  repeated common.v1.Correlation correlations = 1 [(buf.validate.field).repeated = {max_items: 20}];
+
+  optional string user_id = 2 [(buf.validate.field).string.(identity.user_id) = true];
+
+  string name = 3;
+
+  Faction faction = 4 [(buf.validate.field).enum = {
+    defined_only: true
+    not_in: [0]
+  }];
+
+  repeated string loadouts = 5;
+}
+
+message CreateSquadResponse {
+  Squad squad = 1;
+}
+
+message CreateSquadContext {
+  CreateSquadRequest request = 1;
+}
