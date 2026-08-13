@@ -1,7 +1,7 @@
 <script lang="ts">
 	import LoadoutItem from "$lib/components/loadout-item.svelte";
 	import type { Loadout } from "@battle-bricks/contracts/catalogue/v1/loadout_pb";
-	import { dndzone, type DndEvent } from "svelte-dnd-action";
+	import { dragHandleZone, type DndEvent } from "svelte-dnd-action";
 
 	let {
 		items = $bindable(),
@@ -21,7 +21,7 @@
 </script>
 
 <ul
-	use:dndzone={{
+	use:dragHandleZone={{
 		items,
 		flipDurationMs,
 		morphDisabled: true,
@@ -41,7 +41,7 @@
 	onfinalize={handleFinalize}
 >
 	{#each items as item (item.id)}
-		<LoadoutItem loadout={item.loadout} />
+		<LoadoutItem loadout={item.loadout} drag />
 	{/each}
 </ul>
 

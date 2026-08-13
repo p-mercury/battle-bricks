@@ -24,96 +24,116 @@ msgstr "Menge erhöhen"
 msgid "Battle Bricks"
 msgstr "Battle Bricks"
 
+#: src/routes/(authenticated)/home/+page.svelte
 #: src/routes/+page.svelte
 msgid "Squads"
 msgstr "Trupps"
 
+#: src/routes/(authenticated)/home/+page.svelte
 #: src/routes/+page.svelte
 msgid "Select Squad"
 msgstr "Trupp auswählen"
 
+#: src/routes/(authenticated)/home/+page.svelte
 #: src/routes/(authenticated)/squads/[id]/+page.svelte
 #: src/routes/+page.svelte
 #: src/routes/squads/[id]/+page.svelte
 msgid "Galactic Republic"
 msgstr "Galaktische Republik"
 
+#: src/routes/(authenticated)/home/+page.svelte
 #: src/routes/(authenticated)/squads/[id]/+page.svelte
 #: src/routes/+page.svelte
 #: src/routes/squads/[id]/+page.svelte
 msgid "Separatist Alliance"
 msgstr "Separatistenallianz"
 
+#: src/routes/(authenticated)/home/+page.svelte
 #: src/routes/+page.svelte
 msgid "Select enemy faction"
 msgstr "Gegnerische Fraktion auswählen"
 
+#: src/routes/(authenticated)/home/+page.svelte
 #: src/routes/+page.svelte
 msgid "Start Game"
 msgstr "Spiel starten"
 
+#: src/routes/(authenticated)/home/+page.svelte
 #: src/routes/+page.svelte
 msgid "Start a new game"
 msgstr "Ein neues Spiel starten"
 
+#: src/routes/(authenticated)/game/+page.svelte
 #: src/routes/game/+page.svelte
 msgid "Clear Turn Complete"
 msgstr "Zugabschluss aufheben"
 
+#: src/routes/(authenticated)/game/+page.svelte
 #: src/routes/game/+page.svelte
 msgid "Your Squad"
 msgstr "Dein Trupp"
 
+#: src/routes/(authenticated)/game/+page.svelte
 #: src/routes/game/+page.svelte
 msgid "Enemy"
 msgstr "Gegner"
 
+#: src/routes/(authenticated)/game/+page.svelte
 #: src/routes/game/+page.svelte
 msgid "Actions"
 msgstr "Aktionen"
 
+#: src/routes/(authenticated)/game/game-loadout-item.svelte
 #: src/routes/game/game-loadout-item.svelte
 msgid "In Cover: <0/>"
 msgstr "In Deckung: <0/>"
 
 #: src/lib/components/loadout-item.svelte
 #: src/lib/components/unit-item.svelte
+#: src/routes/(authenticated)/game/game-loadout-item.svelte
 #: src/routes/game/game-loadout-item.svelte
 msgid "Marksmanship: <0/>"
 msgstr "Treffsicherheit: <0/>"
 
 #: src/lib/components/loadout-item.svelte
 #: src/lib/components/unit-item.svelte
+#: src/routes/(authenticated)/game/game-loadout-item.svelte
 #: src/routes/game/game-loadout-item.svelte
 msgid "Melee Ability: <0/>"
 msgstr "Nahkampffähigkeit: <0/>"
 
+#: src/routes/(authenticated)/game/game-loadout-item.svelte
 #: src/routes/game/game-loadout-item.svelte
 msgid "Turn: <0/>"
 msgstr "Zug: <0/>"
 
+#: src/routes/(authenticated)/game/game-loadout-item.svelte
 #: src/routes/game/game-loadout-item.svelte
 msgid "Health: <0/>"
 msgstr "Gesundheit: <0/>"
 
 #: src/lib/components/loadout-item.svelte
 #: src/lib/components/unit-item.svelte
+#: src/routes/(authenticated)/game/game-loadout-item.svelte
 #: src/routes/game/game-loadout-item.svelte
 msgid "Speed: <0/>"
 msgstr "Geschwindigkeit: <0/>"
 
 #: src/lib/components/loadout-item.svelte
 #: src/lib/components/unit-item.svelte
+#: src/routes/(authenticated)/game/game-loadout-item.svelte
 #: src/routes/game/game-loadout-item.svelte
 msgid "Size: <0/>"
 msgstr "Größe: <0/>"
 
 #: src/lib/components/loadout-item.svelte
 #: src/lib/components/unit-item.svelte
+#: src/routes/(authenticated)/game/game-loadout-item.svelte
 #: src/routes/game/game-loadout-item.svelte
 msgid "Armor Class: <0/>"
 msgstr "Rüstungsklasse: <0/>"
 
+#: src/routes/(authenticated)/home/+page.svelte
 #: src/routes/(authenticated)/squads/+page.svelte
 #: src/routes/squads/+page.svelte
 msgid "New Squad"
@@ -126,7 +146,6 @@ msgstr "Neuer Trupp"
 msgid "Capacity: <0/>"
 msgstr "Kapazität: <0/>"
 
-#: src/lib/components/action-item.svelte
 #: src/lib/components/action-item.svelte
 #: src/lib/components/action-item.svelte
 #: src/lib/components/action-item.svelte
@@ -147,12 +166,10 @@ msgstr "Rüstungsdurchdringung: <0/>"
 msgid "Splash Radius: <0/>"
 msgstr "Explosionsradius: <0/>"
 
-#. 0.0: action.weapon.range.min; 0.1: action.weapon.range.max
-#. 0.0: action.weapon.range.min; 0.1: action.weapon.range.max
-#. 0.0: action.weapon.range.min; 0.1: action.weapon.range.max
+#. 0.0: action.weapon.range!.min; 0.1: action.weapon.range!.max
+#. 0.0: action.ammunition.item.details.value.range?.min; 0.1: action.ammunition .item.details.value.range?.max
 #. 0.0: item.details.value.range!.min; 0.1: item.details.value.range!.max
 #. 0.0: item.details.value.range!.min; 0.1: item.details.value.range!.max
-#: src/lib/components/action-item.svelte
 #: src/lib/components/action-item.svelte
 #: src/lib/components/action-item.svelte
 #: src/lib/components/item.svelte
@@ -160,7 +177,6 @@ msgstr "Explosionsradius: <0/>"
 msgid "Range: <0>{0}-{1}m</0>"
 msgstr "Reichweite: <0>{0}-{1} m</0>"
 
-#: src/lib/components/action-item.svelte
 #: src/lib/components/action-item.svelte
 #: src/lib/components/action-item.svelte
 #: src/lib/components/item.svelte
@@ -202,11 +218,9 @@ msgstr "Preis: <0>{0}/1500 c</0>"
 msgid "Units: <0/>"
 msgstr "Einheiten: <0/>"
 
-#: src/routes/(authenticated)/home/+page.svelte
-msgid "Test"
-msgstr "Test"
+#~ msgid "Test"
+#~ msgstr "Test"
 
-#: src/lib/components/action-item.svelte
 #: src/lib/components/action-item.svelte
 #: src/lib/components/action-item.svelte
 #: src/lib/components/action-item.svelte
@@ -215,25 +229,17 @@ msgstr "Zum Durchdringen der Rüstung: <0/>"
 
 #: src/lib/components/action-item.svelte
 #: src/lib/components/action-item.svelte
-#: src/lib/components/action-item.svelte
 msgid "Amunition: <0/>"
 msgstr "Munition: <0/>"
 
 #: src/lib/components/action-item.svelte
 #: src/lib/components/action-item.svelte
 #: src/lib/components/action-item.svelte
-#: src/lib/components/action-item.svelte
 msgid "To hit: <0/>"
 msgstr "Trefferwurf: <0/>"
 
-#. 0: action.weapon.name; 1: action.ammunition[0].name
-#. 0: action.weapon.name; 1: action.ammunition[0].name
-#. 0: action.weapon.name; 1: action.ammunition[0].name
-#: src/lib/components/action-item.svelte
-#: src/lib/components/action-item.svelte
-#: src/lib/components/action-item.svelte
-msgid "{0} with {1}"
-msgstr "{0} mit {1}"
+#~ msgid "{0} with {1}"
+#~ msgstr "{0} mit {1}"
 
 #: src/lib/components/action-item.svelte
 #: src/lib/components/item.svelte
@@ -257,7 +263,6 @@ msgstr "Galaktisches Imperium"
 msgid "Budget: {0}"
 msgstr "Budget: {0}"
 
-#: src/routes/(authenticated)/squads/[id]/+page.svelte
 #: src/routes/squads/[id]/+page.svelte
 msgid "Cancle"
 msgstr "Abbrechen"
@@ -270,3 +275,7 @@ msgstr "Farbe auswählen"
 #: src/lib/components/dice-roll.svelte
 msgid "{0}d{1}{2}"
 msgstr "{0}W{1}{2}"
+
+#: src/routes/(authenticated)/squads/[id]/+page.svelte
+msgid "Cancel"
+msgstr "Abbrechen"

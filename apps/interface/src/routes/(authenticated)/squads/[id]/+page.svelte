@@ -103,12 +103,12 @@
 
 				localStorage.setItem("SQUADS", JSON.stringify(squads));
 
-				goto("/squads");
+				goto("/home");
 			}}
 		>
 			Save
 		</button>
-		<button onclick={() => goto("/squads")}> Cancle </button>
+		<button onclick={() => goto("/home")}>Cancel</button>
 	</header>
 	<div class="loadouts">
 		<LoadoutsZone bind:items={loadouts} {flipDurationMs} />

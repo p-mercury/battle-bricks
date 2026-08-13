@@ -61,12 +61,16 @@
 		}
 	}
 
-	function handleIncrementClick() {
+	function handleIncrementClick(event: Event) {
+		event.preventDefault();
+		event.stopPropagation();
 		commitInput();
 		if (canIncrement) value++;
 	}
 
-	function handleDecrementClick() {
+	function handleDecrementClick(event: Event) {
+		event.preventDefault();
+		event.stopPropagation();
 		commitInput();
 		if (canDecrement) value--;
 	}

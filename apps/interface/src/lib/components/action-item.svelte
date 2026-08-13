@@ -1,71 +1,27 @@
-<!-- <script lang="ts">
+<script lang="ts">
 	import type {
 		MeleeAction,
-		RangeBoltAction,
-		RangeRocketAction,
-		RangeShellAction,
+		BlasterAction,
+		CannonAction,
+		LauncherAction,
+		Action,
 	} from "$lib/get-actions";
-	import type { Action } from "$lib/items";
-	import { untrack } from "svelte";
 	import NumberInput from "./number-input.svelte";
 	import Brick from "$lib/components/brick.svelte";
 	import StatTable from "$lib/components/stat-table.svelte";
 	import StatRow from "./stat-row.svelte";
+	import DiceRoll from "./dice-roll.svelte";
 
 	let {
 		action,
 	}: {
 		action:
-			| RangeBoltAction
-			| RangeShellAction
-			| RangeRocketAction
+			| BlasterAction
+			| CannonAction
+			| LauncherAction
 			| MeleeAction
 			| Action;
 	} = $props();
-
-	let ammunition = $state(0);
-
-	$effect(() => {
-		if (
-			action.type === "RANGE_BOLT" ||
-			action.type === "RANGE_SHELL" ||
-			action.type === "RANGE_ROCKET"
-		) {
-			const newAmmunition = action.ammunition.reduce(
-				(state, item) => state + item.capacity,
-				0,
-			);
-			if (newAmmunition != untrack(() => ammunition)) {
-				ammunition = newAmmunition;
-			}
-		}
-	});
-
-	$effect(() => {
-		if (
-			action.type === "RANGE_BOLT" ||
-			action.type === "RANGE_SHELL" ||
-			action.type === "RANGE_ROCKET"
-		) {
-			const newTotal = Math.max(0, Math.trunc(ammunition));
-			untrack(() => {
-				const count = action.ammunition.length;
-
-				if (count === 0) return;
-
-				const amountPerItem = Math.floor(newTotal / count);
-				let remainder = newTotal % count;
-
-				action.ammunition.forEach((item) => {
-					item.capacity = amountPerItem + (remainder > 0 ? 1 : 0);
-
-					if (remainder > 0) {
-						remainder--;
-					}
-				});
-			});
-		}
-	});
 </script>
 
 <section>
@@ -73,39 +29,9 @@
 		<Brick />
 	</header>
 	<div class="info">
-		{#if action.type === "RANGE_BOLT"}
-			<h3>{action.weapon.name} with {action.ammunition[0].name}</h3>
-			<StatTable>
-				<StatRow>
-					Fire Rate:
-					<span>{action.weapon.fireRate}</span>
-				</StatRow>
-				<StatRow>
-					Amunition:
-					<NumberInput bind:value={ammunition} min={0} max={2000} />
-				</StatRow>
-				<StatRow>
-					Range:
-					<span>{action.weapon.range.min}-{action.weapon.range.max}m</span>
-				</StatRow>
-				<StatRow>
-					To hit:
-					<span>≥{action.b1r}</span>
-				</StatRow>
-				{#if action.b2}
-					<StatRow>
-						To pierce armor:
-						<span>≥{action.b2}</span>
-					</StatRow>
-				{/if}
-				<StatRow>
-					Damage:
-					<span>{action.damage}</span>
-				</StatRow>
-			</StatTable>
-		{:else if action.type === "RANGE_SHELL"}
-			<h3>{action.weapon.name} with {action.ammunition[0].name}</h3>
-			<StatTable>
+		<h3>{action.name}</h3>
+		<StatTable>
+			{#if action.type === "BLASTER" || action.type === "CANNON"}
 				<StatRow>
 					Fire Rate:
 					<span>{action.weapon.fireRate}</span>
@@ -113,14 +39,14 @@
 				<StatRow>
 					Amunition:
 					<NumberInput
-						bind:value={ammunition}
+						bind:value={action.ammunition.quantity}
 						min={0}
-						max={action.ammunition.length}
+						max={2000}
 					/>
 				</StatRow>
 				<StatRow>
 					Range:
-					<span>{action.weapon.range.min}-{action.weapon.range.max}m</span>
+					<span>{action.weapon.range!.min}-{action.weapon.range!.max}m</span>
 				</StatRow>
 				<StatRow>
 					To hit:
@@ -134,12 +60,9 @@
 				{/if}
 				<StatRow>
 					Damage:
-					<span>{action.damage}</span>
+					<DiceRoll roll={action.damage} />
 				</StatRow>
-			</StatTable>
-		{:else if action.type === "RANGE_ROCKET"}
-			<h3>{action.weapon.name} with {action.ammunition[0].name}</h3>
-			<StatTable>
+			{:else if action.type === "LAUNCHER"}
 				<StatRow>
 					Fire Rate:
 					<span>{action.weapon.fireRate}</span>
@@ -147,14 +70,17 @@
 				<StatRow>
 					Amunition:
 					<NumberInput
-						bind:value={ammunition}
+						bind:value={action.ammunition.quantity}
 						min={0}
-						max={action.ammunition.length}
+						max={2000}
 					/>
 				</StatRow>
 				<StatRow>
 					Range:
-					<span>{action.weapon.range.min}-{action.weapon.range.max}m</span>
+					<span>
+						{action.ammunition.item.details.value.range?.min}-{action.ammunition
+							.item.details.value.range?.max}m
+					</span>
 				</StatRow>
 				<StatRow>
 					To hit:
@@ -168,12 +94,9 @@
 				{/if}
 				<StatRow>
 					Damage:
-					<span>{action.damage}</span>
+					<DiceRoll roll={action.damage} />
 				</StatRow>
-			</StatTable>
-		{:else if action.type === "MELEE"}
-			<h3>{action.weapon.name}</h3>
-			<StatTable>
+			{:else if action.type === "MELEE"}
 				<StatRow>
 					Attack Speed:
 					<span>{action.weapon.attackSpeed}</span>
@@ -188,15 +111,14 @@
 				</StatRow>
 				<StatRow>
 					Damage:
-					<span>{action.damage}</span>
+					<DiceRoll roll={action.damage} />
 				</StatRow>
-			</StatTable>
-		{:else if action.type === "ACTION"}
-			<h3>{action.name}</h3>
-			<div>
-				<div>{action.description}</div>
-			</div>
-		{/if}
+			{:else if action.type === "ACTION"}
+				<div>
+					<div>{action.description}</div>
+				</div>
+			{/if}
+		</StatTable>
 	</div>
 </section>
 
@@ -237,4 +159,4 @@
 			font-weight: 600;
 		}
 	}
-</style> -->
+</style>

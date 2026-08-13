@@ -2,7 +2,7 @@
 	import LoadoutItem from "$lib/components/loadout-item.svelte";
 	import type { Loadout } from "@battle-bricks/contracts/catalogue/v1/loadout_pb";
 	import {
-		dndzone,
+		dragHandleZone,
 		TRIGGERS,
 		SHADOW_ITEM_MARKER_PROPERTY_NAME,
 		type DndEvent,
@@ -39,7 +39,7 @@
 </script>
 
 <ul
-	use:dndzone={{
+	use:dragHandleZone={{
 		items,
 		useCursorForDetection: true,
 		flipDurationMs,
@@ -51,7 +51,7 @@
 	onfinalize={handleDndFinalize}
 >
 	{#each items as item (item.id)}
-		<LoadoutItem loadout={item.loadout} />
+		<LoadoutItem loadout={item.loadout} drag />
 	{/each}
 </ul>
 

@@ -1,14 +1,14 @@
-<!-- <script lang="ts">
+<script lang="ts">
 	import UnitItem from "$lib/components/unit-item.svelte";
 	import { browser } from "$app/env";
 	import type { Game } from "$lib/game";
-	import type { Unit } from "$lib/units";
 	import GameLoadoutItem from "./game-loadout-item.svelte";
 	import ActionItem from "$lib/components/action-item.svelte";
-	import { getActions } from "$lib/get-actions";
 	import { flip } from "svelte/animate";
 	import { quintInOut, quintOut } from "svelte/easing";
 	import { fade } from "svelte/transition";
+	import type { Unit } from "@battle-bricks/contracts/catalogue/v1/unit_pb";
+	import { getActions } from "$lib/get-actions";
 
 	let game = $state<Game>();
 	let selectedDefender = $state<Unit>();
@@ -236,4 +236,4 @@
 	li {
 		all: unset;
 	}
-</style> -->
+</style>

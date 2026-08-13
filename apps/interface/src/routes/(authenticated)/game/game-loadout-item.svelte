@@ -6,7 +6,7 @@
 	import type { GameLoadout } from "$lib/game";
 	import Switcher from "$lib/components/switcher.svelte";
 	import SelectColor from "$lib/components/select-color.svelte";
-	import type { Faction } from "$lib/faction";
+	import { Faction } from "@battle-bricks/contracts/catalogue/v1/faction_pb";
 
 	let {
 		faction,
@@ -29,8 +29,8 @@
 		<img
 			alt={loadout.name}
 			src={loadout.image}
-			class:republic={faction === "GALACTIC_REPUBLIC"}
-			class:separatists={faction === "SEPARATIST_ALLIANCE"}
+			class:republic={faction === Faction.GALACTIC_REPUBLIC}
+			class:separatists={faction === Faction.SEPARATIST_ALLIANCE}
 		/>
 	{/if}
 	<div class="info">
@@ -59,12 +59,12 @@
 				</StatRow>
 			{/if}
 			<StatRow>
-				Speed:
-				<StatBar value={loadout.unit.speed} size={4} />
-			</StatRow>
-			<StatRow>
 				Size:
 				<StatBar value={loadout.unit.size} size={4} />
+			</StatRow>
+			<StatRow>
+				Speed:
+				<StatBar value={loadout.unit.speed} size={4} />
 			</StatRow>
 			<StatRow>
 				Armor Class:
