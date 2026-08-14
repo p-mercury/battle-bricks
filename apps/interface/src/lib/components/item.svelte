@@ -63,7 +63,7 @@
 				</StatRow>
 				<StatRow>
 					Armor Piercing:
-					<StatBar value={item.details.value.armorPiercing} size={4} red />
+					<StatBar value={item.details.value.armorPiercing} size={5} red />
 				</StatRow>
 			{:else if item.details.case === "cannonShell"}
 				<StatRow>
@@ -72,7 +72,7 @@
 				</StatRow>
 				<StatRow>
 					Armor Piercing:
-					<StatBar value={item.details.value.armorPiercing} size={4} red />
+					<StatBar value={item.details.value.armorPiercing} size={5} red />
 				</StatRow>
 			{:else if item.details.case === "launcherRocket"}
 				<StatRow>
@@ -81,7 +81,7 @@
 				</StatRow>
 				<StatRow>
 					Splash Radius:
-					<StatBar value={item.details.value.splashRadius} size={4} red />
+					<StatBar value={item.details.value.splashRadius} size={5} red />
 				</StatRow>
 			{:else if item.details.case === "blaster"}
 				<StatRow>
@@ -113,11 +113,11 @@
 			{:else if item.details.case === "meleeWeapon"}
 				<StatRow>
 					Attack Speed:
-					<StatBar value={item.details.value.attackSpeed} size={4} red />
+					<StatBar value={item.details.value.attackSpeed} size={5} red />
 				</StatRow>
 				<StatRow>
 					Armor Piercing:
-					<StatBar value={item.details.value.armorPiercing} size={4} red />
+					<StatBar value={item.details.value.armorPiercing} size={5} red />
 				</StatRow>
 				<StatRow>
 					Damage:

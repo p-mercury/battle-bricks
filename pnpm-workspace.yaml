@@ -21,3 +21,10 @@ minimumReleaseAgeExclude:
   - "@bufbuild/protoc-gen-es@2.14.0"
   - "@bufbuild/protoplugin@2.14.0"
   - aws-cdk-lib@2.265.0
+  - "@turbo/darwin-64@2.10.10"
+  - "@turbo/darwin-arm64@2.10.10"
+  - "@turbo/linux-64@2.10.10"
+  - "@turbo/linux-arm64@2.10.10"
+  - "@turbo/windows-64@2.10.10"
+  - "@turbo/windows-arm64@2.10.10"
+  - turbo@2.10.10

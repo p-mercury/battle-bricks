@@ -43,26 +43,26 @@
 					</StatRow>
 					<StatRow>
 						Size:
-						<StatBar value={loadout.unit.size} size={4} />
+						<StatBar value={loadout.unit.size} size={5} />
 					</StatRow>
 					<StatRow>
 						Speed:
-						<StatBar value={loadout.unit.speed} size={4} />
+						<StatBar value={loadout.unit.speed} size={5} />
 					</StatRow>
 					<StatRow>
 						Armor Class:
-						<StatBar value={loadout.unit.armorClass} size={4} />
+						<StatBar value={loadout.unit.armorClass} size={5} />
 					</StatRow>
 					{#if loadout.unit.marksmanship}
 						<StatRow>
 							Marksmanship:
-							<StatBar value={loadout.unit.marksmanship} size={4} red />
+							<StatBar value={loadout.unit.marksmanship} size={5} red />
 						</StatRow>
 					{/if}
 					{#if loadout.unit.meleeAbility}
 						<StatRow>
 							Melee Ability:
-							<StatBar value={loadout.unit.meleeAbility} size={4} red />
+							<StatBar value={loadout.unit.meleeAbility} size={5} red />
 						</StatRow>
 					{/if}
 				</StatTable>
@@ -87,9 +87,9 @@
 		width: 33.7rem;
 		height: 13rem;
 		grid-template:
-			"image stats items" 8rem
+			"image stats items" 7rem
 			"info stats items" auto /
-			8rem min-content 1fr;
+			7rem min-content 1fr;
 		gap: 0.6rem;
 	}
 
@@ -129,7 +129,7 @@
 		h3 {
 			margin: 0;
 			padding: 0;
-			font-size: 1.2rem;
+			font-size: 1.1rem;
 			font-weight: 600;
 		}
 	}
