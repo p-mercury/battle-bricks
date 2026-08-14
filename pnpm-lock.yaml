@@ -23,14 +23,14 @@ importers:
   apps/cdk/backbone:
     dependencies:
       "@aws-cdk/aws-lambda-go-alpha":
-        specifier: ^2.264.0-alpha.0
-        version: 2.264.0-alpha.0(aws-cdk-lib@2.264.0(constructs@10.8.1))(constructs@10.8.1)
+        specifier: ^2.265.0-alpha.0
+        version: 2.265.0-alpha.0(aws-cdk-lib@2.265.0(constructs@10.8.1))(constructs@10.8.1)
       "@types/node":
         specifier: ^26.2.0
         version: 26.2.0
       aws-cdk-lib:
-        specifier: ^2.264.0
-        version: 2.264.0(constructs@10.8.1)
+        specifier: ^2.265.0
+        version: 2.265.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -47,8 +47,8 @@ importers:
         specifier: ^26.2.0
         version: 26.2.0
       aws-cdk-lib:
-        specifier: ^2.264.0
-        version: 2.264.0(constructs@10.8.1)
+        specifier: ^2.265.0
+        version: 2.265.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -81,7 +81,7 @@ importers:
         version: link:../services/policy
       "@flit/cdk-pipeline":
         specifier: ^2.7.0
-        version: 2.7.0(aws-cdk-lib@2.264.0(constructs@10.8.1))(constructs@10.8.1)
+        version: 2.7.0(aws-cdk-lib@2.265.0(constructs@10.8.1))(constructs@10.8.1)
       "@types/node":
         specifier: ^26.2.0
         version: 26.2.0
@@ -89,8 +89,8 @@ importers:
         specifier: ^2.1136.0
         version: 2.1136.0
       aws-cdk-lib:
-        specifier: ^2.264.0
-        version: 2.264.0(constructs@10.8.1)
+        specifier: ^2.265.0
+        version: 2.265.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -104,8 +104,8 @@ importers:
   apps/cdk/services/catalogue:
     dependencies:
       "@aws-cdk/aws-lambda-go-alpha":
-        specifier: ^2.264.0-alpha.0
-        version: 2.264.0-alpha.0(aws-cdk-lib@2.264.0(constructs@10.8.1))(constructs@10.8.1)
+        specifier: ^2.265.0-alpha.0
+        version: 2.265.0-alpha.0(aws-cdk-lib@2.265.0(constructs@10.8.1))(constructs@10.8.1)
       "@battle-bricks/backbone":
         specifier: workspace:*
         version: link:../../backbone
@@ -119,23 +119,23 @@ importers:
         specifier: ^1.72.0
         version: 1.72.0
       "@bufbuild/protobuf":
-        specifier: ^2.13.0
-        version: 2.13.0
+        specifier: ^2.14.0
+        version: 2.14.0
       "@bufbuild/protoc-gen-es":
-        specifier: ^2.13.0
-        version: 2.13.0(@bufbuild/protobuf@2.13.0)
+        specifier: ^2.14.0
+        version: 2.14.0(@bufbuild/protobuf@2.14.0)
       "@connectrpc/connect":
         specifier: ^2.1.2
-        version: 2.1.2(@bufbuild/protobuf@2.13.0)
+        version: 2.1.2(@bufbuild/protobuf@2.14.0)
       "@flit/cdk-bucket-mesh":
         specifier: ^0.7.1
-        version: 0.7.1(aws-cdk-lib@2.264.0(constructs@10.8.1))(constructs@10.8.1)
+        version: 0.7.1(aws-cdk-lib@2.265.0(constructs@10.8.1))(constructs@10.8.1)
       "@types/node":
         specifier: ^26.2.0
         version: 26.2.0
       aws-cdk-lib:
-        specifier: ^2.264.0
-        version: 2.264.0(constructs@10.8.1)
+        specifier: ^2.265.0
+        version: 2.265.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -146,8 +146,8 @@ importers:
   apps/cdk/services/file-staging:
     dependencies:
       "@aws-cdk/aws-lambda-go-alpha":
-        specifier: ^2.264.0-alpha.0
-        version: 2.264.0-alpha.0(aws-cdk-lib@2.264.0(constructs@10.8.1))(constructs@10.8.1)
+        specifier: ^2.265.0-alpha.0
+        version: 2.265.0-alpha.0(aws-cdk-lib@2.265.0(constructs@10.8.1))(constructs@10.8.1)
       "@battle-bricks/backbone":
         specifier: workspace:*
         version: link:../../backbone
@@ -158,20 +158,20 @@ importers:
         specifier: ^1.72.0
         version: 1.72.0
       "@bufbuild/protobuf":
-        specifier: ^2.13.0
-        version: 2.13.0
+        specifier: ^2.14.0
+        version: 2.14.0
       "@bufbuild/protoc-gen-es":
-        specifier: ^2.13.0
-        version: 2.13.0(@bufbuild/protobuf@2.13.0)
+        specifier: ^2.14.0
+        version: 2.14.0(@bufbuild/protobuf@2.14.0)
       "@connectrpc/connect":
         specifier: ^2.1.2
-        version: 2.1.2(@bufbuild/protobuf@2.13.0)
+        version: 2.1.2(@bufbuild/protobuf@2.14.0)
       "@types/node":
         specifier: ^26.2.0
         version: 26.2.0
       aws-cdk-lib:
-        specifier: ^2.264.0
-        version: 2.264.0(constructs@10.8.1)
+        specifier: ^2.265.0
+        version: 2.265.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -185,8 +185,8 @@ importers:
   apps/cdk/services/identity:
     dependencies:
       "@aws-cdk/aws-lambda-go-alpha":
-        specifier: ^2.264.0-alpha.0
-        version: 2.264.0-alpha.0(aws-cdk-lib@2.264.0(constructs@10.8.1))(constructs@10.8.1)
+        specifier: ^2.265.0-alpha.0
+        version: 2.265.0-alpha.0(aws-cdk-lib@2.265.0(constructs@10.8.1))(constructs@10.8.1)
       "@battle-bricks/backbone":
         specifier: workspace:*
         version: link:../../backbone
@@ -200,23 +200,23 @@ importers:
         specifier: ^1.72.0
         version: 1.72.0
       "@bufbuild/protobuf":
-        specifier: ^2.13.0
-        version: 2.13.0
+        specifier: ^2.14.0
+        version: 2.14.0
       "@bufbuild/protoc-gen-es":
-        specifier: ^2.13.0
-        version: 2.13.0(@bufbuild/protobuf@2.13.0)
+        specifier: ^2.14.0
+        version: 2.14.0(@bufbuild/protobuf@2.14.0)
       "@connectrpc/connect":
         specifier: ^2.1.2
-        version: 2.1.2(@bufbuild/protobuf@2.13.0)
+        version: 2.1.2(@bufbuild/protobuf@2.14.0)
       "@flit/cdk-bucket-mesh":
         specifier: ^0.7.1
-        version: 0.7.1(aws-cdk-lib@2.264.0(constructs@10.8.1))(constructs@10.8.1)
+        version: 0.7.1(aws-cdk-lib@2.265.0(constructs@10.8.1))(constructs@10.8.1)
       "@types/node":
         specifier: ^26.2.0
         version: 26.2.0
       aws-cdk-lib:
-        specifier: ^2.264.0
-        version: 2.264.0(constructs@10.8.1)
+        specifier: ^2.265.0
+        version: 2.265.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -227,8 +227,8 @@ importers:
   apps/cdk/services/notification:
     dependencies:
       "@aws-cdk/aws-lambda-go-alpha":
-        specifier: ^2.264.0-alpha.0
-        version: 2.264.0-alpha.0(aws-cdk-lib@2.264.0(constructs@10.8.1))(constructs@10.8.1)
+        specifier: ^2.265.0-alpha.0
+        version: 2.265.0-alpha.0(aws-cdk-lib@2.265.0(constructs@10.8.1))(constructs@10.8.1)
       "@battle-bricks/backbone":
         specifier: workspace:*
         version: link:../../backbone
@@ -239,20 +239,20 @@ importers:
         specifier: ^1.72.0
         version: 1.72.0
       "@bufbuild/protobuf":
-        specifier: ^2.13.0
-        version: 2.13.0
+        specifier: ^2.14.0
+        version: 2.14.0
       "@bufbuild/protoc-gen-es":
-        specifier: ^2.13.0
-        version: 2.13.0(@bufbuild/protobuf@2.13.0)
+        specifier: ^2.14.0
+        version: 2.14.0(@bufbuild/protobuf@2.14.0)
       "@connectrpc/connect":
         specifier: ^2.1.2
-        version: 2.1.2(@bufbuild/protobuf@2.13.0)
+        version: 2.1.2(@bufbuild/protobuf@2.14.0)
       "@types/node":
         specifier: ^26.2.0
         version: 26.2.0
       aws-cdk-lib:
-        specifier: ^2.264.0
-        version: 2.264.0(constructs@10.8.1)
+        specifier: ^2.265.0
+        version: 2.265.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -269,8 +269,8 @@ importers:
   apps/cdk/services/policy:
     dependencies:
       "@aws-cdk/aws-lambda-go-alpha":
-        specifier: ^2.264.0-alpha.0
-        version: 2.264.0-alpha.0(aws-cdk-lib@2.264.0(constructs@10.8.1))(constructs@10.8.1)
+        specifier: ^2.265.0-alpha.0
+        version: 2.265.0-alpha.0(aws-cdk-lib@2.265.0(constructs@10.8.1))(constructs@10.8.1)
       "@battle-bricks/backbone":
         specifier: workspace:*
         version: link:../../backbone
@@ -281,20 +281,20 @@ importers:
         specifier: ^1.72.0
         version: 1.72.0
       "@bufbuild/protobuf":
-        specifier: ^2.13.0
-        version: 2.13.0
+        specifier: ^2.14.0
+        version: 2.14.0
       "@bufbuild/protoc-gen-es":
-        specifier: ^2.13.0
-        version: 2.13.0(@bufbuild/protobuf@2.13.0)
+        specifier: ^2.14.0
+        version: 2.14.0(@bufbuild/protobuf@2.14.0)
       "@connectrpc/connect":
         specifier: ^2.1.2
-        version: 2.1.2(@bufbuild/protobuf@2.13.0)
+        version: 2.1.2(@bufbuild/protobuf@2.14.0)
       "@types/node":
         specifier: ^26.2.0
         version: 26.2.0
       aws-cdk-lib:
-        specifier: ^2.264.0
-        version: 2.264.0(constructs@10.8.1)
+        specifier: ^2.265.0
+        version: 2.265.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -314,14 +314,14 @@ importers:
         specifier: workspace:*
         version: link:../../packages/contracts
       "@bufbuild/protobuf":
-        specifier: ^2.13.0
-        version: 2.13.0
+        specifier: ^2.14.0
+        version: 2.14.0
       "@connectrpc/connect":
         specifier: ^2.1.2
-        version: 2.1.2(@bufbuild/protobuf@2.13.0)
+        version: 2.1.2(@bufbuild/protobuf@2.14.0)
       "@connectrpc/connect-web":
         specifier: ^2.1.2
-        version: 2.1.2(@bufbuild/protobuf@2.13.0)(@connectrpc/connect@2.1.2(@bufbuild/protobuf@2.13.0))
+        version: 2.1.2(@bufbuild/protobuf@2.14.0)(@connectrpc/connect@2.1.2(@bufbuild/protobuf@2.14.0))
       "@flit/accepted-language":
         specifier: ^0.1.0
         version: 0.1.0
@@ -356,8 +356,8 @@ importers:
         specifier: ^0.20.5
         version: 0.20.5(svelte@5.56.9)
       ai:
-        specifier: ^7.0.64
-        version: 7.0.64(zod@4.4.3)
+        specifier: ^7.0.65
+        version: 7.0.65(zod@4.4.3)
       minisearch:
         specifier: ^7.2.0
         version: 7.2.0
@@ -368,8 +368,8 @@ importers:
         specifier: ^5.56.9
         version: 5.56.9
       svelte-check:
-        specifier: ^4.7.5
-        version: 4.7.5(picomatch@4.0.5)(svelte@5.56.9)(typescript@6.0.3)
+        specifier: ^4.7.6
+        version: 4.7.6(picomatch@4.0.5)(svelte@5.56.9)(typescript@6.0.3)
       svelte-dnd-action:
         specifier: ^0.9.78
         version: 0.9.78(svelte@5.56.9)
@@ -397,14 +397,14 @@ importers:
         specifier: ^1.72.0
         version: 1.72.0
       "@bufbuild/protobuf":
-        specifier: ^2.13.0
-        version: 2.13.0
+        specifier: ^2.14.0
+        version: 2.14.0
       "@bufbuild/protoc-gen-es":
-        specifier: ^2.13.0
-        version: 2.13.0(@bufbuild/protobuf@2.13.0)
+        specifier: ^2.14.0
+        version: 2.14.0(@bufbuild/protobuf@2.14.0)
       aws-cdk-lib:
-        specifier: ^2.264.0
-        version: 2.264.0(constructs@10.8.1)
+        specifier: ^2.265.0
+        version: 2.265.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -419,16 +419,16 @@ importers:
   packages/protoc-gen-event-registry:
     dependencies:
       "@bufbuild/protoc-gen-es":
-        specifier: ^2.13.0
-        version: 2.13.0(@bufbuild/protobuf@2.13.0)
+        specifier: ^2.14.0
+        version: 2.14.0(@bufbuild/protobuf@2.14.0)
 
   packages/sigv4-http: {}
 
 packages:
-  "@ai-sdk/gateway@4.0.51":
+  "@ai-sdk/gateway@4.0.52":
     resolution:
       {
-        integrity: sha512-tQxWGUbg/O3A5EgekJo/C2byLVQ1r+vL6QdEVWmxUSnPhdCupcOeDbQO1tv9Um40VrdwYuSWlYzcbWvtlG5bOA==,
+        integrity: sha512-SXUM8jzzuTUJRq+EOgPd5to6DSx0EKslVn+IVZHbUEX6k/3vCPNrvjckbK26HnNxHU/STxm+zTSJteqrO+7Z0w==,
       }
     engines: { node: ">=22" }
     peerDependencies:
@@ -485,20 +485,26 @@ packages:
         integrity: sha512-7hKMi5tTxDcKGIMIOq14PnY0GBcugW33Uh/2YHDZiEwSxLeFOCYBwhR+BFXONb/EJeVI3RETFgailNZbkcKF6g==,
       }
 
+  "@aws-cdk/asset-awscli-v1@2.2.292":
+    resolution:
+      {
+        integrity: sha512-d4aMFsAFj19FtxVyw8IzlUKv5Zu4sIvgnEjI2IU6IWBJgVbJ4aFnadANqYa+6MwB1CQbGOg0jh8WE77M+Nb/9A==,
+      }
+
   "@aws-cdk/asset-node-proxy-agent-v6@2.1.2":
     resolution:
       {
         integrity: sha512-pDiuqH+qY3zM9lhhLjbKJ1tnKOHzQ2V4Wr/3qsxyKeKAkuPMI/BVGvZG1PbrikUw949cGVTfVEt4ETKKYnrj0Q==,
       }
 
-  "@aws-cdk/aws-lambda-go-alpha@2.264.0-alpha.0":
+  "@aws-cdk/aws-lambda-go-alpha@2.265.0-alpha.0":
     resolution:
       {
-        integrity: sha512-KSKTNtyYAHLfXp8UONyysFXkQzuDT0Ce5J3og7iXk0xbHaDNd+2VMu/OBuVGoNirBYrWxJGggNngv/oAV/+l1A==,
+        integrity: sha512-hgoWoPQ+Ve+L1qoNxMRjpDIe4ZK2fHnp5Ot12IjBVU7Z++UETrON7FdkB5WC4FFunXMRAABEkoo4SHqCP2ltsA==,
       }
     engines: { node: ">= 20.0.0" }
     peerDependencies:
-      aws-cdk-lib: ^2.264.0
+      aws-cdk-lib: ^2.265.0
       constructs: ^10.5.0
 
   "@aws-cdk/cloud-assembly-schema@54.17.0":
@@ -724,29 +730,29 @@ packages:
     engines: { node: ">=12" }
     hasBin: true
 
-  "@bufbuild/protobuf@2.13.0":
+  "@bufbuild/protobuf@2.14.0":
     resolution:
       {
-        integrity: sha512-acq7c49vxfm1ggJ95P70TX7ABDM0vxr1SYD3BB0o0jnBLB4OAqeHyKuN+cD3w80gXEDQ2zxHpR6CUeA+O/aU9g==,
+        integrity: sha512-C3UGsiCwSprE2NKIIFA3hCDlpXTMCAXRZuEVp88L1GY36Y41+rYL5fryE+nOFhp4p4JPQvdV8PQ4DWgHgeTE+w==,
       }
 
-  "@bufbuild/protoc-gen-es@2.13.0":
+  "@bufbuild/protoc-gen-es@2.14.0":
     resolution:
       {
-        integrity: sha512-ylI1vrLksdnXrVZRs9xGxmrQxKGhUm6pPszv26kqBvNiO3qPTktk+hgfwbLISBY4M/reShkT2dFLGT9fbydBXg==,
+        integrity: sha512-/Rrui0BJWSRONiKGYzqWq9ivGN3+cYkmc47QWITufr7K6yDb8HfssuJUSQZeptyg/rHbHrfDzCUjzoJ2pwuafg==,
       }
-    engines: { node: ">=20" }
+    engines: { node: ">=22" }
     hasBin: true
     peerDependencies:
-      "@bufbuild/protobuf": 2.13.0
+      "@bufbuild/protobuf": 2.14.0
     peerDependenciesMeta:
       "@bufbuild/protobuf":
         optional: true
 
-  "@bufbuild/protoplugin@2.13.0":
+  "@bufbuild/protoplugin@2.14.0":
     resolution:
       {
-        integrity: sha512-32eMChKaL/A8Hh5AfMmXSdnuyznN85uoEjoyWiWeRrvtQOtpqX/v1R9PDe0g9vMIgzznK9inMT3CUaal0kjLUQ==,
+        integrity: sha512-S0TvZhVtTEkZQRj2JsXBCXiib/b0+bLQtJCcn+hj9O/usgbcgxHn4D+ii22Ao3qj0/kKxVYeo7BtAI2dMk+iig==,
       }
 
   "@connectrpc/connect-web@2.1.2":
@@ -1696,10 +1702,10 @@ packages:
       typescript:
         optional: true
 
-  "@sveltejs/load-config@0.2.2":
+  "@sveltejs/load-config@0.2.3":
     resolution:
       {
-        integrity: sha512-K7dsJDQxBOF+f+epuhMactcjK2VP4MRkLKtwSykNtEI+cKVEyzrmmhQ1pmoxI800m4JKcyJ05L2M4yPwAGiBNw==,
+        integrity: sha512-VT3qmUb8pRV2QrZjd8iAmtg8lf4W0TIjZbvXtz5MKei/q96teWZgGJyyidJzOjzZzvdq616eSRVeMYIQChUTAQ==,
       }
     engines: { node: ">= 18.0.0" }
 
@@ -1868,10 +1874,10 @@ packages:
       }
     engines: { node: ">= 6.0.0" }
 
-  ai@7.0.64:
+  ai@7.0.65:
     resolution:
       {
-        integrity: sha512-29Ufm56e53pRzIPueWzZiwJsgxmZStaBFpwEkVM89sqyIIax/pzDm+ez/ksJ/CcY9UCuYzvCQpE2zkFHICvS3w==,
+        integrity: sha512-Uzom971mOHETL9tbeCWDEgbAA/Banj0KnR2obNEWPEUlGnAv2NJjFIxrUZ6F0XxHFDgGVVpnz86BB2CPOZZ83g==,
       }
     engines: { node: ">=22" }
     peerDependencies:
@@ -1902,6 +1908,28 @@ packages:
     resolution:
       {
         integrity: sha512-TzeWc4aM2qftdoWzIgqV7DotzUO9+DqYLXHvL2qygZqkrJdvITTp8ojHstxYPH40FfA+RL4x5hVfa52NCTB0ZA==,
+      }
+    engines: { node: ">= 20.0.0" }
+    peerDependencies:
+      constructs: ^10.5.0
+    bundledDependencies:
+      - "@aws/cloudformation-validate"
+      - "@balena/dockerignore"
+      - "@aws-cdk/cloud-assembly-api"
+      - case
+      - fs-extra
+      - ignore
+      - jsonschema
+      - minimatch
+      - punycode
+      - semver
+      - yaml
+      - mime-types
+
+  aws-cdk-lib@2.265.0:
+    resolution:
+      {
+        integrity: sha512-Ur96d/ZW+gqAW4XtqKQp//D9O/jQvyRoXhAqoHGybpV03qjckGIQcLcGkLV68+jv03TX/rOXHCsa2IEFcCXa4w==,
       }
     engines: { node: ">= 20.0.0" }
     peerDependencies:
@@ -2962,10 +2990,10 @@ packages:
         integrity: sha512-IwfBptatlO+QCJUo19AqvrPNqlVMpW9YEL2LIVY+Rpv2qsjCGxaDLNRgeGsQWJhfItebuJhsGSLjaBbNSQ+ieg==,
       }
 
-  svelte-check@4.7.5:
+  svelte-check@4.7.6:
     resolution:
       {
-        integrity: sha512-NnkHGCTPH6k4ka1E9IpTuNv40uLArHnX52kLEuaHSGqRlPYTnkbFs529jSWG+y+wDy+v+jA2PQ0soN1umVK+OA==,
+        integrity: sha512-t2scM//ZuVbSY/T2w6FSBw1v9s2NEmh/g+sy1lqtosW5ylBV5AF4wFb1Ts9Kf3MbfPDUDJDZ9L436YT0SPTdvw==,
       }
     engines: { node: ">= 18.0.0" }
     hasBin: true
@@ -3265,7 +3293,7 @@ packages:
       }
 
 snapshots:
-  "@ai-sdk/gateway@4.0.51(zod@4.4.3)":
+  "@ai-sdk/gateway@4.0.52(zod@4.4.3)":
     dependencies:
       "@ai-sdk/provider": 4.0.7
       "@ai-sdk/provider-utils": 5.0.27(zod@4.4.3)
@@ -3317,11 +3345,13 @@ snapshots:
 
   "@aws-cdk/asset-awscli-v1@2.2.282": {}
 
+  "@aws-cdk/asset-awscli-v1@2.2.292": {}
+
   "@aws-cdk/asset-node-proxy-agent-v6@2.1.2": {}
 
-  "@aws-cdk/aws-lambda-go-alpha@2.264.0-alpha.0(aws-cdk-lib@2.264.0(constructs@10.8.1))(constructs@10.8.1)":
+  "@aws-cdk/aws-lambda-go-alpha@2.265.0-alpha.0(aws-cdk-lib@2.265.0(constructs@10.8.1))(constructs@10.8.1)":
     dependencies:
-      aws-cdk-lib: 2.264.0(constructs@10.8.1)
+      aws-cdk-lib: 2.265.0(constructs@10.8.1)
       constructs: 10.8.1
 
   "@aws-cdk/cloud-assembly-schema@54.17.0": {}
@@ -3468,32 +3498,32 @@ snapshots:
       "@bufbuild/buf-win32-arm64": 1.72.0
       "@bufbuild/buf-win32-x64": 1.72.0
 
-  "@bufbuild/protobuf@2.13.0": {}
+  "@bufbuild/protobuf@2.14.0": {}
 
-  "@bufbuild/protoc-gen-es@2.13.0(@bufbuild/protobuf@2.13.0)":
+  "@bufbuild/protoc-gen-es@2.14.0(@bufbuild/protobuf@2.14.0)":
     dependencies:
-      "@bufbuild/protoplugin": 2.13.0
+      "@bufbuild/protoplugin": 2.14.0
     optionalDependencies:
-      "@bufbuild/protobuf": 2.13.0
+      "@bufbuild/protobuf": 2.14.0
     transitivePeerDependencies:
       - supports-color
 
-  "@bufbuild/protoplugin@2.13.0":
+  "@bufbuild/protoplugin@2.14.0":
     dependencies:
-      "@bufbuild/protobuf": 2.13.0
+      "@bufbuild/protobuf": 2.14.0
       "@typescript/vfs": 1.6.4(typescript@5.4.5)
       typescript: 5.4.5
     transitivePeerDependencies:
       - supports-color
 
-  "@connectrpc/connect-web@2.1.2(@bufbuild/protobuf@2.13.0)(@connectrpc/connect@2.1.2(@bufbuild/protobuf@2.13.0))":
+  "@connectrpc/connect-web@2.1.2(@bufbuild/protobuf@2.14.0)(@connectrpc/connect@2.1.2(@bufbuild/protobuf@2.14.0))":
     dependencies:
-      "@bufbuild/protobuf": 2.13.0
-      "@connectrpc/connect": 2.1.2(@bufbuild/protobuf@2.13.0)
+      "@bufbuild/protobuf": 2.14.0
+      "@connectrpc/connect": 2.1.2(@bufbuild/protobuf@2.14.0)
 
-  "@connectrpc/connect@2.1.2(@bufbuild/protobuf@2.13.0)":
+  "@connectrpc/connect@2.1.2(@bufbuild/protobuf@2.14.0)":
     dependencies:
-      "@bufbuild/protobuf": 2.13.0
+      "@bufbuild/protobuf": 2.14.0
 
   "@esbuild/aix-ppc64@0.28.2":
     optional: true
@@ -3575,14 +3605,14 @@ snapshots:
 
   "@flit/accepted-language@0.1.0": {}
 
-  "@flit/cdk-bucket-mesh@0.7.1(aws-cdk-lib@2.264.0(constructs@10.8.1))(constructs@10.8.1)":
+  "@flit/cdk-bucket-mesh@0.7.1(aws-cdk-lib@2.265.0(constructs@10.8.1))(constructs@10.8.1)":
     dependencies:
-      aws-cdk-lib: 2.264.0(constructs@10.8.1)
+      aws-cdk-lib: 2.265.0(constructs@10.8.1)
       constructs: 10.8.1
 
-  "@flit/cdk-pipeline@2.7.0(aws-cdk-lib@2.264.0(constructs@10.8.1))(constructs@10.8.1)":
+  "@flit/cdk-pipeline@2.7.0(aws-cdk-lib@2.265.0(constructs@10.8.1))(constructs@10.8.1)":
     dependencies:
-      aws-cdk-lib: 2.264.0(constructs@10.8.1)
+      aws-cdk-lib: 2.265.0(constructs@10.8.1)
       constructs: 10.8.1
 
   "@flit/svelte-form@2.7.0":
@@ -4005,7 +4035,7 @@ snapshots:
       "@opentelemetry/api": 1.9.1
       typescript: 6.0.3
 
-  "@sveltejs/load-config@0.2.2": {}
+  "@sveltejs/load-config@0.2.3": {}
 
   "@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.9)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0))":
     dependencies:
@@ -4086,9 +4116,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ai@7.0.64(zod@4.4.3):
+  ai@7.0.65(zod@4.4.3):
     dependencies:
-      "@ai-sdk/gateway": 4.0.51(zod@4.4.3)
+      "@ai-sdk/gateway": 4.0.52(zod@4.4.3)
       "@ai-sdk/provider": 4.0.7
       "@ai-sdk/provider-utils": 5.0.27(zod@4.4.3)
       zod: 4.4.3
@@ -4102,6 +4132,13 @@ snapshots:
   aws-cdk-lib@2.264.0(constructs@10.8.1):
     dependencies:
       "@aws-cdk/asset-awscli-v1": 2.2.282
+      "@aws-cdk/asset-node-proxy-agent-v6": 2.1.2
+      "@aws-cdk/cloud-assembly-schema": 54.17.0
+      constructs: 10.8.1
+
+  aws-cdk-lib@2.265.0(constructs@10.8.1):
+    dependencies:
+      "@aws-cdk/asset-awscli-v1": 2.2.292
       "@aws-cdk/asset-node-proxy-agent-v6": 2.1.2
       "@aws-cdk/cloud-assembly-schema": 54.17.0
       constructs: 10.8.1
@@ -4642,10 +4679,10 @@ snapshots:
       character-entities-html4: 2.1.0
       character-entities-legacy: 3.0.0
 
-  svelte-check@4.7.5(picomatch@4.0.5)(svelte@5.56.9)(typescript@6.0.3):
+  svelte-check@4.7.6(picomatch@4.0.5)(svelte@5.56.9)(typescript@6.0.3):
     dependencies:
       "@jridgewell/trace-mapping": 0.3.31
-      "@sveltejs/load-config": 0.2.2
+      "@sveltejs/load-config": 0.2.3
       chokidar: 4.0.3
       fdir: 6.5.0(picomatch@4.0.5)
       picocolors: 1.1.1

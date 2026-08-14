@@ -8,6 +8,7 @@
 	import type { Loadout } from "@battle-bricks/contracts/catalogue/v1/loadout_pb";
 	import type { PageData } from "./$types";
 	import { Faction } from "@battle-bricks/contracts/catalogue/v1/faction_pb";
+	import { getClient } from "$lib/clients/univeral-client.svelte";
 
 	let { data }: { data: PageData } = $props();
 
@@ -40,18 +41,13 @@
 
 	$effect(() => {
 		if (page.params.id && page.params.id !== "new") {
-			let item = localStorage.getItem("SQUADS");
-			if (!item) {
-				item = "{}";
-			}
-			const squads = JSON.parse(item) as Record<string, Squad | undefined>;
-			const s = squads[page.params.id];
+			const s = data.squads[page.params.id];
 			if (s) {
 				faction = s.faction;
 				name = s.name;
-				squad = s.loadouts.map((l) => ({
+				squad = s.loadouts.map((loadout) => ({
 					id: crypto.randomUUID(),
-					loadout: data.loadouts[l],
+					loadout,
 				}));
 			}
 		}
@@ -84,21 +80,21 @@
 				}
 				const squads = JSON.parse(item) as Record<string, Squad | undefined>;
 
+				const client = getClient();
 				if (page.params.id && page.params.id !== "new") {
-					squads[page.params.id] = {
+					client.catalogue.updateSquad({
 						id: page.params.id,
+						updateMask: ["name", "faction", "loadouts"],
 						name: name,
 						faction: faction,
 						loadouts: squad.map((l) => l.loadout.id),
-					};
+					});
 				} else {
-					const id = crypto.randomUUID();
-					squads[id] = {
-						id: id,
+					client.catalogue.createSquad({
 						name: name,
 						faction: faction,
 						loadouts: squad.map((l) => l.loadout.id),
-					};
+					});
 				}
 
 				localStorage.setItem("SQUADS", JSON.stringify(squads));

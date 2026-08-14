@@ -21,6 +21,7 @@ export class CatalogueServiceDataStack extends Stack {
 			deletionProtection: true,
 			removalPolicy: RemovalPolicy.RETAIN,
 			partitionKey: { name: "pk", type: AttributeType.STRING },
+			sortKey: { name: "sk", type: AttributeType.STRING },
 			timeToLiveAttribute: "ttl",
 			billing: Billing.onDemand(),
 			replicas: props.backboneStack.activeRegions
@@ -28,6 +29,18 @@ export class CatalogueServiceDataStack extends Stack {
 				.map((r) => ({ region: r })),
 			pointInTimeRecoverySpecification: {
 				pointInTimeRecoveryEnabled: true,
+			},
+		});
+
+		this.table.addGlobalSecondaryIndex({
+			indexName: "gsi1",
+			partitionKey: {
+				name: "gsi1pk",
+				type: AttributeType.STRING,
+			},
+			sortKey: {
+				name: "gsi1sk",
+				type: AttributeType.STRING,
 			},
 		});
 	}

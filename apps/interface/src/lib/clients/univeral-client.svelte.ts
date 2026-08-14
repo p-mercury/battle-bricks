@@ -164,7 +164,7 @@ class Client {
 			evaluate: async <Desc extends DescMessage>(
 				service:
 					| "catalogue"
-					| "identity_customer"
+					| "identity"
 					| "identity_staff"
 					| "zoho_crm"
 					| "order"

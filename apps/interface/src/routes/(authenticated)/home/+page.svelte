@@ -1,7 +1,5 @@
 <script lang="ts">
 	import { getFactionName } from "$lib/faction";
-	import type { Squad } from "$lib/squad";
-	import { browser } from "$app/env";
 	import { goto } from "$app/navigation";
 	import { colors } from "$lib/color";
 	import SquadItem from "$lib/components/squad-item.svelte";
@@ -13,18 +11,6 @@
 
 	let selectedSquad = $state<string>("");
 	let selectedDefender = $state<Faction>("" as any);
-
-	let squads = $derived.by<Record<string, Squad>>(() => {
-		if (browser) {
-			let item = localStorage.getItem("SQUADS");
-			if (!item) {
-				item = "{}";
-			}
-			return JSON.parse(item);
-		} else {
-			return {};
-		}
-	});
 </script>
 
 <div class="wrapper">
@@ -32,19 +18,15 @@
 		<h2>Squads</h2>
 		<button onclick={() => goto("/squads/new")}>New Squad</button>
 		<ul>
-			{#each Object.values(squads) as squad}
-				<SquadItem
-					{squad}
-					loadouts={data.loadouts}
-					onclick={() => goto(`/squads/${squad.id}`)}
-				/>
+			{#each Object.values(data.squads) as squad}
+				<SquadItem {squad} onclick={() => goto(`/squads/${squad.id}`)} />
 			{/each}
 		</ul>
 	</section>
 	<h1>Start a new game</h1>
 	<select bind:value={selectedSquad}>
 		<option value="" disabled hidden selected>Select Squad</option>
-		{#each Object.values(squads) as squad}
+		{#each Object.values(data.squads) as squad}
 			<option value={squad!.id}>
 				{getFactionName(squad!.faction)}
 				{squad!.name}
@@ -54,10 +36,10 @@
 	{#if selectedSquad}
 		<select bind:value={selectedDefender}>
 			<option value="" disabled hidden selected>Select enemy faction</option>
-			{#if squads[selectedSquad]?.faction !== Faction.GALACTIC_REPUBLIC}
+			{#if data.squads[selectedSquad]?.faction !== Faction.GALACTIC_REPUBLIC}
 				<option value={Faction.GALACTIC_REPUBLIC}>Galactic Republic</option>
 			{/if}
-			{#if squads[selectedSquad]?.faction !== Faction.SEPARATIST_ALLIANCE}
+			{#if data.squads[selectedSquad]?.faction !== Faction.SEPARATIST_ALLIANCE}
 				<option value={Faction.SEPARATIST_ALLIANCE}>Separatist Alliance</option>
 			{/if}
 		</select>
@@ -69,20 +51,20 @@
 						JSON.stringify(
 							{
 								attacker: {
-									name: squads[selectedSquad]!.name,
-									faction: squads[selectedSquad]!.faction,
+									name: data.squads[selectedSquad]!.name,
+									faction: data.squads[selectedSquad]!.faction,
 									loadouts: Object.fromEntries(
-										squads[selectedSquad]!.loadouts.map((l, i) => {
+										data.squads[selectedSquad]!.loadouts.map((l, i) => {
 											const id = crypto.randomUUID();
 											const loadout: GameLoadout = {
 												id: id,
-												image: data.loadouts[l].image,
-												name: data.loadouts[l].name,
+												image: l.image,
+												name: l.name,
 												color: colors[i].hex,
 												turnComplete: false,
-												unit: data.loadouts[l].unit!,
+												unit: l.unit!,
 												items: Object.values(
-													data.loadouts[l].items.reduce(
+													l.items.reduce(
 														(items, item) => {
 															if (item.details.value) {
 																if ("capacity" in item.details.value) {

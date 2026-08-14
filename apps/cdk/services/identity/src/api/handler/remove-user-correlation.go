@@ -54,7 +54,7 @@ func (s *Handler) RemoveUserCorrelation(
 	}
 
 	if authCtx.Lambda != nil {
-		resp, err := authCtx.Evaluate(ctx, "identity_customer", "remove_user_correlation",
+		resp, err := authCtx.Evaluate(ctx, "identity", "remove_user_correlation",
 			&identity.RemoveUserCorrelationContext{
 				Request: req.Msg,
 				Subject: user,

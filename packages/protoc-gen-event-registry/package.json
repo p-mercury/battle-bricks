@@ -6,6 +6,6 @@
 		"install": "go mod download"
 	},
 	"dependencies": {
-		"@bufbuild/protoc-gen-es": "^2.13.0"
+		"@bufbuild/protoc-gen-es": "^2.14.0"
 	}
 }

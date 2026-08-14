@@ -20,7 +20,7 @@ var Items = map[string]*catalogue.Item{
 		Weight:      2,
 		Details: &catalogue.Item_BlasterBolt{
 			BlasterBolt: &catalogue.BlasterBolt{
-				Capacity:      45,
+				Capacity:      40,
 				ArmorPiercing: 1,
 				Damage: &common.DiceRoll{
 					Count:    1,
@@ -39,7 +39,7 @@ var Items = map[string]*catalogue.Item{
 		Weight:      2,
 		Details: &catalogue.Item_BlasterBolt{
 			BlasterBolt: &catalogue.BlasterBolt{
-				Capacity:      40,
+				Capacity:      35,
 				ArmorPiercing: 2,
 				Damage: &common.DiceRoll{
 					Count:    1,
@@ -58,7 +58,7 @@ var Items = map[string]*catalogue.Item{
 		Weight:      2,
 		Details: &catalogue.Item_BlasterBolt{
 			BlasterBolt: &catalogue.BlasterBolt{
-				Capacity:      35,
+				Capacity:      30,
 				ArmorPiercing: 2,
 				Damage: &common.DiceRoll{
 					Count:    1,
@@ -77,7 +77,7 @@ var Items = map[string]*catalogue.Item{
 		Weight:      2,
 		Details: &catalogue.Item_BlasterBolt{
 			BlasterBolt: &catalogue.BlasterBolt{
-				Capacity:      30,
+				Capacity:      25,
 				ArmorPiercing: 3,
 				Damage: &common.DiceRoll{
 					Count:    1,
@@ -158,7 +158,7 @@ var Items = map[string]*catalogue.Item{
 					Max: 14,
 				},
 				SplashRadius:  2,
-				ArmorPiercing: 1,
+				ArmorPiercing: 2,
 				Damage: &common.DiceRoll{
 					Count:    1,
 					Sides:    6,

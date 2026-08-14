@@ -61,7 +61,7 @@ func (s *Handler) UpdateUser(
 	}
 
 	if authCtx.Lambda != nil {
-		resp, err := authCtx.Evaluate(ctx, "identity_customer", "update_user",
+		resp, err := authCtx.Evaluate(ctx, "identity", "update_user",
 			&identity.UpdateUserContext{
 				Request: req.Msg,
 				Subject: user,

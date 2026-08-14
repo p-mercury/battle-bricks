@@ -55,7 +55,7 @@ func (s *Handler) GetUser(
 	}
 
 	if authCtx.Lambda != nil {
-		resp, err := authCtx.Evaluate(ctx, "identity_customer", "get_user",
+		resp, err := authCtx.Evaluate(ctx, "identity", "get_user",
 			&identity.GetUserContext{
 				Request: req.Msg,
 				Subject: user,

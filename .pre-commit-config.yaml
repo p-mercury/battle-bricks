@@ -11,6 +11,8 @@ repos:
         exclude: (?xi)^((?:.*/)?locales/.*)$
       - id: detect-private-key
       - id: detect-aws-credentials
+        args:
+          - --allow-missing-credentials
   - repo: https://github.com/bufbuild/buf
     rev: "v1.67.0"
     hooks:

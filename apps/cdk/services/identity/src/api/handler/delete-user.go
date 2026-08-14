@@ -56,7 +56,7 @@ func (s *Handler) DeleteUser(
 	}
 
 	if authCtx.Lambda != nil {
-		resp, err := authCtx.Evaluate(ctx, "identity_customer", "delete_user",
+		resp, err := authCtx.Evaluate(ctx, "identity", "delete_user",
 			&identity.DeleteUserContext{
 				Request: req.Msg,
 				Subject: user,

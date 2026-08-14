@@ -7,12 +7,12 @@ option go_package = "contracts/dist/identity;identity";
 
 extend buf.validate.StringRules {
   optional bool user_id = 81000000 [(buf.validate.predefined).cel = {
-    id: "string.identity_customer_user_id"
+    id: "string.identity_user_id"
     message: "Must be a customer user ID"
     expression: "this.matches('^[0-9A-Za-z]{12}$')"
   }];
   optional bool user_name = 81000002 [(buf.validate.predefined).cel = {
-    id: "string.identity_customer_user_name"
+    id: "string.identity_user_name"
     message: "Must be a customer user name"
     expression: "this.matches('^[\\\\p{L}\\\\p{N}&._-][\\\\p{L}\\\\p{N} &._-]{0,78}[\\\\p{L}\\\\p{N}&._-]$')"
   }];
