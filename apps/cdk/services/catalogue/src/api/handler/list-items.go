@@ -24,7 +24,7 @@ var Items = map[string]*catalogue.Item{
 				ArmorPiercing: 1,
 				Damage: &common.DiceRoll{
 					Count:    1,
-					Sides:    6,
+					Sides:    8,
 					Modifier: -1,
 				},
 			},
@@ -43,7 +43,7 @@ var Items = map[string]*catalogue.Item{
 				ArmorPiercing: 2,
 				Damage: &common.DiceRoll{
 					Count:    1,
-					Sides:    6,
+					Sides:    8,
 					Modifier: 0,
 				},
 			},
@@ -62,7 +62,7 @@ var Items = map[string]*catalogue.Item{
 				ArmorPiercing: 2,
 				Damage: &common.DiceRoll{
 					Count:    1,
-					Sides:    6,
+					Sides:    8,
 					Modifier: 1,
 				},
 			},
@@ -81,7 +81,7 @@ var Items = map[string]*catalogue.Item{
 				ArmorPiercing: 3,
 				Damage: &common.DiceRoll{
 					Count:    1,
-					Sides:    6,
+					Sides:    8,
 					Modifier: 1,
 				},
 			},
@@ -100,7 +100,7 @@ var Items = map[string]*catalogue.Item{
 				ArmorPiercing: 3,
 				Damage: &common.DiceRoll{
 					Count:    2,
-					Sides:    6,
+					Sides:    8,
 					Modifier: 0,
 				},
 			},
@@ -119,7 +119,7 @@ var Items = map[string]*catalogue.Item{
 				ArmorPiercing: 3,
 				Damage: &common.DiceRoll{
 					Count:    2,
-					Sides:    6,
+					Sides:    8,
 					Modifier: 2,
 				},
 			},
@@ -138,7 +138,7 @@ var Items = map[string]*catalogue.Item{
 				ArmorPiercing: 4,
 				Damage: &common.DiceRoll{
 					Count:    2,
-					Sides:    6,
+					Sides:    8,
 					Modifier: 4,
 				},
 			},
@@ -161,7 +161,7 @@ var Items = map[string]*catalogue.Item{
 				ArmorPiercing: 2,
 				Damage: &common.DiceRoll{
 					Count:    1,
-					Sides:    6,
+					Sides:    8,
 					Modifier: 4,
 				},
 			},
@@ -184,7 +184,7 @@ var Items = map[string]*catalogue.Item{
 				ArmorPiercing: 4,
 				Damage: &common.DiceRoll{
 					Count:    1,
-					Sides:    6,
+					Sides:    8,
 					Modifier: 4,
 				},
 			},
@@ -250,7 +250,7 @@ var Items = map[string]*catalogue.Item{
 				ArmorPiercing: 2,
 				Damage: &common.DiceRoll{
 					Count:    1,
-					Sides:    6,
+					Sides:    8,
 					Modifier: 0,
 				},
 			},
@@ -269,7 +269,7 @@ var Items = map[string]*catalogue.Item{
 				ArmorPiercing: 3,
 				Damage: &common.DiceRoll{
 					Count:    1,
-					Sides:    6,
+					Sides:    8,
 					Modifier: 2,
 				},
 			},

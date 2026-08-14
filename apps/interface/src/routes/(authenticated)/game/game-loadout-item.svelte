@@ -93,7 +93,6 @@
 		display: grid;
 		width: 21.55rem;
 		grid-template:
-			"color color" 1.25rem
 			"image stats" 7rem
 			"info stats" auto /
 			7rem auto;

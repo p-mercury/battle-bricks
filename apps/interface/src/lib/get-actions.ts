@@ -93,7 +93,7 @@ const PierceTable: Record<string, number> = {
 	"1/1": 5,
 
 	"2/5": 7,
-	"2/4": 7,
+	"2/4": 6,
 	"2/3": 6,
 	"2/2": 5,
 	"2/1": 4,
