@@ -1,0 +1,21 @@
+syntax = "proto3";
+package catalogue.v1;
+
+import "buf/validate/validate.proto";
+import "catalogue/rules.proto";
+import "catalogue/v1/squad.proto";
+
+option go_package = "contracts/dist/catalogue/v1;catalogue";
+
+message GetSquadRequest {
+  string id = 1 [(buf.validate.field).string.(catalogue.squad_id) = true];
+}
+
+message GetSquadResponse {
+  Squad squad = 1;
+}
+
+message GetSquadContext {
+  GetSquadRequest request = 1;
+  Squad subject = 2;
+}

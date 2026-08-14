@@ -51,6 +51,7 @@ func handleRequest(ctx context.Context, event events.CognitoEventUserPoolsPostCo
 		"pk":           &dynamoTypes.AttributeValueMemberS{Value: "USER#" + id},
 		"sk":           &dynamoTypes.AttributeValueMemberS{Value: "USER"},
 		"type":         &dynamoTypes.AttributeValueMemberS{Value: "USER"},
+		"id":           &dynamoTypes.AttributeValueMemberS{Value: id},
 		"cognitoId":    &dynamoTypes.AttributeValueMemberS{Value: event.Request.UserAttributes["sub"]},
 		"emailAddress": &dynamoTypes.AttributeValueMemberS{Value: event.Request.UserAttributes["email"]},
 		"name":         &dynamoTypes.AttributeValueMemberS{Value: event.Request.UserAttributes["fullname"]},

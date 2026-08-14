@@ -218,8 +218,10 @@ msgstr "Price: <0>{0}/1500c</0>"
 msgid "Units: <0/>"
 msgstr "Units: <0/>"
 
-#~ msgid "Test"
-#~ msgstr "Test"
+#: src/routes/test/+page.svelte
+#: src/routes/test2/+page.svelte
+msgid "Test"
+msgstr "Test"
 
 #: src/lib/components/action-item.svelte
 #: src/lib/components/action-item.svelte
@@ -279,3 +281,7 @@ msgstr "{0}d{1}{2}"
 #: src/routes/(authenticated)/squads/[id]/+page.svelte
 msgid "Cancel"
 msgstr "Cancel"
+
+#: src/routes/test/+page.svelte
+msgid "tes2"
+msgstr "tes2"

@@ -6,19 +6,15 @@ export const load: LayoutLoad = async (event) => {
 	loadLocale(event.data.locale);
 	const client = getClient(event);
 
-	const [{ user }, { units }, { loadouts }, { squads }] = await Promise.all([
+	const [{ user }, { units }, { loadouts }] = await Promise.all([
 		client.policy.getUser({}),
 		client.catalogue.listUnits({}),
 		client.catalogue.listLoadouts({}),
-		client.catalogue.listSquads({}),
 	]);
-
-	console.log(squads);
 
 	return {
 		policyUser: user,
 		units: Object.fromEntries(units.map((i) => [i.id, i])),
 		loadouts: Object.fromEntries(loadouts.map((i) => [i.id, i])),
-		squads: Object.fromEntries(squads.map((i) => [i.id, i])),
 	};
 };

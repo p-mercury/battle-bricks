@@ -40,16 +40,13 @@
 	});
 
 	$effect(() => {
-		if (page.params.id && page.params.id !== "new") {
-			const s = data.squads[page.params.id];
-			if (s) {
-				faction = s.faction;
-				name = s.name;
-				squad = s.loadouts.map((loadout) => ({
-					id: crypto.randomUUID(),
-					loadout,
-				}));
-			}
+		if (data.squad) {
+			faction = data.squad.faction;
+			name = data.squad.name;
+			squad = data.squad.loadouts.map((loadout) => ({
+				id: crypto.randomUUID(),
+				loadout,
+			}));
 		}
 	});
 </script>

@@ -218,8 +218,10 @@ msgstr "Цена: <0>{0}/1500 кр.</0>"
 msgid "Units: <0/>"
 msgstr "Единици: <0/>"
 
-#~ msgid "Test"
-#~ msgstr "Тест"
+#: src/routes/test/+page.svelte
+#: src/routes/test2/+page.svelte
+msgid "Test"
+msgstr "Тест"
 
 #: src/lib/components/action-item.svelte
 #: src/lib/components/action-item.svelte
@@ -279,3 +281,7 @@ msgstr "{0}d{1}{2}"
 #: src/routes/(authenticated)/squads/[id]/+page.svelte
 msgid "Cancel"
 msgstr "Отказ"
+
+#: src/routes/test/+page.svelte
+msgid "tes2"
+msgstr "tes2"
