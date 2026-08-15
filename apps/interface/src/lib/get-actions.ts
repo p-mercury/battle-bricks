@@ -65,7 +65,7 @@ const HitTable: Record<string, number> = {
 	"1/5": 5,
 
 	"2/1": 7,
-	"2/2": 7,
+	"2/2": 6,
 	"2/3": 6,
 	"2/4": 5,
 	"2/5": 4,
@@ -78,7 +78,7 @@ const HitTable: Record<string, number> = {
 
 	"4/1": 5,
 	"4/2": 4,
-	"4/3": 4,
+	"4/3": 3,
 	"4/4": 3,
 	"4/5": 2,
 
@@ -97,7 +97,7 @@ const PierceTable: Record<string, number> = {
 	"1/1": 5,
 
 	"2/5": 7,
-	"2/4": 7,
+	"2/4": 6,
 	"2/3": 6,
 	"2/2": 5,
 	"2/1": 4,
@@ -110,7 +110,7 @@ const PierceTable: Record<string, number> = {
 
 	"4/5": 5,
 	"4/4": 4,
-	"4/3": 4,
+	"4/3": 3,
 	"4/2": 3,
 	"4/1": 2,
 
@@ -119,6 +119,43 @@ const PierceTable: Record<string, number> = {
 	"5/3": 2,
 	"5/2": 2,
 	"5/1": 1,
+};
+
+const MeleeHitTable: Record<string, number> = {
+	"1/5": 8,
+	"1/4": 8,
+	"1/3": 7,
+	"1/2": 6,
+	"1/1": 5,
+	"1/0": 2,
+
+	"2/5": 7,
+	"2/4": 6,
+	"2/3": 6,
+	"2/2": 5,
+	"2/1": 4,
+	"2/0": 1,
+
+	"3/5": 6,
+	"3/4": 5,
+	"3/3": 5,
+	"3/2": 4,
+	"3/1": 3,
+	"3/0": 1,
+
+	"4/5": 5,
+	"4/4": 4,
+	"4/3": 3,
+	"4/2": 3,
+	"4/1": 2,
+	"4/0": 1,
+
+	"5/5": 4,
+	"5/4": 3,
+	"5/3": 2,
+	"5/2": 2,
+	"5/1": 1,
+	"5/0": 1,
 };
 
 export function getActions(attacker: GameLoadout, defender?: Unit) {
@@ -221,7 +258,10 @@ export function getActions(attacker: GameLoadout, defender?: Unit) {
 					type: "MELEE",
 					name: item.name,
 					weapon: item.details.value as MeleeWeapon,
-					toHit: HitTable[`${attacker.unit.meleeAbility}/${defender.size}`],
+					toHit:
+						MeleeHitTable[
+							`${attacker.unit.meleeAbility}/${defender.meleeAbility || 0}`
+						],
 					toPierce:
 						PierceTable[
 							`${(item.details.value as MeleeWeapon).armorPiercing}/${defender.armorClass}`
@@ -229,7 +269,9 @@ export function getActions(attacker: GameLoadout, defender?: Unit) {
 					damage: item.details.value.damage!,
 					damageChance: damageChance(
 						(item.details.value as MeleeWeapon).attackSpeed,
-						HitTable[`${attacker.unit.meleeAbility}/${defender.size}`],
+						MeleeHitTable[
+							`${attacker.unit.meleeAbility}/${defender.meleeAbility || 0}`
+						],
 						PierceTable[
 							`${(item.details.value as MeleeWeapon).armorPiercing}/${defender.armorClass}`
 						],
