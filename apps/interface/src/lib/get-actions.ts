@@ -13,9 +13,10 @@ export interface BlasterAction {
 	name: string;
 	weapon: Blaster;
 	ammunition: GameItem<"blasterBolt">;
-	b1r: number;
-	b2?: number;
+	toHit: number;
+	toPierce: number;
 	damage: DiceRoll;
+	damageChance: number;
 }
 
 export interface CannonAction {
@@ -23,9 +24,10 @@ export interface CannonAction {
 	name: string;
 	weapon: Cannon;
 	ammunition: GameItem<"cannonShell">;
-	b1r: number;
-	b2?: number;
+	toHit: number;
+	toPierce: number;
 	damage: DiceRoll;
+	damageChance: number;
 }
 
 export interface LauncherAction {
@@ -33,18 +35,20 @@ export interface LauncherAction {
 	name: string;
 	weapon: Launcher;
 	ammunition: GameItem<"launcherRocket">;
-	b1r: number;
-	b2?: number;
+	toHit: number;
+	toPierce: number;
 	damage: DiceRoll;
+	damageChance: number;
 }
 
 export interface MeleeAction {
 	type: "MELEE";
 	name: string;
 	weapon: MeleeWeapon;
-	b1r: number;
-	b2: number;
+	toHit: number;
+	toPierce: number;
 	damage: DiceRoll;
+	damageChance: number;
 }
 
 export interface Action {
@@ -133,11 +137,22 @@ export function getActions(attacker: GameLoadout, defender?: Unit) {
 							name: `${item.name} with ${ammunition.item.name}`,
 							weapon: item.details.value as Blaster,
 							ammunition: ammunition,
-							b1r: HitTable[`${attacker.unit.marksmanship}/${defender.size}`],
-							b2: PierceTable[
-								`${ammunition.item.details.value.armorPiercing}/${defender.armorClass}`
-							],
+							toHit: HitTable[`${attacker.unit.marksmanship}/${defender.size}`],
+							toPierce:
+								PierceTable[
+									`${ammunition.item.details.value.armorPiercing}/${defender.armorClass}`
+								],
 							damage: ammunition.item.details.value.damage!,
+							damageChance: damageChance(
+								(item.details.value as Blaster).fireRate,
+								HitTable[`${attacker.unit.marksmanship}/${defender.size}`],
+								PierceTable[
+									`${ammunition.item.details.value.armorPiercing}/${defender.armorClass}`
+								],
+								ammunition.item.details.value.damage!.count,
+								ammunition.item.details.value.damage!.sides,
+								ammunition.item.details.value.damage!.modifier,
+							),
 						});
 					}
 				});
@@ -151,11 +166,22 @@ export function getActions(attacker: GameLoadout, defender?: Unit) {
 							name: `${item.name} with ${ammunition.item.name}`,
 							weapon: item.details.value as Cannon,
 							ammunition: ammunition,
-							b1r: HitTable[`${attacker.unit.marksmanship}/${defender.size}`],
-							b2: PierceTable[
-								`${ammunition.item.details.value.armorPiercing}/${defender.armorClass}`
-							],
+							toHit: HitTable[`${attacker.unit.marksmanship}/${defender.size}`],
+							toPierce:
+								PierceTable[
+									`${ammunition.item.details.value.armorPiercing}/${defender.armorClass}`
+								],
 							damage: ammunition.item.details.value.damage!,
+							damageChance: damageChance(
+								(item.details.value as Cannon).fireRate,
+								HitTable[`${attacker.unit.marksmanship}/${defender.size}`],
+								PierceTable[
+									`${ammunition.item.details.value.armorPiercing}/${defender.armorClass}`
+								],
+								ammunition.item.details.value.damage!.count,
+								ammunition.item.details.value.damage!.sides,
+								ammunition.item.details.value.damage!.modifier,
+							),
 						});
 					}
 				});
@@ -169,11 +195,22 @@ export function getActions(attacker: GameLoadout, defender?: Unit) {
 							name: `${item.name} with ${ammunition.item.name}`,
 							weapon: item.details.value as Launcher,
 							ammunition: ammunition,
-							b1r: HitTable[`${attacker.unit.marksmanship}/${defender.size}`],
-							b2: PierceTable[
-								`${ammunition.item.details.value.armorPiercing}/${defender.armorClass}`
-							],
+							toHit: HitTable[`${attacker.unit.marksmanship}/${defender.size}`],
+							toPierce:
+								PierceTable[
+									`${ammunition.item.details.value.armorPiercing}/${defender.armorClass}`
+								],
 							damage: ammunition.item.details.value.damage!,
+							damageChance: damageChance(
+								(item.details.value as Launcher).fireRate,
+								HitTable[`${attacker.unit.marksmanship}/${defender.size}`],
+								PierceTable[
+									`${ammunition.item.details.value.armorPiercing}/${defender.armorClass}`
+								],
+								ammunition.item.details.value.damage!.count,
+								ammunition.item.details.value.damage!.sides,
+								ammunition.item.details.value.damage!.modifier,
+							),
 						});
 					}
 				});
@@ -184,11 +221,22 @@ export function getActions(attacker: GameLoadout, defender?: Unit) {
 					type: "MELEE",
 					name: item.name,
 					weapon: item.details.value as MeleeWeapon,
-					b1r: 6 - attacker.unit.meleeAbility,
-					b2: PierceTable[
-						`${item.details.value.armorPiercing}/${defender.armorClass}`
-					],
+					toHit: HitTable[`${attacker.unit.meleeAbility}/${defender.size}`],
+					toPierce:
+						PierceTable[
+							`${(item.details.value as MeleeWeapon).armorPiercing}/${defender.armorClass}`
+						],
 					damage: item.details.value.damage!,
+					damageChance: damageChance(
+						(item.details.value as MeleeWeapon).attackSpeed,
+						HitTable[`${attacker.unit.meleeAbility}/${defender.size}`],
+						PierceTable[
+							`${(item.details.value as MeleeWeapon).armorPiercing}/${defender.armorClass}`
+						],
+						(item.details.value as MeleeWeapon).damage!.count,
+						(item.details.value as MeleeWeapon).damage!.sides,
+						(item.details.value as MeleeWeapon).damage!.modifier,
+					),
 				});
 			}
 		}
@@ -204,4 +252,35 @@ export function getActions(attacker: GameLoadout, defender?: Unit) {
 	});
 
 	return actions;
+}
+
+function damageChance(
+	numberOfDice: number,
+	toHit: number,
+	toPierce: number,
+	numberOfDamageDice: number,
+	damageDie: number,
+	damageModifier: number,
+): number {
+	const passChance = (target: number, sides: number): number => {
+		const successfulFaces = sides - target + 1;
+		return Math.max(0, Math.min(1, successfulFaces / sides));
+	};
+
+	const hitChance = passChance(toHit, 8);
+	const armourChance = passChance(toPierce, 8);
+
+	// Damage succeeds when roll + modifier >= 1
+	const damageTarget = 1 - damageModifier;
+	const damageChance = passChance(damageTarget, damageDie);
+
+	// At least one of the generated damage dice succeeds
+	const damageAfterPiercing =
+		1 - Math.pow(1 - damageChance, numberOfDamageDice);
+
+	// One attack passes all stages
+	const damageChancePerAttack = hitChance * armourChance * damageAfterPiercing;
+
+	// At least one of all attacks causes damage
+	return (1 - Math.pow(1 - damageChancePerAttack, numberOfDice)) * 100;
 }

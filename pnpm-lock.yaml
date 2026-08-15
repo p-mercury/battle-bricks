@@ -305,8 +305,8 @@ importers:
   apps/interface:
     dependencies:
       "@ai-sdk/openai":
-        specifier: ^4.0.41
-        version: 4.0.41(zod@4.4.3)
+        specifier: ^4.0.42
+        version: 4.0.42(zod@4.4.3)
       "@aws-lambda-powertools/logger":
         specifier: ^2.34.0
         version: 2.34.0
@@ -353,11 +353,11 @@ importers:
         specifier: ^2.3.0
         version: 2.3.0(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0))
       "@wuchale/svelte":
-        specifier: ^0.20.5
-        version: 0.20.5(svelte@5.56.9)
+        specifier: ^0.20.6
+        version: 0.20.6(svelte@5.56.9)
       ai:
-        specifier: ^7.0.65
-        version: 7.0.65(zod@4.4.3)
+        specifier: ^7.0.66
+        version: 7.0.66(zod@4.4.3)
       minisearch:
         specifier: ^7.2.0
         version: 7.2.0
@@ -380,8 +380,8 @@ importers:
         specifier: ^8.2.1
         version: 8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)
       wuchale:
-        specifier: ^0.25.6
-        version: 0.25.6
+        specifier: ^0.25.7
+        version: 0.25.7
       zod:
         specifier: ^4.4.3
         version: 4.4.3
@@ -434,10 +434,10 @@ packages:
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
 
-  "@ai-sdk/openai@4.0.41":
+  "@ai-sdk/openai@4.0.42":
     resolution:
       {
-        integrity: sha512-+WoY0JyF/uV2z+rye7I+hYaVg+hTanG4rYIgsWKvJFDXaAdu9yg07x+BRa2vTgUqzLIBXEBp5d1T7DwMI9ZGlw==,
+        integrity: sha512-ZxDca6jJalYuXrIGVrw6dnkpz1Io9AWy+/b/wVWIbjigHCbd+zWLpPi8NnK0OFU+U3YCpP+KWfUvEnG5pFhltA==,
       }
     engines: { node: ">=22" }
     peerDependencies:
@@ -1851,10 +1851,10 @@ packages:
         integrity: sha512-pav4F2BoirECWR7Nf1TKt+2eETcBj7jj4cBefQ8VXQCA6NPkaKeLfj/zMgi+3zYV5ZIBT4GuUiphsj0/b9hPQQ==,
       }
 
-  "@wuchale/svelte@0.20.5":
+  "@wuchale/svelte@0.20.6":
     resolution:
       {
-        integrity: sha512-wRu+pKdZxGEBdoxoxjQTacKUoHSYQfB1eV7UVsHlGUW1rG9bf4qhJz4bX8jcZZLCGBmfcjyvQJwdBxJN+nD9Jw==,
+        integrity: sha512-ctraMZNVAj/CMUAE7wgHRqqRhPvg16r2sU/rXoYaY4gypxqFsomc4At5taWE9XLqA9LB5aZSEREb2RIBkr8axA==,
       }
     peerDependencies:
       svelte: ^5
@@ -1874,10 +1874,10 @@ packages:
       }
     engines: { node: ">= 6.0.0" }
 
-  ai@7.0.65:
+  ai@7.0.66:
     resolution:
       {
-        integrity: sha512-Uzom971mOHETL9tbeCWDEgbAA/Banj0KnR2obNEWPEUlGnAv2NJjFIxrUZ6F0XxHFDgGVVpnz86BB2CPOZZ83g==,
+        integrity: sha512-wBUyoCYF3GVr+62nelBgR8YbpTSsMZrzFyOOjiwijylNSM2TFCW35C+Pml2vc59/WLMpyhS/LWZ55M+B9DAcSg==,
       }
     engines: { node: ">=22" }
     peerDependencies:
@@ -3239,10 +3239,10 @@ packages:
     engines: { node: ">= 8" }
     hasBin: true
 
-  wuchale@0.25.6:
+  wuchale@0.25.7:
     resolution:
       {
-        integrity: sha512-GKs1xbU3ra0filKodUtjQuIHuiHnYbCLM8mxuiKRGWTjz/FOmYxuZEoWNXF5uyONxJybNaxvwGFzROVtWFbS8g==,
+        integrity: sha512-WwW9bT1qRXErjq1DeDFE5PXQucPBjAz+H9KL1lWhBSkScdGZwFzS98MclYR0zPZq8/7UhC+Jk82YY6/rnJTnRw==,
       }
     hasBin: true
 
@@ -3300,7 +3300,7 @@ snapshots:
       "@vercel/oidc": 3.2.0
       zod: 4.4.3
 
-  "@ai-sdk/openai@4.0.41(zod@4.4.3)":
+  "@ai-sdk/openai@4.0.42(zod@4.4.3)":
     dependencies:
       "@ai-sdk/provider": 4.0.7
       "@ai-sdk/provider-utils": 5.0.27(zod@4.4.3)
@@ -4103,10 +4103,10 @@ snapshots:
 
   "@workflow/serde@4.1.0": {}
 
-  "@wuchale/svelte@0.20.5(svelte@5.56.9)":
+  "@wuchale/svelte@0.20.6(svelte@5.56.9)":
     dependencies:
       svelte: 5.56.9
-      wuchale: 0.25.6
+      wuchale: 0.25.7
 
   acorn@8.18.0: {}
 
@@ -4116,7 +4116,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ai@7.0.65(zod@4.4.3):
+  ai@7.0.66(zod@4.4.3):
     dependencies:
       "@ai-sdk/gateway": 4.0.52(zod@4.4.3)
       "@ai-sdk/provider": 4.0.7
@@ -4831,7 +4831,7 @@ snapshots:
     dependencies:
       isexe: 2.0.0
 
-  wuchale@0.25.6:
+  wuchale@0.25.7:
     dependencies:
       "@sveltejs/acorn-typescript": 1.0.12(acorn@8.18.0)
       acorn: 8.18.0

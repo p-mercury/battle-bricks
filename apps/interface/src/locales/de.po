@@ -223,11 +223,8 @@ msgstr "Einheiten: <0/>"
 msgid "Test"
 msgstr "Test"
 
-#: src/lib/components/action-item.svelte
-#: src/lib/components/action-item.svelte
-#: src/lib/components/action-item.svelte
-msgid "To pierce armor: <0/>"
-msgstr "Zum Durchdringen der Rüstung: <0/>"
+#~ msgid "To pierce armor: <0/>"
+#~ msgstr "Zum Durchdringen der Rüstung: <0/>"
 
 #: src/lib/components/action-item.svelte
 #: src/lib/components/action-item.svelte
@@ -285,3 +282,15 @@ msgstr "Abbrechen"
 #: src/routes/test/+page.svelte
 msgid "tes2"
 msgstr "tes2"
+
+#: src/lib/components/action-item.svelte
+#: src/lib/components/action-item.svelte
+#: src/lib/components/action-item.svelte
+msgid "To pierce: <0/>"
+msgstr "Durchbohren: <0/>"
+
+#: src/lib/components/action-item.svelte
+#: src/lib/components/action-item.svelte
+#: src/lib/components/action-item.svelte
+msgid "Damage chance: <0/>"
+msgstr "Schadenschance: <0/>"

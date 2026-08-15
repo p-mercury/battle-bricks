@@ -16,11 +16,7 @@
 		action,
 	}: {
 		action:
-			| BlasterAction
-			| CannonAction
-			| LauncherAction
-			| MeleeAction
-			| Action;
+			BlasterAction | CannonAction | LauncherAction | MeleeAction | Action;
 	} = $props();
 </script>
 
@@ -50,17 +46,19 @@
 				</StatRow>
 				<StatRow>
 					To hit:
-					<span>≥{action.b1r}</span>
+					<span>≥{action.toHit}</span>
 				</StatRow>
-				{#if action.b2}
-					<StatRow>
-						To pierce armor:
-						<span>≥{action.b2}</span>
-					</StatRow>
-				{/if}
+				<StatRow>
+					To pierce:
+					<span>≥{action.toPierce}</span>
+				</StatRow>
 				<StatRow>
 					Damage:
 					<DiceRoll roll={action.damage} />
+				</StatRow>
+				<StatRow>
+					Damage chance:
+					<span>{action.damageChance.toFixed(0)}%</span>
 				</StatRow>
 			{:else if action.type === "LAUNCHER"}
 				<StatRow>
@@ -84,17 +82,19 @@
 				</StatRow>
 				<StatRow>
 					To hit:
-					<span>≥{action.b1r}</span>
+					<span>≥{action.toHit}</span>
 				</StatRow>
-				{#if action.b2}
-					<StatRow>
-						To pierce armor:
-						<span>≥{action.b2}</span>
-					</StatRow>
-				{/if}
+				<StatRow>
+					To pierce:
+					<span>≥{action.toPierce}</span>
+				</StatRow>
 				<StatRow>
 					Damage:
 					<DiceRoll roll={action.damage} />
+				</StatRow>
+				<StatRow>
+					Damage chance:
+					<span>{action.damageChance.toFixed(0)}%</span>
 				</StatRow>
 			{:else if action.type === "MELEE"}
 				<StatRow>
@@ -103,15 +103,19 @@
 				</StatRow>
 				<StatRow>
 					To hit:
-					<span>≥{action.b1r}</span>
+					<span>≥{action.toHit}</span>
 				</StatRow>
 				<StatRow>
-					To pierce armor:
-					<span>≥{action.b2}</span>
+					To pierce:
+					<span>≥{action.toPierce}</span>
 				</StatRow>
 				<StatRow>
 					Damage:
 					<DiceRoll roll={action.damage} />
+				</StatRow>
+				<StatRow>
+					Damage chance:
+					<span>{action.damageChance.toFixed(0)}%</span>
 				</StatRow>
 			{:else if action.type === "ACTION"}
 				<div>

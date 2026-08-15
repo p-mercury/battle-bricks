@@ -181,7 +181,7 @@ var Items = map[string]*catalogue.Item{
 					Max: 14,
 				},
 				SplashRadius:  0,
-				ArmorPiercing: 4,
+				ArmorPiercing: 5,
 				Damage: &common.DiceRoll{
 					Count:    1,
 					Sides:    8,
