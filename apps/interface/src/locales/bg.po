@@ -25,7 +25,6 @@ msgstr "Увеличи количеството"
 msgid "Battle Bricks"
 msgstr "Бойни тухлички"
 
-#: src/routes/(authenticated)/home/+page.svelte
 #: src/routes/+page.svelte
 msgid "Squads"
 msgstr "Отряди"
@@ -59,7 +58,6 @@ msgstr "Изберете вражеска фракция"
 msgid "Start Game"
 msgstr "Започни игра"
 
-#: src/routes/(authenticated)/home/+page.svelte
 #: src/routes/+page.svelte
 msgid "Start a new game"
 msgstr "Започни нова игра"
@@ -306,3 +304,11 @@ msgstr "Шанс за нанасяне на щети: <0/>"
 #: src/lib/components/item.svelte
 msgid "Precision: <0/>"
 msgstr "Прецизност: <0/>"
+
+#: src/routes/(authenticated)/home/+page.svelte
+msgid "Your Squads"
+msgstr "Вашите отряди"
+
+#: src/routes/(authenticated)/home/+page.svelte
+msgid "Start game"
+msgstr "Започнете игра"

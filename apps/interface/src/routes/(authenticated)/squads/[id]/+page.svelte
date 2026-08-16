@@ -9,6 +9,7 @@
 	import type { PageData } from "./$types";
 	import { Faction } from "@battle-bricks/contracts/catalogue/v1/faction_pb";
 	import { getClient } from "$lib/clients/univeral-client.svelte";
+	import { getLoadoutPrice } from "$lib/loadout";
 
 	let { data }: { data: PageData } = $props();
 
@@ -30,6 +31,7 @@
 	$effect(() => {
 		loadouts = Object.values(data.loadouts)
 			.filter((i) => i.unit!.factions.includes(faction))
+			.sort((a, b) => getLoadoutPrice(a) - getLoadoutPrice(b))
 			.map((i) => ({
 				id: crypto.randomUUID(),
 				loadout: i,
@@ -62,7 +64,7 @@
 		<input type="text" placeholder="name" bind:value={name} />
 		<ln>Budget: {budget}</ln>
 		<button
-			onclick={() => {
+			onclick={async () => {
 				if (!name) {
 					return;
 				}
@@ -95,6 +97,7 @@
 				}
 
 				localStorage.setItem("SQUADS", JSON.stringify(squads));
+				await new Promise((r) => setTimeout(r, 1000));
 
 				goto("/home");
 			}}
@@ -111,37 +114,31 @@
 			bind:items={squad}
 			{flipDurationMs}
 			handleConsider={(event) => {
-				if (
-					event.detail.items.reduce(
-						(a, item) =>
-							a -
-							item.loadout.unit!.price +
-							item.loadout.items.reduce((b, item) => b + item.price, 0),
-						1500,
-					) >= 0
-				) {
+				const nextBudget = event.detail.items.reduce(
+					(a, item) => a - getLoadoutPrice(item.loadout),
+					1500,
+				);
+				if (nextBudget >= 0) {
 					squad = event.detail.items;
 				}
 			}}
 			handleFinalize={(event) => {
 				const items = event.detail.items;
-				const next = items.reduce(
-					(a, item) =>
-						a -
-						item.loadout.unit!.price +
-						item.loadout.items.reduce((b, item) => b + item.price, 0),
-					1500,
-				);
-				const prev = squad.reduce(
-					(a, item) =>
-						a -
-						item.loadout.unit!.price +
-						item.loadout.items.reduce((b, item) => b + item.price, 0),
+
+				const nextBudget = items.reduce(
+					(remaining, item) => remaining - getLoadoutPrice(item.loadout),
 					1500,
 				);
 
-				if (next <= 1500 || next < prev) {
-					squad = items;
+				const previousBudget = squad.reduce(
+					(remaining, item) => remaining - getLoadoutPrice(item.loadout),
+					1500,
+				);
+
+				if (nextBudget >= 0 || nextBudget > previousBudget) {
+					squad = [...items].sort(
+						(a, b) => getLoadoutPrice(a.loadout) - getLoadoutPrice(b.loadout),
+					);
 				} else {
 					squad = [...squad];
 				}

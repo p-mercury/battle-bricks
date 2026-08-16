@@ -25,7 +25,6 @@ msgstr "Menge erhöhen"
 msgid "Battle Bricks"
 msgstr "Battle Bricks"
 
-#: src/routes/(authenticated)/home/+page.svelte
 #: src/routes/+page.svelte
 msgid "Squads"
 msgstr "Trupps"
@@ -59,7 +58,6 @@ msgstr "Gegnerische Fraktion auswählen"
 msgid "Start Game"
 msgstr "Spiel starten"
 
-#: src/routes/(authenticated)/home/+page.svelte
 #: src/routes/+page.svelte
 msgid "Start a new game"
 msgstr "Ein neues Spiel starten"
@@ -306,3 +304,11 @@ msgstr "Schadenschance: <0/>"
 #: src/lib/components/item.svelte
 msgid "Precision: <0/>"
 msgstr "Präzision: <0/>"
+
+#: src/routes/(authenticated)/home/+page.svelte
+msgid "Your Squads"
+msgstr "Deine Squads"
+
+#: src/routes/(authenticated)/home/+page.svelte
+msgid "Start game"
+msgstr "Spiel starten"
