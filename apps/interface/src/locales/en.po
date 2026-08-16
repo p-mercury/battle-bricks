@@ -13,6 +13,7 @@ msgid "Save"
 msgstr "Save"
 
 #: src/lib/components/number-input.svelte
+#: src/lib/components/number-input.svelte
 msgid "Decrease quantity"
 msgstr "Decrease quantity"
 
@@ -159,19 +160,23 @@ msgstr "Damage: <0/>"
 #: src/lib/components/item.svelte
 #: src/lib/components/item.svelte
 #: src/lib/components/item.svelte
+#: src/lib/components/item.svelte
 msgid "Armor Piercing: <0/>"
 msgstr "Armor Piercing: <0/>"
 
+#: src/lib/components/action-item.svelte
 #: src/lib/components/item.svelte
 msgid "Splash Radius: <0/>"
 msgstr "Splash Radius: <0/>"
 
 #. 0.0: action.weapon.range!.min; 0.1: action.weapon.range!.max
 #. 0.0: action.ammunition.item.details.value.range?.min; 0.1: action.ammunition .item.details.value.range?.max
+#. 0.0: item.details.value.range?.min; 0.1: item.details.value.range?.max
 #. 0.0: item.details.value.range!.min; 0.1: item.details.value.range!.max
 #. 0.0: item.details.value.range!.min; 0.1: item.details.value.range!.max
 #: src/lib/components/action-item.svelte
 #: src/lib/components/action-item.svelte
+#: src/lib/components/item.svelte
 #: src/lib/components/item.svelte
 #: src/lib/components/item.svelte
 msgid "Range: <0>{0}-{1}m</0>"
@@ -294,3 +299,10 @@ msgstr "To pierce: <0/>"
 #: src/lib/components/action-item.svelte
 msgid "Damage chance: <0/>"
 msgstr "Damage chance: <0/>"
+
+#~ msgid "Ragne: <0/>"
+#~ msgstr "Ragne: <0/>"
+
+#: src/lib/components/item.svelte
+msgid "Precision: <0/>"
+msgstr "Precision: <0/>"

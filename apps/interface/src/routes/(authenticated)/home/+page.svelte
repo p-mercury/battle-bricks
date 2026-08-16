@@ -69,19 +69,24 @@
 															if (item.details.value) {
 																if ("capacity" in item.details.value) {
 																	if (item.id in items) {
+																		items[item.id].maxQuantity +=
+																			item.details.value.capacity;
 																		items[item.id].quantity +=
 																			item.details.value.capacity;
 																	} else {
 																		items[item.id] = {
+																			maxQuantity: item.details.value.capacity,
 																			quantity: item.details.value.capacity,
 																			item: item,
 																		};
 																	}
 																} else {
 																	if (item.id in items) {
+																		items[item.id].maxQuantity++;
 																		items[item.id].quantity++;
 																	} else {
 																		items[item.id] = {
+																			maxQuantity: 1,
 																			quantity: 1,
 																			item: item,
 																		};

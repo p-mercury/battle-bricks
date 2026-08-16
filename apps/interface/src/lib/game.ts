@@ -10,6 +10,7 @@ type ItemOf<C extends ItemCase> = Item & {
 
 export interface GameItem<C extends ItemCase | never = never> {
 	quantity: number;
+	maxQuantity: number;
 	item: [C] extends [never] ? Item : ItemOf<C>;
 }
 

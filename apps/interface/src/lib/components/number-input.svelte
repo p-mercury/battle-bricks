@@ -3,6 +3,7 @@
 
 	let {
 		value = $bindable(0),
+		pre,
 		min = 0,
 		max = undefined,
 		disabled = false,
@@ -10,6 +11,7 @@
 		onchange = undefined,
 	}: {
 		value: number;
+		pre?: number;
 		min?: number;
 		max?: number;
 		disabled?: boolean;
@@ -17,14 +19,8 @@
 		onchange?: (value: number) => void;
 	} = $props();
 
-	let effectiveMax = $derived(max ? max : 100);
-	let canIncrement = $derived(!disabled && value < effectiveMax);
-	let canDecrement = $derived(!disabled && value > min);
-	let inputText = $state(String(value));
-
-	$effect(() => {
-		inputText = String(value ?? 0);
-	});
+	let canIncrement = $derived(!disabled && (max == null || value < max));
+	let canDecrement = $derived(!disabled && (min == null || value > min));
 
 	$effect(() => {
 		if (onchange) {
@@ -32,52 +28,41 @@
 		}
 	});
 
-	function commitInput() {
-		if (disabled) return;
-
-		let parsed = Number.parseInt(inputText.trim(), 10);
-
-		if (Number.isNaN(parsed)) {
-			inputText = String(value);
-			return;
-		}
-
-		if (parsed < min) parsed = min;
-		if (parsed > effectiveMax) parsed = effectiveMax;
-
-		value = parsed;
-		inputText = String(parsed);
-	}
-
-	function handleInputKeydown(e: KeyboardEvent) {
-		if (e.key === /* @wc-ignore */ "Enter") {
-			e.preventDefault();
-			(e.target as HTMLInputElement).blur();
-			commitInput();
-		} else if (e.key === /* @wc-ignore */ "Escape") {
-			e.preventDefault();
-			(e.target as HTMLInputElement).blur();
-			inputText = String(value ?? 0);
-		}
-	}
+	$effect(() => {
+		if (max != null) value = Math.min(value, max);
+		if (min != null) value = Math.max(value, min);
+	});
 
 	function handleIncrementClick(event: Event) {
 		event.preventDefault();
 		event.stopPropagation();
-		commitInput();
-		if (canIncrement) value++;
+		value++;
 	}
 
 	function handleDecrementClick(event: Event) {
 		event.preventDefault();
 		event.stopPropagation();
-		commitInput();
-		if (canDecrement) value--;
+		value--;
 	}
 </script>
 
 <div class="qty-row">
 	<div class="qty">
+		{#if pre}
+			<button
+				in:scale={{ duration: 300 }}
+				class="micro-btn"
+				aria-label="Decrease quantity"
+				onclick={(event) => {
+					event.preventDefault();
+					event.stopPropagation();
+					value -= pre;
+				}}
+				class:disabled={!canDecrement}
+			>
+				-{pre}
+			</button>
+		{/if}
 		<button
 			in:scale={{ duration: 300 }}
 			class="micro-btn"
@@ -95,16 +80,9 @@
 				></path>
 			</svg>
 		</button>
-		<input
-			in:scale={{ duration: 300 }}
-			class="qty-input"
-			inputmode="numeric"
-			pattern="[0-9]*"
-			bind:value={inputText}
-			onblur={commitInput}
-			onkeydown={handleInputKeydown}
-			{disabled}
-		/>
+		<div in:scale={{ duration: 300 }} class="qty-input">
+			{value}
+		</div>
 		<button
 			class="micro-btn"
 			aria-label="Increase quantity"
@@ -140,15 +118,15 @@
 	.qty {
 		display: flex;
 		align-items: center;
-		gap: 0.1rem;
+		gap: 0.2rem;
 		background: lightgray;
 		border-radius: 0.6rem;
 	}
 
 	.micro-btn {
 		border: none;
-		width: 1.6rem;
-		height: 1.6rem;
+		width: 1.8rem;
+		height: 1.8rem;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -172,7 +150,7 @@
 	}
 
 	.qty-input {
-		width: 2.1rem;
+		width: 1.5rem;
 		text-align: center;
 		border: none;
 		background: transparent;

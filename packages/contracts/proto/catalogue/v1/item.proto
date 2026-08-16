@@ -60,7 +60,8 @@ message CannonShell {
 
 message LauncherRocket {
   Range range = 1;
-  uint32 armor_piercing = 2;
-  uint32 splash_radius = 3;
-  common.v1.DiceRoll damage = 4;
+  uint32 precision = 2;
+  uint32 armor_piercing = 3;
+  uint32 splash_radius = 4;
+  common.v1.DiceRoll damage = 5;
 }

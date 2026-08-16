@@ -58,30 +58,46 @@
 					<div>{item.details.value.capacity}</div>
 				</StatRow>
 				<StatRow>
-					Damage:
-					<DiceRoll roll={item.details.value.damage} />
-				</StatRow>
-				<StatRow>
 					Armor Piercing:
 					<StatBar value={item.details.value.armorPiercing} size={5} red />
+				</StatRow>
+				<StatRow>
+					Damage:
+					<DiceRoll roll={item.details.value.damage} />
 				</StatRow>
 			{:else if item.details.case === "cannonShell"}
 				<StatRow>
+					Armor Piercing:
+					<StatBar value={item.details.value.armorPiercing} size={5} red />
+				</StatRow>
+				<StatRow>
 					Damage:
 					<DiceRoll roll={item.details.value.damage} />
 				</StatRow>
+			{:else if item.details.case === "launcherRocket"}
+				<StatRow>
+					Range:
+					<span>
+						{item.details.value.range?.min}-{item.details.value.range?.max}m
+					</span>
+				</StatRow>
+				<StatRow>
+					Precision:
+					<StatBar value={item.details.value.precision} size={5} red />
+				</StatRow>
+				{#if item.details.value.splashRadius}
+					<StatRow>
+						Splash Radius:
+						<StatBar value={item.details.value.splashRadius} size={5} red />
+					</StatRow>
+				{/if}
 				<StatRow>
 					Armor Piercing:
 					<StatBar value={item.details.value.armorPiercing} size={5} red />
 				</StatRow>
-			{:else if item.details.case === "launcherRocket"}
 				<StatRow>
 					Damage:
 					<DiceRoll roll={item.details.value.damage} />
-				</StatRow>
-				<StatRow>
-					Splash Radius:
-					<StatBar value={item.details.value.splashRadius} size={5} red />
 				</StatRow>
 			{:else if item.details.case === "blaster"}
 				<StatRow>
@@ -197,6 +213,7 @@
 			max-height: 1000px;
 			visibility: visible;
 			opacity: 1;
+			padding: 0.6rem;
 
 			transition:
 				max-height 0.3s ease,

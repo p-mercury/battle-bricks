@@ -36,8 +36,12 @@
 					Amunition:
 					<NumberInput
 						bind:value={action.ammunition.quantity}
+						pre={Math.min(action.weapon.fireRate, action.ammunition.quantity) >
+						1
+							? Math.min(action.weapon.fireRate, action.ammunition.quantity)
+							: undefined}
 						min={0}
-						max={2000}
+						max={action.ammunition.maxQuantity}
 					/>
 				</StatRow>
 				<StatRow>
@@ -69,8 +73,12 @@
 					Amunition:
 					<NumberInput
 						bind:value={action.ammunition.quantity}
+						pre={Math.min(action.weapon.fireRate, action.ammunition.quantity) >
+						1
+							? Math.min(action.weapon.fireRate, action.ammunition.quantity)
+							: undefined}
 						min={0}
-						max={2000}
+						max={action.ammunition.maxQuantity}
 					/>
 				</StatRow>
 				<StatRow>
@@ -84,6 +92,12 @@
 					To hit:
 					<span>≥{action.toHit}</span>
 				</StatRow>
+				{#if action.ammunition.item.details.value.splashRadius}
+					<StatRow>
+						Splash Radius:
+						<span>{action.ammunition.item.details.value.splashRadius}</span>
+					</StatRow>
+				{/if}
 				<StatRow>
 					To pierce:
 					<span>≥{action.toPierce}</span>
@@ -141,14 +155,14 @@
 		cursor: pointer;
 		display: grid;
 		grid-template:
-			"info color" auto /
-			auto 1.25rem;
+			"color info" auto /
+			1.25rem auto;
 		gap: 0.6rem;
 	}
 
 	header {
 		grid-area: color;
-		margin: -0.6rem -0.6rem -0.6rem 0;
+		margin: -0.6rem 0 -0.6rem -0.6rem;
 		background-color: #595d60;
 	}
 

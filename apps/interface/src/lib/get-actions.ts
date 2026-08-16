@@ -232,7 +232,10 @@ export function getActions(attacker: GameLoadout, defender?: Unit) {
 							name: `${item.name} with ${ammunition.item.name}`,
 							weapon: item.details.value as Launcher,
 							ammunition: ammunition,
-							toHit: HitTable[`${attacker.unit.marksmanship}/${defender.size}`],
+							toHit:
+								HitTable[
+									`${Math.min(attacker.unit.marksmanship! + ammunition.item.details.value.precision, 5)}/${defender.size}`
+								],
 							toPierce:
 								PierceTable[
 									`${ammunition.item.details.value.armorPiercing}/${defender.armorClass}`
