@@ -36,11 +36,11 @@ var Units = map[string]*catalogue.Unit{
 				Name: "Unarmed Strike",
 				Details: &catalogue.Unit_Item_MeleeWeapon{
 					MeleeWeapon: &catalogue.MeleeWeapon{
-						AttackSpeed:   4,
+						AttackSpeed:   6,
 						ArmorPiercing: 1,
 						Damage: &common.DiceRoll{
 							Count:    1,
-							Sides:    6,
+							Sides:    8,
 							Modifier: -3,
 						},
 					},
@@ -73,11 +73,11 @@ var Units = map[string]*catalogue.Unit{
 				Name: "Unarmed Strike",
 				Details: &catalogue.Unit_Item_MeleeWeapon{
 					MeleeWeapon: &catalogue.MeleeWeapon{
-						AttackSpeed:   4,
+						AttackSpeed:   6,
 						ArmorPiercing: 1,
 						Damage: &common.DiceRoll{
 							Count:    1,
-							Sides:    6,
+							Sides:    8,
 							Modifier: -1,
 						},
 					},
@@ -147,11 +147,11 @@ var Units = map[string]*catalogue.Unit{
 				Name: "Unarmed Strike",
 				Details: &catalogue.Unit_Item_MeleeWeapon{
 					MeleeWeapon: &catalogue.MeleeWeapon{
-						AttackSpeed:   3,
+						AttackSpeed:   5,
 						ArmorPiercing: 1,
 						Damage: &common.DiceRoll{
 							Count:    1,
-							Sides:    6,
+							Sides:    8,
 							Modifier: -3,
 						},
 					},
