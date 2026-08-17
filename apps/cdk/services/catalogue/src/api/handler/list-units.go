@@ -168,7 +168,7 @@ var Units = map[string]*catalogue.Unit{
 		Price:         160,
 		Size:          1,
 		Speed:         1,
-		Health:        15,
+		Health:        17,
 		ArmorClass:    2,
 		CarryCapacity: 9,
 		Marksmanship:  new(uint32(2)),

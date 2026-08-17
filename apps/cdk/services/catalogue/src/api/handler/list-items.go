@@ -25,7 +25,7 @@ var Items = map[string]*catalogue.Item{
 				Damage: &common.DiceRoll{
 					Count:    1,
 					Sides:    8,
-					Modifier: -1,
+					Modifier: 0,
 				},
 			},
 		},
