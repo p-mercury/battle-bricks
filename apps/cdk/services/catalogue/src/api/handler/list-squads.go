@@ -69,12 +69,12 @@ func (s *Handler) ListSquads(
 			Id:      squad.Id,
 			Version: squad.Version,
 
-			Name:     squad.Name,
-			Faction:  squad.Faction,
-			Loadouts: make([]*catalogue.Loadout, len(squad.Loadouts)),
+			Name:    squad.Name,
+			Faction: squad.Faction,
+			Units:   make([]*catalogue.Unit, len(squad.Loadouts)),
 		}
 		for n, loadout := range squad.Loadouts {
-			ss[i].Loadouts[n] = Loadouts[loadout]
+			ss[i].Units[n] = Units[loadout]
 		}
 	}
 

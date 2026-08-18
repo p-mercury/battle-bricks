@@ -26,7 +26,7 @@ message UpdateSquadRequest {
           "correlations",
           "name",
           "faction",
-          "loadouts"
+          "units"
         ]
       }
     }
@@ -41,7 +41,7 @@ message UpdateSquadRequest {
     not_in: [0]
   }];
 
-  repeated string loadouts = 7;
+  repeated string units = 7;
 }
 
 message UpdateSquadResponse {

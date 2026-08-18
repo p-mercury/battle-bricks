@@ -3,7 +3,7 @@
 	import StatRow from "$lib/components/stat-row.svelte";
 	import StatTable from "$lib/components/stat-table.svelte";
 	import NumberInput from "$lib/components/number-input.svelte";
-	import type { GameLoadout } from "$lib/game";
+	import type { Loadout } from "$lib/game";
 	import Switcher from "$lib/components/switcher.svelte";
 	import { Faction } from "@battle-bricks/contracts/catalogue/v1/faction_pb";
 	import BrickCard from "$lib/components/brick-card.svelte";
@@ -15,7 +15,7 @@
 		onclick = () => {},
 	}: {
 		faction: Faction;
-		loadout: GameLoadout;
+		loadout: Loadout;
 		selected?: Boolean;
 		onclick?: () => void;
 	} = $props();

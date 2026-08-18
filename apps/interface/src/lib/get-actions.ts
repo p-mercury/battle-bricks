@@ -5,7 +5,7 @@ import type {
 	MeleeWeapon,
 } from "@battle-bricks/contracts/catalogue/v1/item_pb";
 import type { Unit } from "@battle-bricks/contracts/catalogue/v1/unit_pb";
-import { isGameItem, type GameItem, type GameLoadout } from "$lib/game";
+import { isGameItem, type GameItem, type Loadout } from "$lib/game";
 import type { DiceRoll } from "@battle-bricks/contracts/common/v1/dice-roll_pb";
 
 export interface BlasterAction {
@@ -158,7 +158,7 @@ const MeleeHitTable: Record<string, number> = {
 	"5/0": 1,
 };
 
-export function getActions(attacker: GameLoadout, defender?: Unit) {
+export function getActions(attacker: Loadout, defender?: Unit) {
 	const actions = [
 		...attacker.unit!.items,
 		...attacker.items.map((i) => i.item),

@@ -40,18 +40,18 @@ func (s *Handler) GetSquad(
 				return nil, connectkit.NewUnexpected()
 			}
 
-			ls := make([]*catalogue.Loadout, len(item.Loadouts))
+			ls := make([]*catalogue.Unit, len(item.Loadouts))
 			for i, loadout := range item.Loadouts {
-				ls[i] = Loadouts[loadout]
+				ls[i] = Units[loadout]
 			}
 
 			squad = &catalogue.Squad{
 				Id:      item.Id,
 				Version: item.Version,
 
-				Name:     item.Name,
-				Faction:  item.Faction,
-				Loadouts: ls,
+				Name:    item.Name,
+				Faction: item.Faction,
+				Units:   ls,
 			}
 		}
 	}

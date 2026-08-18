@@ -101,8 +101,8 @@ func (s *Handler) CreateSquad(
 		}
 
 		{
-			loadouts := make([]dynamoTypes.AttributeValue, len(req.Msg.Loadouts))
-			for i, loadout := range req.Msg.Loadouts {
+			loadouts := make([]dynamoTypes.AttributeValue, len(req.Msg.Units))
+			for i, loadout := range req.Msg.Units {
 				loadouts[i] = &dynamoTypes.AttributeValueMemberS{Value: loadout}
 			}
 			item["loadouts"] = &dynamoTypes.AttributeValueMemberL{Value: loadouts}
@@ -140,9 +140,9 @@ func (s *Handler) CreateSquad(
 		return nil, connectkit.NewUnexpected()
 	}
 
-	ls := make([]*catalogue.Loadout, len(req.Msg.Loadouts))
-	for i, loadout := range req.Msg.Loadouts {
-		ls[i] = Loadouts[loadout]
+	ls := make([]*catalogue.Unit, len(req.Msg.Units))
+	for i, loadout := range req.Msg.Units {
+		ls[i] = Units[loadout]
 	}
 
 	return connect.NewResponse(&catalogue.CreateSquadResponse{
@@ -150,9 +150,9 @@ func (s *Handler) CreateSquad(
 			Id:      id,
 			Version: 1,
 
-			Name:     req.Msg.Name,
-			Faction:  req.Msg.Faction,
-			Loadouts: ls,
+			Name:    req.Msg.Name,
+			Faction: req.Msg.Faction,
+			Units:   ls,
 		},
 	}), nil
 }

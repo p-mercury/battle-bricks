@@ -21,7 +21,7 @@ export function isGameItem<C extends ItemCase>(
 	return gameItem.item.details.case === itemCase;
 }
 
-export interface GameLoadout {
+export interface Loadout {
 	id: string;
 	image?: string;
 	name: string;
@@ -36,7 +36,7 @@ export interface Game {
 	attacker: {
 		name: string;
 		faction: Faction;
-		loadouts: { [key: string]: GameLoadout };
+		loadouts: { [key: string]: Loadout };
 	};
 	defender: {
 		faction: Faction;

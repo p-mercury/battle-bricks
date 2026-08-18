@@ -1,97 +1,93 @@
 <script lang="ts">
+	import type { Unit } from "@battle-bricks/contracts/catalogue/v1/unit_pb";
+	import Item from "$lib/components/item.svelte";
 	import StatBar from "$lib/components/stat-bar.svelte";
 	import StatRow from "$lib/components/stat-row.svelte";
 	import StatTable from "$lib/components/stat-table.svelte";
-	import { Faction } from "@battle-bricks/contracts/catalogue/v1/faction_pb";
-	import Brick from "./brick.svelte";
-	import type { Unit } from "@battle-bricks/contracts/catalogue/v1/unit_pb";
+	import BrickCard from "./brick-card.svelte";
+	import { getUnitPrice } from "$lib/unit";
 
 	let {
-		faction,
 		unit,
+		drag,
 		selected = false,
 		onclick = () => {},
 	}: {
-		faction?: Faction;
 		unit: Unit;
+		drag?: Boolean;
 		selected?: Boolean;
 		onclick?: () => void;
 	} = $props();
 </script>
 
-<section {onclick} class:selected>
-	<header>
-		<Brick />
-	</header>
-	{#if unit.image}
-		<img
-			alt={unit.name}
-			src={unit.image}
-			class:republic={faction === Faction.GALACTIC_REPUBLIC}
-			class:separatists={faction === Faction.SEPARATIST_ALLIANCE}
-		/>
-	{/if}
-	<div class="info">
-		<h3>{unit.name}</h3>
-	</div>
-	<div class="stats">
-		<StatTable>
-			<StatRow>
-				Health:
-				<div>{unit.health}hp</div>
-			</StatRow>
-			<StatRow>
-				Size:
-				<StatBar value={unit.size} size={5} />
-			</StatRow>
-			<StatRow>
-				Speed:
-				<StatBar value={unit.speed} size={5} />
-			</StatRow>
-			<StatRow>
-				Armor Class:
-				<StatBar value={unit.armorClass} size={5} />
-			</StatRow>
-			{#if unit.marksmanship}
+<BrickCard {selected} {drag} {onclick}>
+	<section>
+		{#if unit.image}
+			<img alt={unit.name} src={unit.image} />
+		{/if}
+		<div class="info">
+			<h3>{unit.name}</h3>
+		</div>
+		<div class="stats">
+			<StatTable>
 				<StatRow>
-					Marksmanship:
-					<StatBar value={unit.marksmanship} size={5} red />
+					Price:
+					<div>
+						{getUnitPrice(unit)}c
+					</div>
 				</StatRow>
-			{/if}
-			{#if unit.meleeAbility}
 				<StatRow>
-					Melee Ability:
-					<StatBar value={unit.meleeAbility} size={5} red />
+					Health:
+					<div>{unit.health}hp</div>
 				</StatRow>
-			{/if}
-		</StatTable>
-	</div>
-</section>
+				<StatRow>
+					Size:
+					<StatBar value={unit.size} size={5} />
+				</StatRow>
+				<StatRow>
+					Speed:
+					<StatBar value={unit.speed} size={5} />
+				</StatRow>
+				<StatRow>
+					Armor Class:
+					<StatBar value={unit.armorClass} size={5} />
+				</StatRow>
+				{#if unit.marksmanship}
+					<StatRow>
+						Marksmanship:
+						<StatBar value={unit.marksmanship} size={5} red />
+					</StatRow>
+				{/if}
+				{#if unit.meleeAbility}
+					<StatRow>
+						Melee Ability:
+						<StatBar value={unit.meleeAbility} size={5} red />
+					</StatRow>
+				{/if}
+			</StatTable>
+		</div>
+		<div class="items-wrapper">
+			<div class="items">
+				{#each unit.items as item}
+					<Item {item} />
+				{/each}
+			</div>
+		</div>
+	</section>
+</BrickCard>
 
 <style lang="scss">
 	@use "sass:color";
 
 	section {
-		background: white;
-		border-radius: 0.8rem;
 		padding: 0.6rem;
-		overflow: hidden;
-		box-shadow:
-			0 1px 2px rgba(0, 0, 0, 0.1),
-			0 4px 8px rgba(0, 0, 0, 0.14),
-			0 8px 16px rgba(0, 0, 0, 0.12);
-		cursor: pointer;
-		&.selected {
-			outline: 4px solid #2388ff;
-			outline-offset: 2px;
-		}
 		display: grid;
-		width: 21.55rem;
+		width: 33.7rem;
+		height: 13rem;
 		grid-template:
-			"color color" 1.25rem
-			"image stats" 7rem
-			"info stats" auto /
-			7rem auto;
+			"image stats items" 7rem
+			"info stats items" auto /
+			7rem min-content 1fr;
 		gap: 0.6rem;
 	}
 
@@ -104,20 +100,20 @@
 		padding: 0.4rem;
 		background: linear-gradient(135deg, #1c1c1c, #4f424f);
 		box-sizing: border-box;
-
-		&.republic {
-			background: linear-gradient(135deg, #1c1c1c, #4f424f);
-		}
-
-		&.separatists {
-			background: linear-gradient(135deg, #2b1515, #2d3f54);
-		}
 	}
 
-	header {
-		grid-area: color;
-		margin: -0.6rem -0.6rem 0 -0.6rem;
-		background-color: #595d60;
+	.items-wrapper {
+		grid-area: items;
+		overflow-y: scroll;
+		padding-left: 0.1rem;
+	}
+
+	.items {
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		gap: 0.2rem;
+		padding: 0;
 	}
 
 	.stats {

@@ -48,10 +48,6 @@
 				Price:
 				<div>{item.price}</div>
 			</StatRow>
-			<StatRow>
-				Weight:
-				<div>{item.weight}</div>
-			</StatRow>
 			{#if item.details.case === "blasterBolt"}
 				<StatRow>
 					Capacity:

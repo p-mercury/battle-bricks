@@ -21,7 +21,7 @@ message CreateSquadRequest {
     not_in: [0]
   }];
 
-  repeated string loadouts = 5;
+  repeated string units = 5;
 }
 
 message CreateSquadResponse {

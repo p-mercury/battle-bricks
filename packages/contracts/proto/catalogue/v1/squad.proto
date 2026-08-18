@@ -2,7 +2,7 @@ syntax = "proto3";
 package catalogue.v1;
 
 import "catalogue/v1/faction.proto";
-import "catalogue/v1/loadout.proto";
+import "catalogue/v1/unit.proto";
 import "google/protobuf/timestamp.proto";
 
 option go_package = "contracts/dist/catalogue/v1;catalogue";
@@ -15,5 +15,5 @@ message Squad {
 
   string name = 6;
   Faction faction = 7;
-  repeated Loadout loadouts = 8;
+  repeated Unit units = 8;
 }

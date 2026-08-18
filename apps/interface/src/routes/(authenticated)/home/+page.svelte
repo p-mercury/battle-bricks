@@ -3,7 +3,7 @@
 	import { goto } from "$app/navigation";
 	import { colors } from "$lib/color";
 	import SquadItem from "$lib/components/squad-item.svelte";
-	import type { GameItem, GameLoadout } from "$lib/game";
+	import type { GameItem, Loadout } from "$lib/game";
 	import type { PageData } from "./$types";
 	import { Faction } from "@battle-bricks/contracts/catalogue/v1/faction_pb";
 
@@ -74,27 +74,27 @@
 													name: data.squads[selectedSquad]!.name,
 													faction: data.squads[selectedSquad]!.faction,
 													loadouts: Object.fromEntries(
-														data.squads[selectedSquad]!.loadouts.map((l, i) => {
+														data.squads[selectedSquad]!.units.map((l, i) => {
 															const id = crypto.randomUUID();
-															const loadout: GameLoadout = {
+															const loadout: Loadout = {
 																id: id,
 																image: l.image,
 																name: l.name,
 																color: colors[i].hex,
 																turnComplete: false,
-																unit: l.unit!,
+																unit: l!,
 																items: Object.values(
 																	l.items.reduce(
 																		(items, item) => {
 																			if (item.details.value) {
 																				if ("capacity" in item.details.value) {
-																					if (item.id in items) {
-																						items[item.id].maxQuantity +=
+																					if (item.name in items) {
+																						items[item.name].maxQuantity +=
 																							item.details.value.capacity;
-																						items[item.id].quantity +=
+																						items[item.name].quantity +=
 																							item.details.value.capacity;
 																					} else {
-																						items[item.id] = {
+																						items[item.name] = {
 																							maxQuantity:
 																								item.details.value.capacity,
 																							quantity:
@@ -103,11 +103,11 @@
 																						};
 																					}
 																				} else {
-																					if (item.id in items) {
-																						items[item.id].maxQuantity++;
-																						items[item.id].quantity++;
+																					if (item.name in items) {
+																						items[item.name].maxQuantity++;
+																						items[item.name].quantity++;
 																					} else {
-																						items[item.id] = {
+																						items[item.name] = {
 																							maxQuantity: 1,
 																							quantity: 1,
 																							item: item,

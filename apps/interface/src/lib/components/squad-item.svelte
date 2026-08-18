@@ -4,6 +4,7 @@
 	import StatTable from "./stat-table.svelte";
 	import BrickCard from "./brick-card.svelte";
 	import type { Squad } from "@battle-bricks/contracts/catalogue/v1/squad_pb";
+	import { getUnitPrice } from "$lib/unit";
 
 	let {
 		squad,
@@ -14,13 +15,7 @@
 	} = $props();
 
 	let burdget = $derived(
-		squad.loadouts.reduce(
-			(a, loadout) =>
-				a +
-				loadout.unit!.price +
-				loadout.items.reduce((total, item) => total + item.price, 0),
-			0,
-		),
+		squad.units.reduce((a, unit) => a + getUnitPrice(unit), 0),
 	);
 </script>
 
@@ -39,7 +34,7 @@
 				</StatRow>
 				<StatRow>
 					Units:
-					<div>{squad.loadouts.length}</div>
+					<div>{squad.units.length}</div>
 				</StatRow>
 			</StatTable>
 		</div>

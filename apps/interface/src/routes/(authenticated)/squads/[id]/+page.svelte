@@ -1,43 +1,43 @@
 <script lang="ts">
 	import { untrack } from "svelte";
-	import LoadoutsZone from "./loadouts-zone.svelte";
+	import UnitsZone from "./units-zone.svelte";
 	import type { Squad } from "$lib/squad";
 	import { page } from "$app/state";
 	import SquadZone from "./squad-zone.svelte";
 	import { goto } from "$app/navigation";
-	import type { Loadout } from "@battle-bricks/contracts/catalogue/v1/loadout_pb";
+	import type { Unit } from "@battle-bricks/contracts/catalogue/v1/unit_pb";
 	import type { PageData } from "./$types";
 	import { Faction } from "@battle-bricks/contracts/catalogue/v1/faction_pb";
 	import { getClient } from "$lib/clients/univeral-client.svelte";
-	import { getLoadoutPrice } from "$lib/loadout";
+	import { getUnitPrice } from "$lib/unit";
 
 	let { data }: { data: PageData } = $props();
 
 	const flipDurationMs = 150;
 	let faction = $state<Faction>(Faction.GALACTIC_REPUBLIC);
-	let loadouts = $state<{ id: string; loadout: Loadout }[]>([]);
-	let squad = $state<{ id: string; loadout: Loadout }[]>([]);
+	let units = $state<{ id: string; unit: Unit }[]>([]);
+	let squad = $state<{ id: string; unit: Unit }[]>([]);
 	let budget = $derived(
 		squad.reduce(
 			(a, item) =>
 				a -
-				(item.loadout.unit!.price +
-					item.loadout.items.reduce((b, item) => b + item.price, 0)),
+				(item.unit!.price +
+					item.unit.items.reduce((b, item) => b + item.price, 0)),
 			1500,
 		),
 	);
 	let name = $state("");
 
 	$effect(() => {
-		loadouts = Object.values(data.loadouts)
-			.filter((i) => i.unit!.factions.includes(faction))
-			.sort((a, b) => getLoadoutPrice(a) - getLoadoutPrice(b))
+		units = Object.values(data.units)
+			.filter((i) => i.factions.includes(faction))
+			.sort((a, b) => getUnitPrice(a) - getUnitPrice(b))
 			.map((i) => ({
 				id: crypto.randomUUID(),
-				loadout: i,
+				unit: i,
 			}));
 		squad = untrack(() => squad).filter((i) =>
-			i.loadout.unit!.factions.includes(faction),
+			i.unit!.factions.includes(faction),
 		);
 	});
 
@@ -45,9 +45,9 @@
 		if (data.squad) {
 			faction = data.squad.faction;
 			name = data.squad.name;
-			squad = data.squad.loadouts.map((loadout) => ({
+			squad = data.squad.units.map((unit) => ({
 				id: crypto.randomUUID(),
-				loadout,
+				unit,
 			}));
 		}
 	});
@@ -83,16 +83,16 @@
 				if (page.params.id && page.params.id !== "new") {
 					client.catalogue.updateSquad({
 						id: page.params.id,
-						updateMask: ["name", "faction", "loadouts"],
+						updateMask: ["name", "faction", "units"],
 						name: name,
 						faction: faction,
-						loadouts: squad.map((l) => l.loadout.id),
+						units: squad.map((l) => l.unit.id),
 					});
 				} else {
 					client.catalogue.createSquad({
 						name: name,
 						faction: faction,
-						loadouts: squad.map((l) => l.loadout.id),
+						units: squad.map((l) => l.unit.id),
 					});
 				}
 
@@ -107,7 +107,7 @@
 		<button onclick={() => goto("/home")}>Cancel</button>
 	</header>
 	<div class="loadouts">
-		<LoadoutsZone bind:items={loadouts} {flipDurationMs} />
+		<UnitsZone bind:items={units} {flipDurationMs} />
 	</div>
 	<div class="squad">
 		<SquadZone
@@ -115,7 +115,7 @@
 			{flipDurationMs}
 			handleConsider={(event) => {
 				const nextBudget = event.detail.items.reduce(
-					(a, item) => a - getLoadoutPrice(item.loadout),
+					(a, item) => a - getUnitPrice(item.unit),
 					1500,
 				);
 				if (nextBudget >= 0) {
@@ -126,18 +126,18 @@
 				const items = event.detail.items;
 
 				const nextBudget = items.reduce(
-					(remaining, item) => remaining - getLoadoutPrice(item.loadout),
+					(remaining, item) => remaining - getUnitPrice(item.unit),
 					1500,
 				);
 
 				const previousBudget = squad.reduce(
-					(remaining, item) => remaining - getLoadoutPrice(item.loadout),
+					(remaining, item) => remaining - getUnitPrice(item.unit),
 					1500,
 				);
 
 				if (nextBudget >= 0 || nextBudget > previousBudget) {
 					squad = [...items].sort(
-						(a, b) => getLoadoutPrice(a.loadout) - getLoadoutPrice(b.loadout),
+						(a, b) => getUnitPrice(a.unit) - getUnitPrice(b.unit),
 					);
 				} else {
 					squad = [...squad];

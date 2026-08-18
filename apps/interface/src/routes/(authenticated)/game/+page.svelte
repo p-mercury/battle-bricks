@@ -2,7 +2,7 @@
 	import UnitItem from "$lib/components/unit-item.svelte";
 	import { browser } from "$app/env";
 	import type { Game } from "$lib/game";
-	import GameLoadoutItem from "./game-loadout-item.svelte";
+	import LoadoutItem from "./game-loadout-item.svelte";
 	import ActionItem from "$lib/components/action-item.svelte";
 	import { flip } from "svelte/animate";
 	import { quintInOut, quintOut } from "svelte/easing";
@@ -60,7 +60,7 @@
 				<ul>
 					{#each Object.values(game!.attacker.loadouts).toSorted((a, b) => Number(a.turnComplete) - Number(b.turnComplete)) as loadout (loadout.id)}
 						<li animate:flip={{ duration: 800, easing: quintOut }}>
-							<GameLoadoutItem
+							<LoadoutItem
 								{loadout}
 								faction={game.attacker.faction}
 								selected={loadout.id === selectedAttacker}
@@ -85,7 +85,6 @@
 						<li animate:flip={{ duration: 800, easing: quintOut }}>
 							<UnitItem
 								{unit}
-								faction={game.defender.faction}
 								selected={selectedDefender?.id === unit.id}
 								onclick={() => {
 									if (selectedDefender?.id !== unit.id) {

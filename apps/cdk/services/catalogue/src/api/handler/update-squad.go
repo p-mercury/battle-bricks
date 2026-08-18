@@ -46,18 +46,18 @@ func (s *Handler) UpdateSquad(
 				return nil, connectkit.NewUnexpected()
 			}
 
-			ls := make([]*catalogue.Loadout, len(item.Loadouts))
+			ls := make([]*catalogue.Unit, len(item.Loadouts))
 			for i, loadout := range item.Loadouts {
-				ls[i] = Loadouts[loadout]
+				ls[i] = Units[loadout]
 			}
 
 			squad = &catalogue.Squad{
 				Id:      item.Id,
 				Version: item.Version,
 
-				Name:     item.Name,
-				Faction:  item.Faction,
-				Loadouts: ls,
+				Name:    item.Name,
+				Faction: item.Faction,
+				Units:   ls,
 			}
 		}
 	}
@@ -181,17 +181,17 @@ func (s *Handler) UpdateSquad(
 			}
 		}
 
-		if slices.Contains(req.Msg.UpdateMask, "loadouts") {
-			ls := make([]*catalogue.Loadout, len(req.Msg.Loadouts))
-			for i, loadout := range req.Msg.Loadouts {
-				ls[i] = Loadouts[loadout]
+		if slices.Contains(req.Msg.UpdateMask, "units") {
+			ls := make([]*catalogue.Unit, len(req.Msg.Units))
+			for i, loadout := range req.Msg.Units {
+				ls[i] = Units[loadout]
 			}
 
-			if !slices.Equal(squad.Loadouts, ls) {
-				squad.Loadouts = ls
+			if !slices.Equal(squad.Units, ls) {
+				squad.Units = ls
 
-				loadouts := make([]dynamoTypes.AttributeValue, len(req.Msg.Loadouts))
-				for i, loadout := range req.Msg.Loadouts {
+				loadouts := make([]dynamoTypes.AttributeValue, len(req.Msg.Units))
+				for i, loadout := range req.Msg.Units {
 					loadouts[i] = &dynamoTypes.AttributeValueMemberS{Value: loadout}
 				}
 				updateBuilder.SetList("loadouts", loadouts)

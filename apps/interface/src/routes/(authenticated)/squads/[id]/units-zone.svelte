@@ -1,6 +1,6 @@
 <script lang="ts">
-	import LoadoutItem from "$lib/components/loadout-item.svelte";
-	import type { Loadout } from "@battle-bricks/contracts/catalogue/v1/loadout_pb";
+	import UnitItem from "$lib/components/unit-item.svelte";
+	import type { Unit } from "@battle-bricks/contracts/catalogue/v1/unit_pb";
 	import {
 		dragHandleZone,
 		TRIGGERS,
@@ -12,7 +12,7 @@
 		items = $bindable(),
 		flipDurationMs,
 	}: {
-		items: { id: string; loadout: Loadout }[];
+		items: { id: string; unit: Unit }[];
 		flipDurationMs: number;
 	} = $props();
 
@@ -51,7 +51,7 @@
 	onfinalize={handleDndFinalize}
 >
 	{#each items as item (item.id)}
-		<LoadoutItem loadout={item.loadout} drag />
+		<UnitItem unit={item.unit} drag />
 	{/each}
 </ul>
 
