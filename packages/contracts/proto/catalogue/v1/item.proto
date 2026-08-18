@@ -7,18 +7,21 @@ import "common/v1/dice-roll.proto";
 option go_package = "contracts/dist/catalogue/v1;catalogue";
 
 message Item {
-  string name = 1;
-  optional string description = 2;
-  uint32 price = 3;
+  string id = 1;
+  uint64 version = 2;
+
+  string name = 3;
+  optional string description = 4;
+  uint32 price = 5;
 
   oneof details {
-    Blaster blaster = 4;
-    BlasterBolt blaster_bolt = 5;
-    Cannon cannon = 6;
-    CannonShell cannon_shell = 7;
-    Launcher launcher = 8;
-    LauncherRocket launcher_rocket = 9;
-    MeleeWeapon melee_weapon = 10;
+    Blaster blaster = 6;
+    BlasterBolt blaster_bolt = 7;
+    Cannon cannon = 8;
+    CannonShell cannon_shell = 9;
+    Launcher launcher = 10;
+    LauncherRocket launcher_rocket = 11;
+    MeleeWeapon melee_weapon = 12;
   }
 }
 

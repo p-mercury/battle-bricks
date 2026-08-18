@@ -460,7 +460,7 @@ export function createPipeline(scope: App, props: CreatePipelineProps) {
 						environmentVariables: props.environmentVariables,
 					},
 					buildSpec: BuildSpec.fromObject({
-						version: 0.2,
+						Version: 0.2,
 						phases: {
 							install: {
 								"runtime-versions": {

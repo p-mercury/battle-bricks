@@ -35,7 +35,9 @@ var Units = map[string]*catalogue.Unit{
 			Items["d2D9WroLYwyxAWaUpG1u"], // Blue Bolts
 			Items["d2D9WroLYwyxAWaUpG1u"], // Blue Bolts
 			{
-				Name: "Unarmed Strike",
+				Id:      "bx2mnRh3jbPrkWUTtExU",
+				Version: 1,
+				Name:    "Unarmed Strike",
 				Details: &catalogue.Item_MeleeWeapon{
 					MeleeWeapon: &catalogue.MeleeWeapon{
 						AttackSpeed:   6,
@@ -48,6 +50,11 @@ var Units = map[string]*catalogue.Unit{
 					},
 				},
 			},
+		},
+		LoadoutSlots: 1,
+		LoadoutItems: []*catalogue.Item{
+			Items["AoM09AjZL8hUMhTYLIYY"], // Vibroblade
+			Items["d2D9WroLYwyxAWaUpG1u"], // Blue Bolts
 		},
 	},
 	"vEPHxbpBSxzeNluR4b9U": {
@@ -73,7 +80,9 @@ var Units = map[string]*catalogue.Unit{
 			Items["UG60YI7qn8DJryG9pmR7"], // Blaster Rifle
 			Items["d2D9WroLYwyxAWaUpG1u"], // Blue Bolts
 			{
-				Name: "Unarmed Strike",
+				Id:      "MS0sOPe1hYsbegxmLI5V",
+				Version: 1,
+				Name:    "Unarmed Strike",
 				Details: &catalogue.Item_MeleeWeapon{
 					MeleeWeapon: &catalogue.MeleeWeapon{
 						AttackSpeed:   6,
@@ -87,6 +96,11 @@ var Units = map[string]*catalogue.Unit{
 				},
 			},
 		},
+		LoadoutSlots: 1,
+		LoadoutItems: []*catalogue.Item{
+			Items["AoM09AjZL8hUMhTYLIYY"], // Vibroblade
+			Items["d2D9WroLYwyxAWaUpG1u"], // Blue Bolts
+		},
 	},
 	"AFFXxbwBD1aNFYbt25m7": {
 		Id:           "AFFXxbwBD1aNFYbt25m7",
@@ -94,7 +108,7 @@ var Units = map[string]*catalogue.Unit{
 		Factions:     []catalogue.Faction{catalogue.Faction_FACTION_GALACTIC_REPUBLIC},
 		Image:        new("/clone-commander.png"),
 		Name:         "Clone Commander",
-		Price:        190,
+		Price:        195,
 		Size:         1,
 		Speed:        2,
 		Health:       15,
@@ -108,12 +122,13 @@ var Units = map[string]*catalogue.Unit{
 			},
 		},
 		Items: []*catalogue.Item{
-			Items["AoM09AjZL8hUMhTYLIYY"], // Vibroblade
 			Items["OiFq73Vk00ob7p8IuKAb"], // Hand Blasters
 			Items["d2D9WroLYwyxAWaUpG1u"], // Blue Bolts
 			Items["d2D9WroLYwyxAWaUpG1u"], // Blue Bolts
 			{
-				Name: "Unarmed Strike",
+				Id:      "KZYHYYxMJznfWqDn7lTB",
+				Version: 1,
+				Name:    "Unarmed Strike",
 				Details: &catalogue.Item_MeleeWeapon{
 					MeleeWeapon: &catalogue.MeleeWeapon{
 						AttackSpeed:   6,
@@ -126,6 +141,11 @@ var Units = map[string]*catalogue.Unit{
 					},
 				},
 			},
+		},
+		LoadoutSlots: 1,
+		LoadoutItems: []*catalogue.Item{
+			Items["AoM09AjZL8hUMhTYLIYY"], // Vibroblade
+			Items["d2D9WroLYwyxAWaUpG1u"], // Blue Bolts
 		},
 	},
 	"buMbZfN6zRflygTOVHaG": {
@@ -149,7 +169,9 @@ var Units = map[string]*catalogue.Unit{
 			Items["xl4SlN7caFSq68DPxhr3"], // Fragmentation rocket
 			Items["2A06zTJVEAHqG8Ax4w7k"], // Ion rocket
 			{
-				Name: "Laser Cannons",
+				Id:      "VS8ICW50OVr0L5iPxS0Y",
+				Version: 1,
+				Name:    "Laser Cannons",
 				Details: &catalogue.Item_Cannon{
 					Cannon: &catalogue.Cannon{
 						Range: &catalogue.Range{
@@ -161,13 +183,21 @@ var Units = map[string]*catalogue.Unit{
 				},
 			},
 			{
-				Name: "Rocket Launchers",
+				Id:      "FC9rHpwti4FIuyhH6bs1",
+				Version: 1,
+				Name:    "Rocket Launchers",
 				Details: &catalogue.Item_Launcher{
 					Launcher: &catalogue.Launcher{
 						FireRate: 2,
 					},
 				},
 			},
+		},
+		LoadoutSlots: 2,
+		LoadoutItems: []*catalogue.Item{
+			Items["bJeepLfSKSzI1yznvTUM"], // Blue Shell
+			Items["xl4SlN7caFSq68DPxhr3"], // Fragmentation rocket
+			Items["2A06zTJVEAHqG8Ax4w7k"], // Ion rocket
 		},
 	},
 	"5LDT5irCFiLuKt6wQMvo": {
@@ -193,7 +223,9 @@ var Units = map[string]*catalogue.Unit{
 			Items["Kq0BO0W0rH2Ko0kyydLI"], // Blaster
 			Items["CV1AILTJNoyVKD7Uon63"], // Red Bolts
 			{
-				Name: "Unarmed Strike",
+				Id:      "6ZMSvxmGw7zO1sWeJbig",
+				Version: 1,
+				Name:    "Unarmed Strike",
 				Details: &catalogue.Item_MeleeWeapon{
 					MeleeWeapon: &catalogue.MeleeWeapon{
 						AttackSpeed:   5,
@@ -206,6 +238,10 @@ var Units = map[string]*catalogue.Unit{
 					},
 				},
 			},
+		},
+		LoadoutSlots: 1,
+		LoadoutItems: []*catalogue.Item{
+			Items["CV1AILTJNoyVKD7Uon63"], // Red Bolts
 		},
 	},
 	"6EpGE8Td4gLWkcYgDIW9": {
@@ -230,7 +266,9 @@ var Units = map[string]*catalogue.Unit{
 			Items["CV1AILTJNoyVKD7Uon63"], // Red Bolts
 			Items["CV1AILTJNoyVKD7Uon63"], // Red Bolts
 			{
-				Name: "Arm blasters",
+				Id:      "Vgaa0TwEqbfHYRnGrkdf",
+				Version: 1,
+				Name:    "Arm blasters",
 				Details: &catalogue.Item_Blaster{
 					Blaster: &catalogue.Blaster{
 						Range: &catalogue.Range{
@@ -241,6 +279,10 @@ var Units = map[string]*catalogue.Unit{
 					},
 				},
 			},
+		},
+		LoadoutSlots: 1,
+		LoadoutItems: []*catalogue.Item{
+			Items["CV1AILTJNoyVKD7Uon63"], // Red Bolts
 		},
 	},
 	"R4ov67MKvT4YFauIDJnV": {
@@ -265,7 +307,9 @@ var Units = map[string]*catalogue.Unit{
 			Items["CV1AILTJNoyVKD7Uon63"], // Red Bolts
 			Items["CV1AILTJNoyVKD7Uon63"], // Red Bolts
 			{
-				Name: "Blaster Rifle",
+				Id:      "Z5WYIKT9RLCj6VQ6TfZe",
+				Version: 1,
+				Name:    "Blaster Rifle",
 				Details: &catalogue.Item_Blaster{
 					Blaster: &catalogue.Blaster{
 						Range: &catalogue.Range{
@@ -276,6 +320,10 @@ var Units = map[string]*catalogue.Unit{
 					},
 				},
 			},
+		},
+		LoadoutSlots: 1,
+		LoadoutItems: []*catalogue.Item{
+			Items["CV1AILTJNoyVKD7Uon63"], // Red Bolts
 		},
 	},
 	"19eF4NtFTiuBXPCLFCNU": {
@@ -298,7 +346,9 @@ var Units = map[string]*catalogue.Unit{
 			Items["xl4SlN7caFSq68DPxhr3"], // Fragmentation rocket
 			Items["2A06zTJVEAHqG8Ax4w7k"], // Ion rocket
 			{
-				Name: "Laser Blaster",
+				Id:      "mvOUbhmAkRnJtRVDrRrs",
+				Version: 1,
+				Name:    "Laser Blaster",
 				Details: &catalogue.Item_Blaster{
 					Blaster: &catalogue.Blaster{
 						Range: &catalogue.Range{
@@ -310,13 +360,21 @@ var Units = map[string]*catalogue.Unit{
 				},
 			},
 			{
-				Name: "Rocket Launcher",
+				Id:      "thVjEWWJSKBxtcIo45uE",
+				Version: 1,
+				Name:    "Rocket Launcher",
 				Details: &catalogue.Item_Launcher{
 					Launcher: &catalogue.Launcher{
 						FireRate: 1,
 					},
 				},
 			},
+		},
+		LoadoutSlots: 1,
+		LoadoutItems: []*catalogue.Item{
+			Items["CV1AILTJNoyVKD7Uon63"], // Red Bolts
+			Items["xl4SlN7caFSq68DPxhr3"], // Fragmentation rocket
+			Items["2A06zTJVEAHqG8Ax4w7k"], // Ion rocket
 		},
 	},
 	"7JSXGhVxkJUuNjZFp3KY": {
@@ -341,7 +399,9 @@ var Units = map[string]*catalogue.Unit{
 			Items["xl4SlN7caFSq68DPxhr3"], // Fragmentation rocket
 			Items["2A06zTJVEAHqG8Ax4w7k"], // Ion rocket
 			{
-				Name: "Side Blasters",
+				Id:      "j2QtTUcX1xGojMhOTExc",
+				Version: 1,
+				Name:    "Side Blasters",
 				Details: &catalogue.Item_Blaster{
 					Blaster: &catalogue.Blaster{
 						Range: &catalogue.Range{
@@ -353,7 +413,9 @@ var Units = map[string]*catalogue.Unit{
 				},
 			},
 			{
-				Name: "Main Turret",
+				Id:      "y7hOdf9HS1BqNz59yCul",
+				Version: 1,
+				Name:    "Main Turret",
 				Details: &catalogue.Item_Cannon{
 					Cannon: &catalogue.Cannon{
 						Range: &catalogue.Range{
@@ -365,13 +427,22 @@ var Units = map[string]*catalogue.Unit{
 				},
 			},
 			{
-				Name: "Rocket Launchers",
+				Id:      "o6sx09eU7AWx6F0b0T8e",
+				Version: 1,
+				Name:    "Rocket Launchers",
 				Details: &catalogue.Item_Launcher{
 					Launcher: &catalogue.Launcher{
 						FireRate: 2,
 					},
 				},
 			},
+		},
+		LoadoutSlots: 1,
+		LoadoutItems: []*catalogue.Item{
+			Items["CV1AILTJNoyVKD7Uon63"], // Red Bolts
+			Items["bJeepLfSKSzI1yznvTUM"], // Red Shell
+			Items["xl4SlN7caFSq68DPxhr3"], // Fragmentation rocket
+			Items["2A06zTJVEAHqG8Ax4w7k"], // Ion rocket
 		},
 	},
 }

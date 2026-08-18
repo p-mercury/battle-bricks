@@ -12,5 +12,4 @@ allowBuilds:
 minimumReleaseAgeExclude:
   - "@flit/svelte-form@2.8.0"
   - "@wuchale/svelte@0.20.7"
-  - aws-cdk@2.1137.0
   - wuchale@0.25.8

@@ -8,7 +8,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/routes/(authenticated)/squads/[id]/+page.svelte
-#: src/routes/squads/[id]/+page.svelte
 msgid "Save"
 msgstr "Запази"
 
@@ -25,121 +24,94 @@ msgstr "Увеличи количеството"
 msgid "Battle Bricks"
 msgstr "Бойни тухлички"
 
-#: src/routes/+page.svelte
-msgid "Squads"
-msgstr "Отряди"
-
 #: src/routes/(authenticated)/home/+page.svelte
-#: src/routes/+page.svelte
 msgid "Select Squad"
 msgstr "Изберете отряд"
 
 #: src/routes/(authenticated)/home/+page.svelte
 #: src/routes/(authenticated)/squads/[id]/+page.svelte
-#: src/routes/+page.svelte
-#: src/routes/squads/[id]/+page.svelte
 msgid "Galactic Republic"
 msgstr "Галактическа република"
 
 #: src/routes/(authenticated)/home/+page.svelte
 #: src/routes/(authenticated)/squads/[id]/+page.svelte
-#: src/routes/+page.svelte
-#: src/routes/squads/[id]/+page.svelte
 msgid "Separatist Alliance"
 msgstr "Сепаратистки алианс"
 
 #: src/routes/(authenticated)/home/+page.svelte
-#: src/routes/+page.svelte
 msgid "Select enemy faction"
 msgstr "Изберете вражеска фракция"
 
 #: src/routes/(authenticated)/home/+page.svelte
-#: src/routes/+page.svelte
 msgid "Start Game"
 msgstr "Започни игра"
 
-#: src/routes/+page.svelte
-msgid "Start a new game"
-msgstr "Започни нова игра"
-
 #: src/routes/(authenticated)/game/+page.svelte
-#: src/routes/game/+page.svelte
 msgid "Clear Turn Complete"
 msgstr "Изчисти завършен ход"
 
 #: src/routes/(authenticated)/game/+page.svelte
-#: src/routes/game/+page.svelte
 msgid "Your Squad"
 msgstr "Вашият отряд"
 
 #: src/routes/(authenticated)/game/+page.svelte
-#: src/routes/game/+page.svelte
 msgid "Enemy"
 msgstr "Враг"
 
 #: src/routes/(authenticated)/game/+page.svelte
-#: src/routes/game/+page.svelte
 msgid "Actions"
 msgstr "Действия"
 
 #: src/routes/(authenticated)/game/game-loadout-item.svelte
-#: src/routes/game/game-loadout-item.svelte
 msgid "In Cover: <0/>"
 msgstr "В укритие: <0/>"
 
-#: src/lib/components/loadout-item.svelte
+#: src/lib/components/unit-card.svelte
 #: src/lib/components/unit-item.svelte
+#: src/lib/components/unit-stat-card.svelte
 #: src/routes/(authenticated)/game/game-loadout-item.svelte
-#: src/routes/game/game-loadout-item.svelte
 msgid "Marksmanship: <0/>"
 msgstr "Точност на стрелба: <0/>"
 
-#: src/lib/components/loadout-item.svelte
+#: src/lib/components/unit-card.svelte
 #: src/lib/components/unit-item.svelte
+#: src/lib/components/unit-stat-card.svelte
 #: src/routes/(authenticated)/game/game-loadout-item.svelte
-#: src/routes/game/game-loadout-item.svelte
 msgid "Melee Ability: <0/>"
 msgstr "Умение за близък бой: <0/>"
 
 #: src/routes/(authenticated)/game/game-loadout-item.svelte
-#: src/routes/game/game-loadout-item.svelte
 msgid "Turn: <0/>"
 msgstr "Ход: <0/>"
 
 #: src/routes/(authenticated)/game/game-loadout-item.svelte
-#: src/routes/game/game-loadout-item.svelte
 msgid "Health: <0/>"
 msgstr "Здраве: <0/>"
 
-#: src/lib/components/loadout-item.svelte
+#: src/lib/components/unit-card.svelte
 #: src/lib/components/unit-item.svelte
+#: src/lib/components/unit-stat-card.svelte
 #: src/routes/(authenticated)/game/game-loadout-item.svelte
-#: src/routes/game/game-loadout-item.svelte
 msgid "Speed: <0/>"
 msgstr "Скорост: <0/>"
 
-#: src/lib/components/loadout-item.svelte
+#: src/lib/components/unit-card.svelte
 #: src/lib/components/unit-item.svelte
+#: src/lib/components/unit-stat-card.svelte
 #: src/routes/(authenticated)/game/game-loadout-item.svelte
-#: src/routes/game/game-loadout-item.svelte
 msgid "Size: <0/>"
 msgstr "Размер: <0/>"
 
-#: src/lib/components/loadout-item.svelte
+#: src/lib/components/unit-card.svelte
 #: src/lib/components/unit-item.svelte
+#: src/lib/components/unit-stat-card.svelte
 #: src/routes/(authenticated)/game/game-loadout-item.svelte
-#: src/routes/game/game-loadout-item.svelte
 msgid "Armor Class: <0/>"
 msgstr "Клас на бронята: <0/>"
 
 #: src/routes/(authenticated)/home/+page.svelte
-#: src/routes/(authenticated)/squads/+page.svelte
-#: src/routes/squads/+page.svelte
 msgid "New Squad"
 msgstr "Нов отряд"
-
-#~ msgid "Type: <0/>"
-#~ msgstr "Тип: <0/>"
 
 #: src/lib/components/item.svelte
 msgid "Capacity: <0/>"
@@ -192,19 +164,21 @@ msgstr "Скорострелност: <0/>"
 msgid "Price: <0/>"
 msgstr "Цена: <0/>"
 
-#: src/lib/components/item.svelte
-msgid "Weight: <0/>"
-msgstr "Тегло: <0/>"
-
-#. 0.0: loadout.unit.price + loadout.items.reduce((total, item) => total + item.price, 0)
-#: src/lib/components/loadout-item.svelte
+#. 0.0: getUnitPrice(unit)
+#. 0.0: getUnitPrice(unit)
+#. 0.0: getUnitPrice(unit)
+#: src/lib/components/unit-card.svelte
+#: src/lib/components/unit-item.svelte
+#: src/lib/components/unit-stat-card.svelte
 msgid "Price: <0>{0}c</0>"
 msgstr "Цена: <0>{0} кр.</0>"
 
-#. 0.0: loadout.unit!.health
 #. 0.0: unit.health
-#: src/lib/components/loadout-item.svelte
+#. 0.0: unit.health
+#. 0.0: unit.health
+#: src/lib/components/unit-card.svelte
 #: src/lib/components/unit-item.svelte
+#: src/lib/components/unit-stat-card.svelte
 msgid "Health: <0>{0}hp</0>"
 msgstr "Здраве: <0>{0} HP</0>"
 
@@ -221,14 +195,6 @@ msgstr "Цена: <0>{0}/1500 кр.</0>"
 msgid "Units: <0/>"
 msgstr "Единици: <0/>"
 
-#: src/routes/test/+page.svelte
-#: src/routes/test2/+page.svelte
-msgid "Test"
-msgstr "Тест"
-
-#~ msgid "To pierce armor: <0/>"
-#~ msgstr "За пробиване на броня: <0/>"
-
 #: src/lib/components/action-item.svelte
 #: src/lib/components/action-item.svelte
 msgid "Amunition: <0/>"
@@ -240,34 +206,23 @@ msgstr "Боеприпаси: <0/>"
 msgid "To hit: <0/>"
 msgstr "За попадение: <0/>"
 
-#~ msgid "{0} with {1}"
-#~ msgstr "{0} с {1}"
-
 #: src/lib/components/action-item.svelte
 #: src/lib/components/item.svelte
 msgid "Attack Speed: <0/>"
 msgstr "Скорост на атака: <0/>"
 
 #: src/routes/(authenticated)/squads/[id]/+page.svelte
-#: src/routes/squads/[id]/+page.svelte
 msgid "Rebel Alliance"
 msgstr "Бунтовнически алианс"
 
 #: src/routes/(authenticated)/squads/[id]/+page.svelte
-#: src/routes/squads/[id]/+page.svelte
 msgid "Galactic Empire"
 msgstr "Галактическа империя"
 
 #. 0: budget
-#. 0: budget
 #: src/routes/(authenticated)/squads/[id]/+page.svelte
-#: src/routes/squads/[id]/+page.svelte
 msgid "Budget: {0}"
 msgstr "Бюджет: {0}"
-
-#: src/routes/squads/[id]/+page.svelte
-msgid "Cancle"
-msgstr "Отказ"
 
 #: src/lib/components/select-color.svelte
 msgid "Select color"
@@ -282,10 +237,6 @@ msgstr "{0}d{1}{2}"
 msgid "Cancel"
 msgstr "Отказ"
 
-#: src/routes/test/+page.svelte
-msgid "tes2"
-msgstr "tes2"
-
 #: src/lib/components/action-item.svelte
 #: src/lib/components/action-item.svelte
 #: src/lib/components/action-item.svelte
@@ -297,9 +248,6 @@ msgstr "За пробиване: <0/>"
 #: src/lib/components/action-item.svelte
 msgid "Damage chance: <0/>"
 msgstr "Шанс за нанасяне на щети: <0/>"
-
-#~ msgid "Ragne: <0/>"
-#~ msgstr "Ragne: <0/>"
 
 #: src/lib/components/item.svelte
 msgid "Precision: <0/>"

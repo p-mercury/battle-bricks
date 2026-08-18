@@ -26,6 +26,9 @@ message Unit {
   repeated Action actions = 15;
   repeated Item items = 16;
 
+  uint32 loadout_slots = 17;
+  repeated Item loadout_items = 18;
+
   message Action {
     string name = 1;
     optional string description = 2;

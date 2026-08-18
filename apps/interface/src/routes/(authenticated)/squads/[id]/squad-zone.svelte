@@ -1,5 +1,5 @@
 <script lang="ts">
-	import UnitItem from "$lib/components/unit-item.svelte";
+	import UnitCard from "$lib/components/unit-card.svelte";
 	import type { Unit } from "@battle-bricks/contracts/catalogue/v1/unit_pb";
 	import { dragHandleZone, type DndEvent } from "svelte-dnd-action";
 
@@ -41,7 +41,7 @@
 	onfinalize={handleFinalize}
 >
 	{#each items as item (item.id)}
-		<UnitItem unit={item.unit} drag />
+		<UnitCard unit={item.unit} drag />
 	{/each}
 </ul>
 

@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"connectkit"
 	"context"
-	"fmt"
 	"contracts/dist/policy/v1/policyconnect"
+	"fmt"
 	"log"
 	"log/slog"
 	"net/http"
@@ -97,7 +97,7 @@ func init() {
         credentials:
           s3_signing:
             service: "s3"
-            signature_version: "4"
+            signature_Version: "4"
             environment_credentials: {}
     bundles:
       bundle:

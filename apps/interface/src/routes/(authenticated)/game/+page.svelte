@@ -1,5 +1,5 @@
 <script lang="ts">
-	import UnitItem from "$lib/components/unit-item.svelte";
+	import UnitStatCard from "$lib/components/unit-stat-card.svelte";
 	import { browser } from "$app/env";
 	import type { Game } from "$lib/game";
 	import LoadoutItem from "./game-loadout-item.svelte";
@@ -83,7 +83,7 @@
 				<ul>
 					{#each game.defender.units as unit (unit.id)}
 						<li animate:flip={{ duration: 800, easing: quintOut }}>
-							<UnitItem
+							<UnitStatCard
 								{unit}
 								selected={selectedDefender?.id === unit.id}
 								onclick={() => {
