@@ -62,50 +62,32 @@ msgstr "Gegner"
 msgid "Actions"
 msgstr "Aktionen"
 
-#: src/routes/(authenticated)/game/game-loadout-item.svelte
-msgid "In Cover: <0/>"
-msgstr "In Deckung: <0/>"
+#~ msgid "In Cover: <0/>"
+#~ msgstr "In Deckung: <0/>"
 
-#: src/lib/components/unit-card.svelte
 #: src/lib/components/unit-item.svelte
-#: src/lib/components/unit-stat-card.svelte
-#: src/routes/(authenticated)/game/game-loadout-item.svelte
 msgid "Marksmanship: <0/>"
 msgstr "Treffsicherheit: <0/>"
 
-#: src/lib/components/unit-card.svelte
 #: src/lib/components/unit-item.svelte
-#: src/lib/components/unit-stat-card.svelte
-#: src/routes/(authenticated)/game/game-loadout-item.svelte
 msgid "Melee Ability: <0/>"
 msgstr "Nahkampffähigkeit: <0/>"
 
-#: src/routes/(authenticated)/game/game-loadout-item.svelte
-msgid "Turn: <0/>"
-msgstr "Zug: <0/>"
+#~ msgid "Turn: <0/>"
+#~ msgstr "Zug: <0/>"
 
-#: src/routes/(authenticated)/game/game-loadout-item.svelte
-msgid "Health: <0/>"
-msgstr "Gesundheit: <0/>"
+#~ msgid "Health: <0/>"
+#~ msgstr "Gesundheit: <0/>"
 
-#: src/lib/components/unit-card.svelte
 #: src/lib/components/unit-item.svelte
-#: src/lib/components/unit-stat-card.svelte
-#: src/routes/(authenticated)/game/game-loadout-item.svelte
 msgid "Speed: <0/>"
 msgstr "Geschwindigkeit: <0/>"
 
-#: src/lib/components/unit-card.svelte
 #: src/lib/components/unit-item.svelte
-#: src/lib/components/unit-stat-card.svelte
-#: src/routes/(authenticated)/game/game-loadout-item.svelte
 msgid "Size: <0/>"
 msgstr "Größe: <0/>"
 
-#: src/lib/components/unit-card.svelte
 #: src/lib/components/unit-item.svelte
-#: src/lib/components/unit-stat-card.svelte
-#: src/routes/(authenticated)/game/game-loadout-item.svelte
 msgid "Armor Class: <0/>"
 msgstr "Rüstungsklasse: <0/>"
 
@@ -165,20 +147,12 @@ msgid "Price: <0/>"
 msgstr "Preis: <0/>"
 
 #. 0.0: getUnitPrice(unit)
-#. 0.0: getUnitPrice(unit)
-#. 0.0: getUnitPrice(unit)
-#: src/lib/components/unit-card.svelte
 #: src/lib/components/unit-item.svelte
-#: src/lib/components/unit-stat-card.svelte
 msgid "Price: <0>{0}c</0>"
 msgstr "Preis: <0>{0} c</0>"
 
 #. 0.0: unit.health
-#. 0.0: unit.health
-#. 0.0: unit.health
-#: src/lib/components/unit-card.svelte
 #: src/lib/components/unit-item.svelte
-#: src/lib/components/unit-stat-card.svelte
 msgid "Health: <0>{0}hp</0>"
 msgstr "Gesundheit: <0>{0} LP</0>"
 

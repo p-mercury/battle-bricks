@@ -30,7 +30,11 @@
 	<button
 		type="button"
 		class="brick"
-		onclick={() => (open = !open)}
+		onclick={(event) => {
+			event.preventDefault();
+			event.stopPropagation();
+			open = !open;
+		}}
 		aria-label="Select color"
 		aria-expanded={open}
 	>

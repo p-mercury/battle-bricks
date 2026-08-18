@@ -1,12 +1,8 @@
 <script lang="ts">
-	import StatBar from "$lib/components/stat-bar.svelte";
-	import StatRow from "$lib/components/stat-row.svelte";
-	import StatTable from "$lib/components/stat-table.svelte";
-	import NumberInput from "$lib/components/number-input.svelte";
 	import type { Loadout } from "$lib/game";
-	import Switcher from "$lib/components/switcher.svelte";
 	import { Faction } from "@battle-bricks/contracts/catalogue/v1/faction_pb";
 	import BrickCard from "$lib/components/brick-card.svelte";
+	import Stat from "$lib/components/stat.svelte";
 
 	let {
 		faction,
@@ -35,52 +31,12 @@
 			<h3>{loadout.name}</h3>
 		</div>
 		<div class="stats">
-			<StatTable>
-				<StatRow>
-					Turn:
-					<Switcher
-						bind:value={loadout.turnComplete}
-						onclick={(event) => event.stopPropagation()}
-					/>
-				</StatRow>
-				<StatRow>
-					Health:
-					<NumberInput bind:value={loadout.unit.health} />
-				</StatRow>
-				{#if "inCover" in loadout}
-					<StatRow>
-						In Cover:
-						<Switcher
-							bind:value={loadout.inCover}
-							onclick={(event) => event.stopPropagation()}
-						/>
-					</StatRow>
-				{/if}
-				<StatRow>
-					Size:
-					<StatBar value={loadout.unit.size} size={5} />
-				</StatRow>
-				<StatRow>
-					Speed:
-					<StatBar value={loadout.unit.speed} size={5} />
-				</StatRow>
-				<StatRow>
-					Armor Class:
-					<StatBar value={loadout.unit.armorClass} size={5} />
-				</StatRow>
-				{#if loadout.unit.marksmanship}
-					<StatRow>
-						Marksmanship:
-						<StatBar value={loadout.unit.marksmanship} size={5} red />
-					</StatRow>
-				{/if}
-				{#if loadout.unit.meleeAbility}
-					<StatRow>
-						Melee Ability:
-						<StatBar value={loadout.unit.meleeAbility} size={5} red />
-					</StatRow>
-				{/if}
-			</StatTable>
+			<Stat label="HP" color="GREEN" value={loadout.unit.health} />
+			<Stat label="SZ" color="BLUE" value={loadout.unit.size} />
+			<Stat label="GS" color="RED" value={loadout.unit.marksmanship || 0} />
+			<Stat label="AC" color="GREEN" value={loadout.unit.armorClass} />
+			<Stat label="SP" color="BLUE" value={loadout.unit.speed} />
+			<Stat label="MS" color="RED" value={loadout.unit.meleeAbility || 0} />
 		</div>
 	</section>
 </BrickCard>
@@ -91,11 +47,11 @@
 	section {
 		padding: 0.6rem;
 		display: grid;
-		width: 21.55rem;
+		width: 18.6rem;
 		grid-template:
-			"image stats" 7rem
-			"info stats" auto /
-			7rem auto;
+			"info info" 1.3rem
+			"image stats" 7.5rem /
+			7.5rem auto;
 		gap: 0.6rem;
 	}
 
@@ -120,7 +76,10 @@
 
 	.stats {
 		grid-area: stats;
-		padding-left: 0.3rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-auto-rows: 1fr;
+		gap: 0.4rem;
 	}
 
 	.info {
@@ -129,7 +88,8 @@
 		h3 {
 			margin: 0;
 			padding: 0;
-			font-size: 1.1rem;
+			font-size: 1.2rem;
+			line-height: 1.2rem;
 			font-weight: 600;
 		}
 	}

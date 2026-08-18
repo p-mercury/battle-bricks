@@ -1,11 +1,8 @@
 <script lang="ts">
 	import type { Unit } from "@battle-bricks/contracts/catalogue/v1/unit_pb";
 	import Item from "$lib/components/item.svelte";
-	import StatBar from "$lib/components/stat-bar.svelte";
-	import StatRow from "$lib/components/stat-row.svelte";
-	import StatTable from "$lib/components/stat-table.svelte";
 	import BrickCard from "./brick-card.svelte";
-	import { getUnitPrice } from "$lib/unit";
+	import Stat from "$lib/components/stat.svelte";
 
 	let {
 		unit,
@@ -29,42 +26,12 @@
 			<h3>{unit.name}</h3>
 		</div>
 		<div class="stats">
-			<StatTable>
-				<StatRow>
-					Price:
-					<div>
-						{getUnitPrice(unit)}c
-					</div>
-				</StatRow>
-				<StatRow>
-					Health:
-					<div>{unit.health}hp</div>
-				</StatRow>
-				<StatRow>
-					Size:
-					<StatBar value={unit.size} size={5} />
-				</StatRow>
-				<StatRow>
-					Speed:
-					<StatBar value={unit.speed} size={5} />
-				</StatRow>
-				<StatRow>
-					Armor Class:
-					<StatBar value={unit.armorClass} size={5} />
-				</StatRow>
-				{#if unit.marksmanship}
-					<StatRow>
-						Marksmanship:
-						<StatBar value={unit.marksmanship} size={5} red />
-					</StatRow>
-				{/if}
-				{#if unit.meleeAbility}
-					<StatRow>
-						Melee Ability:
-						<StatBar value={unit.meleeAbility} size={5} red />
-					</StatRow>
-				{/if}
-			</StatTable>
+			<Stat label="HP" color="GREEN" value={unit.health} />
+			<Stat label="SZ" color="BLUE" value={unit.size} />
+			<Stat label="GS" color="RED" value={unit.marksmanship || 0} />
+			<Stat label="AC" color="GREEN" value={unit.armorClass} />
+			<Stat label="SP" color="BLUE" value={unit.speed} />
+			<Stat label="MS" color="RED" value={unit.meleeAbility || 0} />
 		</div>
 		<div class="items-wrapper">
 			<div class="items">
@@ -82,12 +49,12 @@
 	section {
 		padding: 0.6rem;
 		display: grid;
-		width: 33.7rem;
-		height: 13rem;
+		width: 18.6rem;
 		grid-template:
-			"image stats items" 7rem
-			"info stats items" auto /
-			7rem min-content 1fr;
+			"info info" 1.3rem
+			"image stats" 7.5rem
+			"items items" fit-content(8rem) /
+			7.5rem auto;
 		gap: 0.6rem;
 	}
 
@@ -118,7 +85,10 @@
 
 	.stats {
 		grid-area: stats;
-		padding-left: 0.3rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-auto-rows: 1fr;
+		gap: 0.4rem;
 	}
 
 	.info {
@@ -127,7 +97,8 @@
 		h3 {
 			margin: 0;
 			padding: 0;
-			font-size: 1.1rem;
+			font-size: 1.2rem;
+			line-height: 1.2rem;
 			font-weight: 600;
 		}
 	}

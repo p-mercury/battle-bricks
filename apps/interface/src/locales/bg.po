@@ -62,50 +62,32 @@ msgstr "Враг"
 msgid "Actions"
 msgstr "Действия"
 
-#: src/routes/(authenticated)/game/game-loadout-item.svelte
-msgid "In Cover: <0/>"
-msgstr "В укритие: <0/>"
+#~ msgid "In Cover: <0/>"
+#~ msgstr "В укритие: <0/>"
 
-#: src/lib/components/unit-card.svelte
 #: src/lib/components/unit-item.svelte
-#: src/lib/components/unit-stat-card.svelte
-#: src/routes/(authenticated)/game/game-loadout-item.svelte
 msgid "Marksmanship: <0/>"
 msgstr "Точност на стрелба: <0/>"
 
-#: src/lib/components/unit-card.svelte
 #: src/lib/components/unit-item.svelte
-#: src/lib/components/unit-stat-card.svelte
-#: src/routes/(authenticated)/game/game-loadout-item.svelte
 msgid "Melee Ability: <0/>"
 msgstr "Умение за близък бой: <0/>"
 
-#: src/routes/(authenticated)/game/game-loadout-item.svelte
-msgid "Turn: <0/>"
-msgstr "Ход: <0/>"
+#~ msgid "Turn: <0/>"
+#~ msgstr "Ход: <0/>"
 
-#: src/routes/(authenticated)/game/game-loadout-item.svelte
-msgid "Health: <0/>"
-msgstr "Здраве: <0/>"
+#~ msgid "Health: <0/>"
+#~ msgstr "Здраве: <0/>"
 
-#: src/lib/components/unit-card.svelte
 #: src/lib/components/unit-item.svelte
-#: src/lib/components/unit-stat-card.svelte
-#: src/routes/(authenticated)/game/game-loadout-item.svelte
 msgid "Speed: <0/>"
 msgstr "Скорост: <0/>"
 
-#: src/lib/components/unit-card.svelte
 #: src/lib/components/unit-item.svelte
-#: src/lib/components/unit-stat-card.svelte
-#: src/routes/(authenticated)/game/game-loadout-item.svelte
 msgid "Size: <0/>"
 msgstr "Размер: <0/>"
 
-#: src/lib/components/unit-card.svelte
 #: src/lib/components/unit-item.svelte
-#: src/lib/components/unit-stat-card.svelte
-#: src/routes/(authenticated)/game/game-loadout-item.svelte
 msgid "Armor Class: <0/>"
 msgstr "Клас на бронята: <0/>"
 
@@ -165,20 +147,12 @@ msgid "Price: <0/>"
 msgstr "Цена: <0/>"
 
 #. 0.0: getUnitPrice(unit)
-#. 0.0: getUnitPrice(unit)
-#. 0.0: getUnitPrice(unit)
-#: src/lib/components/unit-card.svelte
 #: src/lib/components/unit-item.svelte
-#: src/lib/components/unit-stat-card.svelte
 msgid "Price: <0>{0}c</0>"
 msgstr "Цена: <0>{0} кр.</0>"
 
 #. 0.0: unit.health
-#. 0.0: unit.health
-#. 0.0: unit.health
-#: src/lib/components/unit-card.svelte
 #: src/lib/components/unit-item.svelte
-#: src/lib/components/unit-stat-card.svelte
 msgid "Health: <0>{0}hp</0>"
 msgstr "Здраве: <0>{0} HP</0>"
 
