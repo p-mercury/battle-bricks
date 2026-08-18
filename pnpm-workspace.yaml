@@ -10,23 +10,7 @@ allowBuilds:
   "@sentry/cli": false
   esbuild: false
 minimumReleaseAgeExclude:
-  - "@ai-sdk/gateway@4.0.51 || 4.0.52"
-  - "@ai-sdk/openai@4.0.41 || 4.0.42"
-  - "@ai-sdk/provider-utils@5.0.27"
-  - ai@7.0.64 || 7.0.65 || 7.0.66
-  - aws-cdk@2.1136.0
-  - svelte@5.56.9
-  - "@aws-cdk/aws-lambda-go-alpha@2.265.0-alpha.0"
-  - "@bufbuild/protobuf@2.14.0"
-  - "@bufbuild/protoc-gen-es@2.14.0"
-  - "@bufbuild/protoplugin@2.14.0"
-  - aws-cdk-lib@2.265.0
-  - "@turbo/darwin-64@2.10.10"
-  - "@turbo/darwin-arm64@2.10.10"
-  - "@turbo/linux-64@2.10.10"
-  - "@turbo/linux-arm64@2.10.10"
-  - "@turbo/windows-64@2.10.10"
-  - "@turbo/windows-arm64@2.10.10"
-  - turbo@2.10.10
-  - "@wuchale/svelte@0.20.6"
-  - wuchale@0.25.7
+  - "@flit/svelte-form@2.8.0"
+  - "@wuchale/svelte@0.20.7"
+  - aws-cdk@2.1137.0
+  - wuchale@0.25.8

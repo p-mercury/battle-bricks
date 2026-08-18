@@ -18,7 +18,7 @@
 		"@connectrpc/connect": "^2.1.2",
 		"@connectrpc/connect-web": "^2.1.2",
 		"@flit/accepted-language": "^0.1.0",
-		"@flit/svelte-form": "^2.7.0",
+		"@flit/svelte-form": "^2.8.0",
 		"@flit/sveltekit-adapter-cdk": "^2.6.0",
 		"@open-policy-agent/opa-wasm": "^1.10.0",
 		"@sentry/sveltekit": "^10.70.0",
@@ -27,7 +27,7 @@
 		"@sveltejs/kit": "^2.70.2",
 		"@sveltejs/vite-plugin-svelte": "^7.3.0",
 		"@vitejs/plugin-basic-ssl": "^2.3.0",
-		"@wuchale/svelte": "^0.20.6",
+		"@wuchale/svelte": "^0.20.7",
 		"ai": "^7.0.66",
 		"minisearch": "^7.2.0",
 		"sass": "^1.102.0",
@@ -36,7 +36,7 @@
 		"svelte-dnd-action": "^0.9.78",
 		"typescript": "^6.0.3",
 		"vite": "^8.2.1",
-		"wuchale": "^0.25.7",
+		"wuchale": "^0.25.8",
 		"zod": "^4.4.3"
 	}
 }

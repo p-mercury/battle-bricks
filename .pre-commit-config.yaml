@@ -21,7 +21,7 @@ repos:
     rev: "v3.9.6"
     hooks:
       - id: prettier
-        exclude: (?xi)^((?:.*/)?locales/.*)$
+        exclude: (?xi)^((?:.*/)?locales/.*|pnpm-lock\.yaml)$
   - repo: local
     hooks:
       - id: check-ci
