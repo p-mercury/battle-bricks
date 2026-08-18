@@ -2,6 +2,7 @@
 	import type { Unit } from "@battle-bricks/contracts/catalogue/v1/unit_pb";
 	import BrickCard from "$lib/components/brick-card.svelte";
 	import Stat from "$lib/components/stat.svelte";
+	import { getUnitPrice } from "$lib/unit";
 
 	let {
 		unit,
@@ -24,6 +25,9 @@
 		<div class="info">
 			<h3>{unit.name}</h3>
 		</div>
+		<div class="price">
+			{getUnitPrice(unit)}c
+		</div>
 		<div class="stats">
 			<Stat label="HP" color="GREEN" value={unit.health} />
 			<Stat label="SZ" color="BLUE" value={unit.size} />
@@ -43,9 +47,9 @@
 		display: grid;
 		width: 18.6rem;
 		grid-template:
-			"info info" 1.3rem
-			"image stats" 7.5rem /
-			7.5rem auto;
+			"info info price" 1.3rem
+			"image stats stats" 7.5rem /
+			7.5rem auto min-content;
 		gap: 0.6rem;
 	}
 
@@ -78,5 +82,15 @@
 			line-height: 1.2rem;
 			font-weight: 600;
 		}
+	}
+
+	.price {
+		grid-area: price;
+		color: black;
+		font-weight: 500;
+		background-color: orange;
+		line-height: 1rem;
+		padding: 0.2rem;
+		border-radius: 0.4rem;
 	}
 </style>
