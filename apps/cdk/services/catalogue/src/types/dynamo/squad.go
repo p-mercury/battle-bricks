@@ -2,7 +2,6 @@ package dynamo
 
 import (
 	"contracts/dist/catalogue/v1"
-	"contracts/dist/identity/v1"
 )
 
 type Squad struct {
@@ -20,10 +19,8 @@ type Squad struct {
 
 	Name     string
 	Faction  catalogue.Faction
-	Loadouts []string
-}
-
-type NotificationSettingsTopic struct {
-	Enabled bool
-	Methods []identity.UserNotificationSettings_Topic_Method
+	Loadouts []struct {
+		Unit string
+		Item *string
+	}
 }

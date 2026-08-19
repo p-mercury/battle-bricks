@@ -36,23 +36,10 @@ func (s *Handler) GetSquad(
 		if len(response.Item) > 0 {
 			var item dynamo.Squad
 			if err := attributevalue.UnmarshalMap(response.Item, &item); err != nil {
-				logger.Error("Error parsing squad", slog.Any("error", err))
+				logger.Error("Error parsing product", slog.Any("error", err))
 				return nil, connectkit.NewUnexpected()
 			}
-
-			ls := make([]*catalogue.Unit, len(item.Loadouts))
-			for i, loadout := range item.Loadouts {
-				ls[i] = Units[loadout]
-			}
-
-			squad = &catalogue.Squad{
-				Id:      item.Id,
-				Version: item.Version,
-
-				Name:    item.Name,
-				Faction: item.Faction,
-				Units:   ls,
-			}
+			squad = parseDynamoSquad(&item)
 		}
 	}
 

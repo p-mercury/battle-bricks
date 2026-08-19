@@ -1,0 +1,17 @@
+syntax = "proto3";
+package catalogue.v1;
+
+import "catalogue/v1/item.proto";
+import "catalogue/v1/unit.proto";
+
+option go_package = "contracts/dist/catalogue/v1;catalogue";
+
+message Loadout {
+  Unit unit = 1;
+  optional Item item = 2;
+}
+
+message UpsertLoadout {
+  string unit = 1;
+  optional string item = 2;
+}

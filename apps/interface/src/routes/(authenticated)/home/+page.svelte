@@ -74,17 +74,17 @@
 													name: data.squads[selectedSquad]!.name,
 													faction: data.squads[selectedSquad]!.faction,
 													loadouts: Object.fromEntries(
-														data.squads[selectedSquad]!.units.map((l, i) => {
+														data.squads[selectedSquad]!.loadouts.map((l, i) => {
 															const id = crypto.randomUUID();
 															const loadout: Loadout = {
 																id: id,
-																image: l.image,
-																name: l.name,
+																image: l.unit!.image,
+																name: l.unit!.name,
 																color: colors[i].hex,
 																turnComplete: false,
-																unit: l!,
+																unit: l.unit!,
 																items: Object.values(
-																	l.items.reduce(
+																	l.unit!.items.reduce(
 																		(items, item) => {
 																			if (item.details.value) {
 																				if ("capacity" in item.details.value) {

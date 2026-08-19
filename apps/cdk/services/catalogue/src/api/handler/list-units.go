@@ -51,7 +51,6 @@ var Units = map[string]*catalogue.Unit{
 				},
 			},
 		},
-		LoadoutSlots: 1,
 		LoadoutItems: []*catalogue.Item{
 			Items["AoM09AjZL8hUMhTYLIYY"], // Vibroblade
 			Items["d2D9WroLYwyxAWaUpG1u"], // Blue Bolts
@@ -96,7 +95,6 @@ var Units = map[string]*catalogue.Unit{
 				},
 			},
 		},
-		LoadoutSlots: 1,
 		LoadoutItems: []*catalogue.Item{
 			Items["AoM09AjZL8hUMhTYLIYY"], // Vibroblade
 			Items["d2D9WroLYwyxAWaUpG1u"], // Blue Bolts
@@ -142,7 +140,6 @@ var Units = map[string]*catalogue.Unit{
 				},
 			},
 		},
-		LoadoutSlots: 1,
 		LoadoutItems: []*catalogue.Item{
 			Items["AoM09AjZL8hUMhTYLIYY"], // Vibroblade
 			Items["d2D9WroLYwyxAWaUpG1u"], // Blue Bolts
@@ -193,7 +190,6 @@ var Units = map[string]*catalogue.Unit{
 				},
 			},
 		},
-		LoadoutSlots: 2,
 		LoadoutItems: []*catalogue.Item{
 			Items["bJeepLfSKSzI1yznvTUM"], // Blue Shell
 			Items["xl4SlN7caFSq68DPxhr3"], // Fragmentation rocket
@@ -239,7 +235,6 @@ var Units = map[string]*catalogue.Unit{
 				},
 			},
 		},
-		LoadoutSlots: 1,
 		LoadoutItems: []*catalogue.Item{
 			Items["CV1AILTJNoyVKD7Uon63"], // Red Bolts
 		},
@@ -280,7 +275,6 @@ var Units = map[string]*catalogue.Unit{
 				},
 			},
 		},
-		LoadoutSlots: 1,
 		LoadoutItems: []*catalogue.Item{
 			Items["CV1AILTJNoyVKD7Uon63"], // Red Bolts
 		},
@@ -321,7 +315,6 @@ var Units = map[string]*catalogue.Unit{
 				},
 			},
 		},
-		LoadoutSlots: 1,
 		LoadoutItems: []*catalogue.Item{
 			Items["CV1AILTJNoyVKD7Uon63"], // Red Bolts
 		},
@@ -370,7 +363,6 @@ var Units = map[string]*catalogue.Unit{
 				},
 			},
 		},
-		LoadoutSlots: 1,
 		LoadoutItems: []*catalogue.Item{
 			Items["CV1AILTJNoyVKD7Uon63"], // Red Bolts
 			Items["xl4SlN7caFSq68DPxhr3"], // Fragmentation rocket
@@ -437,7 +429,6 @@ var Units = map[string]*catalogue.Unit{
 				},
 			},
 		},
-		LoadoutSlots: 1,
 		LoadoutItems: []*catalogue.Item{
 			Items["CV1AILTJNoyVKD7Uon63"], // Red Bolts
 			Items["bJeepLfSKSzI1yznvTUM"], // Red Shell

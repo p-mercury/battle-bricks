@@ -101,9 +101,15 @@ func (s *Handler) CreateSquad(
 		}
 
 		{
-			loadouts := make([]dynamoTypes.AttributeValue, len(req.Msg.Units))
-			for i, loadout := range req.Msg.Units {
-				loadouts[i] = &dynamoTypes.AttributeValueMemberS{Value: loadout}
+			loadouts := make([]dynamoTypes.AttributeValue, len(req.Msg.Loadouts))
+			for i, loadout := range req.Msg.Loadouts {
+				l := map[string]dynamoTypes.AttributeValue{
+					"unit": &dynamoTypes.AttributeValueMemberS{Value: loadout.Unit},
+				}
+				if loadout.Item != nil {
+					l["item"] = &dynamoTypes.AttributeValueMemberS{Value: *loadout.Item}
+				}
+				loadouts[i] = &dynamoTypes.AttributeValueMemberM{Value: l}
 			}
 			item["loadouts"] = &dynamoTypes.AttributeValueMemberL{Value: loadouts}
 		}
@@ -140,9 +146,20 @@ func (s *Handler) CreateSquad(
 		return nil, connectkit.NewUnexpected()
 	}
 
-	ls := make([]*catalogue.Unit, len(req.Msg.Units))
-	for i, loadout := range req.Msg.Units {
-		ls[i] = Units[loadout]
+	loadouts := []*catalogue.Loadout{}
+	for _, loadout := range req.Msg.Loadouts {
+		if unit, found := Units[loadout.Unit]; found {
+			var item *catalogue.Item
+			if loadout.Item != nil {
+				if it, found := Items[*loadout.Item]; found {
+					item = it
+				}
+			}
+			loadouts = append(loadouts, &catalogue.Loadout{
+				Unit: unit,
+				Item: item,
+			})
+		}
 	}
 
 	return connect.NewResponse(&catalogue.CreateSquadResponse{
@@ -150,9 +167,9 @@ func (s *Handler) CreateSquad(
 			Id:      id,
 			Version: 1,
 
-			Name:    req.Msg.Name,
-			Faction: req.Msg.Faction,
-			Units:   ls,
+			Name:     req.Msg.Name,
+			Faction:  req.Msg.Faction,
+			Loadouts: loadouts,
 		},
 	}), nil
 }

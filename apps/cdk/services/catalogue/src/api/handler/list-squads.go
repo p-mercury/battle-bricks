@@ -38,7 +38,7 @@ func (s *Handler) ListSquads(
 		}
 	}
 
-	var squads []dynamo.Squad
+	var squads []*catalogue.Squad
 	{
 		response, err := DynamoRead.Query(ctx, &dynamodb.QueryInput{
 			TableName:              TableName,
@@ -57,26 +57,17 @@ func (s *Handler) ListSquads(
 			logger.Error("Error retriving squads", slog.Any("error", err))
 			return nil, connectkit.NewUnexpected()
 		}
-		if err := attributevalue.UnmarshalListOfMaps(response.Items, &squads); err != nil {
-			logger.Warn("Error parsing squads", slog.Any("items", response.Items), slog.Any("error", err))
-			return nil, connectkit.NewUnexpected()
+		if len(response.Items) > 0 {
+			var items []dynamo.Squad
+			if err := attributevalue.UnmarshalListOfMaps(response.Items, &items); err != nil {
+				logger.Error("Error parsing product", slog.Any("error", err))
+				return nil, connectkit.NewUnexpected()
+			}
+			for _, item := range items {
+				squads = append(squads, parseDynamoSquad(&item))
+			}
 		}
 	}
 
-	ss := make([]*catalogue.Squad, len(squads))
-	for i, squad := range squads {
-		ss[i] = &catalogue.Squad{
-			Id:      squad.Id,
-			Version: squad.Version,
-
-			Name:    squad.Name,
-			Faction: squad.Faction,
-			Units:   make([]*catalogue.Unit, len(squad.Loadouts)),
-		}
-		for n, loadout := range squad.Loadouts {
-			ss[i].Units[n] = Units[loadout]
-		}
-	}
-
-	return connect.NewResponse(&catalogue.ListSquadsResponse{Squads: ss}), nil
+	return connect.NewResponse(&catalogue.ListSquadsResponse{Squads: squads}), nil
 }

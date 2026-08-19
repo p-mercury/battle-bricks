@@ -3,28 +3,23 @@
 	import UnitsZone from "./units-zone.svelte";
 	import type { Squad } from "$lib/squad";
 	import { page } from "$app/state";
-	import SquadZone from "./squad-zone.svelte";
+	import LoadoutsZone from "./loadouts-zone.svelte";
 	import { goto } from "$app/navigation";
-	import type { Unit } from "@battle-bricks/contracts/catalogue/v1/unit_pb";
 	import type { PageData } from "./$types";
 	import { Faction } from "@battle-bricks/contracts/catalogue/v1/faction_pb";
 	import { getClient } from "$lib/clients/univeral-client.svelte";
 	import { getUnitPrice } from "$lib/unit";
+	import { getLoadoutPrice } from "$lib/loadout";
+	import type { Loadout } from "@battle-bricks/contracts/catalogue/v1/loadout_pb";
 
 	let { data }: { data: PageData } = $props();
 
 	const flipDurationMs = 150;
 	let faction = $state<Faction>(Faction.GALACTIC_REPUBLIC);
-	let units = $state<{ id: string; unit: Unit }[]>([]);
-	let squad = $state<{ id: string; unit: Unit }[]>([]);
+	let units = $state<{ id: string; loadout: Loadout }[]>([]);
+	let loadouts = $state<{ id: string; loadout: Loadout }[]>([]);
 	let budget = $derived(
-		squad.reduce(
-			(a, item) =>
-				a -
-				(item.unit!.price +
-					item.unit.items.reduce((b, item) => b + item.price, 0)),
-			1500,
-		),
+		loadouts.reduce((a, i) => a - getLoadoutPrice(i.loadout), 1500),
 	);
 	let name = $state("");
 
@@ -34,10 +29,13 @@
 			.sort((a, b) => getUnitPrice(a) - getUnitPrice(b))
 			.map((i) => ({
 				id: crypto.randomUUID(),
-				unit: i,
+				loadout: {
+					unit: i,
+					items: [],
+				} as any,
 			}));
-		squad = untrack(() => squad).filter((i) =>
-			i.unit!.factions.includes(faction),
+		loadouts = untrack(() => loadouts).filter((i) =>
+			i.loadout!.unit!.factions.includes(faction),
 		);
 	});
 
@@ -45,9 +43,10 @@
 		if (data.squad) {
 			faction = data.squad.faction;
 			name = data.squad.name;
-			squad = data.squad.units.map((unit) => ({
+			loadouts = data.squad.loadouts.map((loadout) => ({
 				id: crypto.randomUUID(),
-				unit,
+				loadout,
+				items: [],
 			}));
 		}
 	});
@@ -69,7 +68,7 @@
 					return;
 				}
 
-				if (!squad.length) {
+				if (!loadouts.length) {
 					return;
 				}
 
@@ -83,16 +82,22 @@
 				if (page.params.id && page.params.id !== "new") {
 					client.catalogue.updateSquad({
 						id: page.params.id,
-						updateMask: ["name", "faction", "units"],
+						updateMask: ["name", "faction", "loadouts"],
 						name: name,
 						faction: faction,
-						units: squad.map((l) => l.unit.id),
+						loadouts: loadouts.map((l) => ({
+							unit: l.loadout.unit!.id,
+							item: l.loadout.item?.id,
+						})),
 					});
 				} else {
 					client.catalogue.createSquad({
 						name: name,
 						faction: faction,
-						units: squad.map((l) => l.unit.id),
+						loadouts: loadouts.map((l) => ({
+							unit: l.loadout.unit!.id,
+							item: l.loadout.item?.id,
+						})),
 					});
 				}
 
@@ -110,37 +115,37 @@
 		<UnitsZone bind:items={units} {flipDurationMs} />
 	</div>
 	<div class="squad">
-		<SquadZone
-			bind:items={squad}
+		<LoadoutsZone
+			bind:items={loadouts}
 			{flipDurationMs}
 			handleConsider={(event) => {
 				const nextBudget = event.detail.items.reduce(
-					(a, item) => a - getUnitPrice(item.unit),
+					(a, item) => a - getLoadoutPrice(item.loadout),
 					1500,
 				);
 				if (nextBudget >= 0) {
-					squad = event.detail.items;
+					loadouts = event.detail.items;
 				}
 			}}
 			handleFinalize={(event) => {
 				const items = event.detail.items;
 
 				const nextBudget = items.reduce(
-					(remaining, item) => remaining - getUnitPrice(item.unit),
+					(remaining, item) => remaining - getLoadoutPrice(item.loadout),
 					1500,
 				);
 
-				const previousBudget = squad.reduce(
-					(remaining, item) => remaining - getUnitPrice(item.unit),
+				const previousBudget = loadouts.reduce(
+					(remaining, item) => remaining - getLoadoutPrice(item.loadout),
 					1500,
 				);
 
 				if (nextBudget >= 0 || nextBudget > previousBudget) {
-					squad = [...items].sort(
-						(a, b) => getUnitPrice(a.unit) - getUnitPrice(b.unit),
+					loadouts = [...items].sort(
+						(a, b) => getLoadoutPrice(a.loadout) - getLoadoutPrice(b.loadout),
 					);
 				} else {
-					squad = [...squad];
+					loadouts = [...loadouts];
 				}
 			}}
 		/>

@@ -3,6 +3,7 @@ package catalogue.v1;
 
 import "buf/validate/validate.proto";
 import "catalogue/v1/faction.proto";
+import "catalogue/v1/loadout.proto";
 import "catalogue/v1/squad.proto";
 import "common/v1/correlation.proto";
 import "identity/rules.proto";
@@ -21,7 +22,7 @@ message CreateSquadRequest {
     not_in: [0]
   }];
 
-  repeated string units = 5;
+  repeated UpsertLoadout loadouts = 5;
 }
 
 message CreateSquadResponse {

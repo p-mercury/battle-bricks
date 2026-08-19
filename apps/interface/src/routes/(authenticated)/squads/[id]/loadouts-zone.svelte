@@ -1,6 +1,6 @@
 <script lang="ts">
 	import UnitCard from "$lib/components/unit-card.svelte";
-	import type { Unit } from "@battle-bricks/contracts/catalogue/v1/unit_pb";
+	import type { Loadout } from "@battle-bricks/contracts/catalogue/v1/loadout_pb";
 	import { dragHandleZone, type DndEvent } from "svelte-dnd-action";
 
 	let {
@@ -9,7 +9,7 @@
 		handleConsider,
 		handleFinalize,
 	}: {
-		items: { id: string; unit: Unit }[];
+		items: { id: string; loadout: Loadout }[];
 		flipDurationMs: number;
 		handleConsider: (
 			event: CustomEvent<DndEvent<(typeof items)[number]>>,
@@ -41,7 +41,7 @@
 	onfinalize={handleFinalize}
 >
 	{#each items as item (item.id)}
-		<UnitCard unit={item.unit} drag />
+		<UnitCard unit={item.loadout.unit!} drag />
 	{/each}
 </ul>
 

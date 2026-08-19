@@ -13,3 +13,18 @@ minimumReleaseAgeExclude:
   - "@flit/svelte-form@2.8.0"
   - "@wuchale/svelte@0.20.7"
   - wuchale@0.25.8
+  - "@ai-sdk/gateway@4.0.55"
+  - "@ai-sdk/openai@4.0.43"
+  - ai@7.0.69
+  - arrayiffy-if-string@5.2.1
+  - aws-cdk@2.1138.0
+  - codsen-utils@1.8.0
+  - html-crush@6.2.1
+  - ranges-apply@7.2.1
+  - ranges-merge@9.2.1
+  - ranges-push@7.2.0
+  - ranges-sort@6.2.0
+  - string-collapse-leading-whitespace@7.2.0
+  - string-left-right@6.2.0
+  - string-match-left-right@9.2.1
+  - string-range-expander@4.2.0

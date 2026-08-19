@@ -42,23 +42,10 @@ func (s *Handler) UpdateSquad(
 		if len(response.Item) > 0 {
 			var item dynamo.Squad
 			if err := attributevalue.UnmarshalMap(response.Item, &item); err != nil {
-				logger.Error("Error parsing squad", slog.Any("error", err))
+				logger.Error("Error parsing product", slog.Any("error", err))
 				return nil, connectkit.NewUnexpected()
 			}
-
-			ls := make([]*catalogue.Unit, len(item.Loadouts))
-			for i, loadout := range item.Loadouts {
-				ls[i] = Units[loadout]
-			}
-
-			squad = &catalogue.Squad{
-				Id:      item.Id,
-				Version: item.Version,
-
-				Name:    item.Name,
-				Faction: item.Faction,
-				Units:   ls,
-			}
+			squad = parseDynamoSquad(&item)
 		}
 	}
 
@@ -181,18 +168,35 @@ func (s *Handler) UpdateSquad(
 			}
 		}
 
-		if slices.Contains(req.Msg.UpdateMask, "units") {
-			ls := make([]*catalogue.Unit, len(req.Msg.Units))
-			for i, loadout := range req.Msg.Units {
-				ls[i] = Units[loadout]
+		if slices.Contains(req.Msg.UpdateMask, "loadouts") {
+			ls := []*catalogue.Loadout{}
+			for _, loadout := range req.Msg.Loadouts {
+				if unit, found := Units[loadout.Unit]; found {
+					var item *catalogue.Item
+					if loadout.Item != nil {
+						if it, found := Items[*loadout.Item]; found {
+							item = it
+						}
+					}
+					ls = append(ls, &catalogue.Loadout{
+						Unit: unit,
+						Item: item,
+					})
+				}
 			}
 
-			if !slices.Equal(squad.Units, ls) {
-				squad.Units = ls
+			if !slices.Equal(squad.Loadouts, ls) {
+				squad.Loadouts = ls
 
-				loadouts := make([]dynamoTypes.AttributeValue, len(req.Msg.Units))
-				for i, loadout := range req.Msg.Units {
-					loadouts[i] = &dynamoTypes.AttributeValueMemberS{Value: loadout}
+				loadouts := make([]dynamoTypes.AttributeValue, len(req.Msg.Loadouts))
+				for i, loadout := range req.Msg.Loadouts {
+					l := map[string]dynamoTypes.AttributeValue{
+						"unit": &dynamoTypes.AttributeValueMemberS{Value: loadout.Unit},
+					}
+					if loadout.Item != nil {
+						l["item"] = &dynamoTypes.AttributeValueMemberS{Value: *loadout.Item}
+					}
+					loadouts[i] = &dynamoTypes.AttributeValueMemberM{Value: l}
 				}
 				updateBuilder.SetList("loadouts", loadouts)
 			}
