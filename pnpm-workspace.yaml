@@ -13,9 +13,9 @@ minimumReleaseAgeExclude:
   - "@flit/svelte-form@2.8.0"
   - "@wuchale/svelte@0.20.7"
   - wuchale@0.25.8
-  - "@ai-sdk/gateway@4.0.55"
-  - "@ai-sdk/openai@4.0.43"
-  - ai@7.0.69
+  - "@ai-sdk/gateway@4.0.55 || 4.0.56"
+  - "@ai-sdk/openai@4.0.43 || 4.0.44"
+  - ai@7.0.69 || 7.0.70
   - arrayiffy-if-string@5.2.1
   - aws-cdk@2.1138.0
   - codsen-utils@1.8.0
@@ -28,3 +28,7 @@ minimumReleaseAgeExclude:
   - string-left-right@6.2.0
   - string-match-left-right@9.2.1
   - string-range-expander@4.2.0
+  - "@ai-sdk/provider-utils@5.0.28"
+  - sass@1.103.0
+  - svelte@5.56.10
+  - vite@8.2.2

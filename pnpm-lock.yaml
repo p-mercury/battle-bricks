@@ -16,7 +16,7 @@ importers:
         version: 3.0.2(prettier@3.9.6)
       prettier-plugin-svelte:
         specifier: ^4.1.1
-        version: 4.1.1(prettier@3.9.6)(svelte@5.56.9)
+        version: 4.1.1(prettier@3.9.6)(svelte@5.56.10)
       turbo:
         specifier: ^2.10.11
         version: 2.10.11
@@ -24,14 +24,14 @@ importers:
   apps/cdk/backbone:
     dependencies:
       '@aws-cdk/aws-lambda-go-alpha':
-        specifier: ^2.265.0-alpha.0
-        version: 2.265.0-alpha.0(aws-cdk-lib@2.265.0(constructs@10.8.1))(constructs@10.8.1)
+        specifier: ^2.266.0-alpha.0
+        version: 2.266.0-alpha.0(aws-cdk-lib@2.266.0(constructs@10.8.1))(constructs@10.8.1)
       '@types/node':
         specifier: ^26.2.0
         version: 26.2.0
       aws-cdk-lib:
-        specifier: ^2.265.0
-        version: 2.265.0(constructs@10.8.1)
+        specifier: ^2.266.0
+        version: 2.266.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -48,8 +48,8 @@ importers:
         specifier: ^26.2.0
         version: 26.2.0
       aws-cdk-lib:
-        specifier: ^2.265.0
-        version: 2.265.0(constructs@10.8.1)
+        specifier: ^2.266.0
+        version: 2.266.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -82,7 +82,7 @@ importers:
         version: link:../services/policy
       '@flit/cdk-pipeline':
         specifier: ^2.7.0
-        version: 2.7.0(aws-cdk-lib@2.265.0(constructs@10.8.1))(constructs@10.8.1)
+        version: 2.7.0(aws-cdk-lib@2.266.0(constructs@10.8.1))(constructs@10.8.1)
       '@types/node':
         specifier: ^26.2.0
         version: 26.2.0
@@ -90,8 +90,8 @@ importers:
         specifier: ^2.1138.0
         version: 2.1138.0
       aws-cdk-lib:
-        specifier: ^2.265.0
-        version: 2.265.0(constructs@10.8.1)
+        specifier: ^2.266.0
+        version: 2.266.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -105,8 +105,8 @@ importers:
   apps/cdk/services/catalogue:
     dependencies:
       '@aws-cdk/aws-lambda-go-alpha':
-        specifier: ^2.265.0-alpha.0
-        version: 2.265.0-alpha.0(aws-cdk-lib@2.265.0(constructs@10.8.1))(constructs@10.8.1)
+        specifier: ^2.266.0-alpha.0
+        version: 2.266.0-alpha.0(aws-cdk-lib@2.266.0(constructs@10.8.1))(constructs@10.8.1)
       '@battle-bricks/backbone':
         specifier: workspace:*
         version: link:../../backbone
@@ -130,13 +130,13 @@ importers:
         version: 2.1.2(@bufbuild/protobuf@2.14.0)
       '@flit/cdk-bucket-mesh':
         specifier: ^0.7.1
-        version: 0.7.1(aws-cdk-lib@2.265.0(constructs@10.8.1))(constructs@10.8.1)
+        version: 0.7.1(aws-cdk-lib@2.266.0(constructs@10.8.1))(constructs@10.8.1)
       '@types/node':
         specifier: ^26.2.0
         version: 26.2.0
       aws-cdk-lib:
-        specifier: ^2.265.0
-        version: 2.265.0(constructs@10.8.1)
+        specifier: ^2.266.0
+        version: 2.266.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -147,8 +147,8 @@ importers:
   apps/cdk/services/file-staging:
     dependencies:
       '@aws-cdk/aws-lambda-go-alpha':
-        specifier: ^2.265.0-alpha.0
-        version: 2.265.0-alpha.0(aws-cdk-lib@2.265.0(constructs@10.8.1))(constructs@10.8.1)
+        specifier: ^2.266.0-alpha.0
+        version: 2.266.0-alpha.0(aws-cdk-lib@2.266.0(constructs@10.8.1))(constructs@10.8.1)
       '@battle-bricks/backbone':
         specifier: workspace:*
         version: link:../../backbone
@@ -171,8 +171,8 @@ importers:
         specifier: ^26.2.0
         version: 26.2.0
       aws-cdk-lib:
-        specifier: ^2.265.0
-        version: 2.265.0(constructs@10.8.1)
+        specifier: ^2.266.0
+        version: 2.266.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -186,8 +186,8 @@ importers:
   apps/cdk/services/identity:
     dependencies:
       '@aws-cdk/aws-lambda-go-alpha':
-        specifier: ^2.265.0-alpha.0
-        version: 2.265.0-alpha.0(aws-cdk-lib@2.265.0(constructs@10.8.1))(constructs@10.8.1)
+        specifier: ^2.266.0-alpha.0
+        version: 2.266.0-alpha.0(aws-cdk-lib@2.266.0(constructs@10.8.1))(constructs@10.8.1)
       '@battle-bricks/backbone':
         specifier: workspace:*
         version: link:../../backbone
@@ -211,13 +211,13 @@ importers:
         version: 2.1.2(@bufbuild/protobuf@2.14.0)
       '@flit/cdk-bucket-mesh':
         specifier: ^0.7.1
-        version: 0.7.1(aws-cdk-lib@2.265.0(constructs@10.8.1))(constructs@10.8.1)
+        version: 0.7.1(aws-cdk-lib@2.266.0(constructs@10.8.1))(constructs@10.8.1)
       '@types/node':
         specifier: ^26.2.0
         version: 26.2.0
       aws-cdk-lib:
-        specifier: ^2.265.0
-        version: 2.265.0(constructs@10.8.1)
+        specifier: ^2.266.0
+        version: 2.266.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -228,8 +228,8 @@ importers:
   apps/cdk/services/notification:
     dependencies:
       '@aws-cdk/aws-lambda-go-alpha':
-        specifier: ^2.265.0-alpha.0
-        version: 2.265.0-alpha.0(aws-cdk-lib@2.265.0(constructs@10.8.1))(constructs@10.8.1)
+        specifier: ^2.266.0-alpha.0
+        version: 2.266.0-alpha.0(aws-cdk-lib@2.266.0(constructs@10.8.1))(constructs@10.8.1)
       '@battle-bricks/backbone':
         specifier: workspace:*
         version: link:../../backbone
@@ -252,8 +252,8 @@ importers:
         specifier: ^26.2.0
         version: 26.2.0
       aws-cdk-lib:
-        specifier: ^2.265.0
-        version: 2.265.0(constructs@10.8.1)
+        specifier: ^2.266.0
+        version: 2.266.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -270,8 +270,8 @@ importers:
   apps/cdk/services/policy:
     dependencies:
       '@aws-cdk/aws-lambda-go-alpha':
-        specifier: ^2.265.0-alpha.0
-        version: 2.265.0-alpha.0(aws-cdk-lib@2.265.0(constructs@10.8.1))(constructs@10.8.1)
+        specifier: ^2.266.0-alpha.0
+        version: 2.266.0-alpha.0(aws-cdk-lib@2.266.0(constructs@10.8.1))(constructs@10.8.1)
       '@battle-bricks/backbone':
         specifier: workspace:*
         version: link:../../backbone
@@ -294,8 +294,8 @@ importers:
         specifier: ^26.2.0
         version: 26.2.0
       aws-cdk-lib:
-        specifier: ^2.265.0
-        version: 2.265.0(constructs@10.8.1)
+        specifier: ^2.266.0
+        version: 2.266.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -306,8 +306,8 @@ importers:
   apps/interface:
     dependencies:
       '@ai-sdk/openai':
-        specifier: ^4.0.43
-        version: 4.0.43(zod@4.4.3)
+        specifier: ^4.0.44
+        version: 4.0.44(zod@4.4.3)
       '@aws-lambda-powertools/logger':
         specifier: ^2.35.0
         version: 2.35.0
@@ -331,55 +331,55 @@ importers:
         version: 2.8.0
       '@flit/sveltekit-adapter-cdk':
         specifier: ^2.6.0
-        version: 2.6.0(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.9)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)))(constructs@10.8.1)(svelte@5.56.9)(typescript@6.0.3)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0))
+        version: 2.6.0(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.10)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0)))(constructs@10.8.1)(svelte@5.56.10)(typescript@6.0.3)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0))
       '@open-policy-agent/opa-wasm':
         specifier: ^1.10.0
         version: 1.10.0
       '@sentry/sveltekit':
         specifier: ^10.70.0
-        version: 10.70.0(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@sveltejs/kit@2.70.3(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.9)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)))(svelte@5.56.9)(typescript@6.0.3)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)))(svelte@5.56.9)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0))
+        version: 10.70.0(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@sveltejs/kit@2.70.3(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.10)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0)))(svelte@5.56.10)(typescript@6.0.3)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0)))(svelte@5.56.10)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0))
       '@svelte-put/inline-svg':
         specifier: ^4.0.2
-        version: 4.0.2(svelte@5.56.9)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0))
+        version: 4.0.2(svelte@5.56.10)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0))
       '@sveltejs/adapter-static':
         specifier: ^3.0.10
-        version: 3.0.10(@sveltejs/kit@2.70.3(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.9)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)))(svelte@5.56.9)(typescript@6.0.3)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)))
+        version: 3.0.10(@sveltejs/kit@2.70.3(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.10)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0)))(svelte@5.56.10)(typescript@6.0.3)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0)))
       '@sveltejs/kit':
         specifier: ^2.70.3
-        version: 2.70.3(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.9)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)))(svelte@5.56.9)(typescript@6.0.3)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0))
+        version: 2.70.3(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.10)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0)))(svelte@5.56.10)(typescript@6.0.3)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0))
       '@sveltejs/vite-plugin-svelte':
         specifier: ^7.3.0
-        version: 7.3.0(svelte@5.56.9)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0))
+        version: 7.3.0(svelte@5.56.10)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0))
       '@vitejs/plugin-basic-ssl':
         specifier: ^2.3.0
-        version: 2.3.0(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0))
+        version: 2.3.0(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0))
       '@wuchale/svelte':
         specifier: ^0.20.7
-        version: 0.20.7(svelte@5.56.9)
+        version: 0.20.7(svelte@5.56.10)
       ai:
-        specifier: ^7.0.69
-        version: 7.0.69(zod@4.4.3)
+        specifier: ^7.0.70
+        version: 7.0.70(zod@4.4.3)
       minisearch:
         specifier: ^7.2.0
         version: 7.2.0
       sass:
-        specifier: ^1.102.0
-        version: 1.102.0
+        specifier: ^1.103.0
+        version: 1.103.0
       svelte:
-        specifier: ^5.56.9
-        version: 5.56.9
+        specifier: ^5.56.10
+        version: 5.56.10
       svelte-check:
         specifier: ^4.7.6
-        version: 4.7.6(picomatch@4.0.5)(svelte@5.56.9)(typescript@6.0.3)
+        version: 4.7.6(picomatch@4.0.5)(svelte@5.56.10)(typescript@6.0.3)
       svelte-dnd-action:
         specifier: ^0.9.78
-        version: 0.9.78(svelte@5.56.9)
+        version: 0.9.78(svelte@5.56.10)
       typescript:
         specifier: ^6.0.3
         version: 6.0.3
       vite:
-        specifier: ^8.2.1
-        version: 8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)
+        specifier: ^8.2.2
+        version: 8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0)
       wuchale:
         specifier: ^0.25.8
         version: 0.25.8
@@ -404,8 +404,8 @@ importers:
         specifier: ^2.14.0
         version: 2.14.0(@bufbuild/protobuf@2.14.0)
       aws-cdk-lib:
-        specifier: ^2.265.0
-        version: 2.265.0(constructs@10.8.1)
+        specifier: ^2.266.0
+        version: 2.266.0(constructs@10.8.1)
       constructs:
         specifier: ^10.8.1
         version: 10.8.1
@@ -427,20 +427,20 @@ importers:
 
 packages:
 
-  '@ai-sdk/gateway@4.0.55':
-    resolution: {integrity: sha512-7WP/nlDz2BkXFlZzwF3w5JgCvktyHC++LP4PZ4mQpbvxrq+M7OdNslevlkuddHhJ+62BZu4oiL/afXlsWOSJZQ==}
+  '@ai-sdk/gateway@4.0.56':
+    resolution: {integrity: sha512-fc7tq+v7WrzCV+aXegbq/EOs68tFDJYLEwnCOnVYcB/Y5ZTjUIHzyJlrqdoJUlMTkc/qmKsXb1ovVvdUYPmxIA==}
     engines: {node: '>=22'}
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
 
-  '@ai-sdk/openai@4.0.43':
-    resolution: {integrity: sha512-O5t21AmcBwsEg/l8ro91CHzdBjEkxtJRFh6DH9KDjRrWDeTMuqJt7XkaFHIqL8H0nvjFv8H7kck+JwirUWPS2g==}
+  '@ai-sdk/openai@4.0.44':
+    resolution: {integrity: sha512-x3XjhKu5r7DKELWwE5WzCAKePkAqZXlgvat4eIiSm37MaQHk+n3qeJxmVcfqJWlQ2kkAld8+f7G3E3yjG+4ShQ==}
     engines: {node: '>=22'}
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
 
-  '@ai-sdk/provider-utils@5.0.27':
-    resolution: {integrity: sha512-EzAn4pdgG5g0xXtH6lE2zyNmfjDQIDjATkfqzuidEI35g++hh4+07vnjzkT/RmGmIClPZiRj/Q2GMPV2V7mkHw==}
+  '@ai-sdk/provider-utils@5.0.28':
+    resolution: {integrity: sha512-TnHUyd/rCYQqHg5RuiOaz/hUql6U+kbUaBW0Rp+0N5UhnAInA9CzzV0HXvuAAPwppDsK6fAx9Rd+tRawpJ/3pg==}
     engines: {node: '>=22'}
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
@@ -466,11 +466,11 @@ packages:
   '@aws-cdk/asset-node-proxy-agent-v6@2.1.2':
     resolution: {integrity: sha512-pDiuqH+qY3zM9lhhLjbKJ1tnKOHzQ2V4Wr/3qsxyKeKAkuPMI/BVGvZG1PbrikUw949cGVTfVEt4ETKKYnrj0Q==}
 
-  '@aws-cdk/aws-lambda-go-alpha@2.265.0-alpha.0':
-    resolution: {integrity: sha512-hgoWoPQ+Ve+L1qoNxMRjpDIe4ZK2fHnp5Ot12IjBVU7Z++UETrON7FdkB5WC4FFunXMRAABEkoo4SHqCP2ltsA==}
+  '@aws-cdk/aws-lambda-go-alpha@2.266.0-alpha.0':
+    resolution: {integrity: sha512-MdcNmeZpNaSisNLtSXGW+uH5NWo+FPNXWALfZxemkhNjJmUg8VxI3WtstPmyBCz+EGzKtfS/OoyGwaBKibr3Nw==}
     engines: {node: '>= 20.0.0'}
     peerDependencies:
-      aws-cdk-lib: ^2.265.0
+      aws-cdk-lib: ^2.266.0
       constructs: ^10.5.0
 
   '@aws-cdk/cloud-assembly-schema@54.19.0':
@@ -1354,8 +1354,8 @@ packages:
     resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
     engines: {node: '>= 6.0.0'}
 
-  ai@7.0.69:
-    resolution: {integrity: sha512-gudEqQYt/FuRpQkckLHPYKOh5M5v5ayPmzQAk5xyZOaWkUM0ArNGdXQiBGEuZA7GCwYOjzmWxB44ZW0CyRhHfQ==}
+  ai@7.0.70:
+    resolution: {integrity: sha512-r7Y0alVQqairf0WvT3puyjz5wPMjRV5zYSHiGz87K3uoqkCeK1EaN6O8lLqduSszLcfqC6XVJAIdy3/RkPwPHg==}
     engines: {node: '>=22'}
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
@@ -1374,6 +1374,25 @@ packages:
 
   aws-cdk-lib@2.265.0:
     resolution: {integrity: sha512-Ur96d/ZW+gqAW4XtqKQp//D9O/jQvyRoXhAqoHGybpV03qjckGIQcLcGkLV68+jv03TX/rOXHCsa2IEFcCXa4w==}
+    engines: {node: '>= 20.0.0'}
+    peerDependencies:
+      constructs: ^10.5.0
+    bundledDependencies:
+      - '@aws/cloudformation-validate'
+      - '@balena/dockerignore'
+      - '@aws-cdk/cloud-assembly-api'
+      - case
+      - fs-extra
+      - ignore
+      - jsonschema
+      - minimatch
+      - punycode
+      - semver
+      - yaml
+      - mime-types
+
+  aws-cdk-lib@2.266.0:
+    resolution: {integrity: sha512-sBQU42pEc9ud3yeVU2En2euQRUhCg63eaJIPEVpBtE5aPhJjN3d9MkzQ9eYGLVXP3fnohUE54BiVOdUrkEDUbg==}
     engines: {node: '>= 20.0.0'}
     peerDependencies:
       constructs: ^10.5.0
@@ -1908,8 +1927,8 @@ packages:
     resolution: {integrity: sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==}
     engines: {node: '>=6'}
 
-  sass@1.102.0:
-    resolution: {integrity: sha512-NSOyTnaQF7rTAEOtI2fwb386vL+akyiQLBZu8Na7hXCb+umJy0GAqlcMIaqACZ6Z1VgTBS4K9PG6B3IdjHGJsw==}
+  sass@1.103.0:
+    resolution: {integrity: sha512-+QpdXUDw19lVqRDlYIyje1Lq/0gHsnNHIl4x1CqeUg13zRhaQN11UvTvouwHWLXc9Q3rQVT6oBhFGRYJ5Z8gHw==}
     engines: {node: '>=20.19.0'}
     hasBin: true
 
@@ -1995,8 +2014,8 @@ packages:
     peerDependencies:
       svelte: ^3.0.0 || ^4.0.0 || ^5.0.0-next.1
 
-  svelte@5.56.9:
-    resolution: {integrity: sha512-VT8kSnlEg8069w7AiCcAk3Yf5xvMnrGTagVOmU/OpOLHaHnNqXhWZCH/4EVga/bT/HtWhvE6/fHrXLErx7OnJA==}
+  svelte@5.56.10:
+    resolution: {integrity: sha512-Lcxbj8I/KAbpY+VjtY4ENQBV0dDCipfGAhqb51XQZ67CIQqXgsv/8dPkbILaj4Fb6/b6JAEM/PIVbILXgDQy2g==}
     engines: {node: '>=18'}
 
   svg-parser@2.0.4:
@@ -2067,13 +2086,13 @@ packages:
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
 
-  vite@8.2.1:
-    resolution: {integrity: sha512-EU/eS7BH3XROHh2YnBefjM6DBKA6ZeMZEYQbj7NLWg5wHYlhB8B/Mayd5XsgWq+NFYccDOTemRpdETWR6Ka/lw==}
+  vite@8.2.2:
+    resolution: {integrity: sha512-cFKLV/PRgAUlIRm5WjMjJ86jrftzpqcgH+Us+DS8mI3CDNiH30Whrz8uHL3+MOLPAgqbMBAqWdAHAphOAM+z/Q==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
       '@types/node': ^20.19.0 || >=22.12.0
-      '@vitejs/devtools': ^0.4.0
+      '@vitejs/devtools': ^0.4.0 || ^0.5.0
       esbuild: ^0.27.0 || ^0.28.0
       jiti: '>=1.21.0'
       less: ^4.0.0
@@ -2160,20 +2179,20 @@ packages:
 
 snapshots:
 
-  '@ai-sdk/gateway@4.0.55(zod@4.4.3)':
+  '@ai-sdk/gateway@4.0.56(zod@4.4.3)':
     dependencies:
       '@ai-sdk/provider': 4.0.7
-      '@ai-sdk/provider-utils': 5.0.27(zod@4.4.3)
+      '@ai-sdk/provider-utils': 5.0.28(zod@4.4.3)
       '@vercel/oidc': 3.2.0
       zod: 4.4.3
 
-  '@ai-sdk/openai@4.0.43(zod@4.4.3)':
+  '@ai-sdk/openai@4.0.44(zod@4.4.3)':
     dependencies:
       '@ai-sdk/provider': 4.0.7
-      '@ai-sdk/provider-utils': 5.0.27(zod@4.4.3)
+      '@ai-sdk/provider-utils': 5.0.28(zod@4.4.3)
       zod: 4.4.3
 
-  '@ai-sdk/provider-utils@5.0.27(zod@4.4.3)':
+  '@ai-sdk/provider-utils@5.0.28(zod@4.4.3)':
     dependencies:
       '@ai-sdk/provider': 4.0.7
       '@standard-schema/spec': 1.1.0
@@ -2214,9 +2233,9 @@ snapshots:
 
   '@aws-cdk/asset-node-proxy-agent-v6@2.1.2': {}
 
-  '@aws-cdk/aws-lambda-go-alpha@2.265.0-alpha.0(aws-cdk-lib@2.265.0(constructs@10.8.1))(constructs@10.8.1)':
+  '@aws-cdk/aws-lambda-go-alpha@2.266.0-alpha.0(aws-cdk-lib@2.266.0(constructs@10.8.1))(constructs@10.8.1)':
     dependencies:
-      aws-cdk-lib: 2.265.0(constructs@10.8.1)
+      aws-cdk-lib: 2.266.0(constructs@10.8.1)
       constructs: 10.8.1
 
   '@aws-cdk/cloud-assembly-schema@54.19.0': {}
@@ -2470,23 +2489,23 @@ snapshots:
 
   '@flit/accepted-language@0.1.0': {}
 
-  '@flit/cdk-bucket-mesh@0.7.1(aws-cdk-lib@2.265.0(constructs@10.8.1))(constructs@10.8.1)':
+  '@flit/cdk-bucket-mesh@0.7.1(aws-cdk-lib@2.266.0(constructs@10.8.1))(constructs@10.8.1)':
     dependencies:
-      aws-cdk-lib: 2.265.0(constructs@10.8.1)
+      aws-cdk-lib: 2.266.0(constructs@10.8.1)
       constructs: 10.8.1
 
-  '@flit/cdk-pipeline@2.7.0(aws-cdk-lib@2.265.0(constructs@10.8.1))(constructs@10.8.1)':
+  '@flit/cdk-pipeline@2.7.0(aws-cdk-lib@2.266.0(constructs@10.8.1))(constructs@10.8.1)':
     dependencies:
-      aws-cdk-lib: 2.265.0(constructs@10.8.1)
+      aws-cdk-lib: 2.266.0(constructs@10.8.1)
       constructs: 10.8.1
 
   '@flit/svelte-form@2.8.0':
     dependencies:
       fast-deep-equal: 3.1.3
 
-  '@flit/sveltekit-adapter-cdk@2.6.0(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.9)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)))(constructs@10.8.1)(svelte@5.56.9)(typescript@6.0.3)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0))':
+  '@flit/sveltekit-adapter-cdk@2.6.0(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.10)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0)))(constructs@10.8.1)(svelte@5.56.10)(typescript@6.0.3)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0))':
     dependencies:
-      '@sveltejs/kit': 2.70.3(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.9)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)))(svelte@5.56.9)(typescript@6.0.3)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0))
+      '@sveltejs/kit': 2.70.3(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.10)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0)))(svelte@5.56.10)(typescript@6.0.3)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0))
       '@types/aws-lambda': 8.10.162
       '@types/node': 26.2.0
       aws-cdk-lib: 2.265.0(constructs@10.8.1)
@@ -2816,28 +2835,28 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@sentry/svelte@10.70.0(svelte@5.56.9)':
+  '@sentry/svelte@10.70.0(svelte@5.56.10)':
     dependencies:
       '@sentry/browser': 10.70.0
       '@sentry/core': 10.70.0
       magic-string: 0.30.21
-      svelte: 5.56.9
+      svelte: 5.56.10
 
-  '@sentry/sveltekit@10.70.0(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@sveltejs/kit@2.70.3(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.9)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)))(svelte@5.56.9)(typescript@6.0.3)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)))(svelte@5.56.9)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0))':
+  '@sentry/sveltekit@10.70.0(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@sveltejs/kit@2.70.3(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.10)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0)))(svelte@5.56.10)(typescript@6.0.3)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0)))(svelte@5.56.10)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0))':
     dependencies:
       '@sentry/cloudflare': 10.70.0
       '@sentry/conventions': 0.16.0
       '@sentry/core': 10.70.0
       '@sentry/node': 10.70.0(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))
-      '@sentry/svelte': 10.70.0(svelte@5.56.9)
+      '@sentry/svelte': 10.70.0(svelte@5.56.10)
       '@sentry/vite-plugin': 5.4.0
       '@sveltejs/acorn-typescript': 1.0.13(acorn@8.18.0)
-      '@sveltejs/kit': 2.70.3(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.9)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)))(svelte@5.56.9)(typescript@6.0.3)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0))
+      '@sveltejs/kit': 2.70.3(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.10)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0)))(svelte@5.56.10)(typescript@6.0.3)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0))
       acorn: 8.18.0
       magic-string: 0.30.21
       sorcery: 1.0.0
     optionalDependencies:
-      vite: 8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)
+      vite: 8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0)
     transitivePeerDependencies:
       - '@cloudflare/workers-types'
       - '@opentelemetry/core'
@@ -2860,30 +2879,30 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@svelte-put/inline-svg@4.0.2(svelte@5.56.9)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0))':
+  '@svelte-put/inline-svg@4.0.2(svelte@5.56.10)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0))':
     dependencies:
       hast-util-to-html: 9.0.5
       lodash.debounce: 4.0.8
       magic-string: 0.30.21
-      svelte: 5.56.9
-      svelte-parse-markup: 0.1.5(svelte@5.56.9)
+      svelte: 5.56.10
+      svelte-parse-markup: 0.1.5(svelte@5.56.10)
       svg-parser: 2.0.4
-      vite: 8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)
+      vite: 8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0)
       zimmerframe: 1.1.4
 
   '@sveltejs/acorn-typescript@1.0.13(acorn@8.18.0)':
     dependencies:
       acorn: 8.18.0
 
-  '@sveltejs/adapter-static@3.0.10(@sveltejs/kit@2.70.3(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.9)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)))(svelte@5.56.9)(typescript@6.0.3)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)))':
+  '@sveltejs/adapter-static@3.0.10(@sveltejs/kit@2.70.3(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.10)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0)))(svelte@5.56.10)(typescript@6.0.3)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0)))':
     dependencies:
-      '@sveltejs/kit': 2.70.3(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.9)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)))(svelte@5.56.9)(typescript@6.0.3)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0))
+      '@sveltejs/kit': 2.70.3(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.10)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0)))(svelte@5.56.10)(typescript@6.0.3)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0))
 
-  '@sveltejs/kit@2.70.3(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.9)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)))(svelte@5.56.9)(typescript@6.0.3)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0))':
+  '@sveltejs/kit@2.70.3(@opentelemetry/api@1.9.1)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.10)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0)))(svelte@5.56.10)(typescript@6.0.3)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0))':
     dependencies:
       '@standard-schema/spec': 1.1.0
       '@sveltejs/acorn-typescript': 1.0.13(acorn@8.18.0)
-      '@sveltejs/vite-plugin-svelte': 7.3.0(svelte@5.56.9)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0))
+      '@sveltejs/vite-plugin-svelte': 7.3.0(svelte@5.56.10)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0))
       '@types/cookie': 0.6.0
       acorn: 8.18.0
       cookie: 0.6.0
@@ -2894,22 +2913,22 @@ snapshots:
       mrmime: 2.0.1
       set-cookie-parser: 3.1.2
       sirv: 3.0.2
-      svelte: 5.56.9
-      vite: 8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)
+      svelte: 5.56.10
+      vite: 8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0)
     optionalDependencies:
       '@opentelemetry/api': 1.9.1
       typescript: 6.0.3
 
   '@sveltejs/load-config@0.2.3': {}
 
-  '@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.9)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0))':
+  '@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.10)(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0))':
     dependencies:
       deepmerge: 4.3.1
       magic-string: 1.2.0
       obug: 2.1.4
-      svelte: 5.56.9
-      vite: 8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)
-      vitefu: 1.1.3(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0))
+      svelte: 5.56.10
+      vite: 8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0)
+      vitefu: 1.1.3(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0))
 
   '@turbo/darwin-64@2.10.11':
     optional: true
@@ -2962,15 +2981,15 @@ snapshots:
 
   '@vercel/oidc@3.2.0': {}
 
-  '@vitejs/plugin-basic-ssl@2.3.0(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0))':
+  '@vitejs/plugin-basic-ssl@2.3.0(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0))':
     dependencies:
-      vite: 8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)
+      vite: 8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0)
 
   '@workflow/serde@4.1.0': {}
 
-  '@wuchale/svelte@0.20.7(svelte@5.56.9)':
+  '@wuchale/svelte@0.20.7(svelte@5.56.10)':
     dependencies:
-      svelte: 5.56.9
+      svelte: 5.56.10
       wuchale: 0.25.8
 
   acorn@8.18.0: {}
@@ -2981,11 +3000,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ai@7.0.69(zod@4.4.3):
+  ai@7.0.70(zod@4.4.3):
     dependencies:
-      '@ai-sdk/gateway': 4.0.55(zod@4.4.3)
+      '@ai-sdk/gateway': 4.0.56(zod@4.4.3)
       '@ai-sdk/provider': 4.0.7
-      '@ai-sdk/provider-utils': 5.0.27(zod@4.4.3)
+      '@ai-sdk/provider-utils': 5.0.28(zod@4.4.3)
       zod: 4.4.3
 
   aria-query@5.3.1: {}
@@ -2995,6 +3014,13 @@ snapshots:
   astring@1.9.0: {}
 
   aws-cdk-lib@2.265.0(constructs@10.8.1):
+    dependencies:
+      '@aws-cdk/asset-awscli-v1': 2.2.292
+      '@aws-cdk/asset-node-proxy-agent-v6': 2.1.2
+      '@aws-cdk/cloud-assembly-schema': 54.19.0
+      constructs: 10.8.1
+
+  aws-cdk-lib@2.266.0(constructs@10.8.1):
     dependencies:
       '@aws-cdk/asset-awscli-v1': 2.2.292
       '@aws-cdk/asset-node-proxy-agent-v6': 2.1.2
@@ -3386,10 +3412,10 @@ snapshots:
     optionalDependencies:
       prettier: 3.9.6
 
-  prettier-plugin-svelte@4.1.1(prettier@3.9.6)(svelte@5.56.9):
+  prettier-plugin-svelte@4.1.1(prettier@3.9.6)(svelte@5.56.10):
     dependencies:
       prettier: 3.9.6
-      svelte: 5.56.9
+      svelte: 5.56.10
 
   prettier@3.9.6: {}
 
@@ -3454,7 +3480,7 @@ snapshots:
     dependencies:
       mri: 1.2.0
 
-  sass@1.102.0:
+  sass@1.103.0:
     dependencies:
       chokidar: 5.0.0
       immutable: 5.1.9
@@ -3522,7 +3548,7 @@ snapshots:
       character-entities-html4: 2.1.0
       character-entities-legacy: 3.0.0
 
-  svelte-check@4.7.6(picomatch@4.0.5)(svelte@5.56.9)(typescript@6.0.3):
+  svelte-check@4.7.6(picomatch@4.0.5)(svelte@5.56.10)(typescript@6.0.3):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       '@sveltejs/load-config': 0.2.3
@@ -3530,20 +3556,20 @@ snapshots:
       fdir: 6.5.0(picomatch@4.0.5)
       picocolors: 1.1.1
       sade: 1.8.1
-      svelte: 5.56.9
+      svelte: 5.56.10
       typescript: 6.0.3
     transitivePeerDependencies:
       - picomatch
 
-  svelte-dnd-action@0.9.78(svelte@5.56.9):
+  svelte-dnd-action@0.9.78(svelte@5.56.10):
     dependencies:
-      svelte: 5.56.9
+      svelte: 5.56.10
 
-  svelte-parse-markup@0.1.5(svelte@5.56.9):
+  svelte-parse-markup@0.1.5(svelte@5.56.10):
     dependencies:
-      svelte: 5.56.9
+      svelte: 5.56.10
 
-  svelte@5.56.9:
+  svelte@5.56.10:
     dependencies:
       '@jridgewell/remapping': 2.3.5
       '@jridgewell/sourcemap-codec': 1.5.5
@@ -3638,7 +3664,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0):
+  vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0):
     dependencies:
       lightningcss: 1.33.0
       picomatch: 4.0.5
@@ -3649,12 +3675,12 @@ snapshots:
       '@types/node': 26.2.0
       esbuild: 0.28.2
       fsevents: 2.3.3
-      sass: 1.102.0
+      sass: 1.103.0
       yaml: 2.9.0
 
-  vitefu@1.1.3(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)):
+  vitefu@1.1.3(vite@8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0)):
     optionalDependencies:
-      vite: 8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.102.0)(yaml@2.9.0)
+      vite: 8.2.2(@types/node@26.2.0)(esbuild@0.28.2)(sass@1.103.0)(yaml@2.9.0)
 
   webidl-conversions@3.0.1: {}
 
