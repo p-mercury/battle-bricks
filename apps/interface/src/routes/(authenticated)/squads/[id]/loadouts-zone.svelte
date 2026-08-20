@@ -1,5 +1,5 @@
 <script lang="ts">
-	import UnitCard from "$lib/components/unit-card.svelte";
+	import LoadoutCard from "$lib/components/loadout-card.svelte";
 	import type { Loadout } from "@battle-bricks/contracts/catalogue/v1/loadout_pb";
 	import { dragHandleZone, type DndEvent } from "svelte-dnd-action";
 
@@ -41,7 +41,7 @@
 	onfinalize={handleFinalize}
 >
 	{#each items as item (item.id)}
-		<UnitCard unit={item.loadout.unit!} drag />
+		<LoadoutCard bind:loadout={item.loadout} drag />
 	{/each}
 </ul>
 
@@ -51,7 +51,6 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
-		padding: 1rem;
 		min-height: 100%;
 	}
 </style>

@@ -84,7 +84,10 @@
 																turnComplete: false,
 																unit: l.unit!,
 																items: Object.values(
-																	l.unit!.items.reduce(
+																	[
+																		...l.unit!.items,
+																		...(l.item ? [l.item] : []),
+																	].reduce(
 																		(items, item) => {
 																			if (item.details.value) {
 																				if ("capacity" in item.details.value) {

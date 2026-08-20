@@ -111,56 +111,64 @@
 		</button>
 		<button onclick={() => goto("/home")}>Cancel</button>
 	</header>
-	<div class="loadouts">
-		<UnitsZone bind:items={units} {flipDurationMs} />
-	</div>
-	<div class="squad">
-		<LoadoutsZone
-			bind:items={loadouts}
-			{flipDurationMs}
-			handleConsider={(event) => {
-				const nextBudget = event.detail.items.reduce(
-					(a, item) => a - getLoadoutPrice(item.loadout),
-					1500,
-				);
-				if (nextBudget >= 0) {
-					loadouts = event.detail.items;
-				}
-			}}
-			handleFinalize={(event) => {
-				const items = event.detail.items;
-
-				const nextBudget = items.reduce(
-					(remaining, item) => remaining - getLoadoutPrice(item.loadout),
-					1500,
-				);
-
-				const previousBudget = loadouts.reduce(
-					(remaining, item) => remaining - getLoadoutPrice(item.loadout),
-					1500,
-				);
-
-				if (nextBudget >= 0 || nextBudget > previousBudget) {
-					loadouts = [...items].sort(
-						(a, b) => getLoadoutPrice(a.loadout) - getLoadoutPrice(b.loadout),
+	<section class="loadouts">
+		<h2>Units</h2>
+		<div>
+			<UnitsZone bind:items={units} {flipDurationMs} />
+		</div>
+	</section>
+	<section class="squad">
+		<h2>Your Squad</h2>
+		<div>
+			<LoadoutsZone
+				bind:items={loadouts}
+				{flipDurationMs}
+				handleConsider={(event) => {
+					const nextBudget = event.detail.items.reduce(
+						(a, item) => a - getLoadoutPrice(item.loadout),
+						1500,
 					);
-				} else {
-					loadouts = [...loadouts];
-				}
-			}}
-		/>
-	</div>
+					if (nextBudget >= 0) {
+						loadouts = event.detail.items;
+					}
+				}}
+				handleFinalize={(event) => {
+					const items = event.detail.items;
+
+					const nextBudget = items.reduce(
+						(remaining, item) => remaining - getLoadoutPrice(item.loadout),
+						1500,
+					);
+
+					const previousBudget = loadouts.reduce(
+						(remaining, item) => remaining - getLoadoutPrice(item.loadout),
+						1500,
+					);
+
+					if (nextBudget >= 0 || nextBudget > previousBudget) {
+						loadouts = [...items].sort(
+							(a, b) => getLoadoutPrice(a.loadout) - getLoadoutPrice(b.loadout),
+						);
+					} else {
+						loadouts = [...loadouts];
+					}
+				}}
+			/>
+		</div>
+	</section>
 </div>
 
 <style lang="scss">
 	.wrapper {
 		display: grid;
 		grid-template:
-			"header header" 4rem
-			"loadouts squad" 1fr /
-			auto 1fr;
+			"header header header header" 4rem
+			". loadouts squad ." 1fr
+			". . . ." 0 /
+			0 auto auto 1fr;
 		height: 100dvh;
 		width: 100dvw;
+		gap: 1rem;
 	}
 
 	header {
@@ -177,5 +185,33 @@
 	.squad {
 		grid-area: squad;
 		overflow: hidden scroll;
+	}
+
+	section {
+		grid-area: game;
+		display: flex;
+		flex-direction: column;
+		margin: 0;
+		padding: 0;
+		border-radius: 0.8rem;
+		box-shadow:
+			0 1px 2px rgba(0, 0, 0, 0.1),
+			0 4px 8px rgba(0, 0, 0, 0.14),
+			0 8px 16px rgba(0, 0, 0, 0.12);
+		overflow: hidden;
+
+		h2 {
+			margin: 0;
+			padding: 0.5rem 1rem 0 1rem;
+			font-size: 1.4rem;
+			font-weight: 600;
+		}
+
+		div {
+			max-height: 100%;
+			max-width: 100%;
+			overflow: hidden scroll;
+			padding: 0.8rem;
+		}
 	}
 </style>

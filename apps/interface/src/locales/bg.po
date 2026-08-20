@@ -51,6 +51,7 @@ msgid "Clear Turn Complete"
 msgstr "Изчисти завършен ход"
 
 #: src/routes/(authenticated)/game/+page.svelte
+#: src/routes/(authenticated)/squads/[id]/+page.svelte
 msgid "Your Squad"
 msgstr "Вашият отряд"
 
@@ -235,11 +236,26 @@ msgstr "Вашите отряди"
 msgid "Start game"
 msgstr "Започнете игра"
 
+#. 0: getLoadoutPrice(loadout)
 #. 0: getUnitPrice(unit)
 #. 0: getUnitPrice(unit)
 #. 0: getUnitPrice(loadout.unit)
+#: src/lib/components/loadout-card.svelte
 #: src/lib/components/unit-card.svelte
 #: src/lib/components/unit-stat-card.svelte
 #: src/routes/(authenticated)/game/game-loadout-item.svelte
 msgid "{0}c"
 msgstr "{0} c"
+
+#: src/routes/(authenticated)/squads/[id]/+page.svelte
+msgid "Units"
+msgstr "Единици"
+
+#. 0: item.name; 1: item.price
+#: src/lib/components/loadout-card.svelte
+msgid "{0} ({1}c)"
+msgstr "{0} ({1}c)"
+
+#: src/lib/components/loadout-card.svelte
+msgid "Extra item"
+msgstr "Допълнителен предмет"

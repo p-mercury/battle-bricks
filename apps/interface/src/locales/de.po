@@ -51,6 +51,7 @@ msgid "Clear Turn Complete"
 msgstr "Zugabschluss aufheben"
 
 #: src/routes/(authenticated)/game/+page.svelte
+#: src/routes/(authenticated)/squads/[id]/+page.svelte
 msgid "Your Squad"
 msgstr "Dein Trupp"
 
@@ -235,11 +236,26 @@ msgstr "Deine Squads"
 msgid "Start game"
 msgstr "Spiel starten"
 
+#. 0: getLoadoutPrice(loadout)
 #. 0: getUnitPrice(unit)
 #. 0: getUnitPrice(unit)
 #. 0: getUnitPrice(loadout.unit)
+#: src/lib/components/loadout-card.svelte
 #: src/lib/components/unit-card.svelte
 #: src/lib/components/unit-stat-card.svelte
 #: src/routes/(authenticated)/game/game-loadout-item.svelte
 msgid "{0}c"
 msgstr "{0} c"
+
+#: src/routes/(authenticated)/squads/[id]/+page.svelte
+msgid "Units"
+msgstr "Einheiten"
+
+#. 0: item.name; 1: item.price
+#: src/lib/components/loadout-card.svelte
+msgid "{0} ({1}c)"
+msgstr "{0} ({1}c)"
+
+#: src/lib/components/loadout-card.svelte
+msgid "Extra item"
+msgstr "Zusätzlicher Gegenstand"

@@ -61,7 +61,6 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
-		padding: 1rem;
 		min-height: 100%;
 	}
 </style>
