@@ -61,7 +61,7 @@
 			<option value={Faction.GALACTIC_EMPIRE}>Galactic Empire</option>
 		</select>
 		<input type="text" placeholder="name" bind:value={name} />
-		<ln>Budget: {budget}</ln>
+		<ln>Budget: {budget}c</ln>
 		<button
 			onclick={async () => {
 				if (!name) {
@@ -131,6 +131,7 @@
 					if (nextBudget >= 0) {
 						loadouts = event.detail.items;
 					}
+					loadouts = event.detail.items;
 				}}
 				handleFinalize={(event) => {
 					const items = event.detail.items;
@@ -162,10 +163,10 @@
 	.wrapper {
 		display: grid;
 		grid-template:
-			"header header header header" 4rem
+			"header header header header" auto
 			". loadouts squad ." 1fr
 			". . . ." 0 /
-			0 auto auto 1fr;
+			0 minmax(21.6rem, auto) minmax(21.6rem, auto) 1fr;
 		height: 100dvh;
 		width: 100dvw;
 		gap: 1rem;
@@ -173,8 +174,11 @@
 
 	header {
 		all: unset;
+		display: flex;
 		grid-area: header;
 		background-color: lightpink;
+		padding: 1rem;
+		gap: 1rem;
 	}
 
 	.loadouts {
@@ -208,7 +212,7 @@
 		}
 
 		div {
-			max-height: 100%;
+			height: 100%;
 			max-width: 100%;
 			overflow: hidden scroll;
 			padding: 0.8rem;

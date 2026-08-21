@@ -44,10 +44,6 @@
 	</button>
 	<div class:open={isOpen} class="stats" aria-hidden={!isOpen}>
 		<StatTable>
-			<StatRow>
-				Price:
-				<div>{item.price}</div>
-			</StatRow>
 			{#if item.details.case === "blasterBolt"}
 				<StatRow>
 					Capacity:

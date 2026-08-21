@@ -143,9 +143,8 @@ msgstr "Reichweite: <0>{0}-{1} m</0>"
 msgid "Fire Rate: <0/>"
 msgstr "Feuerrate: <0/>"
 
-#: src/lib/components/item.svelte
-msgid "Price: <0/>"
-msgstr "Preis: <0/>"
+#~ msgid "Price: <0/>"
+#~ msgstr "Preis: <0/>"
 
 #. 0.0: getUnitPrice(unit)
 #: src/lib/components/unit-item.svelte
@@ -194,10 +193,8 @@ msgstr "Rebellenallianz"
 msgid "Galactic Empire"
 msgstr "Galaktisches Imperium"
 
-#. 0: budget
-#: src/routes/(authenticated)/squads/[id]/+page.svelte
-msgid "Budget: {0}"
-msgstr "Budget: {0}"
+#~ msgid "Budget: {0}"
+#~ msgstr "Budget: {0}"
 
 #: src/lib/components/select-color.svelte
 msgid "Select color"
@@ -256,6 +253,23 @@ msgstr "Einheiten"
 msgid "{0} ({1}c)"
 msgstr "{0} ({1}c)"
 
+#~ msgid "Extra item"
+#~ msgstr "Zusätzlicher Gegenstand"
+
+#~ msgid "-No Item-"
+#~ msgstr "-Kein Gegenstand-"
+
+#~ msgid "- No Item -"
+#~ msgstr "- Kein Gegenstand -"
+
+#~ msgid "No Extra item"
+#~ msgstr "Kein Extra-Item"
+
 #: src/lib/components/loadout-card.svelte
-msgid "Extra item"
-msgstr "Zusätzlicher Gegenstand"
+msgid "No extra item"
+msgstr "Kein zusätzlicher Gegenstand"
+
+#. 0: budget
+#: src/routes/(authenticated)/squads/[id]/+page.svelte
+msgid "Budget: {0}c"
+msgstr "Budget: {0} c"

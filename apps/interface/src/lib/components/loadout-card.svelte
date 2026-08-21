@@ -45,7 +45,7 @@
 		</div>
 		{#if loadout.unit!.loadoutItems.length}
 			<select class="loadout" bind:value={itemId}>
-				<option value={undefined}>Extra item</option>
+				<option value={undefined}>No extra item</option>
 				{#each loadout.unit!.loadoutItems as item}
 					<option value={item.id}>{item.name} ({item.price}c)</option>
 				{/each}

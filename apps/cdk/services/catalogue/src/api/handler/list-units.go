@@ -17,7 +17,7 @@ var Units = map[string]*catalogue.Unit{
 		Factions:     []catalogue.Faction{catalogue.Faction_FACTION_GALACTIC_REPUBLIC},
 		Image:        new("/clone-scout.png"),
 		Name:         "Clone Scout",
-		Price:        150,
+		Price:        180,
 		Size:         1,
 		Speed:        2,
 		Health:       15,
@@ -32,7 +32,6 @@ var Units = map[string]*catalogue.Unit{
 		},
 		Items: []*catalogue.Item{
 			Items["Kq0BO0W0rH2Ko0kyydLI"], // Blaster
-			Items["d2D9WroLYwyxAWaUpG1u"], // Blue Bolts
 			Items["d2D9WroLYwyxAWaUpG1u"], // Blue Bolts
 			{
 				Id:      "bx2mnRh3jbPrkWUTtExU",
@@ -52,8 +51,8 @@ var Units = map[string]*catalogue.Unit{
 			},
 		},
 		LoadoutItems: []*catalogue.Item{
-			Items["AoM09AjZL8hUMhTYLIYY"], // Vibroblade
 			Items["d2D9WroLYwyxAWaUpG1u"], // Blue Bolts
+			Items["AoM09AjZL8hUMhTYLIYY"], // Vibroblade
 		},
 	},
 	"vEPHxbpBSxzeNluR4b9U": {
@@ -62,7 +61,7 @@ var Units = map[string]*catalogue.Unit{
 		Factions:     []catalogue.Faction{catalogue.Faction_FACTION_GALACTIC_REPUBLIC},
 		Image:        new("/clone-sharpshooter.png"),
 		Name:         "Clone Sharpshooter",
-		Price:        190,
+		Price:        230,
 		Size:         1,
 		Speed:        2,
 		Health:       15,
@@ -96,8 +95,8 @@ var Units = map[string]*catalogue.Unit{
 			},
 		},
 		LoadoutItems: []*catalogue.Item{
-			Items["AoM09AjZL8hUMhTYLIYY"], // Vibroblade
 			Items["d2D9WroLYwyxAWaUpG1u"], // Blue Bolts
+			Items["AoM09AjZL8hUMhTYLIYY"], // Vibroblade
 		},
 	},
 	"AFFXxbwBD1aNFYbt25m7": {
@@ -106,7 +105,7 @@ var Units = map[string]*catalogue.Unit{
 		Factions:     []catalogue.Faction{catalogue.Faction_FACTION_GALACTIC_REPUBLIC},
 		Image:        new("/clone-commander.png"),
 		Name:         "Clone Commander",
-		Price:        195,
+		Price:        250,
 		Size:         1,
 		Speed:        2,
 		Health:       15,
@@ -141,8 +140,8 @@ var Units = map[string]*catalogue.Unit{
 			},
 		},
 		LoadoutItems: []*catalogue.Item{
-			Items["AoM09AjZL8hUMhTYLIYY"], // Vibroblade
 			Items["d2D9WroLYwyxAWaUpG1u"], // Blue Bolts
+			Items["AoM09AjZL8hUMhTYLIYY"], // Vibroblade
 		},
 	},
 	"buMbZfN6zRflygTOVHaG": {
@@ -151,7 +150,7 @@ var Units = map[string]*catalogue.Unit{
 		Factions:     []catalogue.Faction{catalogue.Faction_FACTION_GALACTIC_REPUBLIC},
 		Image:        new("/fighter-tank.png"),
 		Name:         "Fighter Tank",
-		Price:        350,
+		Price:        480,
 		Size:         4,
 		Speed:        4,
 		Health:       30,
@@ -202,7 +201,7 @@ var Units = map[string]*catalogue.Unit{
 		Factions:     []catalogue.Faction{catalogue.Faction_FACTION_SEPARATIST_ALLIANCE},
 		Image:        new("/droid-scout.png"),
 		Name:         "Droid",
-		Price:        55,
+		Price:        80,
 		Size:         1,
 		Speed:        2,
 		Health:       10,
@@ -245,7 +244,7 @@ var Units = map[string]*catalogue.Unit{
 		Factions:     []catalogue.Faction{catalogue.Faction_FACTION_SEPARATIST_ALLIANCE},
 		Image:        new("/super-battle-droid.png"),
 		Name:         "Super Battle Droid",
-		Price:        160,
+		Price:        170,
 		Size:         1,
 		Speed:        1,
 		Health:       17,
@@ -285,7 +284,7 @@ var Units = map[string]*catalogue.Unit{
 		Factions:     []catalogue.Faction{catalogue.Faction_FACTION_SEPARATIST_ALLIANCE},
 		Image:        new("/dwarf-spider-droid.png"),
 		Name:         "Dwarf Spider Droid",
-		Price:        360,
+		Price:        370,
 		Size:         2,
 		Speed:        3,
 		Health:       20,
@@ -325,7 +324,7 @@ var Units = map[string]*catalogue.Unit{
 		Factions:     []catalogue.Faction{catalogue.Faction_FACTION_SEPARATIST_ALLIANCE},
 		Image:        new("/octuptarra.png"),
 		Name:         "Octuptarra",
-		Price:        360,
+		Price:        460,
 		Size:         4,
 		Speed:        3,
 		Health:       25,
@@ -375,7 +374,7 @@ var Units = map[string]*catalogue.Unit{
 		Factions:     []catalogue.Faction{catalogue.Faction_FACTION_SEPARATIST_ALLIANCE},
 		Image:        new("/armored-assault-tank.png"),
 		Name:         "Armored Assault Tank",
-		Price:        400,
+		Price:        530,
 		Size:         4,
 		Speed:        3,
 		Health:       30,

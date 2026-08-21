@@ -11,10 +11,10 @@ var Items = map[string]*catalogue.Item{
 		Version:     1,
 		Name:        "Red Plasma Cartridge",
 		Description: new("Cheap Tibanna gas blend producing weaker red bolts"),
-		Price:       5,
+		Price:       10,
 		Details: &catalogue.Item_BlasterBolt{
 			BlasterBolt: &catalogue.BlasterBolt{
-				Capacity:      40,
+				Capacity:      45,
 				ArmorPiercing: 1,
 				Damage: &common.DiceRoll{
 					Count:    1,
@@ -29,10 +29,10 @@ var Items = map[string]*catalogue.Item{
 		Version:     1,
 		Name:        "Blue Plasma Cartridge",
 		Description: new("High grade Tibanna gas blend producing blue bolts"),
-		Price:       10,
+		Price:       20,
 		Details: &catalogue.Item_BlasterBolt{
 			BlasterBolt: &catalogue.BlasterBolt{
-				Capacity:      35,
+				Capacity:      40,
 				ArmorPiercing: 2,
 				Damage: &common.DiceRoll{
 					Count:    1,
@@ -47,10 +47,10 @@ var Items = map[string]*catalogue.Item{
 		Version:     1,
 		Name:        "Green Plasma Cartridge",
 		Description: new("Pure refined Tibanna producing powerful green bolts"),
-		Price:       15,
+		Price:       30,
 		Details: &catalogue.Item_BlasterBolt{
 			BlasterBolt: &catalogue.BlasterBolt{
-				Capacity:      30,
+				Capacity:      35,
 				ArmorPiercing: 2,
 				Damage: &common.DiceRoll{
 					Count:    1,
@@ -65,10 +65,10 @@ var Items = map[string]*catalogue.Item{
 		Version:     1,
 		Name:        "Yellow Plasma Cartridge",
 		Description: new("High pressure Tibanna producing armor piercing yellow bolts"),
-		Price:       20,
+		Price:       40,
 		Details: &catalogue.Item_BlasterBolt{
 			BlasterBolt: &catalogue.BlasterBolt{
-				Capacity:      25,
+				Capacity:      30,
 				ArmorPiercing: 3,
 				Damage: &common.DiceRoll{
 					Count:    1,
@@ -137,7 +137,7 @@ var Items = map[string]*catalogue.Item{
 		Version:     1,
 		Name:        "Fragmentation rocket",
 		Description: new("Anti-personnel rocket that shreds lightly armored targets with a wide blast radius"),
-		Price:       30,
+		Price:       40,
 		Details: &catalogue.Item_LauncherRocket{
 			LauncherRocket: &catalogue.LauncherRocket{
 				Range: &catalogue.Range{
@@ -160,7 +160,7 @@ var Items = map[string]*catalogue.Item{
 		Version:     1,
 		Name:        "Ion rocket",
 		Description: new("Anti-vehicle rocket for piercing thick armor"),
-		Price:       30,
+		Price:       40,
 		Details: &catalogue.Item_LauncherRocket{
 			LauncherRocket: &catalogue.LauncherRocket{
 				Range: &catalogue.Range{
@@ -227,15 +227,15 @@ var Items = map[string]*catalogue.Item{
 		Id:      "AoM09AjZL8hUMhTYLIYY",
 		Version: 1,
 		Name:    "Vibroblade",
-		Price:   15,
+		Price:   20,
 		Details: &catalogue.Item_MeleeWeapon{
 			MeleeWeapon: &catalogue.MeleeWeapon{
-				AttackSpeed:   5,
+				AttackSpeed:   6,
 				ArmorPiercing: 2,
 				Damage: &common.DiceRoll{
 					Count:    1,
 					Sides:    8,
-					Modifier: 0,
+					Modifier: 1,
 				},
 			},
 		},
