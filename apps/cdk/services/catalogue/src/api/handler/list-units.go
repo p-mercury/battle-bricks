@@ -284,12 +284,13 @@ var Units = map[string]*catalogue.Unit{
 		Factions:     []catalogue.Faction{catalogue.Faction_FACTION_SEPARATIST_ALLIANCE},
 		Image:        new("/commando-droid.png"),
 		Name:         "Commando Droid",
-		Price:        210,
+		Price:        190,
 		Size:         1,
-		Speed:        2,
+		Speed:        3,
 		Health:       15,
 		ArmorClass:   3,
 		Marksmanship: new(uint32(3)),
+		MeleeAbility: new(uint32(2)),
 		Actions: []*catalogue.Unit_Action{
 			{
 				Name:        "Sprint",
@@ -340,7 +341,6 @@ var Units = map[string]*catalogue.Unit{
 			},
 		},
 		Items: []*catalogue.Item{
-			Items["CV1AILTJNoyVKD7Uon63"], // Red Bolts
 			Items["CV1AILTJNoyVKD7Uon63"], // Red Bolts
 			{
 				Id:      "Z5WYIKT9RLCj6VQ6TfZe",
