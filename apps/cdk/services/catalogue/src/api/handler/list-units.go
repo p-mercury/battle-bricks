@@ -278,6 +278,49 @@ var Units = map[string]*catalogue.Unit{
 			Items["CV1AILTJNoyVKD7Uon63"], // Red Bolts
 		},
 	},
+	"wDg2qUtkPlZhbtLTwvra": {
+		Id:           "wDg2qUtkPlZhbtLTwvra",
+		Version:      1,
+		Factions:     []catalogue.Faction{catalogue.Faction_FACTION_SEPARATIST_ALLIANCE},
+		Image:        new("/commando-droid.png"),
+		Name:         "Commando Droid",
+		Price:        210,
+		Size:         1,
+		Speed:        2,
+		Health:       15,
+		ArmorClass:   3,
+		Marksmanship: new(uint32(3)),
+		Actions: []*catalogue.Unit_Action{
+			{
+				Name:        "Sprint",
+				Description: new("Double move"),
+			},
+		},
+		Items: []*catalogue.Item{
+			Items["Kq0BO0W0rH2Ko0kyydLI"], // Blaster
+			Items["CV1AILTJNoyVKD7Uon63"], // Red Bolts
+			{
+				Id:      "bx2mnRh3jbPrkWUTtExU",
+				Version: 1,
+				Name:    "Unarmed Strike",
+				Details: &catalogue.Item_MeleeWeapon{
+					MeleeWeapon: &catalogue.MeleeWeapon{
+						AttackSpeed:   6,
+						ArmorPiercing: 1,
+						Damage: &common.DiceRoll{
+							Count:    1,
+							Sides:    8,
+							Modifier: -2,
+						},
+					},
+				},
+			},
+		},
+		LoadoutItems: []*catalogue.Item{
+			Items["CV1AILTJNoyVKD7Uon63"], // Red Bolts
+			Items["AoM09AjZL8hUMhTYLIYY"], // Vibroblade
+		},
+	},
 	"R4ov67MKvT4YFauIDJnV": {
 		Id:           "R4ov67MKvT4YFauIDJnV",
 		Version:      1,
