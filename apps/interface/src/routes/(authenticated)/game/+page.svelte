@@ -46,7 +46,7 @@
 			<button
 				onclick={() =>
 					Object.values(game!.attacker.loadouts).forEach(({ id }) => {
-						if (game!.attacker.loadouts[id].unit.health) {
+						if (game!.attacker.loadouts[id].health) {
 							game!.attacker.loadouts[id].turnComplete = false;
 						}
 					})}

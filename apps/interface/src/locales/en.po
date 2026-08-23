@@ -236,11 +236,9 @@ msgstr "Start game"
 #. 0: getLoadoutPrice(loadout)
 #. 0: getUnitPrice(unit)
 #. 0: getUnitPrice(unit)
-#. 0: getUnitPrice(loadout.unit)
 #: src/lib/components/loadout-card.svelte
 #: src/lib/components/unit-card.svelte
 #: src/lib/components/unit-stat-card.svelte
-#: src/routes/(authenticated)/game/game-loadout-item.svelte
 msgid "{0}c"
 msgstr "{0}c"
 
@@ -273,3 +271,7 @@ msgstr "No extra item"
 #: src/routes/(authenticated)/squads/[id]/+page.svelte
 msgid "Budget: {0}c"
 msgstr "Budget: {0}c"
+
+#: src/routes/(authenticated)/game/game-loadout-item.svelte
+msgid "DEAD"
+msgstr "DEAD"

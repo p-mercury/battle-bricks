@@ -80,9 +80,11 @@
 																id: id,
 																image: l.unit!.image,
 																name: l.unit!.name,
+																health: l.unit!.health,
 																color: colors[i].hex,
 																turnComplete: false,
 																unit: l.unit!,
+																item: l.item,
 																items: Object.values(
 																	[
 																		...l.unit!.items,

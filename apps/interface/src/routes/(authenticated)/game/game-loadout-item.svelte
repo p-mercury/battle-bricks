@@ -3,7 +3,8 @@
 	import { Faction } from "@battle-bricks/contracts/catalogue/v1/faction_pb";
 	import BrickCard from "$lib/components/brick-card.svelte";
 	import Stat from "$lib/components/stat.svelte";
-	import { getUnitPrice } from "$lib/unit";
+	import NumberInput from "$lib/components/number-input.svelte";
+	import Switcher from "$lib/components/switcher.svelte";
 
 	let {
 		faction,
@@ -21,18 +22,23 @@
 <BrickCard {selected} {onclick} bind:color={loadout.color}>
 	<section>
 		{#if loadout.image}
-			<img
-				alt={loadout.name}
-				src={loadout.image}
-				class:republic={faction === Faction.GALACTIC_REPUBLIC}
-				class:separatists={faction === Faction.SEPARATIST_ALLIANCE}
-			/>
+			<div class="image-container" class:dead={loadout.health === 0}>
+				<img
+					alt={loadout.name}
+					src={loadout.image}
+					class:republic={faction === Faction.GALACTIC_REPUBLIC}
+					class:separatists={faction === Faction.SEPARATIST_ALLIANCE}
+				/>
+				{#if loadout.health === 0}
+					<span class="dead-label">DEAD</span>
+				{/if}
+			</div>
 		{/if}
 		<div class="info">
 			<h3>{loadout.name}</h3>
 		</div>
-		<div class="price">
-			{getUnitPrice(loadout.unit)}c
+		<div class="turn">
+			<Switcher bind:value={loadout.turnComplete} />
 		</div>
 		<div class="stats">
 			<Stat label="HP" color="GREEN" value={loadout.unit.health} />
@@ -41,6 +47,16 @@
 			<Stat label="AC" color="GREEN" value={loadout.unit.armorClass} />
 			<Stat label="SP" color="BLUE" value={loadout.unit.speed} />
 			<Stat label="MS" color="RED" value={loadout.unit.meleeAbility || 0} />
+		</div>
+		<div class="trackers">
+			<NumberInput
+				min={0}
+				max={loadout.unit.health}
+				bind:value={loadout.health}
+			/>
+			{#if loadout.inCover != null}
+				<Switcher bind:value={loadout.inCover} />
+			{/if}
 		</div>
 	</section>
 </BrickCard>
@@ -53,29 +69,66 @@
 		display: grid;
 		width: 18.6rem;
 		grid-template:
-			"info info price" 1.3rem
-			"image stats stats" 7.5rem /
+			"info info turn" 1.3rem
+			"image stats stats" 7.5rem
+			"trackers trackers trackers" auto /
 			7.5rem auto min-content;
 		gap: 0.6rem;
 	}
 
-	img {
+	.image-container {
+		grid-area: image;
+		position: relative;
 		width: 100%;
 		height: 100%;
-		grid-area: image;
-		object-fit: contain;
 		border-radius: 0.8rem;
-		padding: 0.4rem;
-		background: linear-gradient(135deg, #1c1c1c, #4f424f);
-		box-sizing: border-box;
+		overflow: hidden;
+		clip-path: inset(0 round 0.8rem);
+		isolation: isolate;
 
-		&.republic {
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			padding: 0.4rem;
+			border-radius: inherit;
 			background: linear-gradient(135deg, #1c1c1c, #4f424f);
+			box-sizing: border-box;
+			transition:
+				filter 0.2s ease,
+				opacity 0.2s ease;
+
+			&.republic {
+				background: linear-gradient(135deg, #1c1c1c, #4f424f);
+			}
+
+			&.separatists {
+				background: linear-gradient(135deg, #2b1515, #2d3f54);
+			}
 		}
 
-		&.separatists {
-			background: linear-gradient(135deg, #2b1515, #2d3f54);
+		&.dead img {
+			filter: grayscale(1) blur(3px);
+			opacity: 0.55;
+			transform: scale(1.03);
 		}
+	}
+
+	.dead-label {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #ffffff;
+		font-size: 1.5rem;
+		font-weight: 900;
+		letter-spacing: 0.15rem;
+		text-shadow:
+			0 2px 4px rgb(0 0 0 / 90%),
+			0 0 8px rgb(255 0 0 / 80%);
+		pointer-events: none;
 	}
 
 	.stats {
@@ -84,6 +137,12 @@
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-auto-rows: 1fr;
 		gap: 0.4rem;
+	}
+
+	.trackers {
+		grid-area: trackers;
+		display: flex;
+		gap: 0.5rem;
 	}
 
 	.info {
@@ -98,13 +157,7 @@
 		}
 	}
 
-	.price {
-		grid-area: price;
-		color: black;
-		font-weight: 500;
-		background-color: orange;
-		line-height: 1rem;
-		padding: 0.2rem;
-		border-radius: 0.4rem;
+	.turn {
+		grid-area: turn;
 	}
 </style>

@@ -26,9 +26,11 @@ export interface Loadout {
 	image?: string;
 	name: string;
 	color: string;
+	health: number;
 	turnComplete: boolean;
 	inCover?: boolean;
 	unit: Unit;
+	item?: Item;
 	items: GameItem[];
 }
 
