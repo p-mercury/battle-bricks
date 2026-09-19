@@ -432,6 +432,7 @@ export function createPipeline(scope: App, props: CreatePipelineProps) {
 	const BUILD_ARTIFACT = new Artifact();
 
 	new Pipeline(scope, `BattleBricks${props.stackPrefix}Pipeline`, {
+		stackName: `BattleBricks${props.stackPrefix}Pipeline`,
 		pipelineName: props.pipelineName,
 		rootDir: "apps/cdk/pipeline",
 		terminationProtection: true,
